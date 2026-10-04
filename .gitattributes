@@ -1,0 +1,10 @@
+*.otf !text !filter !merge !diff
+*.ttf !text !filter !merge !diff
+*.woff !text !filter !merge !diff
+*.woff2 !text !filter !merge !diff
+*.eot !text !filter !merge !diff
+*.ttc !text !filter !merge !diff
+*.otc !text !filter !merge !diff
+*.dfont !text !filter !merge !diff
+*.pfa !text !filter !merge !diff
+*.pfb !text !filter !merge !diff
