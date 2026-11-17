@@ -22,9 +22,8 @@ const { judul, deskripsi, halamanAktif = "" } = Astro.props;
     <meta name="color-scheme" content="light" />
     <title>{judul}</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Paprika&family=Pragati+Narrow:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="preload" href="/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-Regular.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-Bold.otf" as="font" type="font/otf" crossorigin />
 
     <!-- Pemberitahuan replika: situs ini bukan kanal resmi sekolah. -->
     <meta name="replika-situs" content="Ini adalah situs replika, bukan situs resmi. Situs asli: https://www.smkn1mandau.sch.id/?m=1" />
