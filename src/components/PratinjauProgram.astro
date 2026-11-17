@@ -10,7 +10,7 @@ const programKeahlian = [
     <div class="program-heading">
       <div>
         <p class="pita-bagian mb-3">Program keahlian</p>
-        <h2 id="judul-pratinjau-program" class="font-judul text-3xl md:text-4xl mb-4">
+        <h2 id="judul-pratinjau-program" class="font-judul font-familjen text-3xl md:text-4xl mb-4">
           Ruang untuk mengasah kompetensi dan keterampilan
         </h2>
       </div>
@@ -23,11 +23,11 @@ const programKeahlian = [
       {programKeahlian.map((p) => (
         <article class="program-card" style={`--aksen-kartu: var(--${p.warna});`}>
           <div class="program-card-top">
-            <span class="program-number">{p.nomor}</span>
-            <span class="program-code">{p.singkatan}</span>
+            <span class="program-number font-reglo">{p.nomor}</span>
+            <span class="program-code font-office-code-pro">{p.singkatan}</span>
           </div>
           <div class="program-card-line" aria-hidden="true"></div>
-          <h3 class="font-judul text-xl mb-3">{p.nama}</h3>
+          <h3 class="font-judul font-literata text-xl mb-3">{p.nama}</h3>
           <p class="program-description text-sm leading-relaxed">{p.deskripsi}</p>
           <span class="program-card-foot">Nama tercantum di situs resmi</span>
         </article>

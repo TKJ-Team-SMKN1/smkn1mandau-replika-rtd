@@ -10,15 +10,15 @@ const statistik = [
   <div class="kontainer-laman stats-inner">
     <div class="stats-intro">
       <p class="pita-bagian">Sekilas sekolah</p>
-      <h2 id="judul-statistik" class="font-judul text-2xl md:text-3xl">Fakta dari publikasi sekolah</h2>
+      <h2 id="judul-statistik" class="font-judul font-familjen text-2xl md:text-3xl">Fakta dari publikasi sekolah</h2>
       <p>Ringkasan historis dan daftar program yang dipublikasikan pada situs resmi. Bukan statistik real-time.</p>
     </div>
     <div class="stats-grid">
       {statistik.map((s, i) => (
         <div class="stats-item">
           <span class="stats-index">0{i + 1}</span>
-          <p class="stats-number">{s.angka}</p>
-          <p class="stats-label">{s.label}</p>
+          <p class="stats-number font-reglo">{s.angka}</p>
+          <p class="stats-label font-nunito">{s.label}</p>
         </div>
       ))}
     </div>
