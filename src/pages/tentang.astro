@@ -1,0 +1,87 @@
+---
+import LayoutUtama from "../layouts/LayoutUtama.astro";
+---
+
+<LayoutUtama
+  judul="Tentang Replika — SMK Negeri 1 Mandau"
+  deskripsi="Penjelasan tujuan, batas, sumber informasi, dan arsitektur teknis replika independen SMK Negeri 1 Mandau."
+  halamanAktif="tentang"
+>
+  <section class="page-hero">
+    <div class="kontainer-laman page-hero-inner max-w-4xl">
+      <p class="pita-bagian !text-ukir-light mb-4">Tentang proyek</p>
+      <h1 class="font-judul text-4xl md:text-6xl leading-tight mb-6">Replika independen, dengan sumber yang dapat ditelusuri.</h1>
+      <p class="max-w-2xl text-gading/85 text-lg leading-relaxed">
+        Website ini merupakan konsep antarmuka dan pengembangan teknis independen yang merujuk pada informasi publik SMK Negeri 1 Mandau. Website ini bukan kanal resmi dan tidak mewakili pihak sekolah.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20">
+    <div class="kontainer-laman grid lg:grid-cols-[.8fr_1.2fr] gap-8 lg:gap-14">
+      <div>
+        <p class="pita-bagian mb-3">Tujuan</p>
+        <h2 class="font-judul text-3xl md:text-4xl text-malam mb-4">Mengembangkan pengalaman informasi sekolah</h2>
+        <p class="text-tinta-pudar leading-relaxed">
+          Proyek ini digunakan untuk mengeksplorasi struktur informasi, aksesibilitas, desain responsif, dan arsitektur website berbasis konten.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <article class="kartu">
+          <h3 class="font-judul text-xl text-malam mb-2">Bukan situs resmi</h3>
+          <p class="text-sm text-tinta-pudar leading-relaxed">Tidak dikelola, disahkan, atau mewakili SMK Negeri 1 Mandau. Untuk layanan dan keputusan sekolah, gunakan kanal resmi.</p>
+        </article>
+        <article class="kartu">
+          <h3 class="font-judul text-xl text-malam mb-2">Bukan sumber operasional</h3>
+          <p class="text-sm text-tinta-pudar leading-relaxed">Arsip dan data dapat berubah. Informasi jadwal, penerimaan murid, persyaratan, dan kontak harus diperiksa kembali pada sumber asli.</p>
+        </article>
+        <article class="kartu">
+          <h3 class="font-judul text-xl text-malam mb-2">Sumber dapat ditelusuri</h3>
+          <p class="text-sm text-tinta-pudar leading-relaxed">Ringkasan konten disertai rujukan publik. Ketidakpastian tanggal pembaruan atau status data dinyatakan secara terbuka.</p>
+        </article>
+        <article class="kartu">
+          <h3 class="font-judul text-xl text-malam mb-2">Minim pengumpulan data</h3>
+          <p class="text-sm text-tinta-pudar leading-relaxed">Pilihan tema disimpan di penyimpanan lokal browser. Website tidak memerlukan akun pengunjung untuk membaca konten.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-gading border-y border-malam/10">
+    <div class="kontainer-laman grid md:grid-cols-2 gap-8">
+      <div>
+        <p class="pita-bagian mb-3">Sumber informasi</p>
+        <h2 class="font-judul text-3xl text-malam mb-4">Rujuk publikasi aslinya</h2>
+        <p class="text-tinta-pudar leading-relaxed mb-5">Konten profil, program keahlian, arsip pengumuman, serta daftar personel ditranskripsikan atau diringkas dari halaman publik yang dicatat dalam register sumber.</p>
+        <a class="tombol tombol-ukir !w-auto" href="https://www.smkn1mandau.sch.id/" target="_blank" rel="noopener noreferrer">Buka situs resmi sekolah <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="kartu">
+        <h3 class="font-judul text-xl text-malam mb-3">Catatan verifikasi</h3>
+        <ul class="space-y-3 text-sm text-tinta-pudar leading-relaxed">
+          <li>• Daftar personel mengikuti nama dan peran yang dipublikasikan sumber; masa berlaku jabatan belum dikonfirmasi.</li>
+          <li>• Pengumuman lama ditampilkan sebagai arsip, bukan sebagai informasi yang masih berlaku.</li>
+          <li>• Informasi yang tidak didukung sumber primer yang memadai tidak ditambahkan sebagai fakta.</li>
+          <li>• Register dan tanggal pemeriksaan sumber tersedia pada dokumentasi proyek.</li>
+        </ul>
+        <a class="inline-flex mt-5 font-bold text-ukir hover:underline" href="https://github.com/TKJ-Team-SMKN1/smkn1mandau-replika-rtd/blob/main/docs/SUMBER-DATA.md" target="_blank" rel="noopener noreferrer">Baca register sumber ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20">
+    <div class="kontainer-laman max-w-4xl">
+      <p class="pita-bagian mb-3">Arsitektur teknis</p>
+      <h2 class="font-judul text-3xl md:text-4xl text-malam mb-4">Static-first, modular, dan ringan</h2>
+      <p class="text-tinta-pudar leading-relaxed mb-8">Teknologi dipilih berdasarkan pekerjaan nyata di website. Tidak ada compiler atau runtime bahasa lain yang dipasang hanya untuk dipamerkan.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <article class="kartu"><h3 class="font-bold text-malam mb-1">Astro</h3><p class="text-sm text-tinta-pudar">Rendering halaman statis dan struktur situs.</p></article>
+        <article class="kartu"><h3 class="font-bold text-malam mb-1">React</h3><p class="text-sm text-tinta-pudar">Komponen interaktif yang membutuhkan state browser.</p></article>
+        <article class="kartu"><h3 class="font-bold text-malam mb-1">JavaScript &amp; TypeScript</h3><p class="text-sm text-tinta-pudar">Interaksi browser, pengendali tema, dan pemeriksaan tipe.</p></article>
+        <article class="kartu"><h3 class="font-bold text-malam mb-1">CSS &amp; Tailwind</h3><p class="text-sm text-tinta-pudar">Design tokens, lima mode tema, dan layout responsif.</p></article>
+        <article class="kartu"><h3 class="font-bold text-malam mb-1">Node.js &amp; Vite</h3><p class="text-sm text-tinta-pudar">Runtime development dan pipeline build.</p></article>
+        <article class="kartu"><h3 class="font-bold text-malam mb-1">GitHub Actions</h3><p class="text-sm text-tinta-pudar">Pemeriksaan kode dan build otomatis.</p></article>
+      </div>
+      <p class="text-xs text-tinta-pudar mt-6">Dokumentasi arsitektur: <a class="font-bold text-ukir hover:underline" href="https://github.com/TKJ-Team-SMKN1/smkn1mandau-replika-rtd/blob/main/docs/ARSITEKTUR-TEKNOLOGI.md" target="_blank" rel="noopener noreferrer">ARSITEKTUR-TEKNOLOGI.md ↗</a>.</p>
+    </div>
+  </section>
+</LayoutUtama>
