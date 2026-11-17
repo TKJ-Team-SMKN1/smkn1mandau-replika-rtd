@@ -122,7 +122,7 @@
       const base = original.get(node);
       const trimmed = base.trim();
       if (!trimmed) continue;
-      const normalized = trimmed.replace(/\\s+/g, " ");
+      const normalized = trimmed.replace(/\s+/g, " ");
       const translated = dict[trimmed] || dict[normalized];
       if (translated) node.nodeValue = base.replace(trimmed, translated);
       else if (lang === "id") node.nodeValue = base;
