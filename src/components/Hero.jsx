@@ -1,86 +1,100 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Hero() {
   const [tampil, setTampil] = useState(false);
-  const acuan = useRef(null);
 
   useEffect(() => {
-    // Satu urutan reveal terorkestrasi saat halaman dimuat — bukan animasi berulang
-    const waktu = requestAnimationFrame(() => setTampil(true));
-    return () => cancelAnimationFrame(waktu);
+    const frame = requestAnimationFrame(() => setTampil(true));
+    return () => cancelAnimationFrame(frame);
   }, []);
 
+  const reveal = (delay = "") =>
+    `hero-reveal ${tampil ? "is-visible" : ""} ${delay}`;
+
   return (
-    <section
-      ref={acuan}
-      aria-label="Perkenalan SMK Negeri 1 Mandau"
-      className="relative overflow-hidden bg-gradient-to-br from-malam-deep via-malam to-rimba-dark text-white"
-    >
+    <section aria-label="Perkenalan SMK Negeri 1 Mandau" className="hero-shell relative overflow-hidden text-white">
       <div
         aria-hidden="true"
-        className="batas-ukir absolute top-0 left-0 right-0 h-2"
-        style={{
-          "--batik-warna-1": "#b85c14",
-          "--batik-warna-2": "#f6efe6",
-          "--batik-warna-3": "#1a4d2e",
-          "--batik-skala": "22"
-        }}
+        className="batas-ukir absolute inset-x-0 top-0 h-2"
+        style={{ "--batik-warna-1": "#d9843f", "--batik-warna-2": "#f6efe6", "--batik-warna-3": "#1a4d2e", "--batik-skala": "24" }}
       />
 
-      <div className="kontainer-laman relative py-24 md:py-32">
-        <div className="max-w-[640px]">
-          <p
-            className={`font-rapat text-sm tracking-wide text-ukir-light mb-5 transition-all duration-700 ${
-              tampil ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-            }`}
-          >
+      <div aria-hidden="true" className="hero-glow hero-glow-one" />
+      <div aria-hidden="true" className="hero-glow hero-glow-two" />
+      <div aria-hidden="true" className="hero-pattern batas-ukir" style={{ "--batik-warna-1": "#d9843f", "--batik-warna-2": "transparent", "--batik-warna-3": "#2d6b45", "--batik-skala": "34" }} />
+
+      <div className="kontainer-laman hero-content relative z-10">
+        <div className="hero-copy">
+          <p className={reveal("delay-1")}>
+            <span className="hero-eyebrow-dot" aria-hidden="true" />
             Sekolah Menengah Kejuruan Negeri · Kabupaten Bengkalis, Riau
           </p>
 
-          <h1
-            className={`font-judul text-[clamp(2.4rem,6vw,4.2rem)] leading-[1.08] mb-6 transition-all duration-700 delay-100 ${
-              tampil ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-            }`}
-          >
-            Kejuruan yang menyiapkan tangan, bukan hanya nilai rapor.
+          <h1 className={reveal("delay-2")}>
+            Kejuruan yang menyiapkan <span>tangan,</span> bukan hanya nilai rapor.
           </h1>
 
-          <p
-            className={`text-lg text-gading/85 leading-relaxed mb-10 transition-all duration-700 delay-200 ${
-              tampil ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-            }`}
-          >
+          <p className={reveal("delay-3")}>
             SMK Negeri 1 Mandau membekali siswa dengan keahlian praktik industri,
             bimbingan guru produktif, dan jalur langsung menuju dunia kerja maupun
             pendidikan lanjutan.
           </p>
 
-          <div
-            className={`flex flex-wrap gap-4 transition-all duration-700 delay-300 ${
-              tampil ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-            }`}
-          >
+          <div className={`hero-actions ${reveal("delay-4")}`}>
             <a href="/program" className="tombol tombol-ukir">
-              Lihat program keahlian
+              Lihat program keahlian <span aria-hidden="true">↗</span>
             </a>
-            <a href="/pengumuman" className="tombol tombol-garis !text-white !border-white/40 hover:!bg-white/10">
+            <a href="/pengumuman" className="tombol tombol-garis hero-secondary">
               Pengumuman terbaru
             </a>
           </div>
         </div>
+
+        <div className={`hero-sidecard ${reveal("delay-4")}`} aria-label="Identitas visual replika">
+          <div className="hero-sidecard-top">
+            <span className="hero-seal">1</span>
+            <span className="hero-side-label">SMK NEGERI<br />1 MANDAU</span>
+          </div>
+          <div className="hero-side-rule batas-ukir" aria-hidden="true" style={{ "--batik-warna-1": "#b85c14", "--batik-warna-2": "#f6efe6", "--batik-warna-3": "#1a4d2e", "--batik-skala": "15" }} />
+          <p className="hero-side-title">Belajar.<br />Berkarya.<br /><span>Bertumbuh.</span></p>
+          <p className="hero-side-note">Ruang pendidikan kejuruan dan pengembangan kompetensi.</p>
+          <div className="hero-side-bottom"><span>REPLIKA · KONSEP VISUAL</span><span aria-hidden="true">✳</span></div>
+        </div>
       </div>
 
-      {/* Motif batik dekoratif di sisi kanan — hanya terlihat pada layar lebar, tidak mengganggu konten */}
-      <div
-        aria-hidden="true"
-        className="hidden lg:block batas-ukir absolute top-0 right-0 bottom-0 w-[180px] opacity-20"
-        style={{
-          "--batik-warna-1": "#d9843f",
-          "--batik-warna-2": "transparent",
-          "--batik-warna-3": "#2d6b45",
-          "--batik-skala": "40"
-        }}
-      />
+      <style>{`
+        .hero-shell { background:radial-gradient(ellipse at 78% 28%,rgba(45,107,69,.28),transparent 34%),linear-gradient(118deg,#09183a 0%,#102b50 58%,#123b38 120%); }
+        .hero-content { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(230px,.65fr); align-items:center; gap:clamp(2rem,7vw,6rem); min-height:610px; padding-block:clamp(5rem,10vw,8rem); }
+        .hero-copy { max-width:760px; }
+        .hero-copy > p:first-child { display:flex; align-items:center; gap:.7rem; margin:0 0 1.6rem; color:#efb17b; font-family:"Pragati Narrow",sans-serif; font-size:.9rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+        .hero-eyebrow-dot { width:8px; height:8px; border-radius:50%; background:#d9843f; box-shadow:0 0 0 5px rgba(217,132,63,.15); }
+        .hero-copy h1 { max-width:790px; margin:0; color:#fff; font-family:"Paprika",cursive; font-size:clamp(2.55rem,5.6vw,5.1rem); line-height:1.13; letter-spacing:-.045em; }
+        .hero-copy h1 span { color:#efb17b; }
+        .hero-copy > p:not(:first-child) { max-width:610px; margin:1.6rem 0 2rem; color:rgba(246,239,230,.78); font-size:clamp(1rem,1.4vw,1.15rem); line-height:1.85; }
+        .hero-actions { display:flex; flex-wrap:wrap; gap:.85rem; }
+        .hero-secondary { color:#fff !important; border-color:rgba(255,255,255,.32) !important; }
+        .hero-secondary:hover { background:rgba(255,255,255,.1) !important; }
+        .hero-glow { position:absolute; width:340px; height:340px; border-radius:50%; filter:blur(70px); pointer-events:none; }
+        .hero-glow-one { top:8%; right:15%; background:rgba(184,92,20,.15); }
+        .hero-glow-two { bottom:-24%; left:36%; background:rgba(45,107,69,.2); }
+        .hero-pattern { position:absolute; top:0; right:0; bottom:0; width:11%; opacity:.12; mask-image:linear-gradient(90deg,transparent,#000); }
+        .hero-sidecard { position:relative; max-width:310px; justify-self:end; width:100%; padding:1.6rem; border:1px solid rgba(246,239,230,.2); border-radius:1.4rem; background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.035)); box-shadow:0 30px 90px rgba(0,0,0,.18); backdrop-filter:blur(12px); }
+        .hero-sidecard-top { display:flex; align-items:center; gap:.85rem; }
+        .hero-seal { display:grid; place-items:center; width:48px; height:48px; border:1px solid rgba(239,177,123,.75); border-radius:15px 15px 15px 4px; color:#fff; background:linear-gradient(145deg,#d9843f,#8a4410); font-family:"Paprika",cursive; font-size:1.4rem; }
+        .hero-side-label { color:rgba(246,239,230,.8); font-family:"Pragati Narrow",sans-serif; font-size:.75rem; font-weight:700; letter-spacing:.16em; line-height:1.45; }
+        .hero-side-rule { height:5px; margin:1.6rem 0; border-radius:10px; }
+        .hero-side-title { margin:0; color:#fff; font-family:"Paprika",cursive; font-size:2rem; line-height:1.35; }
+        .hero-side-title span { color:#efb17b; }
+        .hero-side-note { margin:1rem 0 1.5rem; color:rgba(246,239,230,.65); font-size:.88rem; line-height:1.7; }
+        .hero-side-bottom { display:flex; justify-content:space-between; align-items:center; padding-top:1rem; border-top:1px solid rgba(255,255,255,.13); color:rgba(246,239,230,.5); font-family:"Pragati Narrow",sans-serif; font-size:.68rem; letter-spacing:.12em; }
+        .hero-side-bottom span:last-child { color:#efb17b; font-size:1.2rem; }
+        .hero-reveal { opacity:0; transform:translateY(14px); transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1); }
+        .hero-reveal.is-visible { opacity:1; transform:translateY(0); }
+        .delay-1 { transition-delay:60ms; } .delay-2 { transition-delay:130ms; } .delay-3 { transition-delay:200ms; } .delay-4 { transition-delay:270ms; }
+        @media(max-width:850px) { .hero-content { grid-template-columns:1fr; min-height:auto; padding-block:5.5rem; } .hero-sidecard { display:none; } .hero-pattern { width:24%; } }
+        @media(max-width:560px) { .hero-content { padding-block:4.5rem; } .hero-copy h1 { font-size:clamp(2.35rem,11vw,3.4rem); } .hero-actions { display:grid; } .hero-actions .tombol { width:100%; } }
+        @media(prefers-reduced-motion:reduce) { .hero-reveal { opacity:1; transform:none; } }
+      `}</style>
     </section>
   );
 }
