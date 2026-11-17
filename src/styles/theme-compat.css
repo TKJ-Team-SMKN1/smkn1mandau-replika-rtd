@@ -226,3 +226,27 @@ html[data-theme] select { accent-color:var(--accent-color); }
   html[data-theme] .theme-preview { border:1px solid CanvasText; }
   html[data-theme] :focus-visible { outline:2px solid Highlight; }
 }
+
+
+/* Program directory controls: theme-aware search and empty state. */
+html[data-theme] .program-search-input {
+  color: var(--text-primary);
+  border-color: var(--line-color);
+  background: var(--surface);
+}
+html[data-theme] .program-search-input::placeholder { color: var(--text-muted); opacity: .8; }
+html[data-theme] .program-search-input:focus-visible {
+  border-color: var(--focus-color);
+  outline-color: var(--focus-color);
+}
+html[data-theme] .program-search-clear {
+  color: var(--accent-color);
+}
+html[data-theme] .program-search-clear:hover {
+  background: var(--surface-muted);
+}
+html[data-theme] .program-empty {
+  color: var(--text-primary);
+  border-color: var(--line-color);
+  background: var(--surface-muted);
+}
