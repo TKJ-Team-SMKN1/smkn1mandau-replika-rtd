@@ -22,5 +22,7 @@ jobs:
           node-version: 20
       - name: Install dependencies
         run: npm install
+      - name: Check browser script syntax
+        run: node --check public/scripts/i18n.js
       - name: Build Astro site
         run: npm run build
