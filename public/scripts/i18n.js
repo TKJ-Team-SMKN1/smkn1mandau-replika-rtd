@@ -196,8 +196,7 @@
       "Nilai yang kami pegang":"Nilai yang kami pegang","Prinsip yang membentuk cara kami mendidik":"Prinsip yang membentuk pendekatan pendidikan kami",
       "Kegiatan":"Aktiviti","Akademik":"Akademik","Penerimaan Siswa":"Kemasukan Pelajar",
       "Menampilkan ":"Memaparkan ","program keahlian":"program pengajian","dalam rumpun ":"dalam bidang ",
-      "Semua":"Semua","Teknologi":"Teknologi","Bisnis":"Perniagaan"
-    
+      "Semua":"Semua","Teknologi":"Teknologi","Bisnis":"Perniagaan",
       "dari": "daripada",
       "MPLS": "MPLS",
       "Menurut halaman sejarah yang dipublikasikan sekolah, gedung sekolah telah berdiri sejak 1999. Lembaga ini didirikan pada 2000 sebagai SMK Swasta Handayani sebelum menjadi sekolah negeri pada 2002.": "Menurut halaman sejarah yang diterbitkan oleh pihak sekolah, bangunan sekolah telah berdiri sejak 1999. Institusi ini ditubuhkan pada 2000 sebagai SMK Swasta Handayani sebelum menjadi sekolah kerajaan pada 2002.",
@@ -338,8 +337,7 @@
       "Penerimaan Siswa":"学生招生",
       "Semua":"所有",
       "Teknologi":"技术",
-      "Bisnis":"商业"
-    
+      "Bisnis":"商业",
       "MPLS": "MPLS",
       "Menurut halaman sejarah yang dipublikasikan sekolah, gedung sekolah telah berdiri sejak 1999. Lembaga ini didirikan pada 2000 sebagai SMK Swasta Handayani sebelum menjadi sekolah negeri pada 2002.": "根据学校发布的历史页面，校舍自1999年起已建成。该机构于2000年以 SMK Swasta Handayani（Handayani 私立职业学校）之名成立，并于2002年成为公立学校。",
       "Nama program berikut ditranskripsikan dari bagian “Program Keahlian” pada situs resmi. Halaman ini tidak menambahkan klaim tentang kuota, kurikulum, atau kompetensi rinci yang belum diverifikasi.": "以下专业名称摘自官方网站的“Program Keahlian（专业课程）”栏目。本页面不会添加任何未经核实的招生名额、课程设置或具体能力要求。",
