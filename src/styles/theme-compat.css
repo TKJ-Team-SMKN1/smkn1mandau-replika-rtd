@@ -111,3 +111,118 @@ html[data-theme] .theme-control select {
     animation-iteration-count: 1 !important;
   }
 }
+
+
+/* Phase 2.1 polish: shared chrome and interactive surfaces follow theme tokens. */
+html[data-theme="light"] { --header-text:#f8fafc; --header-muted:rgba(246,239,230,.68); }
+html[data-theme="dark"] { --header-text:#edf2f8; --header-muted:#b0bac9; }
+html[data-theme="super-black"] { --header-text:#f1f5fa; --header-muted:#aab5c4; }
+html[data-theme="amoled-black"] { --header-text:#f5f5f5; --header-muted:#b5b5b5; }
+html[data-theme="dynamic"] { --header-text:#172033; --header-muted:#586174; }
+@supports (color: CanvasText) {
+  html[data-theme="dynamic"] {
+    --header-text:CanvasText;
+    --header-muted:color-mix(in srgb,CanvasText 72%,Canvas);
+  }
+}
+html[data-theme] .site-header,
+html[data-theme] .header-inner,
+html[data-theme] .mobile-nav,
+html[data-theme] .site-footer {
+  color:var(--header-text);
+  background:var(--header-surface) !important;
+  border-color:var(--line-color);
+}
+html[data-theme] .brand-lockup,
+html[data-theme] .brand-name,
+html[data-theme] .nav-link,
+html[data-theme] .theme-nav-link,
+html[data-theme] .menu-toggle { color:var(--header-text); }
+html[data-theme] .brand-caption,
+html[data-theme] .language-control { color:var(--header-muted); }
+html[data-theme] .nav-link:hover,
+html[data-theme] .theme-nav-link:hover,
+html[data-theme] .theme-nav-link.is-active,
+html[data-theme] .menu-toggle {
+  border-color:var(--line-color);
+  background:color-mix(in srgb,var(--header-text) 8%,transparent);
+}
+html[data-theme] .nav-link.is-active {
+  color:var(--header-text);
+  border-color:color-mix(in srgb,var(--accent-color) 48%,transparent);
+  background:color-mix(in srgb,var(--accent-color) 22%,transparent);
+}
+html[data-theme] .language-control select {
+  color:var(--header-text);
+  border-color:var(--line-color);
+  background:color-mix(in srgb,var(--header-surface) 86%,var(--header-text));
+}
+html[data-theme] .mobile-nav-link { color:var(--header-muted); border-color:var(--line-color); }
+html[data-theme] .mobile-nav-link.is-active { color:var(--accent-color); }
+
+html[data-theme] .site-footer { color:var(--header-text); }
+html[data-theme] .footer-intro > p,
+html[data-theme] .footer-copy,
+html[data-theme] .footer-status,
+html[data-theme] .footer-links a,
+html[data-theme] .footer-bottom-inner { color:var(--header-muted); }
+html[data-theme] .footer-heading,
+html[data-theme] .footer-official { color:var(--accent-on-dark); }
+html[data-theme] .footer-bottom {
+  border-color:var(--line-color);
+  background:color-mix(in srgb,var(--header-surface) 88%,var(--header-text));
+}
+
+html[data-theme] .kartu,
+html[data-theme] .sdm-tools,
+html[data-theme] .sdm-card,
+html[data-theme] .sdm-empty,
+html[data-theme] .theme-preview {
+  color:var(--text-primary);
+  border-color:var(--line-color);
+  background:var(--surface);
+}
+html[data-theme] .sdm-count,
+html[data-theme] .sdm-source-status,
+html[data-theme] .theme-description { color:var(--text-muted); }
+html[data-theme] .sdm-person h2,
+html[data-theme] .sdm-source-note h2 { color:var(--text-primary); }
+html[data-theme] .sdm-source-note {
+  color:var(--text-muted);
+  border-color:var(--line-color);
+  background:var(--surface-muted);
+}
+html[data-theme] .sdm-source-note a,
+html[data-theme] .sdm-role { color:var(--accent-color); }
+html[data-theme] .sdm-filter,
+html[data-theme] .sdm-search input,
+html[data-theme] .theme-control select {
+  color:var(--text-primary);
+  border-color:var(--line-color);
+  background:var(--surface-muted);
+}
+html[data-theme] .sdm-filter.is-active {
+  color:var(--accent-contrast);
+  border-color:var(--accent-color);
+  background:var(--accent-color);
+}
+html[data-theme] .tombol-garis {
+  color:var(--text-primary);
+  border-color:var(--line-color);
+  background:var(--surface);
+}
+html[data-theme] .tombol-garis:hover {
+  color:var(--accent-contrast);
+  border-color:var(--accent-color);
+  background:var(--accent-color);
+}
+html[data-theme] input,
+html[data-theme] textarea,
+html[data-theme] select { accent-color:var(--accent-color); }
+@media (forced-colors:active) {
+  html[data-theme] .kartu,
+  html[data-theme] .sdm-card,
+  html[data-theme] .sdm-tools,
+  html[data-theme] .theme-preview { border:1px solid CanvasText; }
+  html[data-theme] :focus-visible { outline:2px solid Highlight; }
+}
