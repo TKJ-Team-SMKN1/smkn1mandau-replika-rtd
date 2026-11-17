@@ -1,9 +1,8 @@
 ---
-// Placeholder program keahlian — isi dengan data terverifikasi sebelum publikasi.
 const programKeahlian = [
-  { nama: "[Nama Program Keahlian 1]", deskripsi: "Deskripsi singkat kompetensi dan peluang kerja lulusan program ini.", warna: "ukir", nomor: "01" },
-  { nama: "[Nama Program Keahlian 2]", deskripsi: "Deskripsi singkat kompetensi dan peluang kerja lulusan program ini.", warna: "malam", nomor: "02" },
-  { nama: "[Nama Program Keahlian 3]", deskripsi: "Deskripsi singkat kompetensi dan peluang kerja lulusan program ini.", warna: "rimba", nomor: "03" }
+  { nama: "Teknik Komputer dan Jaringan", singkatan: "TKJ", deskripsi: "Bidang komputer, sistem, dan jaringan.", warna: "ukir", nomor: "01" },
+  { nama: "Teknik Audio Video", singkatan: "TAV", deskripsi: "Bidang perangkat dan teknologi audio-video.", warna: "malam", nomor: "02" },
+  { nama: "Desain Pemodelan dan Informasi Bangunan", singkatan: "DPIB", deskripsi: "Bidang desain, pemodelan, dan informasi bangunan.", warna: "rimba", nomor: "03" }
 ];
 ---
 <section id="program" aria-labelledby="judul-pratinjau-program" class="program-section">
@@ -16,7 +15,7 @@ const programKeahlian = [
         </h2>
       </div>
       <p class="text-tinta-pudar leading-relaxed">
-        Kenali pilihan program keahlian dan bidang kompetensi yang tersedia. Informasi nama dan deskripsi pada kartu berikut masih berupa placeholder untuk ditinjau tim sekolah.
+        Tiga contoh nama program dari daftar yang dipublikasikan di situs resmi. Deskripsi hanya menjelaskan bidang secara umum, bukan rincian kurikulum atau klaim program unggulan.
       </p>
     </div>
 
@@ -25,18 +24,19 @@ const programKeahlian = [
         <article class="program-card" style={`--aksen-kartu: var(--${p.warna});`}>
           <div class="program-card-top">
             <span class="program-number">{p.nomor}</span>
-            <span class="program-symbol" aria-hidden="true">✳</span>
+            <span class="program-code">{p.singkatan}</span>
           </div>
           <div class="program-card-line" aria-hidden="true"></div>
           <h3 class="font-judul text-xl text-malam mb-3">{p.nama}</h3>
           <p class="text-sm text-tinta-pudar leading-relaxed">{p.deskripsi}</p>
-          <span class="program-card-foot">Informasi untuk ditinjau</span>
+          <span class="program-card-foot">Nama tercantum di situs resmi</span>
         </article>
       ))}
     </div>
 
     <div class="program-action">
-      <a href="/program" class="tombol tombol-garis">Jelajahi halaman program <span aria-hidden="true">↗</span></a>
+      <a href="/program" class="tombol tombol-garis">Jelajahi seluruh program <span aria-hidden="true">↗</span></a>
+      <a href="https://www.smkn1mandau.sch.id/" target="_blank" rel="noopener noreferrer" class="source-link">Periksa sumber resmi ↗</a>
     </div>
   </div>
 </section>
@@ -49,9 +49,10 @@ const programKeahlian = [
   .program-card:hover { transform:translateY(-5px); box-shadow:0 20px 42px rgba(9,24,58,.11); }
   .program-card-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem; }
   .program-number { color:var(--aksen-kartu); font-family:"Pragati Narrow",sans-serif; font-size:.85rem; font-weight:700; letter-spacing:.15em; }
-  .program-symbol { display:grid; place-items:center; width:38px; height:38px; border-radius:50%; color:var(--aksen-kartu); background:color-mix(in srgb,var(--aksen-kartu) 10%,white); font-size:1.1rem; }
+  .program-code { display:grid; place-items:center; min-width:2.7rem; min-height:2.7rem; padding:.4rem; border-radius:50%; color:var(--aksen-kartu); background:color-mix(in srgb,var(--aksen-kartu) 10%,white); font-size:.7rem; font-weight:800; }
   .program-card-line { width:2.5rem; height:2px; margin-bottom:1.3rem; background:var(--aksen-kartu); }
   .program-card-foot { display:inline-block; margin-top:1.5rem; color:#7a8290; font-family:"Pragati Narrow",sans-serif; font-size:.76rem; letter-spacing:.08em; text-transform:uppercase; }
-  .program-action { margin-top:2rem; }
+  .program-action { display:flex; align-items:center; flex-wrap:wrap; gap:1rem; margin-top:2rem; }
+  .source-link { color:#9f4d10; font-size:.88rem; font-weight:700; text-decoration:underline; text-underline-offset:3px; }
   @media(max-width:700px) { .program-heading { grid-template-columns:1fr; gap:.5rem; margin-bottom:2rem; } .program-card { min-height:0; } }
 </style>
