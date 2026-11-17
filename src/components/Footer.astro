@@ -1,50 +1,68 @@
 ---
 const tahun = new Date().getFullYear();
 ---
-<footer class="bg-malam-deep text-gading border-t-4 border-ukir">
-  <div class="kontainer-laman py-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-    <div>
-      <p class="font-judul text-white text-xl mb-3">SMK Negeri 1 Mandau</p>
-      <p class="text-sm text-gading/70 leading-relaxed">
-        Situs replika untuk keperluan pengembangan internal. Bukan laman resmi sekolah.
-      </p>
+<footer class="site-footer">
+  <div class="batas-ukir footer-batik" aria-hidden="true" style="--batik-warna-1:#b85c14;--batik-warna-2:#f6efe6;--batik-warna-3:#1a4d2e;--batik-skala:18;"></div>
+  <div class="kontainer-laman footer-grid">
+    <div class="footer-intro">
+      <a href="/" class="footer-brand">
+        <span class="footer-mark" aria-hidden="true">1</span>
+        <span>SMK Negeri 1 Mandau</span>
+      </a>
+      <p>Situs replika untuk keperluan pengembangan dan peninjauan antarmuka. Bukan laman resmi sekolah.</p>
+      <span class="footer-status"><i aria-hidden="true"></i> Konsep pengembangan independen</span>
     </div>
 
     <div>
-      <p class="text-sm font-semibold text-white mb-3">Navigasi</p>
-      <ul class="space-y-2 text-sm text-gading/70">
-        <li><a href="/" class="hover:text-white no-underline">Beranda</a></li>
-        <li><a href="/profil" class="hover:text-white no-underline">Profil Sekolah</a></li>
-        <li><a href="/program" class="hover:text-white no-underline">Program Keahlian</a></li>
-        <li><a href="/pengumuman" class="hover:text-white no-underline">Pengumuman</a></li>
+      <h2 class="footer-heading">Jelajahi</h2>
+      <ul class="footer-links">
+        <li><a href="/">Beranda</a></li>
+        <li><a href="/profil">Profil Sekolah</a></li>
+        <li><a href="/program">Program Keahlian</a></li>
+        <li><a href="/pengumuman">Pengumuman</a></li>
       </ul>
     </div>
 
     <div>
-      <p class="text-sm font-semibold text-white mb-3">Tautan resmi</p>
-      <p class="text-sm text-gading/70 leading-relaxed">
-        Untuk data dan layanan resmi, kunjungi
-        <a
-          href="https://www.smkn1mandau.sch.id/?m=1"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-ukir-light hover:text-white underline underline-offset-2"
-        >situs asli SMKN 1 Mandau</a>.
-      </p>
+      <h2 class="footer-heading">Kanal resmi</h2>
+      <p class="footer-copy">Untuk informasi terverifikasi dan layanan sekolah, silakan merujuk ke situs resmi.</p>
+      <a href="https://www.smkn1mandau.sch.id/?m=1" target="_blank" rel="noopener noreferrer" class="footer-official">
+        Kunjungi situs resmi <span aria-hidden="true">↗</span>
+      </a>
     </div>
 
     <div>
-      <p class="text-sm font-semibold text-white mb-3">Status perangkat</p>
-      <p data-status-perangkat class="text-sm text-gading/70 leading-relaxed">
-        Memeriksa dukungan perangkat…
-      </p>
+      <h2 class="footer-heading">Kompatibilitas</h2>
+      <p data-status-perangkat class="footer-copy">Memeriksa dukungan perangkat…</p>
+      <p class="footer-copy footer-small">Efek Batik Rangkai menggunakan CSS Houdini dengan fallback CSS untuk peramban yang belum mendukung.</p>
     </div>
   </div>
 
-  <div class="border-t border-white/10">
-    <div class="kontainer-laman py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gading/50">
-      <span>© {tahun} Replika SMK Negeri 1 Mandau — untuk pengembangan internal</span>
-      <span>Dibangun dengan Astro, React, Tailwind, dan CSS Houdini</span>
+  <div class="footer-bottom">
+    <div class="kontainer-laman footer-bottom-inner">
+      <span>© {tahun} Replika SMK Negeri 1 Mandau</span>
+      <span>Astro · React · Tailwind · CSS Houdini</span>
     </div>
   </div>
 </footer>
+
+<style>
+  .site-footer { position:relative; overflow:hidden; color:#f6efe6; background:#09183a; }
+  .footer-batik { height:6px; }
+  .footer-grid { display:grid; grid-template-columns:1.5fr 1fr 1.2fr 1.2fr; gap:clamp(2rem,5vw,4.5rem); padding-block:4rem; }
+  .footer-brand { display:flex; align-items:center; gap:.8rem; color:#fff; font-family:"Paprika",cursive; font-size:1.08rem; text-decoration:none; }
+  .footer-mark { display:grid; place-items:center; width:38px; height:38px; border-radius:12px 12px 12px 3px; color:white; background:linear-gradient(145deg,#d9843f,#8a4410); font-size:1rem; }
+  .footer-intro > p,.footer-copy { max-width:330px; margin:1rem 0; color:rgba(246,239,230,.62); font-size:.88rem; line-height:1.8; }
+  .footer-status { display:inline-flex; align-items:center; gap:.5rem; color:rgba(246,239,230,.72); font-family:"Pragati Narrow",sans-serif; font-size:.78rem; letter-spacing:.04em; }
+  .footer-status i { width:7px; height:7px; border-radius:50%; background:#d9843f; }
+  .footer-heading { margin:0 0 1.1rem; color:#efb17b; font-family:"Pragati Narrow",sans-serif; font-size:.85rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+  .footer-links { display:grid; gap:.7rem; margin:0; padding:0; list-style:none; }
+  .footer-links a { color:rgba(246,239,230,.68); font-size:.9rem; text-decoration:none; transition:color .2s; }
+  .footer-links a:hover,.footer-official:hover { color:#fff; }
+  .footer-official { display:inline-flex; align-items:center; gap:.5rem; color:#efb17b; font-size:.88rem; font-weight:700; text-decoration:none; }
+  .footer-small { font-size:.78rem; }
+  .footer-bottom { border-top:1px solid rgba(255,255,255,.1); background:rgba(0,0,0,.12); }
+  .footer-bottom-inner { display:flex; justify-content:space-between; gap:1rem; padding-block:1.2rem; color:rgba(246,239,230,.42); font-family:"Pragati Narrow",sans-serif; font-size:.78rem; letter-spacing:.04em; }
+  @media(max-width:900px) { .footer-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  @media(max-width:560px) { .footer-grid { grid-template-columns:1fr; gap:2rem; padding-block:3rem; } .footer-bottom-inner { flex-direction:column; align-items:flex-start; } }
+</style>
