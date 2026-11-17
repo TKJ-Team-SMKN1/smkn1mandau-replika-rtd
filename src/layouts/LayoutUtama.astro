@@ -3,6 +3,7 @@ import NotifikasiReplika from "../components/NotifikasiReplika.jsx";
 import Navigasi from "../components/Navigasi.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+import "../styles/font-library.css";
 import "../styles/theme-compat.css";
 
 interface Props {
@@ -35,6 +36,7 @@ const { judul, deskripsi, halamanAktif = "" } = Astro.props;
 
     <link rel="preload" href="/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-Regular.otf" as="font" type="font/otf" crossorigin />
     <link rel="preload" href="/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-Bold.otf" as="font" type="font/otf" crossorigin />
+    {(halamanAktif === "profil" || halamanAktif === "pengumuman") && <link rel="preload" href="/fonts/Anton_Complete/Anton_Complete/Fonts/OTF/Anton-Regular.otf" as="font" type="font/otf" crossorigin />}
 
     <!-- Pemberitahuan replika: situs ini bukan kanal resmi sekolah. -->
     <meta name="replika-situs" content="Ini adalah situs replika, bukan situs resmi. Situs asli: https://www.smkn1mandau.sch.id/?m=1" />
