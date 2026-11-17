@@ -54,3 +54,9 @@ The current global stylesheet contains legacy utility overrides and theme compat
 - Treat archived announcements as historical records, never current operational instructions.
 - Do not invent staff status, enrollment details, school statistics, or program facts.
 - Keep source links and the source register available to visitors.
+
+## Dependency advisory note
+
+The dependency audit reports the GitHub-reviewed advisory [GHSA-fc5q-39xc-vjpf](https://github.com/advisories/GHSA-fc5q-39xc-vjpf) for `picomatch` versions through 4.0.7. At the time of this review, the advisory lists **no patched version**. The suggested `npm audit fix --force` path would downgrade Astro to 5.3.0, which is a breaking and unacceptable framework rollback for this project.
+
+The site is built as static HTML; its deployed output does not ship the Node build dependency tree or expose a server-side glob-pattern input. The advisory is therefore recorded as a build-tool dependency risk, not marked as fixed or dismissed. Do not use `npm audit fix --force`. Reassess when the upstream advisory or package publishes a compatible remediation.
