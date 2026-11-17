@@ -1,0 +1,18 @@
+---
+import LayoutUtama from "../layouts/LayoutUtama.astro";
+---
+<LayoutUtama judul="Pengaturan Tampilan — SMK Negeri 1 Mandau (Replika)" deskripsi="Pengaturan tema tampilan untuk replika independen SMK Negeri 1 Mandau." halamanAktif="pengaturan">
+ <section class="page-hero"><div class="kontainer-laman page-hero-inner max-w-4xl">
+  <p class="pita-bagian !text-ukir-light mb-4">Preferensi antarmuka</p>
+  <h1 class="font-judul text-4xl md:text-5xl leading-tight mb-5">Pengaturan tampilan</h1>
+  <p class="max-w-2xl text-gading/85 text-lg leading-relaxed">Pilih tema yang paling nyaman. Preferensi disimpan secara lokal di perangkat dan tidak dikirim ke server.</p>
+ </div></section>
+ <section class="py-16 md:py-20"><div class="kontainer-laman grid lg:grid-cols-[.8fr_1.2fr] gap-8">
+  <div><p class="pita-bagian mb-3">Theme engine</p><h2 class="font-judul text-2xl md:text-3xl text-malam mb-3">Lima mode tampilan</h2><p class="text-tinta-pudar leading-relaxed">Dynamic Color menggunakan warna sistem browser apabila didukung. Jika tidak, tema memakai palet fallback.</p></div>
+  <div class="kartu"><label class="theme-control" for="theme-picker">Tema website
+   <select id="theme-picker" data-theme-picker><option value="light">Light</option><option value="dark">Dark</option><option value="super-black">Super Black</option><option value="amoled-black">AMOLED Black</option><option value="dynamic">Dynamic Color</option></select>
+  </label><p class="theme-description mt-4" data-theme-status aria-live="polite">Tema aktif: Light.</p>
+  <div class="theme-preview mt-6" aria-label="Pratinjau komponen antarmuka"><div class="theme-preview-bar" aria-hidden="true"></div><strong>Technical Institution · Minimalism</strong><span class="theme-description">Pratinjau warna mengikuti tema yang dipilih.</span><div class="flex flex-wrap gap-2"><span class="tombol tombol-ukir !w-auto">Aksi utama</span><span class="rounded-lg border border-malam/15 px-3 py-2 text-sm">Komponen sekunder</span></div></div>
+  </div>
+ </div></section>
+</LayoutUtama>

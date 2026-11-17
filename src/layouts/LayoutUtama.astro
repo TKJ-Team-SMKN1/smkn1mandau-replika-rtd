@@ -18,9 +18,19 @@ const { judul, deskripsi, halamanAktif = "" } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={deskripsi} />
-    <meta name="theme-color" content="#09183a" />
-    <meta name="color-scheme" content="light" />
+    <meta id="theme-color-meta" name="theme-color" content="#f5f7fa" />
+    <meta name="color-scheme" content="light dark" />
     <title>{judul}</title>
+    <script is:inline>
+      (() => {
+        const valid = ["light", "dark", "super-black", "amoled-black", "dynamic"];
+        try {
+          const saved = localStorage.getItem("smkn1mandau-theme");
+          document.documentElement.dataset.theme = valid.includes(saved) ? saved : "light";
+        } catch { document.documentElement.dataset.theme = "light"; }
+      })();
+    </script>
+
 
     <link rel="preload" href="/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-Regular.otf" as="font" type="font/otf" crossorigin />
     <link rel="preload" href="/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-Bold.otf" as="font" type="font/otf" crossorigin />
@@ -37,5 +47,25 @@ const { judul, deskripsi, halamanAktif = "" } = Astro.props;
     <Footer />
     <script is:inline src="/scripts/deteksi-fitur.js"></script>
     <script is:inline src="/scripts/i18n.js"></script>
+    <script>
+      type Theme = "light" | "dark" | "super-black" | "amoled-black" | "dynamic";
+      const key = "smkn1mandau-theme";
+      const valid = (value: string): value is Theme => ["light","dark","super-black","amoled-black","dynamic"].includes(value);
+      const root = document.documentElement;
+      const apply = (theme: Theme, save = false) => {
+        root.dataset.theme = theme;
+        root.style.colorScheme = theme === "light" ? "light" : theme === "dynamic" ? "light dark" : "dark";
+        document.querySelectorAll<HTMLSelectElement>("[data-theme-picker]").forEach((el) => { el.value = theme; });
+        const status = document.querySelector<HTMLElement>("[data-theme-status]");
+        if (status) status.textContent = `Tema aktif: ${theme.replaceAll("-", " ")}.`;
+        const meta = document.querySelector<HTMLMetaElement>("#theme-color-meta");
+        if (meta) meta.content = ({light:"#f5f7fa",dark:"#171b24","super-black":"#080b10","amoled-black":"#000000",dynamic:"Canvas"} as Record<Theme,string>)[theme];
+        if (save) { try { localStorage.setItem(key, theme); } catch { /* Theme remains active for this view. */ } }
+      };
+      const initial = root.dataset.theme ?? "light";
+      apply(valid(initial) ? initial : "light");
+      document.querySelectorAll<HTMLSelectElement>("[data-theme-picker]").forEach((el) => el.addEventListener("change", () => { if (valid(el.value)) apply(el.value, true); }));
+      window.addEventListener("storage", (event: StorageEvent) => { if (event.key === key && event.newValue && valid(event.newValue)) apply(event.newValue); });
+    </script>
   </body>
 </html>
