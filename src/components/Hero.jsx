@@ -1,16 +1,6 @@
-import { useEffect, useState } from "react";
+const reveal = (delay = "") => `hero-reveal ${delay}`;
 
 export default function Hero() {
-  const [tampil, setTampil] = useState(false);
-
-  useEffect(() => {
-    const frame = requestAnimationFrame(() => setTampil(true));
-    return () => cancelAnimationFrame(frame);
-  }, []);
-
-  const reveal = (delay = "") =>
-    `hero-reveal ${tampil ? "is-visible" : ""} ${delay}`;
-
   return (
     <section aria-label="Perkenalan SMK Negeri 1 Mandau" className="hero-shell relative overflow-hidden text-white">
       <div
@@ -18,7 +8,6 @@ export default function Hero() {
         className="batas-ukir absolute inset-x-0 top-0 h-2"
         style={{ "--batik-warna-1": "#d9843f", "--batik-warna-2": "#f6efe6", "--batik-warna-3": "#1a4d2e", "--batik-skala": "24" }}
       />
-
       <div aria-hidden="true" className="hero-glow hero-glow-one" />
       <div aria-hidden="true" className="hero-glow hero-glow-two" />
       <div aria-hidden="true" className="hero-pattern batas-ukir" style={{ "--batik-warna-1": "#d9843f", "--batik-warna-2": "transparent", "--batik-warna-3": "#2d6b45", "--batik-skala": "34" }} />
@@ -29,17 +18,14 @@ export default function Hero() {
             <span className="hero-eyebrow-dot" aria-hidden="true" />
             Sekolah Menengah Kejuruan Negeri · Kabupaten Bengkalis, Riau
           </p>
-
           <h1 className={reveal("delay-2")}>
             Informasi sekolah, dirangkai ulang sebagai <span>konsep independen.</span>
           </h1>
-
           <p className={reveal("delay-3")}>
             Replika ini menyusun ulang informasi profil, program keahlian, dan arsip publikasi
             yang tersedia di situs resmi SMK Negeri 1 Mandau. Informasi operasional
             tetap harus diperiksa melalui sumber aslinya.
           </p>
-
           <div className={`hero-actions ${reveal("delay-4")}`}>
             <a href="/program" className="tombol tombol-ukir">
               Lihat program keahlian <span aria-hidden="true">↗</span>
@@ -85,15 +71,15 @@ export default function Hero() {
         .hero-side-rule { height:5px; margin:1.6rem 0; border-radius:10px; }
         .hero-side-title { margin:0; color:#fff; font-family:"Archivo Local",sans-serif; font-size:2rem; line-height:1.35; }
         .hero-side-title span { color:#efb17b; }
-        .hero-side-note { margin:1rem 0 1.5rem; color:rgba(246,239,230,.65); font-size:.88rem; line-height:1.7; }
-        .hero-side-bottom { display:flex; justify-content:space-between; align-items:center; padding-top:1rem; border-top:1px solid rgba(255,255,255,.13); color:rgba(246,239,230,.5); font-family:"Azeret Mono Local",monospace; font-size:.68rem; letter-spacing:.12em; }
+        .hero-side-note { margin:1rem 0 1.5rem; color:rgba(246,239,230,.78); font-size:.9rem; line-height:1.7; }
+        .hero-side-bottom { display:flex; justify-content:space-between; align-items:center; padding-top:1rem; border-top:1px solid rgba(255,255,255,.13); color:rgba(246,239,230,.65); font-family:"Azeret Mono Local",monospace; font-size:.68rem; letter-spacing:.12em; }
         .hero-side-bottom span:last-child { color:#efb17b; font-size:1.2rem; }
-        .hero-reveal { opacity:0; transform:translateY(14px); transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1); }
-        .hero-reveal.is-visible { opacity:1; transform:translateY(0); }
-        .delay-1 { transition-delay:60ms; } .delay-2 { transition-delay:130ms; } .delay-3 { transition-delay:200ms; } .delay-4 { transition-delay:270ms; }
+        .hero-reveal { opacity:0; transform:translateY(14px); animation:hero-enter .65s cubic-bezier(.2,.7,.2,1) both; }
+        @keyframes hero-enter { to { opacity:1; transform:translateY(0); } }
+        .delay-1 { animation-delay:60ms; } .delay-2 { animation-delay:130ms; } .delay-3 { animation-delay:200ms; } .delay-4 { animation-delay:270ms; }
         @media(max-width:850px) { .hero-content { grid-template-columns:1fr; min-height:auto; padding-block:5.5rem; } .hero-sidecard { display:none; } .hero-pattern { width:24%; } }
         @media(max-width:560px) { .hero-content { padding-block:4.5rem; } .hero-copy h1 { font-size:clamp(2.35rem,11vw,3.4rem); } .hero-actions { display:grid; } .hero-actions .tombol { width:100%; } }
-        @media(prefers-reduced-motion:reduce) { .hero-reveal { opacity:1; transform:none; } }
+        @media(prefers-reduced-motion:reduce) { .hero-reveal { opacity:1; transform:none; animation:none; } }
       `}</style>
     </section>
   );
