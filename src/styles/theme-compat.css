@@ -1,0 +1,113 @@
+/* Phase 2 compatibility layer: make existing page utilities follow the five theme tokens. */
+:root {
+  --hero-surface: #09183a;
+  --hero-surface-alt: #164b3d;
+  --accent-on-dark: #efb17b;
+}
+
+html[data-theme="dark"] {
+  --hero-surface: #111722;
+  --hero-surface-alt: #1c2b38;
+  --accent-on-dark: #f0b47f;
+}
+html[data-theme="super-black"] {
+  --hero-surface: #05080d;
+  --hero-surface-alt: #111a23;
+  --accent-on-dark: #f3b77f;
+}
+html[data-theme="amoled-black"] {
+  --hero-surface: #000000;
+  --hero-surface-alt: #090909;
+  --accent-on-dark: #f3b77f;
+}
+/* Dynamic means browser/system colors, not Android wallpaper extraction. Keep branded
+   hero surfaces dark so their white foreground text remains readable. */
+html[data-theme="dynamic"] {
+  --hero-surface: #09183a;
+  --hero-surface-alt: #164b3d;
+  --accent-on-dark: #efb17b;
+}
+
+html[data-theme] {
+  --ukir: var(--accent-color);
+  --ukir-terang: var(--accent-on-dark);
+  --malam: var(--text-primary);
+  --malam-dalam: var(--hero-surface);
+  --rimba: var(--hero-surface-alt);
+  --kapas: var(--page-bg);
+  --gading: var(--surface-muted);
+  --tinta: var(--text-primary);
+  --tinta-pudar: var(--text-muted);
+  --garis: var(--line-color);
+}
+
+/* Existing Tailwind color utilities are mapped to semantic theme surfaces. */
+html[data-theme] .bg-kapas { background-color: var(--page-bg) !important; }
+html[data-theme] .bg-gading { background-color: var(--surface-muted) !important; }
+html[data-theme] .bg-white { background-color: var(--surface) !important; }
+html[data-theme] .bg-malam,
+html[data-theme] .bg-malam-deep { background-color: var(--hero-surface) !important; }
+html[data-theme] .bg-rimba-dark { background-color: var(--hero-surface-alt) !important; }
+
+html[data-theme] .text-malam,
+html[data-theme] .text-tinta { color: var(--text-primary) !important; }
+html[data-theme] .text-tinta-pudar { color: var(--text-muted) !important; }
+html[data-theme] .text-ukir { color: var(--accent-color) !important; }
+html[data-theme] .text-ukir-light { color: var(--accent-on-dark) !important; }
+html[data-theme] .border-malam { border-color: var(--line-color) !important; }
+html[data-theme] .border-ukir { border-color: var(--accent-color) !important; }
+
+/* Keep high-contrast branded hero regions consistent across all themes. */
+html[data-theme] .hero-shell,
+html[data-theme] .page-hero {
+  color: #ffffff;
+  background: linear-gradient(118deg, var(--hero-surface), var(--hero-surface-alt)) !important;
+}
+html[data-theme] .bg-gradient-to-br.from-malam-deep {
+  color: #ffffff;
+  background-image: linear-gradient(135deg, var(--hero-surface), var(--hero-surface-alt)) !important;
+}
+html[data-theme] .site-header,
+html[data-theme] .header-inner,
+html[data-theme] .mobile-nav,
+html[data-theme] .site-footer {
+  border-color: var(--line-color);
+}
+html[data-theme] .sdm-role,
+html[data-theme] .sdm-source-note a { color: var(--accent-color); }
+html[data-theme] .sdm-search input,
+html[data-theme] .theme-control select {
+  color: var(--text-primary);
+  border-color: var(--line-color);
+  background: var(--surface);
+}
+
+/* Dynamic fallback follows the OS when system color keywords are unavailable. */
+@supports not (color: AccentColor) {
+  @media (prefers-color-scheme: dark) {
+    html[data-theme="dynamic"] {
+      color-scheme: dark;
+      --page-bg: #171b24;
+      --surface: #222936;
+      --surface-muted: #1c222d;
+      --text-primary: #edf2f8;
+      --text-muted: #b0bac9;
+      --line-color: rgba(220, 230, 244, .16);
+      --header-surface: #111722;
+      --accent-color: #e49a5c;
+      --accent-contrast: #171b24;
+      --focus-color: #9dc2ff;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme] *,
+  html[data-theme] *::before,
+  html[data-theme] *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
