@@ -6,48 +6,68 @@
  */
 (function () {
   const root = document.documentElement;
+  const status = {
+    houdini: "memeriksa",
+    webgpu: "memeriksa",
+  };
+
+  function perbaruiStatusPerangkat() {
+    const penampung = document.querySelector("[data-status-perangkat]");
+    if (!penampung) return;
+
+    const label = (nilai) => {
+      if (nilai === "memeriksa") return "sedang memeriksa";
+      return nilai === "dukung" ? "mendukung" : "memakai cadangan";
+    };
+
+    penampung.textContent =
+      `Perangkat Anda ${label(status.webgpu)} WebGPU · ${label(status.houdini)} efek Houdini`;
+  }
 
   // --- Houdini Paint Worklet ---
-  if ("paintWorklet" in CSS) {
-    try {
-      CSS.paintWorklet.addModule("/houdini/batik-paint-worklet.js");
-      root.classList.add("dukung-houdini");
-    } catch (err) {
-      root.classList.add("tanpa-houdini");
-    }
+  if ("paintWorklet" in CSS && typeof CSS.paintWorklet?.addModule === "function") {
+    Promise.resolve()
+      .then(() => CSS.paintWorklet.addModule("/houdini/batik-paint-worklet.js"))
+      .then(() => {
+        status.houdini = "dukung";
+        root.classList.add("dukung-houdini");
+        root.classList.remove("tanpa-houdini");
+      })
+      .catch(() => {
+        status.houdini = "tanpa";
+        root.classList.add("tanpa-houdini");
+        root.classList.remove("dukung-houdini");
+      })
+      .finally(perbaruiStatusPerangkat);
   } else {
+    status.houdini = "tanpa";
     root.classList.add("tanpa-houdini");
   }
 
   // --- WebGPU ---
   async function periksaWebGPU() {
     if (!("gpu" in navigator)) {
+      status.webgpu = "tanpa";
       root.classList.add("tanpa-webgpu");
+      perbaruiStatusPerangkat();
       return;
     }
+
     try {
       const adapter = await navigator.gpu.requestAdapter();
-      if (adapter) {
-        root.classList.add("dukung-webgpu");
-      } else {
-        root.classList.add("tanpa-webgpu");
-      }
-    } catch (err) {
+      status.webgpu = adapter ? "dukung" : "tanpa";
+      root.classList.toggle("dukung-webgpu", Boolean(adapter));
+      root.classList.toggle("tanpa-webgpu", !adapter);
+    } catch {
+      status.webgpu = "tanpa";
       root.classList.add("tanpa-webgpu");
+      root.classList.remove("dukung-webgpu");
     }
-  }
-  periksaWebGPU();
 
-  // --- Siarkan status ke elemen penampung status perangkat (opsional, dipakai Footer) ---
-  window.addEventListener("DOMContentLoaded", () => {
-    const penampung = document.querySelector("[data-status-perangkat]");
-    if (!penampung) return;
-    requestAnimationFrame(() => {
-      setTimeout(() => {
-        const webgpuOk = root.classList.contains("dukung-webgpu");
-        const houdiniOk = root.classList.contains("dukung-houdini");
-        penampung.textContent = `Perangkat Anda ${webgpuOk ? "mendukung" : "belum mendukung"} WebGPU · ${houdiniOk ? "mendukung" : "memakai cadangan"} efek Houdini`;
-      }, 150);
-    });
-  });
+    perbaruiStatusPerangkat();
+  }
+
+  document.addEventListener("DOMContentLoaded", perbaruiStatusPerangkat);
+  periksaWebGPU();
+  perbaruiStatusPerangkat();
 })();
