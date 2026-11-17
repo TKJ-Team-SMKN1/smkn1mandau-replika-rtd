@@ -7,6 +7,7 @@ const dist = path.join(root, "dist");
 const errors = [];
 const warnings = [];
 const htmlFiles = [];
+
 async function walk(dir) {
   let entries;
   try { entries = await readdir(dir, { withFileTypes: true }); } catch { return; }
@@ -17,9 +18,10 @@ async function walk(dir) {
   }
 }
 function attr(tag, name) {
-  const re = new RegExp("\\\\b" + name + "\\\\s*=\\\\s*(?:\\"([^\\"]*)\\"|'([^']*)'|([^\\\\s>]+))", "i");
-  const m = tag.match(re);
-  return m ? (m[1] ?? m[2] ?? m[3] ?? "") : null;
+  for (const m of tag.matchAll(/([^\s=/>]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/g)) {
+    if (m[1].toLowerCase() === name.toLowerCase()) return m[2] ?? m[3] ?? m[4] ?? "";
+  }
+  return null;
 }
 function textOnly(value) {
   return value.replace(/<(script|style)\b[\s\S]*?<\/\1>/gi, " ")
@@ -36,6 +38,7 @@ if (!htmlFiles.length) {
   console.error("Static audit: dist/ tidak ditemukan atau tidak berisi HTML. Jalankan npm run build terlebih dahulu.");
   process.exit(1);
 }
+
 for (const file of htmlFiles) {
   const html = await readFile(file, "utf8");
   const htmlTag = html.match(/<html\b[^>]*>/i)?.[0];
@@ -72,9 +75,9 @@ for (const file of htmlFiles) {
     if (id) {
       for (const label of html.matchAll(/<label\b[^>]*>/gi)) if (attr(label[0], "for") === id) hasFor = true;
     }
-    const nested = id && new RegExp("<label\\\\b[^>]*>[\\\\s\\\\S]{0,500}\\\\bid=[\\"']" + id + "[\\"'][\\\\s\\\\S]{0,500}</label>", "i").test(html);
-    if (!labelled && !hasFor && !nested) warn(file, "kontrol form " + (id ? "#" + id : "(tanpa id)") + " mungkin belum memiliki label terhubung.");
+    if (!labelled && !hasFor) warn(file, "kontrol form " + (id ? "#" + id : "(tanpa id)") + " perlu diperiksa labelnya.");
   }
+
   const headingLevels = [...html.matchAll(/<h([1-6])\b/gi)].map(x => Number(x[1]));
   if (headingLevels.filter(x => x === 1).length !== 1) warn(file, "jumlah heading H1 bukan satu; periksa hierarki halaman.");
   for (let i = 1; i < headingLevels.length; i++) {
@@ -83,6 +86,7 @@ for (const file of htmlFiles) {
       break;
     }
   }
+
   for (const m of html.matchAll(/\b(?:href|src)=["']([^"']+)["']/gi)) {
     const value = m[1];
     if (!value.startsWith("/") || value.startsWith("//") || value.startsWith("/#")) continue;
@@ -117,12 +121,12 @@ else {
     const ch = i18n[i], next = i18n[i + 1];
     if (quote) {
       if (escaped) escaped = false;
-      else if (ch === "\\\\") escaped = true;
+      else if (ch === "\\") escaped = true;
       else if (ch === quote) quote = null;
       continue;
     }
     if (ch === '"' || ch === "'" || ch === "\`") { quote = ch; continue; }
-    if (ch === "/" && next === "/") { i = i18n.indexOf("\\n", i); if (i < 0) break; continue; }
+    if (ch === "/" && next === "/") { i = i18n.indexOf("\n", i); if (i < 0) break; continue; }
     if (ch === "/" && next === "*") { i = i18n.indexOf("*/", i + 2); if (i < 0) break; i++; continue; }
     if (ch === "{") depth++;
     if (ch === "}") { depth--; if (depth === 0) { end = i + 1; break; } }
