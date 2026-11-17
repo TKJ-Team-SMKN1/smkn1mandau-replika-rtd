@@ -124,8 +124,22 @@ else {
         if (!dictionaries[language]) fail(path.join(dist, "index.html"), "kamus bahasa " + language + " tidak ditemukan.");
       }
       const allKeys = new Set(languages.flatMap(language => keySets[language]));
+
+      const sourceFiles = [];
+      async function collectSourceFiles(dir) {
+        let items;
+        try { items = await readdir(dir, { withFileTypes: true }); } catch { return; }
+        for (const item of items) {
+          const full = path.join(dir, item.name);
+          if (item.isDirectory()) await collectSourceFiles(full);
+          else if (/\.(astro|jsx|js)$/.test(item.name)) sourceFiles.push(full);
+        }
+      }
+      await collectSourceFiles(path.join(root, "src"));
+      const sourceTexts = await Promise.all(sourceFiles.map(file => readFile(file, "utf8")));
+      const activeKeys = [...allKeys].filter(key => sourceTexts.some(source => source.includes(key)));
       for (const language of languages) {
-        const missing = [...allKeys].filter(key => !(key in (dictionaries[language] || {})));
+        const missing = activeKeys.filter(key => !(key in (dictionaries[language] || {})));
         if (missing.length) warn(path.join(dist, "index.html"), "i18n " + language + ": " + missing.length + " key belum tersedia: " + missing.join(" | "));
       }
       console.log("i18n dictionary key counts:", Object.fromEntries(languages.map(language => [language, keySets[language].length])));
