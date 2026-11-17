@@ -31,13 +31,13 @@ export default function Hero() {
           </p>
 
           <h1 className={reveal("delay-2")}>
-            Kejuruan yang menyiapkan <span>tangan,</span> bukan hanya nilai rapor.
+            Informasi sekolah, dirangkai ulang sebagai <span>konsep independen.</span>
           </h1>
 
           <p className={reveal("delay-3")}>
-            SMK Negeri 1 Mandau membekali siswa dengan keahlian praktik industri,
-            bimbingan guru produktif, dan jalur langsung menuju dunia kerja maupun
-            pendidikan lanjutan.
+            Replika ini menyusun ulang informasi profil, program keahlian, dan arsip publikasi
+            yang tersedia di situs resmi SMK Negeri 1 Mandau. Informasi operasional
+            tetap harus diperiksa melalui sumber aslinya.
           </p>
 
           <div className={`hero-actions ${reveal("delay-4")}`}>
