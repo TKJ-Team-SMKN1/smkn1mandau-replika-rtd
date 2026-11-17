@@ -28,3 +28,12 @@ Dokumen ini mencatat sumber yang digunakan untuk menyusun konten replika. Pemeri
 - Tidak ditambahkan status akreditasi, jumlah peserta didik, jumlah guru, jumlah mitra industri, kuota, atau rincian kurikulum karena belum diverifikasi melalui sumber primer yang memadai.
 - Teks ringkasan ditulis ulang secara singkat. Untuk instruksi, formulir, persyaratan, dan informasi operasional, pengunjung harus membuka postingan asli.
 - Situs ini adalah replika/konsep independen dan tidak boleh menggunakan kata-kata yang menyiratkan persetujuan atau afiliasi resmi.
+
+
+## Direktori SDM — peninjauan 17 November 2026
+
+Direktori baru ditranskripsikan dari bagian “Guru dan Pegawai SMKN 1 Mandau” di beranda resmi http://www.smkn1mandau.sch.id/. Daftar publik memuat 127 entri unik setelah pengulangan identik pada halaman sumber dihapus: pimpinan dan koordinator, guru mata pelajaran, administrasi, operator, teknisi, UKS, kebersihan, dan keamanan. Sumber tidak mencantumkan tanggal pembaruan susunan personel; karena itu, direktori replika memberi catatan bahwa masa berlaku jabatan belum dikonfirmasi. Foto personel tidak disalin.
+
+## Pembaruan materi teknologi
+
+Direktori belajar mandiri memisahkan bahasa pemrograman, teknologi web, platform/infrastruktur, compiler/toolchain, dan build system. HTML, CSS, SQL, runtime, compiler, dan build system tidak disamakan kategorinya. Setiap kartu mengarah ke dokumentasi resmi atau referensi teknis proyek terkait.
