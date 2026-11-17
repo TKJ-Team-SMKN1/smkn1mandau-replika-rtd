@@ -1,6 +1,8 @@
-# SMK Negeri 1 Mandau — Replika (Starter Project)
+# SMK Negeri 1 Mandau — Replika / Konsep Independen
 
-Starter project ini dibangun dengan **Astro + React + Tailwind CSS + CSS Houdini**, untuk dipakai sebagai titik awal pengembangan internal tim developer sekolah. Ini **bukan** situs resmi SMK Negeri 1 Mandau — setiap halaman menampilkan pemberitahuan replika dan tautan ke situs asli.
+Proyek antarmuka berbasis **Astro + React + Tailwind CSS + CSS Houdini**. Ini adalah replika/konsep independen untuk pengembangan dan peninjauan UX/UI, **bukan situs resmi SMK Negeri 1 Mandau dan tidak mewakili pihak sekolah**.
+
+Konten profil, daftar program, dan ringkasan arsip pengumuman merujuk pada publikasi situs resmi. Setiap pengunjung tetap diarahkan ke sumber asli untuk ketentuan dan informasi terbaru. Lihat [register sumber dan kebijakan konten](docs/SUMBER-DATA.md).
 
 ## Menjalankan secara lokal
 
@@ -11,67 +13,61 @@ npm run dev
 
 Buka `http://localhost:4321`.
 
-## Build untuk produksi
+## Build dan pratinjau lokal
 
 ```bash
 npm run build
-npm run preview   # opsional, untuk pratinjau hasil build
+npm run preview
 ```
 
-Hasil build statis ada di folder `dist/`.
+Hasil build statis berada di folder `dist/`. Build perlu dijalankan sebelum menyatakan perubahan siap rilis.
 
-## Deploy ke Vercel
+## Status deployment
 
-Project ini sudah menyertakan `vercel.json`. Cara paling cepat:
-
-1. Push folder ini ke sebuah repository Git (GitHub/GitLab/Bitbucket).
-2. Import repository tersebut di [vercel.com/new](https://vercel.com/new).
-3. Vercel otomatis mendeteksi framework Astro — tidak perlu konfigurasi tambahan.
-
-Atau lewat Vercel CLI:
-
-```bash
-npm i -g vercel
-vercel
-```
+Deployment Vercel proyek ini sedang **dipause atas keputusan pemilik proyek**. Pengembangan GitHub pada branch `main` dapat berlanjut, tetapi jangan melakukan deploy atau mengaktifkan kembali proyek tanpa instruksi eksplisit.
 
 ## Struktur folder
 
 ```
 src/
   components/     Komponen React (.jsx) dan Astro (.astro)
-  layouts/        Layout bersama (header, footer, notifikasi replika)
-  pages/          Satu file = satu halaman/route
+  layouts/        Layout bersama, termasuk pemberitahuan replika
+  pages/          Route halaman
   styles/         CSS global, token desain, setup Houdini
 public/
-  houdini/        Paint worklet (motif batik)
-  scripts/        Deteksi fitur (WebGPU, Houdini)
-  fonts/          (kosongkan — font dimuat dari Google Fonts via <link>)
+  houdini/        Paint worklet motif Batik Rangkai
+  scripts/        Deteksi fitur dan dukungan bahasa
+  fonts/          Font lokal bila digunakan
+docs/
+  SUMBER-DATA.md  Sumber konten, tanggal, dan aturan verifikasi
 ```
 
-## ⚠️ Yang WAJIB diisi sebelum publikasi
+## Ruang lingkup konten
 
-Seluruh konten teks di bawah ini adalah **placeholder**, ditandai dengan tanda kurung siku `[...]`. Cari dan ganti sebelum deploy ke publik:
+- **Profil:** riwayat, visi, misi, daftar program, dan kontak yang dipublikasikan sekolah.
+- **Program:** sepuluh nama program yang tercantum pada beranda resmi. Pencarian hanya alat navigasi; bukan klasifikasi resmi.
+- **Pengumuman:** ringkasan arsip postingan resmi yang bertanggal 2026 dan tahun pelajaran 2025/2026. Jangan menganggap tautan atau jadwal arsip masih aktif.
+- **Statistik:** hanya angka historis yang punya rujukan eksplisit. Tidak ada angka siswa, guru, atau mitra yang ditebak.
+- **Bahasa antarmuka:** Indonesia, English, Bahasa Melayu, dan 中文. Cakupan terjemahan terus diperluas; konten resmi berbahasa Indonesia tetap menjadi rujukan utama.
 
-| Halaman | Yang perlu diisi |
-|---|---|
-| `src/pages/profil.astro` | Sejarah, visi, misi, akreditasi, alamat, kontak |
-| `src/pages/program.astro` → `DaftarProgram.jsx` | Nama program keahlian, rumpun, deskripsi, kompetensi |
-| `src/pages/pengumuman.astro` | Daftar pengumuman nyata (atau hubungkan ke CMS/API) |
-| `src/components/StatistikSingkat.astro` | Jumlah program, guru, siswa, mitra industri |
-| `src/components/PratinjauProgram.astro` | Nama & deskripsi 3 program unggulan di beranda |
+## Prinsip sumber dan akurasi
 
-Disarankan memindahkan data program/pengumuman ke file JSON/CMS terpisah begitu sudah ada sumber data resmi, supaya tidak hardcode di komponen.
+1. Prioritaskan publikasi di `smkn1mandau.sch.id`.
+2. Gunakan Wikipedia hanya sebagai pembanding, bukan sumber utama.
+3. Bedakan fakta yang tertulis pada sumber, ringkasan editorial, dan fitur navigasi buatan replika.
+4. Jangan membuat pengumuman, statistik, status akreditasi, jadwal aktif, atau detail kurikulum tanpa sumber yang jelas.
+5. Untuk pengumuman, tampilkan tanggal/status arsip dan tautan menuju postingan aslinya.
+6. Jangan mengumpulkan atau menampilkan data pribadi siswa.
 
-## Tentang implementasi teknis
+## Implementasi teknis
 
-- **Astro** — routing berbasis file, output statis (`output: "static"`), ringan dan cepat.
-- **React** — dipakai hanya pada bagian yang butuh interaktivitas (notifikasi replika, hero reveal, filter program), lewat `client:load`. Sisanya murni `.astro` (server-rendered, nol JS tambahan).
-- **Tailwind CSS** — token warna/font custom didefinisikan di `tailwind.config.mjs`.
-- **CSS Houdini** — `public/houdini/batik-paint-worklet.js` melukis motif garis parang sebagai pembatas bagian (`background: paint(batik-rangkai)`), didaftarkan lewat `CSS.paintWorklet.addModule()`. Peramban tanpa dukungan Houdini otomatis memakai cadangan gradasi linear (lihat `.batas-ukir` di `src/styles/global.css`).
-- **Deteksi WebGPU** — `public/scripts/deteksi-fitur.js` memeriksa `navigator.gpu` dan menambahkan kelas `dukung-webgpu` / `tanpa-webgpu` pada `<html>`, serta menampilkan status di footer. Ini murni deteksi kemampuan perangkat, bukan gatekeeping — situs tetap berfungsi penuh tanpa WebGPU.
-- **Aksesibilitas** — fokus keyboard terlihat jelas, `prefers-reduced-motion` dihormati, kontras warna disesuaikan standar WCAG AA, struktur heading semantik.
+- **Astro:** routing berbasis file dan output statis.
+- **React:** interaksi yang memang memerlukan state, seperti notifikasi dan pencarian program.
+- **Tailwind CSS:** token warna dan tipografi berada di `tailwind.config.mjs`.
+- **CSS Houdini:** `public/houdini/batik-paint-worklet.js` mempertahankan motif Batik Rangkai. Browser tanpa dukungan Houdini memakai fallback CSS pada `.batas-ukir`.
+- **Deteksi fitur:** `public/scripts/deteksi-fitur.js` memeriksa dukungan browser; fitur ini tidak membatasi akses ke konten.
+- **Aksesibilitas:** fokus keyboard, reduced motion, heading semantik, label input, dan status hasil pencarian.
 
 ## Lisensi font
 
-Josefin Sans, Paprika, dan Pragati Narrow — ketiganya tersedia bebas lewat Google Fonts di bawah SIL Open Font License, dimuat langsung lewat tag `<link>` di `src/layouts/LayoutUtama.astro`.
+Josefin Sans, Paprika, dan Pragati Narrow dimuat melalui Google Fonts. Periksa ketentuan SIL Open Font License pada masing-masing font bila font disalin atau didistribusikan secara lokal.
