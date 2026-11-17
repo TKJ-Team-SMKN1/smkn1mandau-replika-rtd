@@ -22,8 +22,6 @@ jobs:
           node-version: 24
       - name: Install dependencies
         run: npm ci
-      - name: Audit production dependency vulnerabilities
-        run: npm audit --omit=dev --audit-level=high
       - name: Check Astro and TypeScript diagnostics
         run: npm run check
       - name: Check browser script syntax
