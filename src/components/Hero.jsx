@@ -66,9 +66,9 @@ export default function Hero() {
         .hero-shell { background:radial-gradient(ellipse at 78% 28%,rgba(45,107,69,.28),transparent 34%),linear-gradient(118deg,#09183a 0%,#102b50 58%,#123b38 120%); }
         .hero-content { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(230px,.65fr); align-items:center; gap:clamp(2rem,7vw,6rem); min-height:610px; padding-block:clamp(5rem,10vw,8rem); }
         .hero-copy { max-width:760px; }
-        .hero-copy > p:first-child { display:flex; align-items:center; gap:.7rem; margin:0 0 1.6rem; color:#efb17b; font-family:"Pragati Narrow",sans-serif; font-size:.9rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+        .hero-copy > p:first-child { display:flex; align-items:center; gap:.7rem; margin:0 0 1.6rem; color:#efb17b; font-family:"Azeret Mono Local",monospace; font-size:.9rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
         .hero-eyebrow-dot { width:8px; height:8px; border-radius:50%; background:#d9843f; box-shadow:0 0 0 5px rgba(217,132,63,.15); }
-        .hero-copy h1 { max-width:790px; margin:0; color:#fff; font-family:"Paprika",cursive; font-size:clamp(2.55rem,5.6vw,5.1rem); line-height:1.13; letter-spacing:-.045em; }
+        .hero-copy h1 { max-width:790px; margin:0; color:#fff; font-family:"Archivo Local",sans-serif; font-size:clamp(2.55rem,5.6vw,5.1rem); line-height:1.13; letter-spacing:-.045em; }
         .hero-copy h1 span { color:#efb17b; }
         .hero-copy > p:not(:first-child) { max-width:610px; margin:1.6rem 0 2rem; color:rgba(246,239,230,.78); font-size:clamp(1rem,1.4vw,1.15rem); line-height:1.85; }
         .hero-actions { display:flex; flex-wrap:wrap; gap:.85rem; }
@@ -80,13 +80,13 @@ export default function Hero() {
         .hero-pattern { position:absolute; top:0; right:0; bottom:0; width:11%; opacity:.12; mask-image:linear-gradient(90deg,transparent,#000); }
         .hero-sidecard { position:relative; max-width:310px; justify-self:end; width:100%; padding:1.6rem; border:1px solid rgba(246,239,230,.2); border-radius:1.4rem; background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.035)); box-shadow:0 30px 90px rgba(0,0,0,.18); backdrop-filter:blur(12px); }
         .hero-sidecard-top { display:flex; align-items:center; gap:.85rem; }
-        .hero-seal { display:grid; place-items:center; width:48px; height:48px; border:1px solid rgba(239,177,123,.75); border-radius:15px 15px 15px 4px; color:#fff; background:linear-gradient(145deg,#d9843f,#8a4410); font-family:"Paprika",cursive; font-size:1.4rem; }
-        .hero-side-label { color:rgba(246,239,230,.8); font-family:"Pragati Narrow",sans-serif; font-size:.75rem; font-weight:700; letter-spacing:.16em; line-height:1.45; }
+        .hero-seal { display:grid; place-items:center; width:48px; height:48px; border:1px solid rgba(239,177,123,.75); border-radius:15px 15px 15px 4px; color:#fff; background:linear-gradient(145deg,#d9843f,#8a4410); font-family:"Archivo Local",sans-serif; font-size:1.4rem; }
+        .hero-side-label { color:rgba(246,239,230,.8); font-family:"Azeret Mono Local",monospace; font-size:.75rem; font-weight:700; letter-spacing:.16em; line-height:1.45; }
         .hero-side-rule { height:5px; margin:1.6rem 0; border-radius:10px; }
-        .hero-side-title { margin:0; color:#fff; font-family:"Paprika",cursive; font-size:2rem; line-height:1.35; }
+        .hero-side-title { margin:0; color:#fff; font-family:"Archivo Local",sans-serif; font-size:2rem; line-height:1.35; }
         .hero-side-title span { color:#efb17b; }
         .hero-side-note { margin:1rem 0 1.5rem; color:rgba(246,239,230,.65); font-size:.88rem; line-height:1.7; }
-        .hero-side-bottom { display:flex; justify-content:space-between; align-items:center; padding-top:1rem; border-top:1px solid rgba(255,255,255,.13); color:rgba(246,239,230,.5); font-family:"Pragati Narrow",sans-serif; font-size:.68rem; letter-spacing:.12em; }
+        .hero-side-bottom { display:flex; justify-content:space-between; align-items:center; padding-top:1rem; border-top:1px solid rgba(255,255,255,.13); color:rgba(246,239,230,.5); font-family:"Azeret Mono Local",monospace; font-size:.68rem; letter-spacing:.12em; }
         .hero-side-bottom span:last-child { color:#efb17b; font-size:1.2rem; }
         .hero-reveal { opacity:0; transform:translateY(14px); transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1); }
         .hero-reveal.is-visible { opacity:1; transform:translateY(0); }
