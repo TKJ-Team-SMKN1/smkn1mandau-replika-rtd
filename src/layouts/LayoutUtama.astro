@@ -18,27 +18,24 @@ const { judul, deskripsi, halamanAktif = "" } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={deskripsi} />
-    <meta name="theme-color" content="#0f2545" />
+    <meta name="theme-color" content="#09183a" />
+    <meta name="color-scheme" content="light" />
     <title>{judul}</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Paprika&family=Pragati+Narrow:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Paprika&family=Pragati+Narrow:wght@400;700&display=swap" rel="stylesheet" />
 
-    <!-- Pemberitahuan replika — disyaratkan: bukan situs asli -->
+    <!-- Pemberitahuan replika: situs ini bukan kanal resmi sekolah. -->
     <meta name="replika-situs" content="Ini adalah situs replika, bukan situs resmi. Situs asli: https://www.smkn1mandau.sch.id/?m=1" />
   </head>
   <body class="bg-kapas text-tinta font-badan">
     <NotifikasiReplika client:load />
     <Navigasi halamanAktif={halamanAktif} />
-    <main>
+    <main id="konten-utama" tabindex="-1">
       <slot />
     </main>
     <Footer />
-
     <script is:inline src="/scripts/deteksi-fitur.js"></script>
   </body>
 </html>
