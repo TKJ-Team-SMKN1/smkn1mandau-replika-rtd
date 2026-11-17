@@ -131,7 +131,7 @@
       const normalized = trimmed.replace(/\s+/g, " ");
       const translated = dict[trimmed] || dict[normalized];
       if (translated) node.nodeValue = base.replace(trimmed, translated);
-      else if (lang === "id") node.nodeValue = base;
+      else node.nodeValue = base;
     }
     document.querySelectorAll("[placeholder], [aria-label]").forEach(el => {
       for (const attr of ["placeholder", "aria-label"]) {
@@ -142,7 +142,7 @@
         const base = saved[attr];
         const translated = dict[`@${attr}:${base}`];
         if (translated) el.setAttribute(attr, translated);
-        else if (lang === "id") el.setAttribute(attr, base);
+        else el.setAttribute(attr, base);
       }
     });
     document.querySelectorAll("[data-language-picker]").forEach(el => { el.value = lang; });
