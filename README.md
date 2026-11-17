@@ -1,6 +1,6 @@
 # SMK Negeri 1 Mandau — Replika / Konsep Independen
 
-Proyek antarmuka berbasis **Astro + React + Tailwind CSS + CSS Houdini**. Ini adalah replika/konsep independen untuk pengembangan dan peninjauan UX/UI, **bukan situs resmi SMK Negeri 1 Mandau dan tidak mewakili pihak sekolah**.
+Proyek antarmuka berbasis **Astro + React + TypeScript + Tailwind CSS + CSS Houdini**. Ini adalah replika/konsep independen untuk pengembangan dan peninjauan UX/UI, **bukan situs resmi SMK Negeri 1 Mandau dan tidak mewakili pihak sekolah**.
 
 Konten profil, daftar program, dan ringkasan arsip pengumuman merujuk pada publikasi situs resmi. Setiap pengunjung tetap diarahkan ke sumber asli untuk ketentuan dan informasi terbaru. Lihat [register sumber dan kebijakan konten](docs/SUMBER-DATA.md).
 
@@ -33,7 +33,7 @@ src/
   components/     Komponen React (.jsx) dan Astro (.astro)
   layouts/        Layout bersama, termasuk pemberitahuan replika
   pages/          Route halaman
-  styles/         CSS global, token desain, setup Houdini
+  styles/         CSS global, semantic tokens, lima tema, setup Houdini
 public/
   houdini/        Paint worklet motif Batik Rangkai
   scripts/        Deteksi fitur dan dukungan bahasa
@@ -63,11 +63,14 @@ docs/
 
 - **Astro:** routing berbasis file dan output statis.
 - **React:** interaksi yang memang memerlukan state, seperti notifikasi dan pencarian program.
-- **Tailwind CSS:** token warna dan tipografi berada di `tailwind.config.mjs`.
+- **Tailwind CSS:** utility styling melalui Vite plugin; warna dan tipografi memakai semantic tokens serta font lokal.
 - **CSS Houdini:** `public/houdini/batik-paint-worklet.js` mempertahankan motif Batik Rangkai. Browser tanpa dukungan Houdini memakai fallback CSS pada `.batas-ukir`.
+- **TypeScript:** tersedia sebagai dev dependency dan digunakan bertahap untuk theme controller serta pemeriksaan tipe.
+- **Theme engine:** Light, Dark, Super Black, AMOLED Black, dan Dynamic Color; preferensi disimpan lokal di perangkat.
+- **Font lokal:** Outfit, Archivo, dan Azeret Mono dimuat dari `public/fonts/`.
 - **Deteksi fitur:** `public/scripts/deteksi-fitur.js` memeriksa dukungan browser; fitur ini tidak membatasi akses ke konten.
 - **Aksesibilitas:** fokus keyboard, reduced motion, heading semantik, label input, dan status hasil pencarian.
 
 ## Lisensi font
 
-Josefin Sans, Paprika, dan Pragati Narrow dimuat melalui Google Fonts. Periksa ketentuan SIL Open Font License pada masing-masing font bila font disalin atau didistribusikan secara lokal.
+Font Outfit, Archivo, dan Azeret Mono dimuat dari aset lokal di `public/fonts/`. File lisensi disertakan bersama keluarga font terkait. Pertahankan file lisensi saat font dipindahkan atau didistribusikan.
