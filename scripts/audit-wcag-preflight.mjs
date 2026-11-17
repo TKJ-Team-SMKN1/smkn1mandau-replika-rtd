@@ -17,7 +17,7 @@ for(const file of htmlFiles){
  const ids=new Map();for(const m of html.matchAll(/\bid=["']([^"']+)["']/gi))ids.set(m[1],(ids.get(m[1])||0)+1);for(const [id,n] of ids)if(n>1)fail("id duplikat: "+id);
  for(const m of html.matchAll(/<img\b[^>]*>/gi))if(attr(m[0],"alt")===null)fail("img tanpa atribut alt.");
  for(const m of html.matchAll(/<button\b[^>]*>([\s\S]*?)<\/button>/gi)){const label=attr(m[0],"aria-label")||attr(m[0],"title")||m[1].replace(/<[^>]+>/g," ").trim();if(!label)fail("button tanpa nama aksesibel.");}
- for(const m of html.matchAll(/<(input|select|textarea)\b[^>]*>/gi)){const id=attr(m[0],"id"),hidden=attr(m[0],"type")==="hidden";const labelled=attr(m[0],"aria-label")||attr(m[0],"aria-labelledby")||(id&&(html.includes('for="'+id+'"')||html.includes("for='"+id+"'")));if(!labelled&&!hidden)fail(m[1]+" tanpa label programatik.");}
+ for(const m of html.matchAll(/<(input|select|textarea)\b[^>]*>/gi)){const id=attr(m[0],"id"),hidden=attr(m[0],"type")==="hidden";const wrapped=new RegExp("<label\\b[^>]*>[\\s\\S]*?<"+m[1]+"\\b[^>]*>[\\s\\S]*?</label>","i").test(html);const labelled=attr(m[0],"aria-label")||attr(m[0],"aria-labelledby")||(id&&(html.includes('for="'+id+'"')||html.includes("for='"+id+"'")))||wrapped;if(!labelled&&!hidden)fail(m[1]+" tanpa label programatik.");}
  for(const m of html.matchAll(/<a\b[^>]*target=["']_blank["'][^>]*>/gi))if(!/rel=["'][^"']*noopener/i.test(m[0]))fail("target=_blank tanpa rel=noopener.");
  for(const m of html.matchAll(/<(a|button|input|select|textarea)\b[^>]*aria-hidden=["']true["'][^>]*>/gi))fail("elemen interaktif disembunyikan: "+m[1]);
  if(!/<meta\b[^>]*name=["']viewport["']/i.test(html))fail("meta viewport tidak ditemukan.");
