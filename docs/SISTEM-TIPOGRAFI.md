@@ -4,7 +4,7 @@ Seluruh font diambil dari aset yang sudah berada di `public/fonts/`; tidak ada G
 
 ## Inventaris yang terdaftar
 
-18 keluarga font dan 174 berkas OTF terdaftar di `src/styles/font-library.css`:
+19 keluarga font dan 174 berkas OTF terdaftar di `src/styles/font-library.css`:
 
 | Keluarga | Peran utama |
 | --- | --- |
