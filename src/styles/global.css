@@ -152,7 +152,7 @@ section { scroll-margin-top: 6rem; }
   .tombol { width: 100%; }
 }
 
-@layer base{body{font-family:"Outfit Local",system-ui,sans-serif;background:#f5f7fa}h1,h2,h3,.font-judul{font-family:"Archivo Local","Outfit Local",system-ui,sans-serif;font-weight:700}.font-rapat{font-family:"Reglo Local","Archivo Local",sans-serif}}
+@layer base{body{font-family:"Outfit Local",system-ui,sans-serif;background:#f5f7fa}h1,h2,h3,.font-judul{font-family:"Archivo Local","Outfit Local",system-ui,sans-serif;font-weight:700}.font-rapat{font-family:"Azeret Mono Local",monospace}}
 .kontainer-laman{width:min(100% - 2.5rem,1240px)}.kartu{border-radius:1rem;box-shadow:0 8px 28px rgba(9,24,58,.055)}.kartu:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(9,24,58,.09)}
 .tombol{border-radius:.85rem;min-height:46px}.tombol-ukir{background:#a84f12;box-shadow:none}.tombol-ukir:hover{background:#873d0d;box-shadow:none}.tombol-garis{background:#fff}
 .site-header{backdrop-filter:blur(18px)}.brand-name{font-family:"Archivo Local",sans-serif;font-weight:700}.brand-mark,.footer-mark{border-radius:.8rem}.nav-link{border-radius:.7rem}
