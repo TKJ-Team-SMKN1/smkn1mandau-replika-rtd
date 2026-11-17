@@ -31,3 +31,5 @@ jobs:
           node --check public/houdini/batik-paint-worklet.js
       - name: Build Astro site
         run: npm run build
+      - name: Audit generated HTML quality and accessibility preflight
+        run: npm run audit:html
