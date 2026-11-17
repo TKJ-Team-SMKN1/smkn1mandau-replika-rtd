@@ -23,7 +23,7 @@ The audit checks:
 - every font URL referenced by `src/styles/font-library.css`;
 - active localization keys used by the current source for English, Malay, and Simplified Chinese.
 
-Warnings require human review. Static HTML inspection cannot reliably determine contrast, computed accessible names, focus visibility, layout reflow, or whether translations are contextually correct. The latest successful CI audit checked 7 generated pages and 174 font references; dictionaries contain 169 English, 153 Malay, and 151 Chinese keys, with no missing active source keys.
+Warnings require human review. Static HTML inspection cannot reliably determine contrast, computed accessible names, focus visibility, layout reflow, or whether translations are contextually correct. The latest successful CI audit checked 7 generated pages and 174 font references; dictionaries contain 342 English, 326 Malay, and 324 Chinese keys, with no missing active source keys.
 
 ## Font delivery decision
 
