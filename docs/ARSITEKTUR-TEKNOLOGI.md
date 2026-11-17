@@ -60,6 +60,21 @@ Keputusan bukan penilaian kualitas bahasa. Kandidat dapat dievaluasi kembali jik
 | Kotlin Compiler, Swift Compiler | Tidak dibutuhkan |
 | CMake, Ninja, GNU Make, Cargo, Gradle, Maven | Tidak dibutuhkan karena tidak ada native source/service yang dibangun |
 
+## Theme dan UI architecture
+
+- Lima mode menggunakan satu pengendali tema dan semantic CSS tokens: Light, Dark, Super Black, AMOLED Black, dan Dynamic Color.
+- `src/styles/theme-compat.css` memetakan utility warna lama ke token tema agar halaman yang sudah ada mengikuti tema tanpa menulis ulang seluruh markup sekaligus.
+- Hero dan area bermerek mempertahankan permukaan gelap dengan teks kontras; area konten, kartu, form, dan navigasi mengikuti token tema.
+- Dynamic Color pada web berarti mengikuti system color scheme dan CSS system colors browser (misalnya Canvas, CanvasText, dan AccentColor) dengan fallback `prefers-color-scheme`. Website tidak mengklaim dapat membaca palet wallpaper Android Material You.
+- Preferensi tema disimpan di localStorage perangkat; tidak dikirim ke server.
+- Theme switching tidak memerlukan library tambahan.
+
+## Halaman dan transparansi proyek
+
+- Halaman `/tentang` menjelaskan status replika independen, batas informasi, sumber publik, privasi preferensi tema, dan stack teknis aktual.
+- Navigasi utama dan footer mengarah ke halaman Tentang.
+- Konten profil, program, personel, dan arsip pengumuman tetap merujuk ke register sumber; halaman Tentang tidak membuat klaim operasional baru.
+
 ## Batas arsitektur
 
 - Output tetap static-first.
