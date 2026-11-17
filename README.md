@@ -72,7 +72,7 @@ docs/
 - **Theme engine:** Light, Dark, Super Black, AMOLED Black, dan Dynamic Color; preferensi disimpan lokal di perangkat.
 - **Font lokal:** 19 keluarga / 174 face OTF disimpan di `public/fonts/` dan dipanggil melalui URL root `/fonts/`. File lisensi tetap disertakan.
 - **Deteksi fitur:** `public/scripts/deteksi-fitur.js` memeriksa dukungan browser; fitur ini tidak membatasi akses ke konten.
-- **Aksesibilitas:** fokus keyboard, reduced motion, heading semantik, label input, dan status hasil pencarian.
+- **Aksesibilitas:** fokus keyboard dua lapis, reduced motion, heading semantik, label input, batas kontrol kontras, dan status hasil pencarian.
 
 ## Arsip sumber HTML
 
