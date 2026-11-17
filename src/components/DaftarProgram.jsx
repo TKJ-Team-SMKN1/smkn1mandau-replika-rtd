@@ -48,7 +48,7 @@ export default function DaftarProgram() {
             <button
               type="button"
               onClick={() => setKataKunci("")}
-              className="program-search-clear absolute right-3 top-1/2 -translate-y-1/2 rounded-lg px-3 py-2 text-sm font-bold"
+              className="program-search-clear absolute right-3 top-1/2 -translate-y-1/2 min-h-11 min-w-11 rounded-lg px-3 py-2 text-sm font-bold"
               aria-label="Hapus kata pencarian"
             >
               Hapus

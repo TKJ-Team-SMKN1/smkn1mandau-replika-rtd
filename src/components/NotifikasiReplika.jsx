@@ -48,7 +48,7 @@ export default function NotifikasiReplika() {
         <button
           onClick={tutup}
           aria-label="Tutup pemberitahuan"
-          className="shrink-0 w-8 h-8 flex items-center justify-center rounded-md hover:bg-white/10 transition-colors text-lg leading-none"
+          className="shrink-0 w-11 h-11 min-w-11 min-h-11 flex items-center justify-center rounded-md hover:bg-white/10 transition-colors text-lg leading-none"
         >
           ×
         </button>
