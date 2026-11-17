@@ -1,5 +1,17 @@
 ---
 import LayoutUtama from "../layouts/LayoutUtama.astro";
+const koleksiFont = [
+{nama:"Anton",kelas:"font-anton",peran:"Display heading"},{nama:"Archivo",kelas:"font-archivo",peran:"Heading dan UI"},
+{nama:"Azeret Mono",kelas:"font-azeret",peran:"Label teknis"},{nama:"Bagnard",kelas:"font-bagnard",peran:"Display dekoratif"},
+{nama:"Crimson Pro",kelas:"font-crimson",peran:"Editorial"},{nama:"Familjen Grotesk",kelas:"font-familjen",peran:"Heading sekunder"},
+{nama:"Literata",kelas:"font-literata",peran:"Editorial"},{nama:"Lora",kelas:"font-lora",peran:"Narasi"},
+{nama:"M PLUS 1",kelas:"font-mplus-1",peran:"Fallback multilingual"},{nama:"M PLUS 1 Code",kelas:"font-mplus-1-code",peran:"Monospace multilingual"},
+{nama:"M PLUS 2",kelas:"font-mplus-2",peran:"Fallback multilingual"},{nama:"M PLUS Code Latin 50",kelas:"font-mplus-code-latin-50",peran:"Monospace Latin"},
+{nama:"M PLUS Code Latin 60",kelas:"font-mplus-code-latin-60",peran:"Monospace Latin"},{nama:"M PLUS U",kelas:"font-mplus-u",peran:"Fallback multilingual"},
+{nama:"Nunito",kelas:"font-nunito",peran:"Teks penjelas"},{nama:"Outfit",kelas:"font-outfit",peran:"Teks utama"},
+{nama:"Reglo",kelas:"font-reglo",peran:"Angka dan tanggal"},{nama:"Office Code Pro",kelas:"font-office-code-pro",peran:"Monospace"},
+{nama:"Office Code Pro D",kelas:"font-office-code-pro-d",peran:"Monospace dotted-zero"}
+];
 ---
 <LayoutUtama judul="Pengaturan Tampilan — SMK Negeri 1 Mandau (Replika)" deskripsi="Pengaturan tema tampilan untuk replika independen SMK Negeri 1 Mandau." halamanAktif="pengaturan">
  <section class="page-hero"><div class="kontainer-laman page-hero-inner max-w-4xl">
@@ -15,4 +27,15 @@ import LayoutUtama from "../layouts/LayoutUtama.astro";
   <div class="theme-preview mt-6" aria-label="Pratinjau komponen antarmuka"><div class="theme-preview-bar" aria-hidden="true"></div><strong>Technical Institution · Minimalism</strong><span class="theme-description">Pratinjau warna mengikuti tema yang dipilih.</span><div class="flex flex-wrap gap-2"><span class="tombol tombol-ukir !w-auto">Aksi utama</span><span class="rounded-lg border border-malam/15 px-3 py-2 text-sm">Komponen sekunder</span></div></div>
   </div>
  </div></section>
+
+<section class="py-16 md:py-20 bg-gading border-y border-malam/10" aria-labelledby="judul-koleksi-font">
+<div class="kontainer-laman">
+<div class="max-w-3xl mb-8"><p class="pita-bagian mb-3">Tipografi lokal</p><h2 id="judul-koleksi-font" class="font-judul font-familjen text-3xl md:text-4xl text-malam mb-3">Koleksi font lokal</h2>
+<p class="text-tinta-pudar leading-relaxed">19 keluarga dan 174 face OTF tersedia secara lokal. Kartu berikut memperlihatkan peran tiap keluarga; browser tetap memuat file sesuai kebutuhan, bukan mengunduh seluruh font sekaligus.</p></div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+{koleksiFont.map(font=><article class="kartu !p-5"><h3 class={font.kelas + " text-2xl text-malam leading-tight"}>{font.nama}</h3><p class="text-xs text-tinta-pudar mt-3">{font.peran}</p><p class={font.kelas + " text-lg text-malam mt-4"}>SMKN 1 Mandau · 0123456789</p></article>)}
+</div>
+<p class="text-xs text-tinta-pudar mt-6">Berkas OTF asli dan lisensi masing-masing keluarga tetap dipertahankan. Lihat <a class="font-bold text-ukir underline underline-offset-4" href="https://github.com/TKJ-Team-SMKN1/smkn1mandau-replika-rtd/blob/main/docs/SISTEM-TIPOGRAFI.md" target="_blank" rel="noopener noreferrer">dokumentasi sistem tipografi</a>.</p>
+</div></section>
+
 </LayoutUtama>

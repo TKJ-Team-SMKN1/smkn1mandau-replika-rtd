@@ -56,3 +56,8 @@ Keluarga yang lisensinya sudah disertakan di direktori font tetap mempertahankan
 - `public/fonts/Office-Code-Pro-OFL.txt` — Nathan Rutzky dan Adobe Systems; SIL Open Font License 1.1. Sumber: https://www.fontsquirrel.com/license/office-code-pro
 
 Nama keluarga font dipertahankan sesuai nama aslinya. Tidak ada font yang dimodifikasi pada tahap ini.
+
+
+## Katalog visual seluruh keluarga
+
+Halaman Pengaturan menyediakan spesimen visual untuk seluruh 19 keluarga agar nama, rendering, dan peran masing-masing dapat diperiksa di browser. Katalog tidak memuat semua file secara eager; browser mengambil face yang diperlukan saja. Seluruh 174 face OTF dan berkas lisensi sumber tetap dipertahankan.

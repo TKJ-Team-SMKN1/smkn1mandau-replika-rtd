@@ -37,3 +37,14 @@ Direktori baru ditranskripsikan dari bagian “Guru dan Pegawai SMKN 1 Mandau”
 ## Pembaruan materi teknologi
 
 Direktori belajar mandiri memisahkan bahasa pemrograman, teknologi web, platform/infrastruktur, compiler/toolchain, dan build system. HTML, CSS, SQL, runtime, compiler, dan build system tidak disamakan kategorinya. Setiap kartu mengarah ke dokumentasi resmi atau referensi teknis proyek terkait.
+
+
+## Halaman tambahan Fase 3 — diperiksa 18 November 2026
+
+| Bagian | URL | Penggunaan |
+|---|---|---|
+| Fasilitas | http://www.smkn1mandau.sch.id/2022/05/fasilitas.html | Halaman publik berupa media visual; rincian historis fasilitas diambil dari halaman sejarah sekolah, bukan ditebak dari gambar. |
+| Ekstrakurikuler | http://www.smkn1mandau.sch.id/2022/05/ekstrakurikuler.html | Halaman publik berupa media visual; nama kegiatan, pembina, dan jadwal tidak ditranskripsikan karena tidak tersedia sebagai teks terverifikasi. |
+| Arsip kegiatan | http://www.smkn1mandau.sch.id/search?q=kegiatan | Menemukan publikasi kegiatan historis 2023–2024 dan menghubungkan ringkasan dengan artikel aslinya. |
+| BKK | http://www.smkn1mandau.sch.id/2023/09/struktur-organisasi-bursa-kerja-khusus.html | Struktur organisasi berupa gambar; fungsi BKK diringkas dari publikasi kegiatan BKK 2023. |
+| LSP-P1 | http://www.smkn1mandau.sch.id/2023/05/strukrut-organisasi-lembaga-sertifikasi.html | Struktur organisasi berupa gambar; daftar tujuh program berasal dari publikasi pemutakhiran LSP-P1 November 2023. |
