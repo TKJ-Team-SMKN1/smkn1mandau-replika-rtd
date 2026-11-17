@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ===========================================================
-   SMKN 1 Mandau — Replika — Gaya Global
-   Token: amber ukir #b85c14 · navy malam #0f2545 · hijau rimba #1a4d2e
-   Tipografi: Josefin Sans (badan) / Paprika (judul) / Pragati Narrow (rapat)
-   =========================================================== */
+/* =========================================================
+   SMKN 1 Mandau — Replika UI system
+   Identitas dipertahankan: Batik Rangkai · amber · navy · rimba
+   ========================================================= */
 
 @layer base {
   :root {
+    color-scheme: light;
     --ukir: #b85c14;
     --ukir-terang: #d9843f;
     --malam: #0f2545;
@@ -17,135 +17,138 @@
     --rimba: #1a4d2e;
     --kapas: #fdf8f0;
     --gading: #f6efe6;
-    --tinta: #1a1a1a;
+    --tinta: #172033;
+    --tinta-pudar: #586174;
+    --garis: rgba(15, 37, 69, .12);
+    --radius-kartu: 1.1rem;
+    --bayang-halus: 0 14px 40px rgba(9, 24, 58, .08);
   }
 
-  * {
-    box-sizing: border-box;
-  }
+  *, *::before, *::after { box-sizing: border-box; }
 
   html {
     scroll-behavior: smooth;
-  }
-
-  html:focus-within {
-    scroll-behavior: auto;
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
   }
 
   body {
-    background-color: var(--kapas);
+    margin: 0;
+    min-width: 320px;
+    overflow-x: clip;
+    background: var(--kapas);
     color: var(--tinta);
     font-family: "Josefin Sans", system-ui, sans-serif;
-    line-height: 1.65;
-    overflow-x: hidden;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
   }
 
-  /* Fokus keyboard yang jelas kelihatan — aksesibilitas */
+  a { color: inherit; }
+  button, input, textarea, select { font: inherit; }
+  button { cursor: pointer; }
+  img, svg { max-width: 100%; }
+
   :focus-visible {
-    outline: 3px solid var(--ukir);
-    outline-offset: 3px;
-    border-radius: 2px;
+    outline: 3px solid var(--ukir-terang);
+    outline-offset: 4px;
+    border-radius: 4px;
   }
+
+  ::selection { background: rgba(217, 132, 63, .25); color: var(--malam-dalam); }
 
   @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-      animation-duration: 0.01ms !important;
+    *, *::before, *::after {
+      animation-duration: .01ms !important;
       animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
+      transition-duration: .01ms !important;
       scroll-behavior: auto !important;
     }
   }
 }
 
-/* ===========================================================
-   CSS Houdini — Paint Worklet untuk motif ukiran pembatas
-   Terdaftar lewat registerPaintBatik.js, dipanggil sebagai
-   background: paint(batik-rangkai)
-   =========================================================== */
-@supports (background: paint(batik-rangkai)) {
-  .batas-ukir {
-    background: paint(batik-rangkai);
-  }
-}
-
-/* Jatuh balik untuk peramban tanpa dukungan Houdini — garis gradasi tiga warna */
+/* Batik Rangkai: fallback dahulu, Houdini paint sopra quando supportato. */
 .batas-ukir {
-  background: linear-gradient(
-    90deg,
-    var(--ukir) 0%,
-    var(--ukir) 33%,
-    var(--gading) 33%,
-    var(--gading) 66%,
-    var(--rimba) 66%,
-    var(--rimba) 100%
-  );
+  background: linear-gradient(90deg, var(--ukir) 0 33%, var(--gading) 33% 66%, var(--rimba) 66% 100%);
+}
+@supports (background: paint(batik-rangkai)) {
+  .batas-ukir { background: paint(batik-rangkai); }
 }
 
-/* ===========================================================
-   Komponen bersama
-   =========================================================== */
+/* Layout primitives */
 .kontainer-laman {
-  max-width: 1180px;
+  width: min(100% - 2.5rem, 1200px);
   margin-inline: auto;
-  padding-inline: 24px;
 }
-
-.tombol {
+.pita-bagian {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 13px 26px;
-  border-radius: 8px;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 600;
-  font-size: 15px;
-  text-decoration: none;
-  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-  border: 1.5px solid transparent;
-}
-
-.tombol:hover {
-  transform: translateY(-2px);
-}
-
-.tombol-ukir {
-  background-color: var(--ukir);
-  color: #fff;
-  box-shadow: 0 4px 14px rgba(184, 92, 20, 0.35);
-}
-
-.tombol-ukir:hover {
-  background-color: var(--ukir-terang);
-  box-shadow: 0 6px 20px rgba(184, 92, 20, 0.45);
-}
-
-.tombol-garis {
-  background-color: transparent;
-  color: var(--malam);
-  border-color: var(--malam);
-}
-
-.tombol-garis:hover {
-  background-color: var(--malam);
-  color: #fff;
-}
-
-/* Kartu statistik / program — satu radius konsisten, tanpa bayangan generik seragam */
-.kartu {
-  background: #fff;
-  border: 1px solid rgba(15, 37, 69, 0.08);
-  border-radius: 12px;
-  padding: 28px;
-}
-
-/* Pita judul bagian — dipakai sekali per halaman untuk penanda konteks, bukan dekorasi acak */
-.pita-bagian {
-  font-family: "Pragati Narrow", sans-serif;
-  font-size: 13px;
-  letter-spacing: 0.5px;
+  gap: .65rem;
   color: var(--ukir);
+  font-family: "Pragati Narrow", sans-serif;
+  font-size: .85rem;
   font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.pita-bagian::before {
+  content: "";
+  width: 1.8rem;
+  height: 2px;
+  background: currentColor;
+}
+.font-judul { letter-spacing: -.035em; }
+.kartu {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--garis);
+  border-radius: var(--radius-kartu);
+  background: rgba(255,255,255,.92);
+  padding: clamp(1.35rem, 2.5vw, 2rem);
+  box-shadow: var(--bayang-halus);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.kartu:hover {
+  transform: translateY(-4px);
+  border-color: rgba(184,92,20,.3);
+  box-shadow: 0 20px 48px rgba(9,24,58,.12);
+}
+
+/* Buttons */
+.tombol {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: .65rem;
+  padding: .8rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: .94rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: transform .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.tombol:hover { transform: translateY(-2px); }
+.tombol-ukir {
+  color: #fff;
+  background: var(--ukir);
+  box-shadow: 0 8px 22px rgba(184,92,20,.22);
+}
+.tombol-ukir:hover { background: #9f4d10; box-shadow: 0 10px 26px rgba(184,92,20,.3); }
+.tombol-garis {
+  color: var(--malam);
+  border-color: rgba(15,37,69,.28);
+  background: rgba(255,255,255,.08);
+}
+.tombol-garis:hover { color: #fff; border-color: var(--malam); background: var(--malam); }
+
+/* Shared section rhythm */
+section { scroll-margin-top: 6rem; }
+:target { scroll-margin-top: 6rem; }
+
+@media (max-width: 640px) {
+  .kontainer-laman { width: min(100% - 2rem, 1200px); }
+  .tombol { width: 100%; }
 }
