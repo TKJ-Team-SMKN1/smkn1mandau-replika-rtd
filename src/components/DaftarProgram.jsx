@@ -27,7 +27,7 @@ export default function DaftarProgram() {
   return (
     <div className="program-directory">
       <div className="program-search-wrap max-w-2xl mb-8">
-        <label htmlFor="cari-program" className="block text-sm font-bold text-malam mb-2">
+        <label htmlFor="cari-program" className="block text-sm font-bold font-nunito text-malam mb-2">
           Cari program keahlian
         </label>
         <p id="petunjuk-cari-program" className="text-sm text-tinta-pudar mb-3">
@@ -66,16 +66,16 @@ export default function DaftarProgram() {
           {hasil.map((program, index) => (
             <article key={program.id} className="kartu !p-6">
               <div className="flex items-center justify-between gap-3 mb-5">
-                <span className="font-rapat text-xs tracking-widest text-ukir">PROGRAM {String(index + 1).padStart(2, "0")}</span>
-                <span className="rounded-full bg-gading px-3 py-1 text-xs font-bold text-malam">{program.singkatan}</span>
+                <span className="font-office-code-pro text-xs tracking-widest text-ukir">PROGRAM {String(index + 1).padStart(2, "0")}</span>
+                <span className="rounded-full bg-gading px-3 py-1 text-xs font-bold font-reglo text-malam">{program.singkatan}</span>
               </div>
-              <h3 className="font-judul text-xl text-malam leading-snug">{program.nama}</h3>
+              <h3 className="font-judul font-familjen text-xl text-malam leading-snug">{program.nama}</h3>
             </article>
           ))}
         </div>
       ) : (
         <div className="program-empty rounded-2xl border border-dashed px-6 py-12 text-center">
-          <p className="font-judul text-xl text-malam mb-2">Program tidak ditemukan</p>
+          <p className="font-judul font-literata text-xl text-malam mb-2">Program tidak ditemukan</p>
           <p className="text-sm text-tinta-pudar mb-5">Periksa ejaan atau coba singkatan yang berbeda.</p>
           <button type="button" onClick={() => setKataKunci("")} className="tombol tombol-ukir !w-auto">
             Tampilkan semua program
