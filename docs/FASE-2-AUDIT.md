@@ -71,3 +71,10 @@ The site is built as static HTML; its deployed output does not ship the Node bui
 - Reduced-motion handling and visible focus styles remain in the global design system.
 
 These are source-level changes. A screenshot-based visual regression, real keyboard pass, 200% zoom/reflow check, and screen-reader review remain outstanding because the Vercel deployment is paused.
+
+
+## Pembaruan keamanan — 18 November 2026
+
+GitHub Advisory Database mencatat GHSA-fc5q-39xc-vjpf / CVE-2026-112366 sebagai ReDoS pada picomatch melalui repeated extglob satu cabang. Lockfile proyek memiliki picomatch 2.3.2 dan 4.0.7. Advisory menyatakan versi sampai 4.0.7 terdampak dan saat ini belum mencantumkan versi perbaikan. Jangan menggunakan npm audit fix --force, menurunkan Astro, atau mengunci fork yang belum ditinjau. Risiko ini tetap terbuka sebagai risiko toolchain build, bukan ditandai sebagai patched.
+
+Referensi: https://github.com/advisories/GHSA-fc5q-39xc-vjpf · https://osv.dev/vulnerability/GHSA-fc5q-39xc-vjpf · https://github.com/micromatch/picomatch/releases
