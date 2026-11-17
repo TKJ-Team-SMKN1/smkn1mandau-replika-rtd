@@ -69,7 +69,7 @@ export default function DaftarProgram() {
                 <span className="font-office-code-pro text-xs tracking-widest text-ukir">PROGRAM {String(index + 1).padStart(2, "0")}</span>
                 <span className="rounded-full bg-gading px-3 py-1 text-xs font-bold font-reglo text-malam">{program.singkatan}</span>
               </div>
-              <h3 className="font-judul font-familjen text-xl text-malam leading-snug">{program.nama}</h3>
+              <h2 className="font-judul font-familjen text-xl text-malam leading-snug">{program.nama}</h2>
             </article>
           ))}
         </div>
