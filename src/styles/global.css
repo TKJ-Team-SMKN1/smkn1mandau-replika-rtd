@@ -152,11 +152,6 @@ section { scroll-margin-top: 6rem; }
   .tombol { width: 100%; }
 }
 
-@font-face{font-family:"Outfit Local";src:url("/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-Regular.otf") format("opentype");font-weight:400;font-display:swap}
-@font-face{font-family:"Outfit Local";src:url("/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-Medium.otf") format("opentype");font-weight:500;font-display:swap}
-@font-face{font-family:"Outfit Local";src:url("/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-Bold.otf") format("opentype");font-weight:700;font-display:swap}
-@font-face{font-family:"Archivo Local";src:url("/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-Bold.otf") format("opentype");font-weight:700;font-display:swap}
-@font-face{font-family:"Azeret Mono Local";src:url("/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-Regular.otf") format("opentype");font-weight:400;font-display:swap}
 @layer base{body{font-family:"Outfit Local",system-ui,sans-serif;background:#f5f7fa}h1,h2,h3,.font-judul{font-family:"Archivo Local","Outfit Local",system-ui,sans-serif;font-weight:700}.font-rapat{font-family:"Azeret Mono Local",monospace}}
 .kontainer-laman{width:min(100% - 2.5rem,1240px)}.kartu{border-radius:1rem;box-shadow:0 8px 28px rgba(9,24,58,.055)}.kartu:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(9,24,58,.09)}
 .tombol{border-radius:.85rem;min-height:46px}.tombol-ukir{background:#a84f12;box-shadow:none}.tombol-ukir:hover{background:#873d0d;box-shadow:none}.tombol-garis{background:#fff}
