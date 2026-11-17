@@ -94,6 +94,8 @@ html[data-theme] .theme-control select {
       --text-muted: #b0bac9;
       --line-color: rgba(220, 230, 244, .16);
       --header-surface: #111722;
+      --header-text: #edf2f8;
+      --header-muted: #b0bac9;
       --accent-color: #e49a5c;
       --accent-contrast: #171b24;
       --focus-color: #9dc2ff;
