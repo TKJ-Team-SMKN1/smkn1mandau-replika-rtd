@@ -1,5 +1,6 @@
 import { readdir, readFile, access } from "node:fs/promises";
 import path from "node:path";
+import vm from "node:vm";
 
 const root = process.cwd();
 const dist = path.join(root, "dist");
@@ -90,6 +91,48 @@ for (const url of fontUrls) {
   if (!url.startsWith("/")) continue;
   try { await access(path.join(root, "public", url.slice(1))); }
   catch { fail(path.join(dist, "index.html"), "file font tidak ditemukan: " + url); }
+}
+
+
+const i18n = await readFile(path.join(root, "public/scripts/i18n.js"), "utf8");
+const translationsStart = i18n.indexOf("const translations =");
+if (translationsStart < 0) fail(path.join(dist, "index.html"), "objek translations tidak ditemukan.");
+else {
+  const open = i18n.indexOf("{", translationsStart);
+  let depth = 0, quote = null, escaped = false, end = -1;
+  for (let i = open; i < i18n.length; i++) {
+    const ch = i18n[i], next = i18n[i + 1];
+    if (quote) {
+      if (escaped) escaped = false;
+      else if (ch === "\\") escaped = true;
+      else if (ch === quote) quote = null;
+      continue;
+    }
+    if (ch === '"' || ch === "'" || ch === "\`") { quote = ch; continue; }
+    if (ch === "/" && next === "/") { i = i18n.indexOf("\n", i); if (i < 0) break; continue; }
+    if (ch === "/" && next === "*") { i = i18n.indexOf("*/", i + 2); if (i < 0) break; i++; continue; }
+    if (ch === "{") depth++;
+    if (ch === "}") { depth--; if (depth === 0) { end = i + 1; break; } }
+  }
+  if (end < 0) fail(path.join(dist, "index.html"), "objek translations tidak dapat diparse.");
+  else {
+    try {
+      const dictionaries = vm.runInNewContext("(" + i18n.slice(open, end) + ")", Object.create(null), { timeout: 1000 });
+      const languages = ["en", "ms", "zh"];
+      const keySets = Object.fromEntries(languages.map(language => [language, Object.keys(dictionaries[language] || {})]));
+      for (const language of languages) {
+        if (!dictionaries[language]) fail(path.join(dist, "index.html"), "kamus bahasa " + language + " tidak ditemukan.");
+      }
+      const allKeys = new Set(languages.flatMap(language => keySets[language]));
+      for (const language of languages) {
+        const missing = [...allKeys].filter(key => !(key in (dictionaries[language] || {})));
+        if (missing.length) warn(path.join(dist, "index.html"), "i18n " + language + ": " + missing.length + " key belum tersedia dibanding gabungan kamus.");
+      }
+      console.log("i18n dictionary key counts:", Object.fromEntries(languages.map(language => [language, keySets[language].length])));
+    } catch (error) {
+      fail(path.join(dist, "index.html"), "objek translations gagal diparse: " + error.message);
+    }
+  }
 }
 
 console.log("Static audit: " + htmlFiles.length + " halaman HTML; " + fontUrls.length + " referensi font.");
