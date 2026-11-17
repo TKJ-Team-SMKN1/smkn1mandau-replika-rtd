@@ -3,7 +3,7 @@
    M PLUS families remain late fallbacks for multilingual glyph coverage. */
 @font-face {
   font-family: "Anton Local";
-  src: url("/public/fonts/Anton_Complete/Anton_Complete/Fonts/OTF/Anton-Regular.otf") format("opentype");
+  src: url("/fonts/Anton_Complete/Anton_Complete/Fonts/OTF/Anton-Regular.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -11,7 +11,7 @@
 
 @font-face {
   font-family: "Archivo Local";
-  src: url("/public/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-Black.otf") format("opentype");
+  src: url("/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-Black.otf") format("opentype");
   font-style: normal;
   font-weight: 900;
   font-display: swap;
@@ -19,7 +19,7 @@
 
 @font-face {
   font-family: "Archivo Local";
-  src: url("/public/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-BlackItalic.otf") format("opentype");
+  src: url("/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-BlackItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 900;
   font-display: swap;
@@ -27,7 +27,7 @@
 
 @font-face {
   font-family: "Archivo Local";
-  src: url("/public/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-Bold.otf") format("opentype");
+  src: url("/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-Bold.otf") format("opentype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -35,7 +35,7 @@
 
 @font-face {
   font-family: "Archivo Local";
-  src: url("/public/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-BoldItalic.otf") format("opentype");
+  src: url("/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-BoldItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 700;
   font-display: swap;
@@ -43,7 +43,7 @@
 
 @font-face {
   font-family: "Archivo Local";
-  src: url("/public/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-ExtraBold.otf") format("opentype");
+  src: url("/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-ExtraBold.otf") format("opentype");
   font-style: normal;
   font-weight: 800;
   font-display: swap;
@@ -51,7 +51,7 @@
 
 @font-face {
   font-family: "Archivo Local";
-  src: url("/public/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-ExtraBoldItalic.otf") format("opentype");
+  src: url("/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-ExtraBoldItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 800;
   font-display: swap;
@@ -59,7 +59,7 @@
 
 @font-face {
   font-family: "Archivo Local";
-  src: url("/public/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-ExtraLight.otf") format("opentype");
+  src: url("/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-ExtraLight.otf") format("opentype");
   font-style: normal;
   font-weight: 200;
   font-display: swap;
@@ -67,7 +67,7 @@
 
 @font-face {
   font-family: "Archivo Local";
-  src: url("/public/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-ExtraLightItalic.otf") format("opentype");
+  src: url("/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-ExtraLightItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 200;
   font-display: swap;
@@ -75,7 +75,7 @@
 
 @font-face {
   font-family: "Archivo Local";
-  src: url("/public/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-Italic.otf") format("opentype");
+  src: url("/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-Italic.otf") format("opentype");
   font-style: italic;
   font-weight: 400;
   font-display: swap;
@@ -83,7 +83,7 @@
 
 @font-face {
   font-family: "Archivo Local";
-  src: url("/public/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-Light.otf") format("opentype");
+  src: url("/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-Light.otf") format("opentype");
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -91,7 +91,7 @@
 
 @font-face {
   font-family: "Archivo Local";
-  src: url("/public/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-LightItalic.otf") format("opentype");
+  src: url("/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-LightItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 300;
   font-display: swap;
@@ -99,7 +99,7 @@
 
 @font-face {
   font-family: "Archivo Local";
-  src: url("/public/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-Medium.otf") format("opentype");
+  src: url("/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-Medium.otf") format("opentype");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -107,7 +107,7 @@
 
 @font-face {
   font-family: "Archivo Local";
-  src: url("/public/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-MediumItalic.otf") format("opentype");
+  src: url("/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-MediumItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 500;
   font-display: swap;
@@ -115,7 +115,7 @@
 
 @font-face {
   font-family: "Archivo Local";
-  src: url("/public/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-Regular.otf") format("opentype");
+  src: url("/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-Regular.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -123,7 +123,7 @@
 
 @font-face {
   font-family: "Archivo Local";
-  src: url("/public/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-SemiBold.otf") format("opentype");
+  src: url("/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-SemiBold.otf") format("opentype");
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -131,7 +131,7 @@
 
 @font-face {
   font-family: "Archivo Local";
-  src: url("/public/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-SemiBoldItalic.otf") format("opentype");
+  src: url("/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-SemiBoldItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 600;
   font-display: swap;
@@ -139,7 +139,7 @@
 
 @font-face {
   font-family: "Archivo Local";
-  src: url("/public/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-Thin.otf") format("opentype");
+  src: url("/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-Thin.otf") format("opentype");
   font-style: normal;
   font-weight: 100;
   font-display: swap;
@@ -147,7 +147,7 @@
 
 @font-face {
   font-family: "Archivo Local";
-  src: url("/public/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-ThinItalic.otf") format("opentype");
+  src: url("/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-ThinItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 100;
   font-display: swap;
@@ -155,7 +155,7 @@
 
 @font-face {
   font-family: "Azeret Mono Local";
-  src: url("/public/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-Black.otf") format("opentype");
+  src: url("/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-Black.otf") format("opentype");
   font-style: normal;
   font-weight: 900;
   font-display: swap;
@@ -163,7 +163,7 @@
 
 @font-face {
   font-family: "Azeret Mono Local";
-  src: url("/public/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-BlackItalic.otf") format("opentype");
+  src: url("/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-BlackItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 900;
   font-display: swap;
@@ -171,7 +171,7 @@
 
 @font-face {
   font-family: "Azeret Mono Local";
-  src: url("/public/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-Bold.otf") format("opentype");
+  src: url("/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-Bold.otf") format("opentype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -179,7 +179,7 @@
 
 @font-face {
   font-family: "Azeret Mono Local";
-  src: url("/public/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-BoldItalic.otf") format("opentype");
+  src: url("/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-BoldItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 700;
   font-display: swap;
@@ -187,7 +187,7 @@
 
 @font-face {
   font-family: "Azeret Mono Local";
-  src: url("/public/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-ExtraBold.otf") format("opentype");
+  src: url("/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-ExtraBold.otf") format("opentype");
   font-style: normal;
   font-weight: 800;
   font-display: swap;
@@ -195,7 +195,7 @@
 
 @font-face {
   font-family: "Azeret Mono Local";
-  src: url("/public/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-ExtraBoldItalic.otf") format("opentype");
+  src: url("/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-ExtraBoldItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 800;
   font-display: swap;
@@ -203,7 +203,7 @@
 
 @font-face {
   font-family: "Azeret Mono Local";
-  src: url("/public/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-ExtraLight.otf") format("opentype");
+  src: url("/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-ExtraLight.otf") format("opentype");
   font-style: normal;
   font-weight: 200;
   font-display: swap;
@@ -211,7 +211,7 @@
 
 @font-face {
   font-family: "Azeret Mono Local";
-  src: url("/public/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-ExtraLightItalic.otf") format("opentype");
+  src: url("/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-ExtraLightItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 200;
   font-display: swap;
@@ -219,7 +219,7 @@
 
 @font-face {
   font-family: "Azeret Mono Local";
-  src: url("/public/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-Italic.otf") format("opentype");
+  src: url("/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-Italic.otf") format("opentype");
   font-style: italic;
   font-weight: 400;
   font-display: swap;
@@ -227,7 +227,7 @@
 
 @font-face {
   font-family: "Azeret Mono Local";
-  src: url("/public/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-Light.otf") format("opentype");
+  src: url("/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-Light.otf") format("opentype");
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -235,7 +235,7 @@
 
 @font-face {
   font-family: "Azeret Mono Local";
-  src: url("/public/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-LightItalic.otf") format("opentype");
+  src: url("/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-LightItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 300;
   font-display: swap;
@@ -243,7 +243,7 @@
 
 @font-face {
   font-family: "Azeret Mono Local";
-  src: url("/public/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-Medium.otf") format("opentype");
+  src: url("/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-Medium.otf") format("opentype");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -251,7 +251,7 @@
 
 @font-face {
   font-family: "Azeret Mono Local";
-  src: url("/public/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-MediumItalic.otf") format("opentype");
+  src: url("/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-MediumItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 500;
   font-display: swap;
@@ -259,7 +259,7 @@
 
 @font-face {
   font-family: "Azeret Mono Local";
-  src: url("/public/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-Regular.otf") format("opentype");
+  src: url("/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-Regular.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -267,7 +267,7 @@
 
 @font-face {
   font-family: "Azeret Mono Local";
-  src: url("/public/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-SemiBold.otf") format("opentype");
+  src: url("/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-SemiBold.otf") format("opentype");
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -275,7 +275,7 @@
 
 @font-face {
   font-family: "Azeret Mono Local";
-  src: url("/public/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-SemiBoldItalic.otf") format("opentype");
+  src: url("/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-SemiBoldItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 600;
   font-display: swap;
@@ -283,7 +283,7 @@
 
 @font-face {
   font-family: "Azeret Mono Local";
-  src: url("/public/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-Thin.otf") format("opentype");
+  src: url("/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-Thin.otf") format("opentype");
   font-style: normal;
   font-weight: 100;
   font-display: swap;
@@ -291,7 +291,7 @@
 
 @font-face {
   font-family: "Azeret Mono Local";
-  src: url("/public/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-ThinItalic.otf") format("opentype");
+  src: url("/fonts/AzeretMono_Complete/AzeretMono_Complete/Fonts/OTF/AzeretMono-ThinItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 100;
   font-display: swap;
@@ -299,7 +299,7 @@
 
 @font-face {
   font-family: "Bagnard Local";
-  src: url("/public/fonts/Bagnard.otf") format("opentype");
+  src: url("/fonts/Bagnard.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -307,7 +307,7 @@
 
 @font-face {
   font-family: "Crimson Pro Local";
-  src: url("/public/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-Black.otf") format("opentype");
+  src: url("/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-Black.otf") format("opentype");
   font-style: normal;
   font-weight: 900;
   font-display: swap;
@@ -315,7 +315,7 @@
 
 @font-face {
   font-family: "Crimson Pro Local";
-  src: url("/public/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-BlackItalic.otf") format("opentype");
+  src: url("/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-BlackItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 900;
   font-display: swap;
@@ -323,7 +323,7 @@
 
 @font-face {
   font-family: "Crimson Pro Local";
-  src: url("/public/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-Bold.otf") format("opentype");
+  src: url("/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-Bold.otf") format("opentype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -331,7 +331,7 @@
 
 @font-face {
   font-family: "Crimson Pro Local";
-  src: url("/public/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-BoldItalic.otf") format("opentype");
+  src: url("/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-BoldItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 700;
   font-display: swap;
@@ -339,7 +339,7 @@
 
 @font-face {
   font-family: "Crimson Pro Local";
-  src: url("/public/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-ExtraBold.otf") format("opentype");
+  src: url("/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-ExtraBold.otf") format("opentype");
   font-style: normal;
   font-weight: 800;
   font-display: swap;
@@ -347,7 +347,7 @@
 
 @font-face {
   font-family: "Crimson Pro Local";
-  src: url("/public/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-ExtraBoldItalic.otf") format("opentype");
+  src: url("/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-ExtraBoldItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 800;
   font-display: swap;
@@ -355,7 +355,7 @@
 
 @font-face {
   font-family: "Crimson Pro Local";
-  src: url("/public/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-ExtraLight.otf") format("opentype");
+  src: url("/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-ExtraLight.otf") format("opentype");
   font-style: normal;
   font-weight: 200;
   font-display: swap;
@@ -363,7 +363,7 @@
 
 @font-face {
   font-family: "Crimson Pro Local";
-  src: url("/public/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-ExtraLightItalic.otf") format("opentype");
+  src: url("/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-ExtraLightItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 200;
   font-display: swap;
@@ -371,7 +371,7 @@
 
 @font-face {
   font-family: "Crimson Pro Local";
-  src: url("/public/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-Italic.otf") format("opentype");
+  src: url("/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-Italic.otf") format("opentype");
   font-style: italic;
   font-weight: 400;
   font-display: swap;
@@ -379,7 +379,7 @@
 
 @font-face {
   font-family: "Crimson Pro Local";
-  src: url("/public/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-Light.otf") format("opentype");
+  src: url("/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-Light.otf") format("opentype");
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -387,7 +387,7 @@
 
 @font-face {
   font-family: "Crimson Pro Local";
-  src: url("/public/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-LightItalic.otf") format("opentype");
+  src: url("/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-LightItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 300;
   font-display: swap;
@@ -395,7 +395,7 @@
 
 @font-face {
   font-family: "Crimson Pro Local";
-  src: url("/public/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-Medium.otf") format("opentype");
+  src: url("/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-Medium.otf") format("opentype");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -403,7 +403,7 @@
 
 @font-face {
   font-family: "Crimson Pro Local";
-  src: url("/public/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-MediumItalic.otf") format("opentype");
+  src: url("/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-MediumItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 500;
   font-display: swap;
@@ -411,7 +411,7 @@
 
 @font-face {
   font-family: "Crimson Pro Local";
-  src: url("/public/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-Regular.otf") format("opentype");
+  src: url("/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-Regular.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -419,7 +419,7 @@
 
 @font-face {
   font-family: "Crimson Pro Local";
-  src: url("/public/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-SemiBold.otf") format("opentype");
+  src: url("/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-SemiBold.otf") format("opentype");
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -427,7 +427,7 @@
 
 @font-face {
   font-family: "Crimson Pro Local";
-  src: url("/public/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-SemiBoldItalic.otf") format("opentype");
+  src: url("/fonts/CrimsonPro_Complete/CrimsonPro_Complete/Fonts/OTF/CrimsonPro-SemiBoldItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 600;
   font-display: swap;
@@ -435,7 +435,7 @@
 
 @font-face {
   font-family: "Familjen Grotesk Local";
-  src: url("/public/fonts/FamiljenGrotesk_Complete/FamiljenGrotesk_Complete/Fonts/OTF/FamiljenGrotesk-Bold.otf") format("opentype");
+  src: url("/fonts/FamiljenGrotesk_Complete/FamiljenGrotesk_Complete/Fonts/OTF/FamiljenGrotesk-Bold.otf") format("opentype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -443,7 +443,7 @@
 
 @font-face {
   font-family: "Familjen Grotesk Local";
-  src: url("/public/fonts/FamiljenGrotesk_Complete/FamiljenGrotesk_Complete/Fonts/OTF/FamiljenGrotesk-BoldItalic.otf") format("opentype");
+  src: url("/fonts/FamiljenGrotesk_Complete/FamiljenGrotesk_Complete/Fonts/OTF/FamiljenGrotesk-BoldItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 700;
   font-display: swap;
@@ -451,7 +451,7 @@
 
 @font-face {
   font-family: "Familjen Grotesk Local";
-  src: url("/public/fonts/FamiljenGrotesk_Complete/FamiljenGrotesk_Complete/Fonts/OTF/FamiljenGrotesk-Italic.otf") format("opentype");
+  src: url("/fonts/FamiljenGrotesk_Complete/FamiljenGrotesk_Complete/Fonts/OTF/FamiljenGrotesk-Italic.otf") format("opentype");
   font-style: italic;
   font-weight: 400;
   font-display: swap;
@@ -459,7 +459,7 @@
 
 @font-face {
   font-family: "Familjen Grotesk Local";
-  src: url("/public/fonts/FamiljenGrotesk_Complete/FamiljenGrotesk_Complete/Fonts/OTF/FamiljenGrotesk-Medium.otf") format("opentype");
+  src: url("/fonts/FamiljenGrotesk_Complete/FamiljenGrotesk_Complete/Fonts/OTF/FamiljenGrotesk-Medium.otf") format("opentype");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -467,7 +467,7 @@
 
 @font-face {
   font-family: "Familjen Grotesk Local";
-  src: url("/public/fonts/FamiljenGrotesk_Complete/FamiljenGrotesk_Complete/Fonts/OTF/FamiljenGrotesk-MediumItalic.otf") format("opentype");
+  src: url("/fonts/FamiljenGrotesk_Complete/FamiljenGrotesk_Complete/Fonts/OTF/FamiljenGrotesk-MediumItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 500;
   font-display: swap;
@@ -475,7 +475,7 @@
 
 @font-face {
   font-family: "Familjen Grotesk Local";
-  src: url("/public/fonts/FamiljenGrotesk_Complete/FamiljenGrotesk_Complete/Fonts/OTF/FamiljenGrotesk-Regular.otf") format("opentype");
+  src: url("/fonts/FamiljenGrotesk_Complete/FamiljenGrotesk_Complete/Fonts/OTF/FamiljenGrotesk-Regular.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -483,7 +483,7 @@
 
 @font-face {
   font-family: "Familjen Grotesk Local";
-  src: url("/public/fonts/FamiljenGrotesk_Complete/FamiljenGrotesk_Complete/Fonts/OTF/FamiljenGrotesk-SemiBold.otf") format("opentype");
+  src: url("/fonts/FamiljenGrotesk_Complete/FamiljenGrotesk_Complete/Fonts/OTF/FamiljenGrotesk-SemiBold.otf") format("opentype");
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -491,7 +491,7 @@
 
 @font-face {
   font-family: "Familjen Grotesk Local";
-  src: url("/public/fonts/FamiljenGrotesk_Complete/FamiljenGrotesk_Complete/Fonts/OTF/FamiljenGrotesk-SemiBoldItalic.otf") format("opentype");
+  src: url("/fonts/FamiljenGrotesk_Complete/FamiljenGrotesk_Complete/Fonts/OTF/FamiljenGrotesk-SemiBoldItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 600;
   font-display: swap;
@@ -499,7 +499,7 @@
 
 @font-face {
   font-family: "Literata Local";
-  src: url("/public/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-Black.otf") format("opentype");
+  src: url("/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-Black.otf") format("opentype");
   font-style: normal;
   font-weight: 900;
   font-display: swap;
@@ -507,7 +507,7 @@
 
 @font-face {
   font-family: "Literata Local";
-  src: url("/public/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-BlackItalic.otf") format("opentype");
+  src: url("/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-BlackItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 900;
   font-display: swap;
@@ -515,7 +515,7 @@
 
 @font-face {
   font-family: "Literata Local";
-  src: url("/public/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-Bold.otf") format("opentype");
+  src: url("/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-Bold.otf") format("opentype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -523,7 +523,7 @@
 
 @font-face {
   font-family: "Literata Local";
-  src: url("/public/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-BoldItalic.otf") format("opentype");
+  src: url("/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-BoldItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 700;
   font-display: swap;
@@ -531,7 +531,7 @@
 
 @font-face {
   font-family: "Literata Local";
-  src: url("/public/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-ExtraBold.otf") format("opentype");
+  src: url("/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-ExtraBold.otf") format("opentype");
   font-style: normal;
   font-weight: 800;
   font-display: swap;
@@ -539,7 +539,7 @@
 
 @font-face {
   font-family: "Literata Local";
-  src: url("/public/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-ExtraBoldItalic.otf") format("opentype");
+  src: url("/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-ExtraBoldItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 800;
   font-display: swap;
@@ -547,7 +547,7 @@
 
 @font-face {
   font-family: "Literata Local";
-  src: url("/public/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-ExtraLight.otf") format("opentype");
+  src: url("/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-ExtraLight.otf") format("opentype");
   font-style: normal;
   font-weight: 200;
   font-display: swap;
@@ -555,7 +555,7 @@
 
 @font-face {
   font-family: "Literata Local";
-  src: url("/public/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-ExtraLightItalic.otf") format("opentype");
+  src: url("/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-ExtraLightItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 200;
   font-display: swap;
@@ -563,7 +563,7 @@
 
 @font-face {
   font-family: "Literata Local";
-  src: url("/public/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-Italic.otf") format("opentype");
+  src: url("/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-Italic.otf") format("opentype");
   font-style: italic;
   font-weight: 400;
   font-display: swap;
@@ -571,7 +571,7 @@
 
 @font-face {
   font-family: "Literata Local";
-  src: url("/public/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-Light.otf") format("opentype");
+  src: url("/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-Light.otf") format("opentype");
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -579,7 +579,7 @@
 
 @font-face {
   font-family: "Literata Local";
-  src: url("/public/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-LightItalic.otf") format("opentype");
+  src: url("/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-LightItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 300;
   font-display: swap;
@@ -587,7 +587,7 @@
 
 @font-face {
   font-family: "Literata Local";
-  src: url("/public/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-Medium.otf") format("opentype");
+  src: url("/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-Medium.otf") format("opentype");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -595,7 +595,7 @@
 
 @font-face {
   font-family: "Literata Local";
-  src: url("/public/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-MediumItalic.otf") format("opentype");
+  src: url("/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-MediumItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 500;
   font-display: swap;
@@ -603,7 +603,7 @@
 
 @font-face {
   font-family: "Literata Local";
-  src: url("/public/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-Regular.otf") format("opentype");
+  src: url("/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-Regular.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -611,7 +611,7 @@
 
 @font-face {
   font-family: "Literata Local";
-  src: url("/public/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-SemiBold.otf") format("opentype");
+  src: url("/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-SemiBold.otf") format("opentype");
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -619,7 +619,7 @@
 
 @font-face {
   font-family: "Literata Local";
-  src: url("/public/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-SemiBoldItalic.otf") format("opentype");
+  src: url("/fonts/Literata_Complete/Literata_Complete/Fonts/OTF/Literata-SemiBoldItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 600;
   font-display: swap;
@@ -627,7 +627,7 @@
 
 @font-face {
   font-family: "Lora Local";
-  src: url("/public/fonts/Lora_Complete/Lora_Complete/Fonts/OTF/Lora-Bold.otf") format("opentype");
+  src: url("/fonts/Lora_Complete/Lora_Complete/Fonts/OTF/Lora-Bold.otf") format("opentype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -635,7 +635,7 @@
 
 @font-face {
   font-family: "Lora Local";
-  src: url("/public/fonts/Lora_Complete/Lora_Complete/Fonts/OTF/Lora-BoldItalic.otf") format("opentype");
+  src: url("/fonts/Lora_Complete/Lora_Complete/Fonts/OTF/Lora-BoldItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 700;
   font-display: swap;
@@ -643,7 +643,7 @@
 
 @font-face {
   font-family: "Lora Local";
-  src: url("/public/fonts/Lora_Complete/Lora_Complete/Fonts/OTF/Lora-Italic.otf") format("opentype");
+  src: url("/fonts/Lora_Complete/Lora_Complete/Fonts/OTF/Lora-Italic.otf") format("opentype");
   font-style: italic;
   font-weight: 400;
   font-display: swap;
@@ -651,7 +651,7 @@
 
 @font-face {
   font-family: "Lora Local";
-  src: url("/public/fonts/Lora_Complete/Lora_Complete/Fonts/OTF/Lora-Medium.otf") format("opentype");
+  src: url("/fonts/Lora_Complete/Lora_Complete/Fonts/OTF/Lora-Medium.otf") format("opentype");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -659,7 +659,7 @@
 
 @font-face {
   font-family: "Lora Local";
-  src: url("/public/fonts/Lora_Complete/Lora_Complete/Fonts/OTF/Lora-MediumItalic.otf") format("opentype");
+  src: url("/fonts/Lora_Complete/Lora_Complete/Fonts/OTF/Lora-MediumItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 500;
   font-display: swap;
@@ -667,7 +667,7 @@
 
 @font-face {
   font-family: "Lora Local";
-  src: url("/public/fonts/Lora_Complete/Lora_Complete/Fonts/OTF/Lora-Regular.otf") format("opentype");
+  src: url("/fonts/Lora_Complete/Lora_Complete/Fonts/OTF/Lora-Regular.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -675,7 +675,7 @@
 
 @font-face {
   font-family: "Lora Local";
-  src: url("/public/fonts/Lora_Complete/Lora_Complete/Fonts/OTF/Lora-SemiBold.otf") format("opentype");
+  src: url("/fonts/Lora_Complete/Lora_Complete/Fonts/OTF/Lora-SemiBold.otf") format("opentype");
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -683,7 +683,7 @@
 
 @font-face {
   font-family: "Lora Local";
-  src: url("/public/fonts/Lora_Complete/Lora_Complete/Fonts/OTF/Lora-SemiBoldItalic.otf") format("opentype");
+  src: url("/fonts/Lora_Complete/Lora_Complete/Fonts/OTF/Lora-SemiBoldItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 600;
   font-display: swap;
@@ -691,7 +691,7 @@
 
 @font-face {
   font-family: "M PLUS 1 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1/otf/MPLUS1-Black.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1/otf/MPLUS1-Black.otf") format("opentype");
   font-style: normal;
   font-weight: 900;
   font-display: swap;
@@ -699,7 +699,7 @@
 
 @font-face {
   font-family: "M PLUS 1 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1/otf/MPLUS1-Bold.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1/otf/MPLUS1-Bold.otf") format("opentype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -707,7 +707,7 @@
 
 @font-face {
   font-family: "M PLUS 1 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1/otf/MPLUS1-ExtraBold.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1/otf/MPLUS1-ExtraBold.otf") format("opentype");
   font-style: normal;
   font-weight: 800;
   font-display: swap;
@@ -715,7 +715,7 @@
 
 @font-face {
   font-family: "M PLUS 1 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1/otf/MPLUS1-ExtraLight.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1/otf/MPLUS1-ExtraLight.otf") format("opentype");
   font-style: normal;
   font-weight: 200;
   font-display: swap;
@@ -723,7 +723,7 @@
 
 @font-face {
   font-family: "M PLUS 1 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1/otf/MPLUS1-Light.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1/otf/MPLUS1-Light.otf") format("opentype");
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -731,7 +731,7 @@
 
 @font-face {
   font-family: "M PLUS 1 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1/otf/MPLUS1-Medium.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1/otf/MPLUS1-Medium.otf") format("opentype");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -739,7 +739,7 @@
 
 @font-face {
   font-family: "M PLUS 1 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1/otf/MPLUS1-Regular.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1/otf/MPLUS1-Regular.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -747,7 +747,7 @@
 
 @font-face {
   font-family: "M PLUS 1 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1/otf/MPLUS1-SemiBold.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1/otf/MPLUS1-SemiBold.otf") format("opentype");
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -755,7 +755,7 @@
 
 @font-face {
   font-family: "M PLUS 1 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1/otf/MPLUS1-Thin.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1/otf/MPLUS1-Thin.otf") format("opentype");
   font-style: normal;
   font-weight: 100;
   font-display: swap;
@@ -763,7 +763,7 @@
 
 @font-face {
   font-family: "M PLUS 1 Code Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1Code/otf/MPLUS1Code-Bold.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1Code/otf/MPLUS1Code-Bold.otf") format("opentype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -771,7 +771,7 @@
 
 @font-face {
   font-family: "M PLUS 1 Code Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1Code/otf/MPLUS1Code-ExtraLight.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1Code/otf/MPLUS1Code-ExtraLight.otf") format("opentype");
   font-style: normal;
   font-weight: 200;
   font-display: swap;
@@ -779,7 +779,7 @@
 
 @font-face {
   font-family: "M PLUS 1 Code Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1Code/otf/MPLUS1Code-Light.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1Code/otf/MPLUS1Code-Light.otf") format("opentype");
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -787,7 +787,7 @@
 
 @font-face {
   font-family: "M PLUS 1 Code Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1Code/otf/MPLUS1Code-Medium.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1Code/otf/MPLUS1Code-Medium.otf") format("opentype");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -795,7 +795,7 @@
 
 @font-face {
   font-family: "M PLUS 1 Code Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1Code/otf/MPLUS1Code-Regular.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1Code/otf/MPLUS1Code-Regular.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -803,7 +803,7 @@
 
 @font-face {
   font-family: "M PLUS 1 Code Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1Code/otf/MPLUS1Code-SemiBold.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1Code/otf/MPLUS1Code-SemiBold.otf") format("opentype");
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -811,7 +811,7 @@
 
 @font-face {
   font-family: "M PLUS 1 Code Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1Code/otf/MPLUS1Code-Thin.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS1Code/otf/MPLUS1Code-Thin.otf") format("opentype");
   font-style: normal;
   font-weight: 100;
   font-display: swap;
@@ -819,7 +819,7 @@
 
 @font-face {
   font-family: "M PLUS 2 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS2/otf/MPLUS2-Black.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS2/otf/MPLUS2-Black.otf") format("opentype");
   font-style: normal;
   font-weight: 900;
   font-display: swap;
@@ -827,7 +827,7 @@
 
 @font-face {
   font-family: "M PLUS 2 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS2/otf/MPLUS2-Bold.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS2/otf/MPLUS2-Bold.otf") format("opentype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -835,7 +835,7 @@
 
 @font-face {
   font-family: "M PLUS 2 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS2/otf/MPLUS2-ExtraBold.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS2/otf/MPLUS2-ExtraBold.otf") format("opentype");
   font-style: normal;
   font-weight: 800;
   font-display: swap;
@@ -843,7 +843,7 @@
 
 @font-face {
   font-family: "M PLUS 2 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS2/otf/MPLUS2-ExtraLight.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS2/otf/MPLUS2-ExtraLight.otf") format("opentype");
   font-style: normal;
   font-weight: 200;
   font-display: swap;
@@ -851,7 +851,7 @@
 
 @font-face {
   font-family: "M PLUS 2 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS2/otf/MPLUS2-Light.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS2/otf/MPLUS2-Light.otf") format("opentype");
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -859,7 +859,7 @@
 
 @font-face {
   font-family: "M PLUS 2 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS2/otf/MPLUS2-Medium.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS2/otf/MPLUS2-Medium.otf") format("opentype");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -867,7 +867,7 @@
 
 @font-face {
   font-family: "M PLUS 2 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS2/otf/MPLUS2-Regular.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS2/otf/MPLUS2-Regular.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -875,7 +875,7 @@
 
 @font-face {
   font-family: "M PLUS 2 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS2/otf/MPLUS2-SemiBold.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS2/otf/MPLUS2-SemiBold.otf") format("opentype");
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -883,7 +883,7 @@
 
 @font-face {
   font-family: "M PLUS 2 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS2/otf/MPLUS2-Thin.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUS2/otf/MPLUS2-Thin.otf") format("opentype");
   font-style: normal;
   font-weight: 100;
   font-display: swap;
@@ -891,7 +891,7 @@
 
 @font-face {
   font-family: "M PLUS Code Latin 50 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin50-Bold.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin50-Bold.otf") format("opentype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -899,7 +899,7 @@
 
 @font-face {
   font-family: "M PLUS Code Latin 50 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin50-ExtraLight.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin50-ExtraLight.otf") format("opentype");
   font-style: normal;
   font-weight: 200;
   font-display: swap;
@@ -907,7 +907,7 @@
 
 @font-face {
   font-family: "M PLUS Code Latin 50 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin50-Light.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin50-Light.otf") format("opentype");
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -915,7 +915,7 @@
 
 @font-face {
   font-family: "M PLUS Code Latin 50 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin50-Medium.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin50-Medium.otf") format("opentype");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -923,7 +923,7 @@
 
 @font-face {
   font-family: "M PLUS Code Latin 50 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin50-Regular.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin50-Regular.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -931,7 +931,7 @@
 
 @font-face {
   font-family: "M PLUS Code Latin 50 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin50-SemiBold.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin50-SemiBold.otf") format("opentype");
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -939,7 +939,7 @@
 
 @font-face {
   font-family: "M PLUS Code Latin 50 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin50-Thin.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin50-Thin.otf") format("opentype");
   font-style: normal;
   font-weight: 100;
   font-display: swap;
@@ -947,7 +947,7 @@
 
 @font-face {
   font-family: "M PLUS Code Latin 60 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin60-Bold.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin60-Bold.otf") format("opentype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -955,7 +955,7 @@
 
 @font-face {
   font-family: "M PLUS Code Latin 60 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin60-ExtraLight.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin60-ExtraLight.otf") format("opentype");
   font-style: normal;
   font-weight: 200;
   font-display: swap;
@@ -963,7 +963,7 @@
 
 @font-face {
   font-family: "M PLUS Code Latin 60 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin60-Light.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin60-Light.otf") format("opentype");
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -971,7 +971,7 @@
 
 @font-face {
   font-family: "M PLUS Code Latin 60 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin60-Medium.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin60-Medium.otf") format("opentype");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -979,7 +979,7 @@
 
 @font-face {
   font-family: "M PLUS Code Latin 60 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin60-Regular.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin60-Regular.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -987,7 +987,7 @@
 
 @font-face {
   font-family: "M PLUS Code Latin 60 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin60-SemiBold.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin60-SemiBold.otf") format("opentype");
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -995,7 +995,7 @@
 
 @font-face {
   font-family: "M PLUS Code Latin 60 Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin60-Thin.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSCodeLatin/otf/MPLUSCodeLatin60-Thin.otf") format("opentype");
   font-style: normal;
   font-weight: 100;
   font-display: swap;
@@ -1003,7 +1003,7 @@
 
 @font-face {
   font-family: "M PLUS U Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSU/otf/MPLUSU-Black.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSU/otf/MPLUSU-Black.otf") format("opentype");
   font-style: normal;
   font-weight: 900;
   font-display: swap;
@@ -1011,7 +1011,7 @@
 
 @font-face {
   font-family: "M PLUS U Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSU/otf/MPLUSU-Bold.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSU/otf/MPLUSU-Bold.otf") format("opentype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -1019,7 +1019,7 @@
 
 @font-face {
   font-family: "M PLUS U Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSU/otf/MPLUSU-ExtraBold.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSU/otf/MPLUSU-ExtraBold.otf") format("opentype");
   font-style: normal;
   font-weight: 800;
   font-display: swap;
@@ -1027,7 +1027,7 @@
 
 @font-face {
   font-family: "M PLUS U Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSU/otf/MPLUSU-ExtraLight.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSU/otf/MPLUSU-ExtraLight.otf") format("opentype");
   font-style: normal;
   font-weight: 200;
   font-display: swap;
@@ -1035,7 +1035,7 @@
 
 @font-face {
   font-family: "M PLUS U Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSU/otf/MPLUSU-Light.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSU/otf/MPLUSU-Light.otf") format("opentype");
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -1043,7 +1043,7 @@
 
 @font-face {
   font-family: "M PLUS U Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSU/otf/MPLUSU-Medium.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSU/otf/MPLUSU-Medium.otf") format("opentype");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -1051,7 +1051,7 @@
 
 @font-face {
   font-family: "M PLUS U Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSU/otf/MPLUSU-Regular.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSU/otf/MPLUSU-Regular.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -1059,7 +1059,7 @@
 
 @font-face {
   font-family: "M PLUS U Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSU/otf/MPLUSU-SemiBold.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSU/otf/MPLUSU-SemiBold.otf") format("opentype");
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -1067,7 +1067,7 @@
 
 @font-face {
   font-family: "M PLUS U Local";
-  src: url("/public/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSU/otf/MPLUSU-Thin.otf") format("opentype");
+  src: url("/fonts/MPLUS_FONTS-master/MPLUS_FONTS-master/fonts/MPLUSU/otf/MPLUSU-Thin.otf") format("opentype");
   font-style: normal;
   font-weight: 100;
   font-display: swap;
@@ -1075,7 +1075,7 @@
 
 @font-face {
   font-family: "Nunito Local";
-  src: url("/public/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-Black.otf") format("opentype");
+  src: url("/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-Black.otf") format("opentype");
   font-style: normal;
   font-weight: 900;
   font-display: swap;
@@ -1083,7 +1083,7 @@
 
 @font-face {
   font-family: "Nunito Local";
-  src: url("/public/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-BlackItalic.otf") format("opentype");
+  src: url("/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-BlackItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 900;
   font-display: swap;
@@ -1091,7 +1091,7 @@
 
 @font-face {
   font-family: "Nunito Local";
-  src: url("/public/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-Bold.otf") format("opentype");
+  src: url("/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-Bold.otf") format("opentype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -1099,7 +1099,7 @@
 
 @font-face {
   font-family: "Nunito Local";
-  src: url("/public/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-BoldItalic.otf") format("opentype");
+  src: url("/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-BoldItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 700;
   font-display: swap;
@@ -1107,7 +1107,7 @@
 
 @font-face {
   font-family: "Nunito Local";
-  src: url("/public/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-ExtraBold.otf") format("opentype");
+  src: url("/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-ExtraBold.otf") format("opentype");
   font-style: normal;
   font-weight: 800;
   font-display: swap;
@@ -1115,7 +1115,7 @@
 
 @font-face {
   font-family: "Nunito Local";
-  src: url("/public/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-ExtraBoldItalic.otf") format("opentype");
+  src: url("/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-ExtraBoldItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 800;
   font-display: swap;
@@ -1123,7 +1123,7 @@
 
 @font-face {
   font-family: "Nunito Local";
-  src: url("/public/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-ExtraLight.otf") format("opentype");
+  src: url("/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-ExtraLight.otf") format("opentype");
   font-style: normal;
   font-weight: 200;
   font-display: swap;
@@ -1131,7 +1131,7 @@
 
 @font-face {
   font-family: "Nunito Local";
-  src: url("/public/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-ExtraLightItalic.otf") format("opentype");
+  src: url("/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-ExtraLightItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 200;
   font-display: swap;
@@ -1139,7 +1139,7 @@
 
 @font-face {
   font-family: "Nunito Local";
-  src: url("/public/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-Italic.otf") format("opentype");
+  src: url("/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-Italic.otf") format("opentype");
   font-style: italic;
   font-weight: 400;
   font-display: swap;
@@ -1147,7 +1147,7 @@
 
 @font-face {
   font-family: "Nunito Local";
-  src: url("/public/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-Light.otf") format("opentype");
+  src: url("/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-Light.otf") format("opentype");
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -1155,7 +1155,7 @@
 
 @font-face {
   font-family: "Nunito Local";
-  src: url("/public/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-LightItalic.otf") format("opentype");
+  src: url("/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-LightItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 300;
   font-display: swap;
@@ -1163,7 +1163,7 @@
 
 @font-face {
   font-family: "Nunito Local";
-  src: url("/public/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-Medium.otf") format("opentype");
+  src: url("/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-Medium.otf") format("opentype");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -1171,7 +1171,7 @@
 
 @font-face {
   font-family: "Nunito Local";
-  src: url("/public/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-MediumItalic.otf") format("opentype");
+  src: url("/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-MediumItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 500;
   font-display: swap;
@@ -1179,7 +1179,7 @@
 
 @font-face {
   font-family: "Nunito Local";
-  src: url("/public/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-Regular.otf") format("opentype");
+  src: url("/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-Regular.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -1187,7 +1187,7 @@
 
 @font-face {
   font-family: "Nunito Local";
-  src: url("/public/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-SemiBold.otf") format("opentype");
+  src: url("/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-SemiBold.otf") format("opentype");
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -1195,7 +1195,7 @@
 
 @font-face {
   font-family: "Nunito Local";
-  src: url("/public/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-SemiBoldItalic.otf") format("opentype");
+  src: url("/fonts/Nunito_Complete/Nunito_Complete/Fonts/OTF/Nunito-SemiBoldItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 600;
   font-display: swap;
@@ -1203,7 +1203,7 @@
 
 @font-face {
   font-family: "Outfit Local";
-  src: url("/public/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-Black.otf") format("opentype");
+  src: url("/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-Black.otf") format("opentype");
   font-style: normal;
   font-weight: 900;
   font-display: swap;
@@ -1211,7 +1211,7 @@
 
 @font-face {
   font-family: "Outfit Local";
-  src: url("/public/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-Bold.otf") format("opentype");
+  src: url("/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-Bold.otf") format("opentype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -1219,7 +1219,7 @@
 
 @font-face {
   font-family: "Outfit Local";
-  src: url("/public/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-ExtraBold.otf") format("opentype");
+  src: url("/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-ExtraBold.otf") format("opentype");
   font-style: normal;
   font-weight: 800;
   font-display: swap;
@@ -1227,7 +1227,7 @@
 
 @font-face {
   font-family: "Outfit Local";
-  src: url("/public/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-ExtraLight.otf") format("opentype");
+  src: url("/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-ExtraLight.otf") format("opentype");
   font-style: normal;
   font-weight: 200;
   font-display: swap;
@@ -1235,7 +1235,7 @@
 
 @font-face {
   font-family: "Outfit Local";
-  src: url("/public/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-Light.otf") format("opentype");
+  src: url("/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-Light.otf") format("opentype");
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -1243,7 +1243,7 @@
 
 @font-face {
   font-family: "Outfit Local";
-  src: url("/public/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-Medium.otf") format("opentype");
+  src: url("/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-Medium.otf") format("opentype");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -1251,7 +1251,7 @@
 
 @font-face {
   font-family: "Outfit Local";
-  src: url("/public/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-Regular.otf") format("opentype");
+  src: url("/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-Regular.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -1259,7 +1259,7 @@
 
 @font-face {
   font-family: "Outfit Local";
-  src: url("/public/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-SemiBold.otf") format("opentype");
+  src: url("/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-SemiBold.otf") format("opentype");
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -1267,7 +1267,7 @@
 
 @font-face {
   font-family: "Outfit Local";
-  src: url("/public/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-Thin.otf") format("opentype");
+  src: url("/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-Thin.otf") format("opentype");
   font-style: normal;
   font-weight: 100;
   font-display: swap;
@@ -1275,7 +1275,7 @@
 
 @font-face {
   font-family: "Reglo Local";
-  src: url("/public/fonts/Reglo-Bold.otf") format("opentype");
+  src: url("/fonts/Reglo-Bold.otf") format("opentype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -1283,7 +1283,7 @@
 
 @font-face {
   font-family: "Office Code Pro D Local";
-  src: url("/public/fonts/office-code-pro/OfficeCodeProD-Bold.otf") format("opentype");
+  src: url("/fonts/office-code-pro/OfficeCodeProD-Bold.otf") format("opentype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -1291,7 +1291,7 @@
 
 @font-face {
   font-family: "Office Code Pro D Local";
-  src: url("/public/fonts/office-code-pro/OfficeCodeProD-BoldItalic.otf") format("opentype");
+  src: url("/fonts/office-code-pro/OfficeCodeProD-BoldItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 700;
   font-display: swap;
@@ -1299,7 +1299,7 @@
 
 @font-face {
   font-family: "Office Code Pro D Local";
-  src: url("/public/fonts/office-code-pro/OfficeCodeProD-RegularItalic.otf") format("opentype");
+  src: url("/fonts/office-code-pro/OfficeCodeProD-RegularItalic.otf") format("opentype");
   font-style: italic;
   font-weight: 400;
   font-display: swap;
@@ -1307,7 +1307,7 @@
 
 @font-face {
   font-family: "Office Code Pro Local";
-  src: url("/public/fonts/office-code-pro/officecodepro-bold.otf") format("opentype");
+  src: url("/fonts/office-code-pro/officecodepro-bold.otf") format("opentype");
   font-style: normal;
   font-weight: 700;
   font-display: swap;
@@ -1315,7 +1315,7 @@
 
 @font-face {
   font-family: "Office Code Pro Local";
-  src: url("/public/fonts/office-code-pro/officecodepro-bolditalic.otf") format("opentype");
+  src: url("/fonts/office-code-pro/officecodepro-bolditalic.otf") format("opentype");
   font-style: italic;
   font-weight: 700;
   font-display: swap;
@@ -1323,7 +1323,7 @@
 
 @font-face {
   font-family: "Office Code Pro Local";
-  src: url("/public/fonts/office-code-pro/officecodepro-light.otf") format("opentype");
+  src: url("/fonts/office-code-pro/officecodepro-light.otf") format("opentype");
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -1331,7 +1331,7 @@
 
 @font-face {
   font-family: "Office Code Pro Local";
-  src: url("/public/fonts/office-code-pro/officecodepro-lightitalic.otf") format("opentype");
+  src: url("/fonts/office-code-pro/officecodepro-lightitalic.otf") format("opentype");
   font-style: italic;
   font-weight: 300;
   font-display: swap;
@@ -1339,7 +1339,7 @@
 
 @font-face {
   font-family: "Office Code Pro Local";
-  src: url("/public/fonts/office-code-pro/officecodepro-medium.otf") format("opentype");
+  src: url("/fonts/office-code-pro/officecodepro-medium.otf") format("opentype");
   font-style: normal;
   font-weight: 500;
   font-display: swap;
@@ -1347,7 +1347,7 @@
 
 @font-face {
   font-family: "Office Code Pro Local";
-  src: url("/public/fonts/office-code-pro/officecodepro-mediumitalic.otf") format("opentype");
+  src: url("/fonts/office-code-pro/officecodepro-mediumitalic.otf") format("opentype");
   font-style: italic;
   font-weight: 500;
   font-display: swap;
@@ -1355,7 +1355,7 @@
 
 @font-face {
   font-family: "Office Code Pro Local";
-  src: url("/public/fonts/office-code-pro/officecodepro-regular.otf") format("opentype");
+  src: url("/fonts/office-code-pro/officecodepro-regular.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -1363,7 +1363,7 @@
 
 @font-face {
   font-family: "Office Code Pro Local";
-  src: url("/public/fonts/office-code-pro/officecodepro-regularitalic.otf") format("opentype");
+  src: url("/fonts/office-code-pro/officecodepro-regularitalic.otf") format("opentype");
   font-style: italic;
   font-weight: 400;
   font-display: swap;
@@ -1371,7 +1371,7 @@
 
 @font-face {
   font-family: "Office Code Pro D Local";
-  src: url("/public/fonts/office-code-pro/officecodeprod-light.otf") format("opentype");
+  src: url("/fonts/office-code-pro/officecodeprod-light.otf") format("opentype");
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -1379,7 +1379,7 @@
 
 @font-face {
   font-family: "Office Code Pro D Local";
-  src: url("/public/fonts/office-code-pro/officecodeprod-lightitalic.otf") format("opentype");
+  src: url("/fonts/office-code-pro/officecodeprod-lightitalic.otf") format("opentype");
   font-style: italic;
   font-weight: 300;
   font-display: swap;
@@ -1387,7 +1387,7 @@
 
 @font-face {
   font-family: "Office Code Pro D Local";
-  src: url("/public/fonts/office-code-pro/officecodeprod-regular.otf") format("opentype");
+  src: url("/fonts/office-code-pro/officecodeprod-regular.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;

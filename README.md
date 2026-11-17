@@ -7,7 +7,7 @@ Konten profil, daftar program, dan ringkasan arsip pengumuman merujuk pada publi
 ## Menjalankan secara lokal
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -34,6 +34,8 @@ src/
   layouts/        Layout bersama, termasuk pemberitahuan replika
   pages/          Route halaman
   styles/         CSS global, semantic tokens, lima tema, setup Houdini
+data/
+  raw-archive/   Arsip HTML hasil scrape; bukan aset web yang disajikan langsung
 public/
   houdini/        Paint worklet motif Batik Rangkai
   scripts/        Deteksi fitur dan dukungan bahasa
@@ -67,9 +69,13 @@ docs/
 - **CSS Houdini:** `public/houdini/batik-paint-worklet.js` mempertahankan motif Batik Rangkai. Browser tanpa dukungan Houdini memakai fallback CSS pada `.batas-ukir`.
 - **TypeScript:** tersedia sebagai dev dependency dan digunakan bertahap untuk theme controller serta pemeriksaan tipe.
 - **Theme engine:** Light, Dark, Super Black, AMOLED Black, dan Dynamic Color; preferensi disimpan lokal di perangkat.
-- **Font lokal:** Outfit, Archivo, dan Azeret Mono dimuat dari `public/fonts/`.
+- **Font lokal:** 19 keluarga / 174 face OTF disimpan di `public/fonts/` dan dipanggil melalui URL root `/fonts/`. File lisensi tetap disertakan.
 - **Deteksi fitur:** `public/scripts/deteksi-fitur.js` memeriksa dukungan browser; fitur ini tidak membatasi akses ke konten.
 - **Aksesibilitas:** fokus keyboard, reduced motion, heading semantik, label input, dan status hasil pencarian.
+
+## Arsip sumber HTML
+
+Salinan halaman hasil scrape disimpan di `data/raw-archive/hasil_scrape_smkn1mandau/` bersama `daftar_halaman.csv`. Arsip dipertahankan sebagai bahan referensi dan tidak disajikan dari webroot agar dokumen HTML tidak berjalan pada origin situs replika.
 
 ## Lisensi font
 

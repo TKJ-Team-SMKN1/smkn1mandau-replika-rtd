@@ -1,5 +1,14 @@
 node_modules/
 dist/
 .astro/
-.env
+
+# Environment files: keep explicitly named examples only.
+.env*
+!.env.example
+!.env.*.example
+
+# Local operating-system and debug artifacts.
 .DS_Store
+Thumbs.db
+*.log
+npm-debug.log*

@@ -21,10 +21,13 @@ jobs:
         with:
           node-version: 24
       - name: Install dependencies
-        run: npm install
+        run: npm ci
       - name: Check Astro and TypeScript diagnostics
         run: npm run check
       - name: Check browser script syntax
-        run: node --check public/scripts/i18n.js
+        run: |
+          node --check public/scripts/i18n.js
+          node --check public/scripts/deteksi-fitur.js
+          node --check public/houdini/batik-paint-worklet.js
       - name: Build Astro site
         run: npm run build
