@@ -220,3 +220,8 @@ html[data-theme="dynamic"] .footer-bottom-inner { color: var(--text-muted); }
 html[data-theme="dynamic"] .footer-heading,
 html[data-theme="dynamic"] .footer-official { color: var(--accent-color); }
 html[data-theme="dynamic"] .footer-mark { color: #fff; }
+
+
+/* Compact controls meet the 44px preferred touch-target size. */
+.language-control select,
+.sdm-filter { min-height: 44px; }
