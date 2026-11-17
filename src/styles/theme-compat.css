@@ -250,3 +250,14 @@ html[data-theme] .program-empty {
   border-color: var(--line-color);
   background: var(--surface-muted);
 }
+
+
+/* WCAG 2.2 contrast corrections for active mobile navigation and dynamic fallback. */
+html[data-theme] .mobile-nav-link.is-active { color:var(--header-text); text-decoration:underline; text-decoration-color:var(--accent-color); text-decoration-thickness:2px; text-underline-offset:4px; }
+html[data-theme] .program-search-input:focus-visible { border-color:CanvasText; outline-color:CanvasText; }
+@supports not (color: AccentColor) {
+  @media (prefers-color-scheme: dark) {
+    html[data-theme="dynamic"] { --control-border:#8993a3; }
+  }
+}
+@media (forced-colors:active) { html[data-theme] :focus-visible { outline:2px solid Highlight; box-shadow:none; } }
