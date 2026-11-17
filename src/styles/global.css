@@ -49,7 +49,7 @@
   img, svg { max-width: 100%; }
 
   :focus-visible {
-    outline: 3px solid var(--ukir-terang);
+    outline: 3px solid var(--focus-color, #2768c5);
     outline-offset: 4px;
     border-radius: 4px;
   }
@@ -225,3 +225,10 @@ html[data-theme="dynamic"] .footer-mark { color: #fff; }
 /* Compact controls meet the 44px preferred touch-target size. */
 .language-control select,
 .sdm-filter { min-height: 44px; }
+
+
+/* Phase 3: WCAG 2.2 keyboard visibility and target-size baseline. */
+:focus { scroll-margin-block-start: 8rem; scroll-margin-block-end: 2rem; }
+.nav-link,.theme-nav-link,.mobile-nav-link,.nav-dropdown summary,.nav-dropdown-menu a { min-height: 44px; }
+.nav-dropdown summary { outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } }

@@ -1419,3 +1419,14 @@
 .font-office-code-pro { font-family: "Office Code Pro Local", "Office Code Pro D Local", "Azeret Mono Local", monospace; }
 
 /* CJK-capable M PLUS families are fallbacks, not eagerly downloaded display fonts. */
+
+
+/* Phase 3: explicit specimen roles for every local family. */
+.font-outfit { font-family: "Outfit Local", "M PLUS 1 Local", system-ui, sans-serif; }
+.font-mplus-1 { font-family: "M PLUS 1 Local", "Outfit Local", sans-serif; }
+.font-mplus-1-code { font-family: "M PLUS 1 Code Local", "Office Code Pro Local", monospace; }
+.font-mplus-2 { font-family: "M PLUS 2 Local", "Outfit Local", sans-serif; }
+.font-mplus-code-latin-50 { font-family: "M PLUS Code Latin 50 Local", "Azeret Mono Local", monospace; }
+.font-mplus-code-latin-60 { font-family: "M PLUS Code Latin 60 Local", "Azeret Mono Local", monospace; }
+.font-mplus-u { font-family: "M PLUS U Local", "Outfit Local", sans-serif; }
+.font-office-code-pro-d { font-family: "Office Code Pro D Local", "Office Code Pro Local", monospace; }
