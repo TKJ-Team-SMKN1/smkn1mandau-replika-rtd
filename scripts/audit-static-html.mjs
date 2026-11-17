@@ -84,7 +84,7 @@ for (const file of htmlFiles) {
 }
 
 const fontCss = await readFile(path.join(root, "src/styles/font-library.css"), "utf8");
-const fontUrls = [...fontCss.matchAll(/url\(["']?([^"')]+)["']?\)/g)].map(match => match[1]);
+const fontUrls = [...fontCss.matchAll(/url\(\s*(?:"([^"]+)"|'([^']+)'|([^)\\s]+))\s*\)/g)].map(match => match[1] ?? match[2] ?? match[3]);
 for (const url of fontUrls) {
   if (url.includes("/public/")) { fail(path.join(dist, "index.html"), "URL font tidak valid: " + url); continue; }
   if (!url.startsWith("/")) continue;
