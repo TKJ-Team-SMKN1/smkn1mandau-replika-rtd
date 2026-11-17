@@ -31,7 +31,20 @@
       "Bahasa pemrograman & teknologi web":"Programming languages & web technologies",
       "Bahasa pemrograman":"Programming language","Markup":"Markup","Styling":"Styling","Query":"Query language",
       "Pelajari konsep, sintaks dasar, dan contoh penggunaan melalui dokumentasi resmi.":"Learn concepts, basic syntax, and use cases through official documentation.",
-      "Dokumentasi":"Documentation"
+      "Dokumentasi":"Documentation",
+      "Informasi penerimaan siswa, jadwal ujian, dan kegiatan sekolah diperbarui":"Admissions information, exam schedules, and school activities are updated",
+      "secara berkala di halaman pengumuman.":"periodically on the announcements page.",
+      "Setiap program dirancang dengan kurikulum berbasis kompetensi dan jam praktik":"Each program is designed around competency-based learning and practical sessions",
+      "yang memadai di bengkel maupun laboratorium sekolah.":"in school workshops and laboratories.",
+      "Kenali pilihan program keahlian dan bidang kompetensi yang tersedia.":"Explore the available study programs and competency fields.",
+      "Informasi nama dan deskripsi pada kartu berikut masih berupa placeholder untuk ditinjau tim sekolah.":"Names and descriptions on these cards are placeholders for school-team review.",
+      "Referensi belajar mandiri":"Independent learning reference",
+      "Kenali fungsi setiap teknologi dan mulai dari dokumentasi resminya.":"Learn what each technology does and start with its official documentation.",
+      "Akreditasi":"Accreditation","Alamat dan kontak":"Address and contact","Visi":"Vision","Misi":"Mission",
+      "Nilai yang kami pegang":"Our values","Prinsip yang membentuk cara kami mendidik":"Principles that shape our approach to education",
+      "Kejuruan":"Vocational","Kegiatan":"Activities","Akademik":"Academic",
+      "Penerimaan Siswa":"Admissions","Menampilkan ":"Showing ","program keahlian":"study programs",
+      "dalam rumpun ":"in the field of ","Semua":"All","Teknologi":"Technology","Bisnis":"Business"
     },
     ms: {
       "Beranda":"Laman Utama","Profil Sekolah":"Profil Sekolah","Program Keahlian":"Program Pengajian","Pengumuman":"Pengumuman",
@@ -54,7 +67,14 @@
       "Materi belajar mandiri — bukan daftar mata pelajaran resmi sekolah.":"Bahan pembelajaran kendiri — bukan senarai mata pelajaran rasmi sekolah.",
       "Bahasa pemrograman & teknologi web":"Bahasa pengaturcaraan & teknologi web",
       "Bahasa pemrograman":"Bahasa pengaturcaraan","Markup":"Markup","Styling":"Penggayaan","Query":"Bahasa pertanyaan",
-      "Dokumentasi":"Dokumentasi"
+      "Dokumentasi":"Dokumentasi",
+      "Referensi belajar mandiri":"Rujukan pembelajaran kendiri",
+      "Kenali fungsi setiap teknologi dan mulai dari dokumentasi resminya.":"Kenali fungsi setiap teknologi dan mulakan dengan dokumentasi rasminya.",
+      "Akreditasi":"Akreditasi","Alamat dan kontak":"Alamat dan hubungan","Visi":"Visi","Misi":"Misi",
+      "Nilai yang kami pegang":"Nilai yang kami pegang","Prinsip yang membentuk cara kami mendidik":"Prinsip yang membentuk pendekatan pendidikan kami",
+      "Kegiatan":"Aktiviti","Akademik":"Akademik","Penerimaan Siswa":"Kemasukan Pelajar",
+      "Menampilkan ":"Memaparkan ","program keahlian":"program pengajian","dalam rumpun ":"dalam bidang ",
+      "Semua":"Semua","Teknologi":"Teknologi","Bisnis":"Perniagaan"
     },
     zh: {
       "Beranda":"首页","Profil Sekolah":"学校简介","Program Keahlian":"专业课程","Pengumuman":"公告",
@@ -75,7 +95,13 @@
       "Materi belajar mandiri — bukan daftar mata pelajaran resmi sekolah.":"自主学习参考资料，并非学校官方课程清单。",
       "Bahasa pemrograman & teknologi web":"编程语言与网页技术",
       "Bahasa pemrograman":"编程语言","Markup":"标记语言","Styling":"样式语言","Query":"查询语言",
-      "Dokumentasi":"文档"
+      "Dokumentasi":"文档",
+      "Referensi belajar mandiri":"自主学习参考",
+      "Kenali fungsi setiap teknologi dan mulai dari dokumentasi resminya.":"了解每项技术的用途，并从官方文档开始学习。",
+      "Akreditasi":"认证","Alamat dan kontak":"地址与联系方式","Visi":"愿景","Misi":"使命",
+      "Nilai yang kami pegang":"我们的价值观","Prinsip yang membentuk cara kami mendidik":"塑造教育方式的原则",
+      "Kegiatan":"活动","Akademik":"学术","Penerimaan Siswa":"招生",
+      "Semua":"全部","Teknologi":"技术","Bisnis":"商业"
     }
   };
   const original = new WeakMap();
