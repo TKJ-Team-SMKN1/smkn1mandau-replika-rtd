@@ -25,4 +25,45 @@ import DaftarProgram from "../components/DaftarProgram.jsx";
       <DaftarProgram client:load />
     </div>
   </section>
+
+  <section class="py-20 bg-gading border-y border-malam/10" aria-labelledby="judul-bahasa-pemrograman">
+    <div class="kontainer-laman">
+      <p class="pita-bagian mb-3">Referensi belajar mandiri</p>
+      <h2 id="judul-bahasa-pemrograman" class="font-judul text-3xl md:text-4xl text-malam mb-4">
+        Bahasa pemrograman & teknologi web
+      </h2>
+      <p class="max-w-3xl text-tinta-pudar leading-relaxed mb-9">
+        Materi belajar mandiri — bukan daftar mata pelajaran resmi sekolah. Kenali fungsi setiap teknologi dan mulai dari dokumentasi resminya.
+      </p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {[
+          {name:"Python",type:"Bahasa pemrograman",desc:"Automasi, pemrosesan data, backend, dan kecerdasan buatan.",url:"https://docs.python.org/3/"},
+          {name:"JavaScript",type:"Bahasa pemrograman",desc:"Interaksi web di browser serta aplikasi berbasis JavaScript.",url:"https://developer.mozilla.org/en-US/docs/Web/JavaScript"},
+          {name:"TypeScript",type:"Bahasa pemrograman",desc:"Pengembangan JavaScript dengan sistem tipe statis.",url:"https://www.typescriptlang.org/docs/"},
+          {name:"Java",type:"Bahasa pemrograman",desc:"Pemrograman berorientasi objek dan aplikasi lintas platform.",url:"https://dev.java/learn/"},
+          {name:"C",type:"Bahasa pemrograman",desc:"Dasar pemrograman sistem dan konsep memori tingkat rendah.",url:"https://en.cppreference.com/w/c"},
+          {name:"C++",type:"Bahasa pemrograman",desc:"Pemrograman sistem, aplikasi performa tinggi, dan perangkat lunak.",url:"https://en.cppreference.com/w/cpp"},
+          {name:"C#",type:"Bahasa pemrograman",desc:"Aplikasi .NET, layanan backend, dan pengembangan perangkat lunak.",url:"https://learn.microsoft.com/dotnet/csharp/"},
+          {name:"PHP",type:"Bahasa pemrograman",desc:"Pengembangan aplikasi web sisi server.",url:"https://www.php.net/docs.php"},
+          {name:"Go",type:"Bahasa pemrograman",desc:"Layanan backend, jaringan, dan perangkat lunak konkuren.",url:"https://go.dev/doc/"},
+          {name:"Rust",type:"Bahasa pemrograman",desc:"Perangkat lunak sistem dengan fokus pada keamanan memori.",url:"https://doc.rust-lang.org/book/"},
+          {name:"HTML",type:"Markup",desc:"Menyusun struktur dan semantik konten halaman web.",url:"https://developer.mozilla.org/en-US/docs/Web/HTML"},
+          {name:"CSS",type:"Styling",desc:"Mengatur tampilan, tata letak, dan responsivitas halaman web.",url:"https://developer.mozilla.org/en-US/docs/Web/CSS"},
+          {name:"SQL",type:"Query",desc:"Membaca, mengelola, dan memanipulasi data pada basis data relasional.",url:"https://www.postgresql.org/docs/current/sql.html"}
+        ].map((item) => (
+          <article class="kartu flex flex-col !p-6">
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <h3 class="font-judul text-xl text-malam">{item.name}</h3>
+              <span class="text-[.68rem] font-semibold uppercase tracking-wider rounded-full bg-gading text-malam px-2.5 py-1">{item.type}</span>
+            </div>
+            <p class="text-sm text-tinta-pudar leading-relaxed flex-1">{item.desc}</p>
+            <a class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-ukir hover:underline" href={item.url} target="_blank" rel="noopener noreferrer">
+              Dokumentasi <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+        ))}
+      </div>
+      <p class="text-xs text-tinta-pudar mt-7">HTML adalah bahasa markup, CSS adalah bahasa stylesheet, dan SQL adalah bahasa kueri; ketiganya bukan bahasa pemrograman umum.</p>
+    </div>
+  </section>
 </LayoutUtama>
