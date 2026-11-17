@@ -81,3 +81,8 @@ Salinan halaman hasil scrape disimpan di `data/raw-archive/hasil_scrape_smkn1man
 ## Lisensi font
 
 Font Outfit, Archivo, dan Azeret Mono dimuat dari aset lokal di `public/fonts/`. File lisensi disertakan bersama keluarga font terkait. Pertahankan file lisensi saat font dipindahkan atau didistribusikan.
+
+
+### Fase 3
+
+Navigasi Jelajah menambahkan halaman Fasilitas, Ekstrakurikuler, Kegiatan, dan Unit Sekolah. Informasi historis diberi label periode; halaman sumber yang hanya berupa gambar tidak diisi dengan tebakan. Halaman Pengaturan menampilkan spesimen 19 keluarga font/174 face OTF. CI menjalankan preflight HTML, WCAG statis, dan audit dependensi; pemeriksaan otomatis bukan sertifikasi WCAG 2.2 AA.
