@@ -137,7 +137,7 @@ else {
       }
       await collectSourceFiles(path.join(root, "src"));
       const sourceTexts = await Promise.all(sourceFiles.map(file => readFile(file, "utf8")));
-      const activeKeys = [...allKeys].filter(key => sourceTexts.some(source => source.includes(key)));
+      const activeKeys = [...new Set([...allKeys].filter(key => sourceTexts.some(source => source.includes(key.trim()))).map(key => key.trim()))];
       for (const language of languages) {
         const missing = activeKeys.filter(key => !(key in (dictionaries[language] || {})));
         if (missing.length) warn(path.join(dist, "index.html"), "i18n " + language + ": " + missing.length + " key belum tersedia: " + missing.join(" | "));
