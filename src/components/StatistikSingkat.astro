@@ -1,17 +1,17 @@
 ---
 const statistik = [
-  { angka: "[—]", label: "Program keahlian" },
-  { angka: "[—]", label: "Tenaga pengajar" },
-  { angka: "[—]", label: "Siswa aktif" },
-  { angka: "[—]", label: "Mitra industri" }
+  { angka: "10", label: "Program keahlian pada beranda resmi" },
+  { angka: "6", label: "Butir misi sekolah" },
+  { angka: "2000", label: "Tahun pendirian yang tercantum" },
+  { angka: "1999", label: "Tahun gedung mulai berdiri" }
 ];
 ---
 <section aria-labelledby="judul-statistik" class="stats-section">
   <div class="kontainer-laman stats-inner">
     <div class="stats-intro">
       <p class="pita-bagian">Sekilas sekolah</p>
-      <h2 id="judul-statistik" class="font-judul text-2xl md:text-3xl text-malam">Pendidikan dalam angka</h2>
-      <p>Ringkasan ini menunggu pembaruan menggunakan data resmi sekolah.</p>
+      <h2 id="judul-statistik" class="font-judul text-2xl md:text-3xl text-malam">Fakta dari publikasi sekolah</h2>
+      <p>Ringkasan historis dan daftar program yang dipublikasikan pada situs resmi. Bukan statistik real-time.</p>
     </div>
     <div class="stats-grid">
       {statistik.map((s, i) => (
@@ -22,19 +22,22 @@ const statistik = [
         </div>
       ))}
     </div>
+    <p class="stats-source">Sumber: <a href="https://www.smkn1mandau.sch.id/" target="_blank" rel="noopener noreferrer">beranda resmi</a> dan <a href="http://www.smkn1mandau.sch.id/2022/04/sejarah-sekolah.html" target="_blank" rel="noopener noreferrer">halaman sejarah sekolah</a>.</p>
   </div>
 </section>
 
 <style>
   .stats-section { position:relative; overflow:hidden; border-block:1px solid rgba(15,37,69,.09); background:#fff; }
-  .stats-inner { display:grid; grid-template-columns:.8fr 1.5fr; align-items:center; gap:3rem; padding-block:3.5rem; }
+  .stats-inner { display:grid; grid-template-columns:.8fr 1.5fr; align-items:center; gap:2rem 3rem; padding-block:3.5rem; }
   .stats-intro h2 { margin:.7rem 0 .55rem; }
   .stats-intro > p:last-child { max-width:290px; margin:0; color:#687184; font-size:.86rem; line-height:1.7; }
   .stats-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); }
-  .stats-item { position:relative; padding:.4rem 1.1rem; border-left:1px solid rgba(15,37,69,.12); }
+  .stats-item { position:relative; min-width:0; padding:.4rem 1.1rem; border-left:1px solid rgba(15,37,69,.12); }
   .stats-index { color:#b85c14; font-family:"Pragati Narrow",sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.14em; }
-  .stats-number { margin:.35rem 0 .15rem; color:#0f2545; font-family:"Paprika",cursive; font-size:clamp(1.5rem,3vw,2.2rem); line-height:1.3; }
-  .stats-label { margin:0; color:#687184; font-size:.78rem; }
+  .stats-number { margin:.35rem 0 .15rem; color:#0f2545; font-family:"Paprika",cursive; font-size:clamp(1.35rem,2.7vw,2.1rem); line-height:1.3; overflow-wrap:anywhere; }
+  .stats-label { margin:0; color:#687184; font-size:.76rem; line-height:1.45; }
+  .stats-source { grid-column:1/-1; margin:0; color:#687184; font-size:.72rem; }
+  .stats-source a { color:#9f4d10; text-decoration:underline; text-underline-offset:3px; }
   @media(max-width:850px) { .stats-inner { grid-template-columns:1fr; gap:1.8rem; } }
   @media(max-width:560px) { .stats-grid { grid-template-columns:repeat(2,minmax(0,1fr)); row-gap:1.4rem; } .stats-item:nth-child(odd) { border-left:0; padding-left:0; } }
 </style>
