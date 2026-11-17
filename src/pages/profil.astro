@@ -1,82 +1,141 @@
 ---
 import LayoutUtama from "../layouts/LayoutUtama.astro";
 
-// Placeholder — tim dev: lengkapi dengan data resmi sekolah (sejarah, visi-misi, akreditasi).
-const nilaiUtama = [
-  { judul: "Kompetensi praktik", teks: "[Deskripsi pendekatan pembelajaran praktik sekolah]" },
-  { judul: "Kemitraan industri", teks: "[Deskripsi kerja sama dengan dunia usaha dan industri]" },
-  { judul: "Karakter dan disiplin", teks: "[Deskripsi pembinaan karakter siswa]" }
+const misi = [
+  "Meningkatkan sumberdaya pendidik dan tenaga kependidikan.",
+  "Melengkapi peralatan praktik yang standar.",
+  "Menyiapkan tamatan berakhlak mulia, berprestasi dalam bekerja.",
+  "Melanjutkan pendidikan dan wirausaha.",
+  "Meningkatkan pelayanan prima kepada warga sekolah dan instansi lain.",
+  "Memberdayakan semua alumni untuk meningkatkan kualitas kompetensi siswa."
+];
+
+const program = [
+  "Desain Pemodelan dan Informasi Bangunan (DPIB)",
+  "Teknik Audio Video (TAV)",
+  "Teknik Instalasi Tenaga Listrik (TITL)",
+  "Teknik Kendaraan Ringan (TKR)",
+  "Teknik Pengelasan (TP)",
+  "Teknik Bisnis Sepeda Motor (TBSM)",
+  "Teknik Komputer dan Jaringan (TKJ)",
+  "Geologi Pertambangan (GP)",
+  "Teknik Pemboran Minyak dan Gas (TPMG)",
+  "Analisis Pengujian Laboratorium (APL)"
 ];
 ---
 <LayoutUtama
-  judul="Profil Sekolah — SMK Negeri 1 Mandau (Replika)"
-  deskripsi="Profil, visi misi, dan nilai-nilai SMK Negeri 1 Mandau."
+  judul="Profil Sekolah — SMK Negeri 1 Mandau (Replika Konsep)"
+  deskripsi="Profil historis, visi, misi, program keahlian, dan kontak berdasarkan publikasi situs resmi SMK Negeri 1 Mandau."
   halamanAktif="profil"
 >
-  <section class="bg-gradient-to-br from-malam-deep to-malam text-white py-20">
-    <div class="kontainer-laman max-w-[640px]">
-      <p class="font-rapat text-sm tracking-wide text-ukir-light mb-4">Profil sekolah</p>
-      <h1 class="font-judul text-4xl md:text-5xl leading-tight mb-5">
-        Mengenal lebih dekat SMK Negeri 1 Mandau
-      </h1>
-      <p class="text-gading/85 leading-relaxed text-lg">
-        [Paragraf sejarah singkat berdirinya sekolah — tim dev mohon lengkapi dengan
-        data resmi tahun pendirian, latar belakang, dan perkembangan sekolah.]
+  <section class="relative overflow-hidden bg-gradient-to-br from-malam-deep via-malam to-rimba-dark text-white py-20 md:py-24">
+    <div class="kontainer-laman max-w-4xl">
+      <p class="pita-bagian !text-ukir-light mb-4">Profil sekolah · sumber publik</p>
+      <h1 class="font-judul text-4xl md:text-6xl leading-tight mb-6">Mengenal SMK Negeri 1 Mandau</h1>
+      <p class="max-w-2xl text-gading/85 text-lg leading-relaxed">
+        Informasi profil ini disusun ulang sebagai konsep antarmuka independen dengan merujuk pada halaman sejarah, visi-misi, dan beranda situs resmi sekolah.
       </p>
+      <div class="flex flex-wrap gap-3 mt-8">
+        <a class="tombol tombol-ukir" href="https://www.smkn1mandau.sch.id/" target="_blank" rel="noopener noreferrer">Situs resmi sekolah <span aria-hidden="true">↗</span></a>
+        <a class="tombol tombol-garis" href="#sejarah">Baca sejarah</a>
+      </div>
     </div>
   </section>
 
-  <section class="py-20">
-    <div class="kontainer-laman grid md:grid-cols-2 gap-12">
-      <div class="kartu">
-        <h2 class="font-judul text-2xl text-malam mb-3">Visi</h2>
+  <section class="py-16 md:py-20" id="sejarah">
+    <div class="kontainer-laman grid lg:grid-cols-[.8fr_1.2fr] gap-10 lg:gap-16">
+      <div>
+        <p class="pita-bagian mb-3">Riwayat sekolah</p>
+        <h2 class="font-judul text-3xl md:text-4xl text-malam mb-4">Berawal dari SMK Swasta Handayani</h2>
         <p class="text-tinta-pudar leading-relaxed">
-          [Teks visi sekolah — tim dev mohon isi dengan rumusan visi resmi.]
+          Menurut halaman sejarah yang dipublikasikan sekolah, gedung sekolah telah berdiri sejak 1999. Lembaga ini didirikan pada 2000 sebagai SMK Swasta Handayani sebelum menjadi sekolah negeri pada 2002.
         </p>
+        <a class="inline-flex mt-5 font-bold text-ukir hover:underline" href="http://www.smkn1mandau.sch.id/2022/04/sejarah-sekolah.html" target="_blank" rel="noopener noreferrer">Baca sejarah pada sumber asli ↗</a>
       </div>
-      <div class="kartu">
-        <h2 class="font-judul text-2xl text-malam mb-3">Misi</h2>
-        <ul class="text-tinta-pudar leading-relaxed space-y-2 list-disc pl-5">
-          <li>[Poin misi 1]</li>
-          <li>[Poin misi 2]</li>
-          <li>[Poin misi 3]</li>
-        </ul>
-      </div>
+      <ol class="relative border-l-2 border-ukir/30 pl-7 space-y-8">
+        <li class="relative">
+          <span class="absolute -left-[2.18rem] top-1.5 w-4 h-4 rounded-full bg-ukir border-4 border-gading"></span>
+          <p class="font-rapat text-sm uppercase tracking-widest text-ukir">1999</p>
+          <h3 class="font-judul text-xl text-malam mt-1">Gedung sekolah berdiri</h3>
+          <p class="text-sm text-tinta-pudar mt-1">Lokasi yang disebut dalam riwayat sekolah berada di Jalan Pipa Air Bersih, Simpang Padang.</p>
+        </li>
+        <li class="relative">
+          <span class="absolute -left-[2.18rem] top-1.5 w-4 h-4 rounded-full bg-ukir border-4 border-gading"></span>
+          <p class="font-rapat text-sm uppercase tracking-widest text-ukir">8 Juli 2000</p>
+          <h3 class="font-judul text-xl text-malam mt-1">Pendirian SMK Swasta Handayani</h3>
+          <p class="text-sm text-tinta-pudar mt-1">Halaman sejarah mencantumkan tanggal pendirian 8 Juli 2000 dan nomor 05864/109.8.4/MN-2000.</p>
+        </li>
+        <li class="relative">
+          <span class="absolute -left-[2.18rem] top-1.5 w-4 h-4 rounded-full bg-ukir border-4 border-gading"></span>
+          <p class="font-rapat text-sm uppercase tracking-widest text-ukir">2002</p>
+          <h3 class="font-judul text-xl text-malam mt-1">Penegerian menjadi SMKN 1 Mandau</h3>
+          <p class="text-sm text-tinta-pudar mt-1">Publikasi sejarah menyebut Keputusan Bupati Bengkalis Nomor 113 Tahun 2002.</p>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <section class="py-20 bg-gading border-y border-malam/10">
+  <section class="py-16 md:py-20 bg-gading border-y border-malam/10">
+    <div class="kontainer-laman grid md:grid-cols-2 gap-6">
+      <article class="kartu !p-7 md:!p-9">
+        <p class="pita-bagian mb-3">Arah sekolah</p>
+        <h2 class="font-judul text-2xl text-malam mb-4">Visi</h2>
+        <blockquote class="border-l-4 border-ukir pl-5 text-lg text-malam leading-relaxed">
+          Menjadi SMK yang unggul dalam prestasi, handal, berakhlak mulia dan berwawasan lingkungan.
+        </blockquote>
+        <a class="inline-flex mt-6 text-sm font-bold text-ukir hover:underline" href="http://www.smkn1mandau.sch.id/2022/05/visi-misi-smkn-1-mandau.html" target="_blank" rel="noopener noreferrer">Sumber visi-misi resmi ↗</a>
+      </article>
+      <article class="kartu !p-7 md:!p-9">
+        <p class="pita-bagian mb-3">Enam butir misi</p>
+        <h2 class="font-judul text-2xl text-malam mb-4">Misi</h2>
+        <ol class="space-y-3 text-sm text-tinta-pudar">
+          {misi.map((item, index) => (
+            <li class="flex gap-3"><span class="font-rapat text-ukir font-bold">{String(index + 1).padStart(2, "0")}</span><span>{item}</span></li>
+          ))}
+        </ol>
+      </article>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20">
     <div class="kontainer-laman">
-      <p class="pita-bagian mb-3">Nilai yang kami pegang</p>
-      <h2 class="font-judul text-3xl text-malam mb-10 max-w-[520px]">
-        Prinsip yang membentuk cara kami mendidik
-      </h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        {nilaiUtama.map((n) => (
-          <div class="kartu">
-            <h3 class="font-judul text-lg text-malam mb-2">{n.judul}</h3>
-            <p class="text-sm text-tinta-pudar leading-relaxed">{n.teks}</p>
+      <div class="max-w-2xl mb-9">
+        <p class="pita-bagian mb-3">Program keahlian</p>
+        <h2 class="font-judul text-3xl md:text-4xl text-malam mb-3">Sepuluh program yang tercantum di beranda resmi</h2>
+        <p class="text-tinta-pudar">Nama program berikut ditranskripsikan dari bagian “Program Keahlian” pada situs resmi. Halaman ini tidak menambahkan klaim tentang kuota, kurikulum, atau kompetensi rinci yang belum diverifikasi.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {program.map((item, index) => (
+          <div class="kartu !p-5 flex gap-4 items-start">
+            <span class="font-rapat text-ukir text-sm font-bold">{String(index + 1).padStart(2, "0")}</span>
+            <h3 class="font-semibold text-malam leading-snug">{item}</h3>
           </div>
         ))}
       </div>
+      <a class="inline-flex mt-7 font-bold text-ukir hover:underline" href="https://www.smkn1mandau.sch.id/" target="_blank" rel="noopener noreferrer">Periksa daftar pada beranda resmi ↗</a>
     </div>
   </section>
 
-  <section class="py-20">
-    <div class="kontainer-laman grid md:grid-cols-2 gap-10">
-      <div class="kartu">
-        <h2 class="font-judul text-xl text-malam mb-3">Akreditasi</h2>
-        <p class="text-tinta-pudar leading-relaxed">
-          [Status akreditasi sekolah dan tahun penetapan — mohon dilengkapi tim dev.]
-        </p>
+  <section class="py-16 bg-malam-deep text-white">
+    <div class="kontainer-laman grid md:grid-cols-2 gap-8 items-start">
+      <div>
+        <p class="pita-bagian !text-ukir-light mb-3">Lokasi dan kontak</p>
+        <h2 class="font-judul text-3xl mb-4">Hubungi sekolah melalui kanal publikasinya</h2>
+        <p class="text-gading/75 text-sm leading-relaxed">Data kontak berikut tercantum pada situs resmi. Pastikan kembali sebelum mengirim dokumen atau informasi pribadi.</p>
       </div>
-      <div class="kartu">
-        <h2 class="font-judul text-xl text-malam mb-3">Alamat dan kontak</h2>
-        <p class="text-tinta-pudar leading-relaxed">
-          [Alamat lengkap sekolah]<br />
-          [Nomor telepon] · [Alamat surel resmi]
-        </p>
-      </div>
+      <address class="not-italic rounded-2xl border border-white/15 bg-white/5 p-6 space-y-4 text-sm">
+        <div><p class="text-ukir-light text-xs uppercase tracking-widest mb-1">Alamat</p><p>Jl. Pipa Air Bersih, Simpang Padang, Duri, Kabupaten Bengkalis, Riau</p></div>
+        <div><p class="text-ukir-light text-xs uppercase tracking-widest mb-1">Telepon</p><a href="tel:+6282387758277" class="hover:underline">+62 823-8775-8277</a></div>
+        <div><p class="text-ukir-light text-xs uppercase tracking-widest mb-1">Email</p><a href="mailto:smknegeri1mandau@gmail.com" class="hover:underline break-all">smknegeri1mandau@gmail.com</a></div>
+        <a class="inline-flex font-bold text-ukir-light hover:underline" href="https://www.smkn1mandau.sch.id/" target="_blank" rel="noopener noreferrer">Buka situs resmi ↗</a>
+      </address>
+    </div>
+  </section>
+
+  <section class="py-8">
+    <div class="kontainer-laman flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-xs text-tinta-pudar">
+      <p>Catatan sumber: konten diringkas dari halaman resmi sekolah, bukan pernyataan baru dari pihak sekolah.</p>
+      <a class="font-bold text-ukir hover:underline" href="http://www.smkn1mandau.sch.id/2022/04/sejarah-sekolah.html" target="_blank" rel="noopener noreferrer">Riwayat asli ↗</a>
     </div>
   </section>
 </LayoutUtama>
