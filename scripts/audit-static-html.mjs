@@ -126,7 +126,7 @@ else {
       const allKeys = new Set(languages.flatMap(language => keySets[language]));
       for (const language of languages) {
         const missing = [...allKeys].filter(key => !(key in (dictionaries[language] || {})));
-        if (missing.length) warn(path.join(dist, "index.html"), "i18n " + language + ": " + missing.length + " key belum tersedia dibanding gabungan kamus.");
+        if (missing.length) warn(path.join(dist, "index.html"), "i18n " + language + ": " + missing.length + " key belum tersedia: " + missing.join(" | "));
       }
       console.log("i18n dictionary key counts:", Object.fromEntries(languages.map(language => [language, keySets[language].length])));
     } catch (error) {
