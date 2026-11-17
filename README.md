@@ -17,10 +17,11 @@ Buka `http://localhost:4321`.
 
 ```bash
 npm run build
+npm run audit:html
 npm run preview
 ```
 
-Hasil build statis berada di folder `dist/`. Build perlu dijalankan sebelum menyatakan perubahan siap rilis.
+Hasil build statis berada di folder `dist/`. `npm run audit:html` memeriksa metadata dokumen, landmark utama, alt gambar, nama tombol, tautan tab baru, referensi lokal, dan keberadaan font. Audit ini adalah preflight statis, bukan sertifikasi WCAG; pengujian keyboard, kontras, zoom, dan screen reader tetap diperlukan.
 
 ## Status deployment
 
