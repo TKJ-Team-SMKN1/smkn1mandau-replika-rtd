@@ -2,7 +2,7 @@ import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 const root=process.cwd(), dist=path.join(root,"dist"), errors=[], warnings=[], htmlFiles=[];
 async function walk(dir){let entries;try{entries=await readdir(dir,{withFileTypes:true});}catch{errors.push("Folder dist tidak ditemukan.");return;}for(const e of entries){const f=path.join(dir,e.name);if(e.isDirectory())await walk(f);else if(e.isFile()&&e.name.endsWith(".html"))htmlFiles.push(f);}}
-const attr=(tag,name)=>{const m=tag.match(new RegExp("\\b"+name+"\\s*=\\s*(?:\\"([^\\"]*)\\"|'([^']*)'|([^\\s>]+))","i"));return m?(m[1]??m[2]??m[3]??""):null;};
+const attr=(tag,name)=>{const m=tag.match(new RegExp(name + "\\s*=\\s*[\"']([^\"']*)[\"']", "i"));return m?m[1]:null;};
 await walk(dist);
 for(const file of htmlFiles){
  const html=await readFile(file,"utf8"), count=p=>[...html.matchAll(p)].length;
