@@ -2,6 +2,7 @@
   const KEY = "smkn1mandau-language";
   const translations = {
     en: {
+      "Pengaturan":"Settings","Tema":"Theme","Pengaturan tampilan":"Display settings","Preferensi antarmuka":"Interface preferences","Theme engine":"Theme engine","Lima mode tampilan":"Five display modes","Pilih tema yang paling nyaman. Preferensi disimpan secara lokal di perangkat dan tidak dikirim ke server.":"Choose the theme you prefer. Your preference is stored locally on this device and is not sent to the server.","Dynamic Color menggunakan warna sistem browser apabila didukung. Jika tidak, tema memakai palet fallback.":"Dynamic Color uses browser system colors when supported. Otherwise, a fallback palette is used.","Tema website":"Website theme","Pratinjau warna mengikuti tema yang dipilih.":"Preview colors follow the selected theme.","Aksi utama":"Primary action","Komponen sekunder":"Secondary component",
       "Menampilkan":"Displaying",
       "dari":"dari",
       "@aria-label:Filter kategori teknologi":"Filter technology categories",
@@ -29,7 +30,7 @@
       "Replika ini menyusun ulang informasi profil, program keahlian, dan arsip publikasi yang tersedia di situs resmi SMK Negeri 1 Mandau. Informasi operasional tetap harus diperiksa melalui sumber aslinya.":"This replica compiles profile information, vocational programs, and a list of publications available on the official website of SMK Negeri 1 Mandau. Operational information should still be verified through the original source.",
       "Situs replika untuk keperluan pengembangan dan peninjauan antarmuka. Bukan laman resmi sekolah.":"A replica website for interface development and review purposes. This is not the school's official website.",
       "Konsep pengembangan independen":"The concept of independent development",
-      "Kanal resmi":"Channel logo",
+      "Kanal resmi":"Official channels",
       "Kompatibilitas":"Compatibility",
       "Memeriksa dukungan perangkat…":"Checking device support…",
       "Meningkatkan sumberdaya pendidik dan tenaga kependidikan.":"Enhancing the capabilities of educators and school staff.",
@@ -161,6 +162,7 @@
       "Bisnis":"Business"
     },
     ms: {
+      "Pengaturan":"Tetapan","Tema":"Tema","Pengaturan tampilan":"Tetapan paparan","Preferensi antarmuka":"Keutamaan antara muka","Theme engine":"Enjin tema","Lima mode tampilan":"Lima mod paparan","Pilih tema yang paling nyaman. Preferensi disimpan secara lokal di perangkat dan tidak dikirim ke server.":"Pilih tema yang paling selesa. Pilihan anda disimpan secara setempat pada peranti ini dan tidak dihantar ke pelayan.","Dynamic Color menggunakan warna sistem browser apabila didukung. Jika tidak, tema memakai palet fallback.":"Dynamic Color menggunakan warna sistem pelayar jika disokong. Jika tidak, palet sandaran akan digunakan.","Tema website":"Tema laman web","Pratinjau warna mengikuti tema yang dipilih.":"Pratonton warna mengikut tema yang dipilih.","Aksi utama":"Tindakan utama","Komponen sekunder":"Komponen sekunder",
       "Menampilkan":"Memaparkan", "dari":"daripada", "@aria-label:Filter kategori teknologi":"Tapis kategori teknologi",
       "Cari bahasa atau teknologi":"Cari bahasa atau teknologi", "Contoh: Python, web, database...":"Contoh: Python, web, pangkalan data...", "Filter kategori teknologi":"Tapis kategori teknologi", "Dokumentasi resmi":"Dokumentasi rasmi", "Tidak ada hasil yang cocok":"Tiada hasil yang sepadan", "Ubah kata kunci atau pilih kategori lain.":"Ubah kata kunci atau pilih kategori lain.", "Reset filter":"Tetapkan semula tapisan",
       "Informasi sekolah, dirangkai ulang sebagai":"Maklumat sekolah yang disusun semula sebagai", "Bahasa":"Bahasa", "Jelajahi":"Terokai", "Penerimaan Murid Baru":"Kemasukan Murid Baharu", "Arsip":"Arkib", "Untuk informasi terverifikasi dan layanan sekolah, silakan merujuk ke situs resmi.":"Untuk maklumat yang disahkan dan perkhidmatan sekolah, sila rujuk laman rasmi.", "Kunjungi situs resmi":"Lawati laman rasmi",
@@ -197,6 +199,7 @@
       "Semua":"Semua","Teknologi":"Teknologi","Bisnis":"Perniagaan"
     },
     zh: {
+      "Pengaturan":"设置","Tema":"主题","Pengaturan tampilan":"显示设置","Preferensi antarmuka":"界面偏好","Theme engine":"主题引擎","Lima mode tampilan":"五种显示模式","Pilih tema yang paling nyaman. Preferensi disimpan secara lokal di perangkat dan tidak dikirim ke server.":"选择你偏好的主题。偏好设置仅保存在此设备本地，不会发送到服务器。","Dynamic Color menggunakan warna sistem browser apabila didukung. Jika tidak, tema memakai palet fallback.":"如果浏览器支持，动态颜色会使用系统颜色；否则使用备用配色。","Tema website":"网站主题","Pratinjau warna mengikuti tema yang dipilih.":"预览颜色会随所选主题变化。","Aksi utama":"主要操作","Komponen sekunder":"次要组件",
       "Menampilkan":"显示",
       "dari":"dari",
       "@aria-label:Filter kategori teknologi":"筛选技术类别",
