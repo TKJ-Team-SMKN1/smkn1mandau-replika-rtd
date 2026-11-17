@@ -7,12 +7,8 @@ export default function NotifikasiReplika() {
 
   useEffect(() => {
     try {
-      const sudahLihat = sessionStorage.getItem(KUNCI_SIMPAN);
-      if (!sudahLihat) {
-        setTampil(true);
-      }
+      if (!sessionStorage.getItem(KUNCI_SIMPAN)) setTampil(true);
     } catch {
-      // Jika sessionStorage diblokir (mode privat ketat), tetap tampilkan sekali
       setTampil(true);
     }
   }, []);
@@ -22,7 +18,7 @@ export default function NotifikasiReplika() {
     try {
       sessionStorage.setItem(KUNCI_SIMPAN, "1");
     } catch {
-      /* diamkan */
+      // Notifikasi tetap dapat ditutup meski penyimpanan sesi tidak tersedia.
     }
   }
 
@@ -30,23 +26,24 @@ export default function NotifikasiReplika() {
 
   return (
     <div
-      role="alert"
-      aria-live="polite"
+      role="region"
+      aria-label="Pemberitahuan status situs"
       className="relative z-[200] bg-malam-deep text-kapas border-b-2 border-ukir"
     >
-      <div className="kontainer-laman flex items-center gap-3 py-3 text-sm flex-wrap">
-        <span aria-hidden="true" className="text-ukir-light text-base leading-none">●</span>
-        <p className="flex-1 min-w-[240px]">
-          Ini adalah situs replika dan bukan situs resmi. Untuk situs asli, kunjungi{" "}
+      <div className="kontainer-laman flex items-start gap-3 py-3 text-sm flex-wrap">
+        <span aria-hidden="true" className="text-ukir-light text-base leading-none mt-1">●</span>
+        <p className="flex-1 min-w-[240px] leading-relaxed">
+          <strong>Replika / konsep independen:</strong> ini bukan situs resmi dan tidak mewakili pihak sekolah.
+          Informasi profil dan arsip pengumuman dirangkum dari publikasi sekolah; untuk ketentuan terbaru,
+          selalu rujuk kanal asli di{" "}
           <a
-            href="https://www.smkn1mandau.sch.id/?m=1"
+            href="https://www.smkn1mandau.sch.id/"
             target="_blank"
             rel="noopener noreferrer"
             className="underline decoration-ukir-light underline-offset-2 text-ukir-light hover:text-white"
           >
             smkn1mandau.sch.id
-          </a>
-          .
+          </a>.
         </p>
         <button
           onClick={tutup}
