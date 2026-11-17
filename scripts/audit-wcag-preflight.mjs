@@ -29,3 +29,30 @@ if(!/:focus-visible/.test(css))errors.push("focus-visible tidak ditemukan.");if(
 console.log("WCAG 2.2 AA static preflight: "+htmlFiles.length+" halaman; "+faces+" face OTF; "+families.size+" keluarga font.");
 for(const w of warnings)console.warn("WARNING:",w);for(const e of errors)console.error("ERROR:",e);
 if(errors.length)process.exit(1);console.log("Static preflight passed; this is not WCAG certification.");
+
+/* Contrast-token preflight for the five themes and Dynamic fallback modes. */
+const globalCss = await readFile(path.join(root, "src/styles/global.css"), "utf8");
+const themeCss = await readFile(path.join(root, "src/styles/theme-compat.css"), "utf8");
+const parseVars = (block) => Object.fromEntries([...block.matchAll(/(--[\w-]+)\s*:\s*(#[0-9a-f]{3,8})/gi)].map((m) => [m[1], m[2]]));
+function blocksFor(css, selector) { let cursor=0; const blocks=[]; while(true) { const at=css.indexOf(selector,cursor); if(at<0) break; const open=css.indexOf("{",at+selector.length); const close=css.indexOf("}",open+1); if(open<0||close<0) break; if(css.slice(at+selector.length,open).trim()==="") blocks.push(css.slice(open+1,close)); cursor=close+1; } return blocks; }
+function varsFor(css, selector) { return Object.assign({}, ...blocksFor(css,selector).map(parseVars)); }
+const globalRoot=varsFor(globalCss,":root"), compatRoot=varsFor(themeCss,":root");
+function luminance(hex) { const raw=hex.slice(1); const full=raw.length===3?[...raw].map(x=>x+x).join(""):raw; const rgb=[0,2,4].map(i=>parseInt(full.slice(i,i+2),16)/255).map(x=>x<=.04045?x/12.92:((x+.055)/1.055)**2.4); return .2126*rgb[0]+.7152*rgb[1]+.0722*rgb[2]; }
+function contrast(fg,bg) { const pair=[luminance(fg),luminance(bg)].sort((x,y)=>y-x); return (pair[0]+.05)/(pair[1]+.05); }
+const failures=[];
+function checkPalette(name,vars) {
+ const pairs=[["body/page",vars["--text-primary"],vars["--page-bg"],4.5],["body/surface",vars["--text-primary"],vars["--surface"],4.5],["muted/page",vars["--text-muted"],vars["--page-bg"],4.5],["muted/surface",vars["--text-muted"],vars["--surface"],4.5],["accent/page",vars["--accent-color"],vars["--page-bg"],4.5],["accent/surface",vars["--accent-color"],vars["--surface"],4.5],["accent/muted",vars["--accent-color"],vars["--surface-muted"],4.5],["button/accent",vars["--accent-contrast"],vars["--accent-color"],4.5],["control/surface",vars["--control-border"],vars["--surface"],3],["control/muted",vars["--control-border"],vars["--surface-muted"],3],["header",vars["--header-text"],vars["--header-surface"],4.5],["hero white","#ffffff",vars["--hero-surface-alt"],4.5],["hero accent",vars["--accent-on-dark"],vars["--hero-surface-alt"],4.5],["mobile active",vars["--header-text"],vars["--header-surface"],4.5],["mobile underline",vars["--accent-color"],vars["--header-surface"],3]];
+ for(const [label,fg,bg,min] of pairs) { if(!fg||!bg) { failures.push(name+": missing token "+label); continue; } const value=contrast(fg,bg); if(value+1e-9<min) failures.push(name+": "+label+" "+value.toFixed(2)+":1 (minimum "+min+")"); }
+}
+for(const theme of ["light","dark","super-black","amoled-black"]) { const selector='html[data-theme="'+theme+'"]'; const vars=Object.assign({},globalRoot,varsFor(globalCss,selector),compatRoot,varsFor(themeCss,selector)); checkPalette(theme,vars); }
+const dynamicSelector='html[data-theme="dynamic"]';
+const dynamicBlocks=blocksFor(themeCss,dynamicSelector);
+const dynamicBase=Object.assign({},globalRoot,varsFor(globalCss,dynamicSelector),compatRoot,parseVars(dynamicBlocks[0]||""));
+const dynamicLight=Object.assign({},dynamicBase,parseVars(dynamicBlocks[2]||""));
+const dynamicDark=Object.assign({},dynamicBase,parseVars(dynamicBlocks[1]||""),parseVars(dynamicBlocks[4]||""));
+checkPalette("dynamic-light-fallback",dynamicLight);
+checkPalette("dynamic-dark-fallback",dynamicDark);
+if(!globalCss.includes("outline: 3px solid CanvasText")||!globalCss.includes("box-shadow: 0 0 0 6px Canvas")) failures.push("Two-layer CanvasText/Canvas focus ring is missing.");
+if(failures.length) { for(const failure of failures) console.error("CONTRAST:",failure); process.exit(1); }
+console.log("Theme contrast preflight passed: six fallback palettes; text 4.5:1 and control boundaries 3:1.");
+console.warn("Dynamic OS color overrides, gradients, imagery and interactive rendered states still require manual review.");
