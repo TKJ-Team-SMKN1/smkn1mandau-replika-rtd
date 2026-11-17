@@ -160,6 +160,7 @@
       "Teknologi":"Technology",
       "Bisnis":"Business"
     },
+    ms: {
       "Menampilkan":"Memaparkan", "dari":"daripada", "@aria-label:Filter kategori teknologi":"Tapis kategori teknologi",
       "Cari bahasa atau teknologi":"Cari bahasa atau teknologi", "Contoh: Python, web, database...":"Contoh: Python, web, pangkalan data...", "Filter kategori teknologi":"Tapis kategori teknologi", "Dokumentasi resmi":"Dokumentasi rasmi", "Tidak ada hasil yang cocok":"Tiada hasil yang sepadan", "Ubah kata kunci atau pilih kategori lain.":"Ubah kata kunci atau pilih kategori lain.", "Reset filter":"Tetapkan semula tapisan",
       "Informasi sekolah, dirangkai ulang sebagai":"Maklumat sekolah yang disusun semula sebagai", "Bahasa":"Bahasa", "Jelajahi":"Terokai", "Penerimaan Murid Baru":"Kemasukan Murid Baharu", "Arsip":"Arkib", "Untuk informasi terverifikasi dan layanan sekolah, silakan merujuk ke situs resmi.":"Untuk maklumat yang disahkan dan perkhidmatan sekolah, sila rujuk laman rasmi.", "Kunjungi situs resmi":"Lawati laman rasmi",
@@ -310,6 +311,7 @@
       "Teknologi":"技术",
       "Bisnis":"商业"
     }
+  };
 
   Object.assign(translations.en, {"Menurut halaman sejarah yang dipublikasikan sekolah, gedung sekolah telah berdiri sejak 1999. Lembaga ini didirikan pada 2000 sebagai SMK Swasta Handayani sebelum menjadi sekolah negeri pada 2002.":"According to the school’s published history page, the school building has stood since 1999. The school was founded in 2000 as Handayani Private Vocational High School before becoming a public school in 2002.","Lokasi yang disebut dalam riwayat sekolah berada di Jalan Pipa Air Bersih, Simpang Padang.":"The location mentioned in the school’s history is on Jalan Pipa Air Bersih, Simpang Padang.","Halaman sejarah mencantumkan tanggal pendirian 8 Juli 2000 dan nomor 05864/109.8.4/MN-2000.":"The history page lists the date of establishment as July 8, 2000, and the number as 05864/109.8.4/MN-2000.","Publikasi sejarah menyebut Keputusan Bupati Bengkalis Nomor 113 Tahun 2002.":"Historical publications refer to Bengkalis Regent’s Decree No. 113 of 2002.","Menjadi SMK yang unggul dalam prestasi, handal, berakhlak mulia dan berwawasan lingkungan.":"To become a vocational high school that excels in academic achievement, is reliable, upholds high moral standards, and is environmentally conscious.","Nama program berikut ditranskripsikan dari bagian “Program Keahlian” pada situs resmi. Halaman ini tidak menambahkan klaim tentang kuota, kurikulum, atau kompetensi rinci yang belum diverifikasi.":"The names of the following programs are transcribed from the “Specialization Programs” section on the official website. This page does not include any unverified claims regarding enrollment quotas, curricula, or specific competencies.","Data kontak berikut tercantum pada situs resmi. Pastikan kembali sebelum mengirim dokumen atau informasi pribadi.":"The following contact information is listed on the official website. Please double-check it before sending any documents or personal information.","Daftar nama program di bawah merujuk pada bagian “Program Keahlian” di situs resmi sekolah. Gunakan pencarian untuk menemukan nama atau singkatan program.":"The list of program names below refers to the “Specialization Programs” section on the school’s official website. Use the search function to find a program’s name or abbreviation.","HTML adalah bahasa markup, CSS adalah bahasa stylesheet, dan SQL adalah bahasa kueri; ketiganya bukan bahasa pemrograman umum.":"HTML is a markup language, CSS is a stylesheet language, and SQL is a query language; none of these are general-purpose programming languages.","Automasi, pemrosesan data, backend, dan kecerdasan buatan.":"Automation, data processing, backend, and artificial intelligence.","Interaksi web di browser serta aplikasi berbasis JavaScript.":"Web interactions in browsers and JavaScript-based applications.","Pengembangan JavaScript dengan sistem tipe statis.":"JavaScript development with a statically typed system.","Pemrograman berorientasi objek dan aplikasi lintas platform.":"Object-oriented programming and cross-platform applications.","Dasar pemrograman sistem dan konsep memori tingkat rendah.":"Fundamentals of system programming and low-level memory concepts.","Pemrograman sistem, aplikasi performa tinggi, dan perangkat lunak.":"Systems programming, high-performance applications, and software.","Aplikasi .NET, layanan backend, dan pengembangan perangkat lunak.":".NET applications, backend services, and software development.","Pengembangan aplikasi web sisi server.":"Server-side web application development.","Layanan backend, jaringan, dan perangkat lunak konkuren.":"Backend, networking, and concurrent software services.","Perangkat lunak sistem dengan fokus pada keamanan memori.":"System software focused on memory security.","Menyusun struktur dan semantik konten halaman web.":"Organizing the structure and semantics of web page content.","Mengatur tampilan, tata letak, dan responsivitas halaman web.":"Control the appearance, layout, and responsiveness of web pages.","Membaca, mengelola, dan memanipulasi data pada basis data relasional.":"Reading, managing, and manipulating data in a relational database.","Replika / konsep independen:":"Replica / independent project:","Tutup pemberitahuan":"Close notification","Pemberitahuan status situs":"Site Status Notification","Informasi profil ini disusun ulang sebagai konsep antarmuka independen dengan merujuk pada halaman sejarah, visi-misi, dan beranda situs resmi sekolah.":"This profile information has been reorganized as an independent interface concept, drawing on the history, vision and mission, and homepage sections of the school’s official website.","Ringkasan ini mengambil informasi dari postingan yang tersedia di situs resmi. Halaman ini bukan kanal pengumuman resmi dan tidak menggantikan instruksi pada sumber asli.":"This summary is based on information from posts available on the official website. This page is not an official announcement channel and does not replace the instructions provided in the original source.","Semua entri yang ditampilkan di bawah merupakan arsip tahun 2026 atau tahun pelajaran 2025/2026. Jangan menganggap pendaftaran, jadwal, atau tautan lama masih aktif. Selalu periksa situs resmi untuk informasi terbaru.":"All entries listed below are from the 2026 archives or the 2025–2026 school year. Do not assume that old registration information, schedules, or links are still active. Always check the official website for the latest information."});
   Object.assign(translations.ms, {"Menurut halaman sejarah yang dipublikasikan sekolah, gedung sekolah telah berdiri sejak 1999. Lembaga ini didirikan pada 2000 sebagai SMK Swasta Handayani sebelum menjadi sekolah negeri pada 2002.":"Menurut halaman sejarah sekolah, bangunan sekolah itu telah berdiri sejak tahun 1999. Institusi ini ditubuhkan pada tahun 2000 sebagai Sekolah Vokasional Swasta Handayani sebelum menjadi sekolah negeri pada tahun 2002.","Lokasi yang disebut dalam riwayat sekolah berada di Jalan Pipa Air Bersih, Simpang Padang.":"Lokasi yang disebut dalam sejarah sekolah itu terletak di Jalan Pipa Air Bersih, Simpang Padang.","Halaman sejarah mencantumkan tanggal pendirian 8 Juli 2000 dan nomor 05864/109.8.4/MN-2000.":"Halaman 'Sejarah' menyatakan tarikh penubuhan pada 8 Julai 2000 dan nombor rujukan sebagai 05864/109.8.4/MN-2000.","Publikasi sejarah menyebut Keputusan Bupati Bengkalis Nomor 113 Tahun 2002.":"Publikasi sejarah merujuk kepada Dekri Rejensi Bengkalis No. 113 tahun 2002.","Menjadi SMK yang unggul dalam prestasi, handal, berakhlak mulia dan berwawasan lingkungan.":"Untuk menjadi sekolah vokasional yang cemerlang dalam pencapaian akademik, boleh dipercayai, menegakkan piawaian moral yang tinggi dan peka terhadap alam sekitar.","Nama program berikut ditranskripsikan dari bagian “Program Keahlian” pada situs resmi. Halaman ini tidak menambahkan klaim tentang kuota, kurikulum, atau kompetensi rinci yang belum diverifikasi.":"Nama-nama program berikut telah disalin daripada bahagian 'Program Pakar' di laman web rasmi. Halaman ini tidak termasuk sebarang tuntutan mengenai kuota kemasukan, kurikulum atau hasil pembelajaran terperinci yang belum disahkan.","Data kontak berikut tercantum pada situs resmi. Pastikan kembali sebelum mengirim dokumen atau informasi pribadi.":"Butiran hubungan berikut disenaraikan di laman web rasmi. Sila semak semula sebelum menghantar sebarang dokumen atau maklumat peribadi.","Daftar nama program di bawah merujuk pada bagian “Program Keahlian” di situs resmi sekolah. Gunakan pencarian untuk menemukan nama atau singkatan program.":"Senarai nama program di bawah merujuk kepada bahagian 'Program Pakar' di laman web rasmi sekolah. Gunakan fungsi carian untuk mencari nama atau singkatan program.","HTML adalah bahasa markup, CSS adalah bahasa stylesheet, dan SQL adalah bahasa kueri; ketiganya bukan bahasa pemrograman umum.":"HTML adalah bahasa penandaan, CSS adalah bahasa helaian gaya, dan SQL adalah bahasa pertanyaan; tiada satu pun daripadanya yang merupakan bahasa pengaturcaraan guna umum.","Automasi, pemrosesan data, backend, dan kecerdasan buatan.":"Automasi, pemprosesan data, sistem belakang dan kecerdasan buatan.","Interaksi web di browser serta aplikasi berbasis JavaScript.":"Interaksi web dalam pelayar dan aplikasi berasaskan JavaScript.","Pengembangan JavaScript dengan sistem tipe statis.":"Pembangunan JavaScript dengan sistem jenis statik.","Pemrograman berorientasi objek dan aplikasi lintas platform.":"Pengaturcaraan berorientasikan objek dan aplikasi merentas platform.","Dasar pemrograman sistem dan konsep memori tingkat rendah.":"Asas pengaturcaraan sistem dan konsep memori aras rendah.","Pemrograman sistem, aplikasi performa tinggi, dan perangkat lunak.":"Pengaturcaraan sistem, aplikasi dan perisian berprestasi tinggi.","Aplikasi .NET, layanan backend, dan pengembangan perangkat lunak.":"Aplikasi .NET, perkhidmatan belakang dan pembangunan perisian.","Pengembangan aplikasi web sisi server.":"Pembangunan aplikasi web sisi pelayan.","Layanan backend, jaringan, dan perangkat lunak konkuren.":"Perkhidmatan belakang, rangkaian dan perisian serentak.","Perangkat lunak sistem dengan fokus pada keamanan memori.":"Perisian sistem dengan tumpuan pada keselamatan memori.","Menyusun struktur dan semantik konten halaman web.":"Mengatur struktur dan semantik kandungan halaman web.","Mengatur tampilan, tata letak, dan responsivitas halaman web.":"Konfigurasikan penampilan, susun atur dan keupayaan responsif halaman web.","Membaca, mengelola, dan memanipulasi data pada basis data relasional.":"Membaca, mengurus dan memanipulasi data dalam pangkalan data relasi.","Replika / konsep independen:":"Replika / konsep bebas:","Tutup pemberitahuan":"Tutup pemberitahuan","Pemberitahuan status situs":"Notifikasi status tapak","Informasi profil ini disusun ulang sebagai konsep antarmuka independen dengan merujuk pada halaman sejarah, visi-misi, dan beranda situs resmi sekolah.":"Maklumat profil ini telah disusun semula sebagai konsep antara muka berdiri sendiri, merujuk kepada halaman 'Sejarah', 'Visi dan Misi' dan 'Home' di laman web rasmi sekolah.","Ringkasan ini mengambil informasi dari postingan yang tersedia di situs resmi. Halaman ini bukan kanal pengumuman resmi dan tidak menggantikan instruksi pada sumber asli.":"Ringkasan ini berdasarkan maklumat daripada pos yang terdapat di laman web rasmi. Halaman ini bukan saluran pengumuman rasmi dan tidak menggantikan arahan yang disediakan dalam sumber asal.","Semua entri yang ditampilkan di bawah merupakan arsip tahun 2026 atau tahun pelajaran 2025/2026. Jangan menganggap pendaftaran, jadwal, atau tautan lama masih aktif. Selalu periksa situs resmi untuk informasi terbaru.":"Semua entri yang dipaparkan di bawah adalah daripada arkib 2026 atau tahun akademik 2025/2026. Sila jangan anggap bahawa butiran pendaftaran lama, jadual waktu atau pautan masih sah. Sentiasa semak laman web rasmi untuk maklumat terkini."});
@@ -318,211 +320,6 @@
   Object.assign(translations.en, {" ini bukan situs resmi dan tidak mewakili pihak sekolah. Informasi profil dan arsip pengumuman dirangkum dari publikasi sekolah; untuk ketentuan terbaru, selalu rujuk kanal asli di":" This is not the official website and does not represent the school. Profile information and archived announcements are compiled from the school’s publications; for the most up-to-date information, always refer to the original source at "});
   Object.assign(translations.ms, {" ini bukan situs resmi dan tidak mewakili pihak sekolah. Informasi profil dan arsip pengumuman dirangkum dari publikasi sekolah; untuk ketentuan terbaru, selalu rujuk kanal asli di":" Ini bukan laman web rasmi dan tidak mewakili sekolah. Maklumat profil dan arkib pengumuman telah disusun daripada penerbitan sekolah; untuk maklumat terkini, sila sentiasa rujuk saluran asal di "});
   Object.assign(translations.zh, {" ini bukan situs resmi dan tidak mewakili pihak sekolah. Informasi profil dan arsip pengumuman dirangkum dari publikasi sekolah; untuk ketentuan terbaru, selalu rujuk kanal asli di":" 本网站并非官方网站，也不代表学校。简介信息和公告存档均摘自学校发布的资料；如需了解最新规定，请始终参考原始渠道： "});
-  const original = new WeakMap();
-  const originalAttributes = new WeakMap();
-  function applyLanguage(lang) {
-    const dict = translations[lang] || {};
-    document.documentElement.lang = lang === "zh" ? "zh-CN" : lang;
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-    while (walker.nextNode()) {
-      const node = walker.currentNode;
-      if (!original.has(node)) original.set(node, node.nodeValue);
-      const base = original.get(node);
-      const trimmed = base.trim();
-      if (!trimmed) continue;
-      const normalized = trimmed.replace(/\s+/g, " ");
-      const translated = dict[trimmed] || dict[normalized];
-      if (translated) node.nodeValue = base.replace(trimmed, translated);
-      else node.nodeValue = base;
-    }
-    document.querySelectorAll("[placeholder], [aria-label]").forEach(el => {
-      for (const attr of ["placeholder", "aria-label"]) {
-        if (!el.hasAttribute(attr)) continue;
-        let saved = originalAttributes.get(el);
-        if (!saved) { saved = {}; originalAttributes.set(el, saved); }
-        if (!(attr in saved)) saved[attr] = el.getAttribute(attr);
-        const base = saved[attr];
-        const translated = dict[`@${attr}:${base}`];
-        if (translated) el.setAttribute(attr, translated);
-        else el.setAttribute(attr, base);
-      }
-    });
-    document.querySelectorAll("[data-language-picker]").forEach(el => { el.value = lang; });
-    try { localStorage.setItem(KEY, lang); } catch {}
-  }
-  function init() {
-    const picker = document.querySelector("[data-language-picker]");
-    let lang = "id";
-    try { lang = localStorage.getItem(KEY) || "id"; } catch {}
-    if (picker) picker.addEventListener("change", () => applyLanguage(picker.value));
-    applyLanguage(lang);
-    const observer = new MutationObserver(() => applyLanguage(lang));
-    observer.observe(document.body, { childList: true, subtree: true });
-    document.addEventListener("change", e => {
-      if (e.target.matches("[data-language-picker]")) { lang = e.target.value; applyLanguage(lang); }
-    });
-  }
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init, { once: true });
-  else init();
-})()    ms: {
-      "Menampilkan":"Menampilkan",
-      "dari":"daripada",
-      "@aria-label:Filter kategori teknologi":"Tapis kategori teknologi",
-      "Cari bahasa atau teknologi":"Cari bahasa atau teknologi",
-      "Contoh: Python, web, database...":"Contoh: Python, web, pangkalan data...",
-      "Filter kategori teknologi":"Penapis kategori teknologi",
-      "Dokumentasi resmi":"Dokumentasi rasmi",
-      "Tidak ada hasil yang cocok":"Tiada keputusan yang sepadan",
-      "Ubah kata kunci atau pilih kategori lain.":"Ubah kata kunci atau pilih kategori lain.",
-      "Reset filter":"Reset penapis",
-      "Informasi sekolah, dirangkai ulang sebagai":"Maklumat sekolah, disusun semula sebagai",
-      "Bahasa":"Bahasa",
-      "Jelajahi":"Terokai",
-      "Penerimaan Murid Baru":"Penerimaan Murid Baru",
-      "Arsip":"Arkib",
-      "Untuk informasi terverifikasi dan layanan sekolah, silakan merujuk ke situs resmi.":"Untuk maklumat yang disahkan dan perkhidmatan sekolah, sila rujuk laman web rasmi.",
-      "Kunjungi situs resmi":"Lawati laman web rasmi",
-      "Informasi sekolah, dirangkai ulang sebagai ":"Maklumat sekolah, disusun semula sebagai ",
-      "konsep independen.":"sebuah konsep yang bebas.",
-      "Replika ini menyusun ulang informasi profil, program keahlian, dan arsip publikasi yang tersedia di situs resmi SMK Negeri 1 Mandau. Informasi operasional tetap harus diperiksa melalui sumber aslinya.":"Replika ini mengumpulkan maklumat mengenai profil sekolah, program vokasional dan arkib penerbitan yang terdapat di laman web rasmi SMK Negeri 1 Mandau. Maklumat operasi masih perlu disahkan melalui sumber asal.",
-      "Situs replika untuk keperluan pengembangan dan peninjauan antarmuka. Bukan laman resmi sekolah.":"Laman web replika untuk tujuan pembangunan dan semakan antaramuka. Ini bukan laman web rasmi sekolah.",
-      "Konsep pengembangan independen":"Konsep pembangunan bebas",
-      "Kanal resmi":"Logo saluran",
-      "Kompatibilitas":"Kesesuaian",
-      "Memeriksa dukungan perangkat…":"Semak keserasian peranti…",
-      "Meningkatkan sumberdaya pendidik dan tenaga kependidikan.":"Meningkatkan keupayaan kakitangan pengajar dan bukan pengajar.",
-      "Melengkapi peralatan praktik yang standar.":"Untuk melengkapkan peralatan praktikal piawai.",
-      "Menyiapkan tamatan berakhlak mulia, berprestasi dalam bekerja.":"Untuk mempersiapkan graduan yang berintegriti tinggi dan cemerlang dalam kerja mereka.",
-      "Melanjutkan pendidikan dan wirausaha.":"Pendidikan lanjutan dan keusahawanan.",
-      "Meningkatkan pelayanan prima kepada warga sekolah dan instansi lain.":"Untuk meningkatkan kualiti perkhidmatan yang disediakan kepada komuniti sekolah dan organisasi lain.",
-      "Memberdayakan semua alumni untuk meningkatkan kualitas kompetensi siswa.":"Memberdayakan semua alumni untuk meningkatkan kualiti kemahiran pelajar.",
-      "Sumber visi-misi resmi ↗":"Sumber visi dan misi rasmi ↗",
-      "Sumber nama program:":"Sumber nama program:",
-      "Baca sumber asli":"Baca sumber asal",
-      "Baca sejarah":"Baca sejarahnya",
-      "Bidang komputer, sistem, dan jaringan.":"Bidang pengkomputeran, sistem dan rangkaian.",
-      "Bidang perangkat dan teknologi audio-video.":"Bidang peralatan dan teknologi audio-visual.",
-      "Bidang desain, pemodelan, dan informasi bangunan.":"Bidang reka bentuk, pemodelan dan maklumat pembinaan.",
-      "Nama tercantum di situs resmi":"Nama-nama yang disenaraikan di laman web rasmi",
-      "@placeholder:Cari program keahlian":"Cari program pengajian",
-      "@placeholder:Contoh: TKJ, listrik, otomotif...":"Contoh: TKJ, elektrik, automotif...",
-      "@aria-label:Hapus pencarian":"Kosongkan carian",
-      "Riwayat sekolah":"Latar belakang pendidikan",
-      "Berawal dari SMK Swasta Handayani":"Semuanya bermula di Sekolah Vokasional Swasta Handayani.",
-      "Baca sejarah pada sumber asli ↗":"Baca sejarah dalam sumber asal ↗",
-      "Gedung sekolah berdiri":"Bangunan sekolah itu berdiri",
-      "Pendirian SMK Swasta Handayani":"Penubuhan Sekolah Vokasional Swasta Handayani",
-      "Penegerian menjadi SMKN 1 Mandau":"Dilantik sebagai SMKN 1 Mandau",
-      "Arah sekolah":"Arah sekolah",
-      "Enam butir misi":"Enam mata misi",
-      "Sepuluh program yang tercantum di beranda resmi":"Sepuluh program yang disenaraikan di laman utama rasmi",
-      "Periksa daftar pada beranda resmi ↗":"Semak senarai di laman utama rasmi ↗",
-      "Lokasi dan kontak":"Lokasi dan butiran hubungan",
-      "Hubungi sekolah melalui kanal publikasinya":"Hubungi sekolah melalui saluran komunikasinya.",
-      "Alamat":"Alamat",
-      "Telepon":"Telefon",
-      "Pusat informasi · arsip publik":"Pusat maklumat · arkib awam",
-      "Pengumuman sekolah":"Pengumuman sekolah",
-      "Perhatikan tanggal publikasi":"Sila ambil perhatian tarikh penerbitan.",
-      "Arsip 2026":"Arkib 2026",
-      "Arsip 2025/2026":"Arkib 2025/2026",
-      "Lihat seluruh arsip di situs resmi":"Lihat keseluruhan arkib di laman web rasmi",
-      "Cari program keahlian":"Cari program vokasional",
-      "Contoh: TKJ, listrik, otomotif...":"Contoh: Teknologi Maklumat dan Komunikasi, Kejuruteraan Elektrik, Kejuruteraan Automotif...",
-      "Program tidak ditemukan":"Program tidak ditemui",
-      "Coba kata kunci lain atau hapus pencarian.":"Cuba istilah carian lain atau kosongkan carian anda.",
-      "Tampilkan semua program":"Tunjukkan semua program",
-      "Beranda":"Rumah",
-      "Profil Sekolah":"Profil Sekolah",
-      "Program Keahlian":"Program Khusus",
-      "Pengumuman":"Pengumuman",
-      "Lewati ke konten utama":"Langkau ke kandungan utama",
-      "Buka menu navigasi":"Buka menu navigasi",
-      "Tutup menu navigasi":"Tutup menu navigasi",
-      "Sekolah Menengah Kejuruan Negeri · Kabupaten Bengkalis, Riau":"Sekolah Menengah Vokasional Negeri · Daerah Bengkalis, Riau",
-      "Lihat program keahlian":"Lihat program vokasional",
-      "Pengumuman terbaru":"Pengumuman terkini",
-      "Belajar.":"Belajar.",
-      "Berkarya.":"Mencipta.",
-      "Bertumbuh.":"Pertumbuhan.",
-      "Tetap terhubung":"Tetap berhubung",
-      "Jangan lewatkan jadwal dan pengumuman sekolah":"Jangan terlepas jadual sekolah dan pengumuman.",
-      "Buka pengumuman":"Lihat pengumuman",
-      "Sekilas sekolah":"Gambaran ringkas tentang sekolah",
-      "Pendidikan dalam angka":"Pendidikan dalam angka",
-      "Tenaga pengajar":"Staf pengajar",
-      "Siswa aktif":"Pelajar aktif",
-      "Mitra industri":"Rakan kongsi industri",
-      "Ruang untuk mengasah kompetensi dan keterampilan":"Satu ruang untuk mengasah kompetensi dan kemahiran seseorang",
-      "Jelajahi halaman program":"Terokai halaman program",
-      "Profil sekolah":"Profil sekolah",
-      "Mengenal lebih dekat SMK Negeri 1 Mandau":"Mengenal SMK Negeri 1 Mandau dengan lebih baik",
-      "Pilih jalur keahlian sesuai minat Anda":"Pilih kepakaran yang sesuai dengan minat anda.",
-      "Informasi terbaru dari sekolah":"Berita terkini dari sekolah",
-      "Jadwal, kegiatan, dan pembaruan penting disampaikan di sini secara berkala.":"Jadual, acara dan kemas kini penting dipaparkan di sini secara berkala.",
-      "Referensi belajar bahasa pemrograman":"Sumber untuk mempelajari bahasa pengaturcaraan",
-      "Materi belajar mandiri — bukan daftar mata pelajaran resmi sekolah.":"Bahan kajian sendiri — bukan jadual rasmi sekolah.",
-      "Bahasa pemrograman & teknologi web":"Bahasa pengaturcaraan & teknologi web",
-      "Bahasa pemrograman":"Bahasa pengaturcaraan",
-      "Markup":"Penandaan",
-      "Styling":"Gaya",
-      "Query":"Permintaan",
-      "Dokumentasi":"Dokumentasi",
-      "Referensi belajar mandiri":"Sumber pembelajaran kendiri",
-      "Kenali fungsi setiap teknologi dan mulai dari dokumentasi resminya.":"Biasakan diri anda dengan fungsi setiap teknologi, bermula dengan dokumentasi rasmi.",
-      "Akreditasi":"Akreditasi",
-      "Alamat dan kontak":"Alamat dan butiran hubungan",
-      "Visi":"Visi",
-      "Misi":"Misi",
-      "Nilai yang kami pegang":"Nilai-nilai yang kami junjung",
-      "Prinsip yang membentuk cara kami mendidik":"Prinsip-prinsip yang membentuk cara kita mendidik",
-      "Kegiatan":"Aktiviti",
-      "Akademik":"Akademik",
-      "Penerimaan Siswa":"Penerimaan Pelajar",
-      "Menampilkan ":"Menampilkan ",
-      "program keahlian":"program vokasional",
-      "dalam rumpun ":"dalam kalangan keluarga ",
-      "Semua":"Semua",
-      "Teknologi":"Teknologi",
-      "Bisnis":"Perniagaan"
-    },
-      "Menampilkan":"显示", "dari":"共", "@aria-label:Filter kategori teknologi":"筛选技术类别",
-      "Cari bahasa atau teknologi":"搜索语言或技术", "Contoh: Python, web, database...":"例如：Python、网页、数据库……", "Filter kategori teknologi":"筛选技术类别", "Dokumentasi resmi":"官方文档", "Tidak ada hasil yang cocok":"没有匹配结果", "Ubah kata kunci atau pilih kategori lain.":"请更改关键词或选择其他类别。", "Reset filter":"重置筛选",
-      "Informasi sekolah, dirangkai ulang sebagai":"学校信息重新整理为", "Bahasa":"语言", "Jelajahi":"浏览", "Penerimaan Murid Baru":"新生招生", "Arsip":"档案", "Untuk informasi terverifikasi dan layanan sekolah, silakan merujuk ke situs resmi.":"如需经过核实的信息和学校服务，请参阅官方网站。", "Kunjungi situs resmi":"访问官方网站",
-      "Informasi sekolah, dirangkai ulang sebagai ":"学校信息重新整理为一个","konsep independen.":"独立概念。","Replika ini menyusun ulang informasi profil, program keahlian, dan arsip publikasi yang tersedia di situs resmi SMK Negeri 1 Mandau. Informasi operasional tetap harus diperiksa melalui sumber aslinya.":"本概念网站重新整理了 Mandau 第一公立职业高中官方网站上的学校简介、专业课程和公开信息档案。具体办事信息仍应以原始来源为准。","Situs replika untuk keperluan pengembangan dan peninjauan antarmuka. Bukan laman resmi sekolah.":"用于开发和界面审阅的复制概念网站，并非学校官方网站。","Konsep pengembangan independen":"独立开发概念","Kanal resmi":"官方渠道","Jelajahi":"浏览","Kompatibilitas":"兼容性","Memeriksa dukungan perangkat…":"正在检查设备支持…",
-      "Meningkatkan sumberdaya pendidik dan tenaga kependidikan.":"提升教师和教育工作人员的能力。","Melengkapi peralatan praktik yang standar.":"配备符合标准的实训设备。","Menyiapkan tamatan berakhlak mulia, berprestasi dalam bekerja.":"培养品德良好、工作表现优秀的毕业生。","Melanjutkan pendidikan dan wirausaha.":"支持继续深造与创业。","Meningkatkan pelayanan prima kepada warga sekolah dan instansi lain.":"提升对学校成员及其他机构的服务质量。","Memberdayakan semua alumni untuk meningkatkan kualitas kompetensi siswa.":"发挥校友作用，提升学生的能力水平。","Sumber visi-misi resmi ↗":"官方愿景与使命来源 ↗","Sumber nama program:":"专业名称来源：","Baca sumber asli":"阅读原始来源","Baca sejarah":"阅读历史","Bidang komputer, sistem, dan jaringan.":"计算机、系统与网络领域。","Bidang perangkat dan teknologi audio-video.":"音频视频设备与技术领域。","Bidang desain, pemodelan, dan informasi bangunan.":"建筑设计、建模与信息领域。","Nama tercantum di situs resmi":"名称列于官方网站","@placeholder:Cari program keahlian":"搜索专业课程","@placeholder:Contoh: TKJ, listrik, otomotif...":"例如：TKJ、电力、汽车","@aria-label:Hapus pencarian":"清除搜索",
-      "Riwayat sekolah":"学校历史","Berawal dari SMK Swasta Handayani":"源自 Handayani 私立职业学校","Baca sejarah pada sumber asli ↗":"阅读原始历史资料 ↗","Gedung sekolah berdiri":"校舍建成","Pendirian SMK Swasta Handayani":"Handayani 私立职业学校成立","Penegerian menjadi SMKN 1 Mandau":"转为 Mandau 第一公立职业高中","Arah sekolah":"学校方向","Enam butir misi":"六项使命","Sepuluh program yang tercantum di beranda resmi":"官方网站列出的十个专业","Periksa daftar pada beranda resmi ↗":"查看官方网站专业列表 ↗","Lokasi dan kontak":"地址与联系方式","Hubungi sekolah melalui kanal publikasinya":"通过学校公开渠道联系","Alamat":"地址","Telepon":"电话","Pusat informasi · arsip publik":"信息中心 · 公开档案","Pengumuman sekolah":"学校公告","Perhatikan tanggal publikasi":"请注意发布日期","Arsip 2026":"2026 年档案","Arsip 2025/2026":"2025/2026 学年档案","Baca sumber asli":"阅读原始来源","Lihat seluruh arsip di situs resmi":"查看官方网站全部档案","Cari program keahlian":"搜索专业课程","Contoh: TKJ, listrik, otomotif...":"例如：TKJ、电力、汽车","Program tidak ditemukan":"未找到专业","Coba kata kunci lain atau hapus pencarian.":"请尝试其他关键词或清除搜索。","Tampilkan semua program":"显示全部专业",
-      "Beranda":"首页","Profil Sekolah":"学校简介","Program Keahlian":"专业课程","Pengumuman":"公告",
-      "Lewati ke konten utama":"跳转到主要内容","Buka menu navigasi":"打开导航菜单","Tutup menu navigasi":"关闭导航菜单",
-      "Lihat program keahlian":"查看专业课程","Pengumuman terbaru":"最新公告",
-      "Tetap terhubung":"保持联系","Jangan lewatkan jadwal dan pengumuman sekolah":"不要错过学校日程和公告",
-      "Buka pengumuman":"查看公告","Sekilas sekolah":"学校概况","Pendidikan dalam angka":"数据中的教育",
-      "Tenaga pengajar":"教师","Siswa aktif":"在校学生","Mitra industri":"产业合作伙伴",
-      "Ruang untuk mengasah kompetensi dan keterampilan":"提升能力与技能的空间",
-      "Jelajahi halaman program":"浏览专业课程页面","Profil sekolah":"学校简介",
-      "Mengenal lebih dekat SMK Negeri 1 Mandau":"进一步了解 Mandau 第一公立职业高中",
-      "Pilih jalur keahlian sesuai minat Anda":"选择符合您兴趣的专业方向",
-      "Informasi terbaru dari sekolah":"学校最新信息",
-      "Jadwal, kegiatan, dan pembaruan penting disampaikan di sini secara berkala.":"学校日程、活动和重要更新将在此定期发布。",
-      "Jelajahi":"浏览","Kanal resmi":"官方渠道","Kompatibilitas":"兼容性",
-      "Kunjungi situs resmi":"访问官方网站","Konsep pengembangan independen":"独立开发概念",
-      "Referensi belajar bahasa pemrograman":"编程语言学习参考",
-      "Materi belajar mandiri — bukan daftar mata pelajaran resmi sekolah.":"自主学习参考资料，并非学校官方课程清单。",
-      "Bahasa pemrograman & teknologi web":"编程语言与网页技术",
-      "Bahasa pemrograman":"编程语言","Markup":"标记语言","Styling":"样式语言","Query":"查询语言",
-      "Dokumentasi":"文档",
-      "Referensi belajar mandiri":"自主学习参考",
-      "Kenali fungsi setiap teknologi dan mulai dari dokumentasi resminya.":"了解每项技术的用途，并从官方文档开始学习。",
-      "Akreditasi":"认证","Alamat dan kontak":"地址与联系方式","Visi":"愿景","Misi":"使命",
-      "Nilai yang kami pegang":"我们的价值观","Prinsip yang membentuk cara kami mendidik":"塑造教育方式的原则",
-      "Kegiatan":"活动","Akademik":"学术","Penerimaan Siswa":"招生",
-      "Semua":"全部","Teknologi":"技术","Bisnis":"商业"
-    }
-  };
-
-  Object.assign(translations.en, {"Menurut halaman sejarah yang dipublikasikan sekolah, gedung sekolah telah berdiri sejak 1999. Lembaga ini didirikan pada 2000 sebagai SMK Swasta Handayani sebelum menjadi sekolah negeri pada 2002.":"According to the school’s published history page, the school building has stood since 1999. The school was founded in 2000 as Handayani Private Vocational High School before becoming a public school in 2002.","Lokasi yang disebut dalam riwayat sekolah berada di Jalan Pipa Air Bersih, Simpang Padang.":"The location mentioned in the school’s history is on Jalan Pipa Air Bersih, Simpang Padang.","Halaman sejarah mencantumkan tanggal pendirian 8 Juli 2000 dan nomor 05864/109.8.4/MN-2000.":"The history page lists the date of establishment as July 8, 2000, and the number as 05864/109.8.4/MN-2000.","Publikasi sejarah menyebut Keputusan Bupati Bengkalis Nomor 113 Tahun 2002.":"Historical publications refer to Bengkalis Regent’s Decree No. 113 of 2002.","Menjadi SMK yang unggul dalam prestasi, handal, berakhlak mulia dan berwawasan lingkungan.":"To become a vocational high school that excels in academic achievement, is reliable, upholds high moral standards, and is environmentally conscious.","Nama program berikut ditranskripsikan dari bagian “Program Keahlian” pada situs resmi. Halaman ini tidak menambahkan klaim tentang kuota, kurikulum, atau kompetensi rinci yang belum diverifikasi.":"The names of the following programs are transcribed from the “Specialization Programs” section on the official website. This page does not include any unverified claims regarding enrollment quotas, curricula, or specific competencies.","Data kontak berikut tercantum pada situs resmi. Pastikan kembali sebelum mengirim dokumen atau informasi pribadi.":"The following contact information is listed on the official website. Please double-check it before sending any documents or personal information.","Daftar nama program di bawah merujuk pada bagian “Program Keahlian” di situs resmi sekolah. Gunakan pencarian untuk menemukan nama atau singkatan program.":"The list of program names below refers to the “Specialization Programs” section on the school’s official website. Use the search function to find a program’s name or abbreviation.","HTML adalah bahasa markup, CSS adalah bahasa stylesheet, dan SQL adalah bahasa kueri; ketiganya bukan bahasa pemrograman umum.":"HTML is a markup language, CSS is a stylesheet language, and SQL is a query language; none of these are general-purpose programming languages.","Automasi, pemrosesan data, backend, dan kecerdasan buatan.":"Automation, data processing, backend, and artificial intelligence.","Interaksi web di browser serta aplikasi berbasis JavaScript.":"Web interactions in browsers and JavaScript-based applications.","Pengembangan JavaScript dengan sistem tipe statis.":"JavaScript development with a statically typed system.","Pemrograman berorientasi objek dan aplikasi lintas platform.":"Object-oriented programming and cross-platform applications.","Dasar pemrograman sistem dan konsep memori tingkat rendah.":"Fundamentals of system programming and low-level memory concepts.","Pemrograman sistem, aplikasi performa tinggi, dan perangkat lunak.":"Systems programming, high-performance applications, and software.","Aplikasi .NET, layanan backend, dan pengembangan perangkat lunak.":".NET applications, backend services, and software development.","Pengembangan aplikasi web sisi server.":"Server-side web application development.","Layanan backend, jaringan, dan perangkat lunak konkuren.":"Backend, networking, and concurrent software services.","Perangkat lunak sistem dengan fokus pada keamanan memori.":"System software focused on memory security.","Menyusun struktur dan semantik konten halaman web.":"Organizing the structure and semantics of web page content.","Mengatur tampilan, tata letak, dan responsivitas halaman web.":"Control the appearance, layout, and responsiveness of web pages.","Membaca, mengelola, dan memanipulasi data pada basis data relasional.":"Reading, managing, and manipulating data in a relational database.","Replika / konsep independen:":"Replica / independent project:","Tutup pemberitahuan":"Close notification","Pemberitahuan status situs":"Site Status Notification","Informasi profil ini disusun ulang sebagai konsep antarmuka independen dengan merujuk pada halaman sejarah, visi-misi, dan beranda situs resmi sekolah.":"This profile information has been reorganized as an independent interface concept, drawing on the history, vision and mission, and homepage sections of the school’s official website.","Ringkasan ini mengambil informasi dari postingan yang tersedia di situs resmi. Halaman ini bukan kanal pengumuman resmi dan tidak menggantikan instruksi pada sumber asli.":"This summary is based on information from posts available on the official website. This page is not an official announcement channel and does not replace the instructions provided in the original source.","Semua entri yang ditampilkan di bawah merupakan arsip tahun 2026 atau tahun pelajaran 2025/2026. Jangan menganggap pendaftaran, jadwal, atau tautan lama masih aktif. Selalu periksa situs resmi untuk informasi terbaru.":"All entries listed below are from the 2026 archives or the 2025–2026 school year. Do not assume that old registration information, schedules, or links are still active. Always check the official website for the latest information."});
-  Object.assign(translations.ms, {"Menurut halaman sejarah yang dipublikasikan sekolah, gedung sekolah telah berdiri sejak 1999. Lembaga ini didirikan pada 2000 sebagai SMK Swasta Handayani sebelum menjadi sekolah negeri pada 2002.":"Menurut halaman sejarah sekolah, bangunan sekolah itu telah berdiri sejak tahun 1999. Institusi ini ditubuhkan pada tahun 2000 sebagai Sekolah Vokasional Swasta Handayani sebelum menjadi sekolah negeri pada tahun 2002.","Lokasi yang disebut dalam riwayat sekolah berada di Jalan Pipa Air Bersih, Simpang Padang.":"Lokasi yang disebut dalam sejarah sekolah itu terletak di Jalan Pipa Air Bersih, Simpang Padang.","Halaman sejarah mencantumkan tanggal pendirian 8 Juli 2000 dan nomor 05864/109.8.4/MN-2000.":"Halaman 'Sejarah' menyatakan tarikh penubuhan pada 8 Julai 2000 dan nombor rujukan sebagai 05864/109.8.4/MN-2000.","Publikasi sejarah menyebut Keputusan Bupati Bengkalis Nomor 113 Tahun 2002.":"Publikasi sejarah merujuk kepada Dekri Rejensi Bengkalis No. 113 tahun 2002.","Menjadi SMK yang unggul dalam prestasi, handal, berakhlak mulia dan berwawasan lingkungan.":"Untuk menjadi sekolah vokasional yang cemerlang dalam pencapaian akademik, boleh dipercayai, menegakkan piawaian moral yang tinggi dan peka terhadap alam sekitar.","Nama program berikut ditranskripsikan dari bagian “Program Keahlian” pada situs resmi. Halaman ini tidak menambahkan klaim tentang kuota, kurikulum, atau kompetensi rinci yang belum diverifikasi.":"Nama-nama program berikut telah disalin daripada bahagian 'Program Pakar' di laman web rasmi. Halaman ini tidak termasuk sebarang tuntutan mengenai kuota kemasukan, kurikulum atau hasil pembelajaran terperinci yang belum disahkan.","Data kontak berikut tercantum pada situs resmi. Pastikan kembali sebelum mengirim dokumen atau informasi pribadi.":"Butiran hubungan berikut disenaraikan di laman web rasmi. Sila semak semula sebelum menghantar sebarang dokumen atau maklumat peribadi.","Daftar nama program di bawah merujuk pada bagian “Program Keahlian” di situs resmi sekolah. Gunakan pencarian untuk menemukan nama atau singkatan program.":"Senarai nama program di bawah merujuk kepada bahagian 'Program Pakar' di laman web rasmi sekolah. Gunakan fungsi carian untuk mencari nama atau singkatan program.","HTML adalah bahasa markup, CSS adalah bahasa stylesheet, dan SQL adalah bahasa kueri; ketiganya bukan bahasa pemrograman umum.":"HTML adalah bahasa penandaan, CSS adalah bahasa helaian gaya, dan SQL adalah bahasa pertanyaan; tiada satu pun daripadanya yang merupakan bahasa pengaturcaraan guna umum.","Automasi, pemrosesan data, backend, dan kecerdasan buatan.":"Automasi, pemprosesan data, sistem belakang dan kecerdasan buatan.","Interaksi web di browser serta aplikasi berbasis JavaScript.":"Interaksi web dalam pelayar dan aplikasi berasaskan JavaScript.","Pengembangan JavaScript dengan sistem tipe statis.":"Pembangunan JavaScript dengan sistem jenis statik.","Pemrograman berorientasi objek dan aplikasi lintas platform.":"Pengaturcaraan berorientasikan objek dan aplikasi merentas platform.","Dasar pemrograman sistem dan konsep memori tingkat rendah.":"Asas pengaturcaraan sistem dan konsep memori aras rendah.","Pemrograman sistem, aplikasi performa tinggi, dan perangkat lunak.":"Pengaturcaraan sistem, aplikasi dan perisian berprestasi tinggi.","Aplikasi .NET, layanan backend, dan pengembangan perangkat lunak.":"Aplikasi .NET, perkhidmatan belakang dan pembangunan perisian.","Pengembangan aplikasi web sisi server.":"Pembangunan aplikasi web sisi pelayan.","Layanan backend, jaringan, dan perangkat lunak konkuren.":"Perkhidmatan belakang, rangkaian dan perisian serentak.","Perangkat lunak sistem dengan fokus pada keamanan memori.":"Perisian sistem dengan tumpuan pada keselamatan memori.","Menyusun struktur dan semantik konten halaman web.":"Mengatur struktur dan semantik kandungan halaman web.","Mengatur tampilan, tata letak, dan responsivitas halaman web.":"Konfigurasikan penampilan, susun atur dan keupayaan responsif halaman web.","Membaca, mengelola, dan memanipulasi data pada basis data relasional.":"Membaca, mengurus dan memanipulasi data dalam pangkalan data relasi.","Replika / konsep independen:":"Replika / konsep bebas:","Tutup pemberitahuan":"Tutup pemberitahuan","Pemberitahuan status situs":"Notifikasi status tapak","Informasi profil ini disusun ulang sebagai konsep antarmuka independen dengan merujuk pada halaman sejarah, visi-misi, dan beranda situs resmi sekolah.":"Maklumat profil ini telah disusun semula sebagai konsep antara muka berdiri sendiri, merujuk kepada halaman 'Sejarah', 'Visi dan Misi' dan 'Home' di laman web rasmi sekolah.","Ringkasan ini mengambil informasi dari postingan yang tersedia di situs resmi. Halaman ini bukan kanal pengumuman resmi dan tidak menggantikan instruksi pada sumber asli.":"Ringkasan ini berdasarkan maklumat daripada pos yang terdapat di laman web rasmi. Halaman ini bukan saluran pengumuman rasmi dan tidak menggantikan arahan yang disediakan dalam sumber asal.","Semua entri yang ditampilkan di bawah merupakan arsip tahun 2026 atau tahun pelajaran 2025/2026. Jangan menganggap pendaftaran, jadwal, atau tautan lama masih aktif. Selalu periksa situs resmi untuk informasi terbaru.":"Semua entri yang dipaparkan di bawah adalah daripada arkib 2026 atau tahun akademik 2025/2026. Sila jangan anggap bahawa butiran pendaftaran lama, jadual waktu atau pautan masih sah. Sentiasa semak laman web rasmi untuk maklumat terkini."});
-  Object.assign(translations.zh, {"Menurut halaman sejarah yang dipublikasikan sekolah, gedung sekolah telah berdiri sejak 1999. Lembaga ini didirikan pada 2000 sebagai SMK Swasta Handayani sebelum menjadi sekolah negeri pada 2002.":"根据学校发布的历史介绍，校舍自1999年起便已建成。该校于2000年作为“汉达亚尼私立职业学校”创立，随后于2002年转为公立学校。","Lokasi yang disebut dalam riwayat sekolah berada di Jalan Pipa Air Bersih, Simpang Padang.":"学校简史中提到的地点位于帕当十字路口的自来水管道街。","Halaman sejarah mencantumkan tanggal pendirian 8 Juli 2000 dan nomor 05864/109.8.4/MN-2000.":"“历史”页面记载了成立日期为2000年7月8日，编号为05864/109.8.4/MN-2000。","Publikasi sejarah menyebut Keputusan Bupati Bengkalis Nomor 113 Tahun 2002.":"历史文献中提到了《2002年本卡利斯县长第113号决定》。","Menjadi SMK yang unggul dalam prestasi, handal, berakhlak mulia dan berwawasan lingkungan.":"成为一所成绩优异、实力雄厚、品德高尚且具有环保意识的职业高中。","Nama program berikut ditranskripsikan dari bagian “Program Keahlian” pada situs resmi. Halaman ini tidak menambahkan klaim tentang kuota, kurikulum, atau kompetensi rinci yang belum diverifikasi.":"以下专业名称摘自官方网站“专业课程”栏目。本页面未添加任何关于尚未核实的招生名额、课程设置或具体能力要求的说明。","Data kontak berikut tercantum pada situs resmi. Pastikan kembali sebelum mengirim dokumen atau informasi pribadi.":"以下联系方式刊载于官方网站。在发送文件或个人信息前，请再次确认。","Daftar nama program di bawah merujuk pada bagian “Program Keahlian” di situs resmi sekolah. Gunakan pencarian untuk menemukan nama atau singkatan program.":"以下课程名称列表对应学校官网上的“专业课程”栏目。请使用搜索功能查找课程名称或缩写。","HTML adalah bahasa markup, CSS adalah bahasa stylesheet, dan SQL adalah bahasa kueri; ketiganya bukan bahasa pemrograman umum.":"HTML 是一种标记语言，CSS 是一种样式表语言，而 SQL 是一种查询语言；这三种都不是通用的编程语言。","Automasi, pemrosesan data, backend, dan kecerdasan buatan.":"自动化、数据处理、后端和人工智能。","Interaksi web di browser serta aplikasi berbasis JavaScript.":"浏览器中的网页交互以及基于JavaScript的应用程序。","Pengembangan JavaScript dengan sistem tipe statis.":"基于静态类型系统的JavaScript开发。","Pemrograman berorientasi objek dan aplikasi lintas platform.":"面向对象编程和跨平台应用。","Dasar pemrograman sistem dan konsep memori tingkat rendah.":"系统编程基础与低级内存概念。","Pemrograman sistem, aplikasi performa tinggi, dan perangkat lunak.":"系统编程、高性能应用程序和软件。","Aplikasi .NET, layanan backend, dan pengembangan perangkat lunak.":".NET 应用程序、后端服务及软件开发。","Pengembangan aplikasi web sisi server.":"服务器端Web应用程序开发。","Layanan backend, jaringan, dan perangkat lunak konkuren.":"后端服务、网络和并发软件。","Perangkat lunak sistem dengan fokus pada keamanan memori.":"一款专注于内存安全的系统软件。","Menyusun struktur dan semantik konten halaman web.":"构建网页内容的结构和语义。","Mengatur tampilan, tata letak, dan responsivitas halaman web.":"设置网页的外观、布局和响应式设计。","Membaca, mengelola, dan memanipulasi data pada basis data relasional.":"在关系型数据库中读取、管理和处理数据。","Replika / konsep independen:":"复刻版/独立制作：","Tutup pemberitahuan":"关闭通知","Pemberitahuan status situs":"网站状态通知","Informasi profil ini disusun ulang sebagai konsep antarmuka independen dengan merujuk pada halaman sejarah, visi-misi, dan beranda situs resmi sekolah.":"本简介信息参考了学校官网的“历史”、“愿景与使命”及“首页”等页面内容，重新整理为一个独立的界面设计方案。","Ringkasan ini mengambil informasi dari postingan yang tersedia di situs resmi. Halaman ini bukan kanal pengumuman resmi dan tidak menggantikan instruksi pada sumber asli.":"本摘要摘自官方网站上的相关帖子。本页面并非官方公告渠道，也不能替代原始来源中的说明。","Semua entri yang ditampilkan di bawah merupakan arsip tahun 2026 atau tahun pelajaran 2025/2026. Jangan menganggap pendaftaran, jadwal, atau tautan lama masih aktif. Selalu periksa situs resmi untuk informasi terbaru.":"以下显示的所有条目均为2026年的存档内容，或2025/2026学年的存档内容。请勿认为过期的报名信息、时间表或链接仍然有效。请务必访问官方网站以获取最新信息。"});
   const original = new WeakMap();
   const originalAttributes = new WeakMap();
   function applyLanguage(lang) {
