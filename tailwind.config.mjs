@@ -26,9 +26,9 @@ export default {
         "tinta-pudar": "#4a4a4a"
       },
       fontFamily: {
-        judul: ["'Paprika'", "cursive"],
-        badan: ["'Josefin Sans'", "system-ui", "sans-serif"],
-        rapat: ["'Pragati Narrow'", "sans-serif"]
+        judul: ["Archivo Local", "system-ui", "sans-serif"],
+        badan: ["Outfit Local", "system-ui", "sans-serif"],
+        rapat: ["Azeret Mono Local", "monospace"]
       },
       maxWidth: {
         laman: "1180px"
