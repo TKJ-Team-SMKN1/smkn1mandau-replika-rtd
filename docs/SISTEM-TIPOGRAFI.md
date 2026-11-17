@@ -34,7 +34,7 @@ Catatan: inventaris memuat Office Code Pro dan varian dotted-zero Office Code Pr
 
 - Semua deklarasi memakai `font-display: swap`.
 - Deklarasi `@font-face` tidak otomatis mengunduh berkas. Browser mengambil file hanya ketika keluarga, bobot, dan gaya yang sesuai benar-benar dipakai.
-- Hanya Outfit Regular dan Archivo Bold yang dipreload secara global. Anton Regular dipreload hanya pada halaman Profil dan Pengumuman yang memakai display heading tersebut.
+- Hanya Outfit Regular dan Archivo Bold yang dipreload secara global. Anton Regular dipreload pada Beranda, Program, SDM, Tentang, Profil, dan Pengumuman karena dipakai pada heading display bagian atas halaman.
 - M PLUS disusun sebagai fallback setelah font utama agar glyph non-Latin dapat ditangani tanpa memaksa unduhan besar pada halaman Latin biasa.
 - File sumber tetap OTF pada tahap ini. Konversi/subset WOFF2 dapat menjadi pekerjaan optimasi terpisah setelah verifikasi visual dan ukuran output.
 - Jangan menambahkan preload untuk semua keluarga atau semua bobot; itu akan mengalahkan pemuatan sesuai kebutuhan.
