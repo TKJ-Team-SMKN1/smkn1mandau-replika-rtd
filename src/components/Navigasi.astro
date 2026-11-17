@@ -1,7 +1,6 @@
 ---
 interface Props { halamanAktif?: string; }
 const { halamanAktif = "" } = Astro.props;
-
 const taut = [
   { kunci: "beranda", label: "Beranda", href: "/" },
   { kunci: "profil", label: "Profil Sekolah", href: "/profil" },
@@ -11,8 +10,14 @@ const taut = [
   { kunci: "tentang", label: "Tentang", href: "/tentang" },
   { kunci: "pengaturan", label: "Pengaturan", href: "/pengaturan" }
 ];
+const jelajah = [
+  { kunci: "fasilitas", label: "Fasilitas", href: "/fasilitas" },
+  { kunci: "ekstrakurikuler", label: "Ekstrakurikuler", href: "/ekstrakurikuler" },
+  { kunci: "kegiatan", label: "Kegiatan", href: "/kegiatan" },
+  { kunci: "unit-sekolah", label: "Unit Sekolah", href: "/unit-sekolah" }
+];
+const jelajahAktif = jelajah.some((item) => item.kunci === halamanAktif);
 ---
-
 <a class="lewati-ke-konten" href="#konten-utama">Lewati ke konten utama</a>
 <header class="site-header sticky top-0 z-[150]">
   <div class="batas-ukir h-[4px] w-full" aria-hidden="true" style="--batik-warna-1:#b85c14;--batik-warna-2:#f6efe6;--batik-warna-3:#1a4d2e;--batik-skala:18;"></div>
@@ -20,119 +25,79 @@ const taut = [
     <div class="kontainer-laman flex items-center justify-between gap-4 py-3">
       <a href="/" class="brand-lockup" aria-label="SMK Negeri 1 Mandau — Beranda">
         <span class="brand-mark" aria-hidden="true">1</span>
-        <span class="brand-copy">
-          <span class="brand-name">SMK Negeri 1 Mandau</span>
-          <span class="brand-caption">Sekolah Menengah Kejuruan Negeri</span>
-        </span>
+        <span class="brand-copy"><span class="brand-name">SMK Negeri 1 Mandau</span><span class="brand-caption">Sekolah Menengah Kejuruan Negeri</span></span>
       </a>
-
       <nav aria-label="Navigasi utama" class="desktop-nav">
-        {taut.map((t) => (
-          <a href={t.href} class:list={["nav-link", { "is-active": halamanAktif === t.kunci }]} aria-current={halamanAktif === t.kunci ? "page" : undefined}>
-            {t.label}
-          </a>
-        ))}
+        {taut.map((t) => <a href={t.href} class:list={["nav-link", { "is-active": halamanAktif === t.kunci }]} aria-current={halamanAktif === t.kunci ? "page" : undefined}>{t.label}</a>)}
+        <details class:list={["nav-dropdown", { "is-active": jelajahAktif }]} open={jelajahAktif}>
+          <summary>Jelajah <span aria-hidden="true">⌄</span></summary>
+          <div class="nav-dropdown-menu">
+            {jelajah.map((item) => <a href={item.href} aria-current={halamanAktif === item.kunci ? "page" : undefined}>{item.label}</a>)}
+          </div>
+        </details>
       </nav>
-
       <a href="/pengaturan" class:list={["theme-nav-link", { "is-active": halamanAktif === "pengaturan" }]} aria-current={halamanAktif === "pengaturan" ? "page" : undefined}>Tema</a>
-
       <label class="language-control" aria-label="Pilih bahasa antarmuka">
         <span aria-hidden="true">文</span>
         <select data-language-picker aria-label="Pilih bahasa">
-          <option value="id">ID</option>
-          <option value="en">EN</option>
-          <option value="ms">MS</option>
-          <option value="zh">中文</option>
+          <option value="id">ID</option><option value="en">EN</option><option value="ms">MS</option><option value="zh">中文</option>
         </select>
       </label>
-
       <button id="tombol-menu-mobile" class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-mobile" aria-label="Buka menu navigasi">
-        <svg class="icon-menu" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
-        </svg>
-        <svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
-        </svg>
+        <svg class="icon-menu" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+        <svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
       </button>
     </div>
   </div>
-
   <nav id="menu-mobile" aria-label="Navigasi mobile" class="mobile-nav" hidden>
     <div class="kontainer-laman py-3">
-      {taut.map((t) => (
-        <a href={t.href} class:list={["mobile-nav-link", { "is-active": halamanAktif === t.kunci }]} aria-current={halamanAktif === t.kunci ? "page" : undefined}>
-          {t.label}
-          <span aria-hidden="true">↗</span>
-        </a>
-      ))}
+      {taut.map((t) => <a href={t.href} class:list={["mobile-nav-link", { "is-active": halamanAktif === t.kunci }]} aria-current={halamanAktif === t.kunci ? "page" : undefined}>{t.label}<span aria-hidden="true">↗</span></a>)}
+      <p class="mobile-nav-heading">Jelajah</p>
+      {jelajah.map((item) => <a href={item.href} class:list={["mobile-nav-link", { "is-active": halamanAktif === item.kunci }]} aria-current={halamanAktif === item.kunci ? "page" : undefined}>{item.label}<span aria-hidden="true">↗</span></a>)}
     </div>
   </nav>
 </header>
-
 <style>
-  .site-header { background: rgba(9,24,58,.96); color: #fdf8f0; border-bottom: 1px solid rgba(255,255,255,.1); box-shadow: 0 10px 32px rgba(9,24,58,.16); backdrop-filter: blur(16px); }
-  .header-inner { background: linear-gradient(110deg, #09183a, #102b50); }
-  .brand-lockup { display:flex; align-items:center; gap:.8rem; color:inherit; text-decoration:none; min-width:0; }
-  .brand-mark { display:grid; place-items:center; width:44px; height:44px; flex:none; border:1px solid rgba(217,132,63,.65); border-radius:14px 14px 14px 4px; background:linear-gradient(145deg,#d9843f,#9f4d10); color:white; font-family:"Archivo Local",sans-serif; font-size:1.25rem; box-shadow:0 5px 16px rgba(184,92,20,.25); }
-  .brand-copy { display:grid; line-height:1.2; }
-  .brand-name { font-family:"Archivo Local",sans-serif; font-size:clamp(.9rem,2vw,1.08rem); letter-spacing:-.02em; }
-  .brand-caption { margin-top:.3rem; color:rgba(246,239,230,.62); font-family:"Azeret Mono Local",monospace; font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; }
-  .desktop-nav { display:flex; align-items:center; gap:.3rem; }
-  .nav-link { padding:.68rem .9rem; border:1px solid transparent; border-radius:999px; color:rgba(246,239,230,.78); font-size:.87rem; font-weight:600; text-decoration:none; transition:background .2s,color .2s,border-color .2s; }
-  .nav-link:hover { color:white; background:rgba(255,255,255,.08); }
-  .nav-link.is-active { color:white; border-color:rgba(217,132,63,.38); background:rgba(184,92,20,.22); }
-  .language-control { display:flex; align-items:center; gap:.35rem; color:#efb17b; font-size:.8rem; }
-  .language-control select { min-height:44px; max-width:86px; padding:.45rem .55rem; border:1px solid rgba(255,255,255,.2); border-radius:10px; color:#fff; background:#102b50; font-size:.8rem; }
-  .language-control select:focus-visible { outline:3px solid #efb17b; outline-offset:3px; }
-  .theme-nav-link{margin-left:.25rem;padding:.62rem .78rem;border:1px solid rgba(255,255,255,.18);border-radius:999px;color:rgba(246,239,230,.82);font-size:.82rem;text-decoration:none;white-space:nowrap}
-  .theme-nav-link:hover,.theme-nav-link.is-active{color:#fff;background:rgba(255,255,255,.09)}
-  .menu-toggle { display:none; width:44px; height:44px; place-items:center; border:1px solid rgba(255,255,255,.18); border-radius:12px; color:white; background:rgba(255,255,255,.06); }
-  .icon-close { display:none; }
-  .menu-toggle[aria-expanded="true"] .icon-menu { display:none; }
-  .menu-toggle[aria-expanded="true"] .icon-close { display:block; }
-  .mobile-nav { border-top:1px solid rgba(255,255,255,.1); background:#09183a; }
-  .mobile-nav-link { display:flex; justify-content:space-between; align-items:center; padding:.95rem .2rem; color:rgba(246,239,230,.82); border-bottom:1px solid rgba(255,255,255,.08); text-decoration:none; font-weight:600; }
-  .mobile-nav-link.is-active { color:#f3b47e; }
-  .lewati-ke-konten { position:fixed; top:.75rem; left:.75rem; z-index:300; transform:translateY(-160%); padding:.7rem 1rem; border-radius:.5rem; color:#09183a; background:#fff; font-weight:700; }
-  .lewati-ke-konten:focus { transform:translateY(0); }
-  @media(max-width:1024px) {
-    .desktop-nav { display:none; }
-    .menu-toggle { display:grid; }
-    .language-control { margin-left:auto; }
-  }
-  @media(min-width:1025px) { .mobile-nav { display:none !important; } }
+.site-header{background:rgba(9,24,58,.96);color:#fdf8f0;border-bottom:1px solid rgba(255,255,255,.1);box-shadow:0 10px 32px rgba(9,24,58,.16);backdrop-filter:blur(16px)}
+.header-inner{background:linear-gradient(110deg,#09183a,#102b50)}
+.brand-lockup{display:flex;align-items:center;gap:.8rem;color:inherit;text-decoration:none;min-width:0}
+.brand-mark{display:grid;place-items:center;width:44px;height:44px;flex:none;border:1px solid rgba(217,132,63,.65);border-radius:14px 14px 14px 4px;background:linear-gradient(145deg,#d9843f,#9f4d10);color:white;font-family:"Archivo Local",sans-serif;font-size:1.25rem}
+.brand-copy{display:grid;line-height:1.2}.brand-name{font-family:"Archivo Local",sans-serif;font-size:clamp(.9rem,2vw,1.08rem);letter-spacing:-.02em}
+.brand-caption{margin-top:.3rem;color:rgba(246,239,230,.72);font-family:"Azeret Mono Local",monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}
+.desktop-nav{display:flex;align-items:center;gap:.15rem}
+.nav-link{display:inline-flex;min-height:44px;align-items:center;padding:.62rem .68rem;border:1px solid transparent;border-radius:.7rem;color:rgba(246,239,230,.92);font-size:.8rem;font-weight:600;text-decoration:none}
+.nav-link:hover{color:white;background:rgba(255,255,255,.08)}.nav-link.is-active{color:white;border-color:rgba(217,132,63,.38);background:rgba(184,92,20,.22)}
+.nav-dropdown{position:relative;color:rgba(246,239,230,.92);font-size:.8rem;font-weight:600}
+.nav-dropdown summary{display:flex;min-height:44px;align-items:center;gap:.4rem;padding:.62rem .68rem;border:1px solid transparent;border-radius:.7rem;cursor:pointer;list-style:none}
+.nav-dropdown summary::-webkit-details-marker{display:none}.nav-dropdown summary:hover,.nav-dropdown[open] summary{color:#fff;background:rgba(255,255,255,.08)}
+.nav-dropdown.is-active summary{border-color:rgba(217,132,63,.38);background:rgba(184,92,20,.22)}
+.nav-dropdown-menu{position:absolute;top:calc(100% + .45rem);right:0;z-index:220;display:grid;min-width:220px;padding:.4rem;border:1px solid rgba(255,255,255,.16);border-radius:.85rem;background:#09183a;box-shadow:0 16px 38px rgba(0,0,0,.28)}
+.nav-dropdown-menu a{display:flex;min-height:44px;align-items:center;padding:.65rem .8rem;border-radius:.55rem;color:#f6efe6;text-decoration:none}
+.nav-dropdown-menu a:hover,.nav-dropdown-menu a[aria-current="page"]{color:#fff;background:rgba(184,92,20,.28)}
+.language-control{display:flex;align-items:center;gap:.35rem;color:#efb17b;font-size:.8rem}
+.language-control select{min-height:44px;max-width:86px;padding:.45rem .55rem;border:1px solid rgba(255,255,255,.2);border-radius:10px;color:#fff;background:#102b50;font-size:.8rem}
+.theme-nav-link{display:inline-flex;min-height:44px;align-items:center;margin-left:.15rem;padding:.62rem .7rem;border:1px solid rgba(255,255,255,.18);border-radius:.7rem;color:rgba(246,239,230,.9);font-size:.8rem;text-decoration:none;white-space:nowrap}
+.theme-nav-link:hover,.theme-nav-link.is-active{color:#fff;background:rgba(255,255,255,.09)}
+.menu-toggle{display:none;width:44px;height:44px;place-items:center;border:1px solid rgba(255,255,255,.18);border-radius:12px;color:white;background:rgba(255,255,255,.06)}
+.icon-close{display:none}.menu-toggle[aria-expanded="true"] .icon-menu{display:none}.menu-toggle[aria-expanded="true"] .icon-close{display:block}
+.mobile-nav{border-top:1px solid rgba(255,255,255,.1);background:#09183a}
+.mobile-nav-link{display:flex;min-height:44px;justify-content:space-between;align-items:center;padding:.7rem .2rem;color:rgba(246,239,230,.9);border-bottom:1px solid rgba(255,255,255,.08);text-decoration:none;font-weight:600}
+.mobile-nav-link.is-active{color:#f3b47e}.mobile-nav-heading{margin:.9rem 0 .25rem;color:#efb17b;font-family:"Azeret Mono Local",monospace;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.lewati-ke-konten{position:fixed;top:.75rem;left:.75rem;z-index:300;transform:translateY(-160%);padding:.7rem 1rem;border-radius:.5rem;color:#09183a;background:#fff;font-weight:700}
+.lewati-ke-konten:focus{transform:translateY(0)}
+.language-control select:focus-visible,.nav-dropdown summary:focus-visible{outline:3px solid #efb17b;outline-offset:3px}
+@media(max-width:1180px){.desktop-nav{display:none}.menu-toggle{display:grid}.language-control{margin-left:auto}}
+@media(min-width:1181px){.mobile-nav{display:none!important}}
 </style>
-
 <script is:inline>
-  (() => {
-    const button = document.getElementById("tombol-menu-mobile");
-    const menu = document.getElementById("menu-mobile");
-    if (!button || !menu) return;
-
-    const closeMenu = () => {
-      button.setAttribute("aria-expanded", "false");
-      button.setAttribute("aria-label", "Buka menu navigasi");
-      menu.hidden = true;
-    };
-
-    button.addEventListener("click", () => {
-      const open = button.getAttribute("aria-expanded") !== "true";
-      button.setAttribute("aria-expanded", String(open));
-      button.setAttribute("aria-label", open ? "Tutup menu navigasi" : "Buka menu navigasi");
-      menu.hidden = !open;
-    });
-
-    menu.addEventListener("click", (event) => {
-      if (event.target.closest("a")) closeMenu();
-    });
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        closeMenu();
-        button.focus();
-      }
-    });
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 1024) closeMenu();
-    });
-  })();
+(() => {
+  const button=document.getElementById("tombol-menu-mobile");
+  const menu=document.getElementById("menu-mobile");
+  if(!button||!menu)return;
+  const closeMenu=()=>{button.setAttribute("aria-expanded","false");button.setAttribute("aria-label","Buka menu navigasi");menu.hidden=true;};
+  button.addEventListener("click",()=>{const open=button.getAttribute("aria-expanded")!=="true";button.setAttribute("aria-expanded",String(open));button.setAttribute("aria-label",open?"Tutup menu navigasi":"Buka menu navigasi");menu.hidden=!open;});
+  menu.addEventListener("click",event=>{if(event.target.closest("a"))closeMenu();});
+  document.addEventListener("keydown",event=>{if(event.key==="Escape"){closeMenu();button.focus();}});
+  window.addEventListener("resize",()=>{if(window.innerWidth>1180)closeMenu();});
+})();
 </script>

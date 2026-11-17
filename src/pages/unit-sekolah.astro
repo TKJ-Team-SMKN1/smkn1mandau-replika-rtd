@@ -1,0 +1,23 @@
+---
+import LayoutUtama from "../layouts/LayoutUtama.astro";
+const tujuhProgram = ["Teknik Kendaraan Ringan (TKR)","Analisis Pengujian Laboratorium (APL)","Teknik Komputer dan Jaringan (TKJ)","Teknik Pengelasan (TP)","Teknik Instalasi Tenaga Listrik (TITL)","Geologi Pertambangan (GP)","Teknik Audio Video (TAV)"];
+---
+<LayoutUtama judul="Unit Sekolah — SMK Negeri 1 Mandau (Replika)" deskripsi="Ringkasan historis unit Bursa Kerja Khusus dan Lembaga Sertifikasi Profesi dari publikasi sekolah." halamanAktif="unit-sekolah">
+<section class="page-hero"><div class="kontainer-laman page-hero-inner max-w-4xl">
+<p class="pita-bagian font-bagnard !text-ukir-light mb-4">Layanan dan sertifikasi · arsip publik</p><h1 class="font-judul font-anton text-4xl md:text-6xl leading-tight mb-5">Unit sekolah</h1>
+<p class="font-lora max-w-3xl text-gading/85 text-lg leading-relaxed">Halaman ini merangkum informasi publik tentang Bursa Kerja Khusus (BKK) dan Lembaga Sertifikasi Profesi (LSP-P1) yang tercatat dalam arsip sekolah.</p>
+</div></section>
+<section class="py-12 md:py-16"><div class="kontainer-laman grid lg:grid-cols-2 gap-5">
+<article class="kartu !p-6 md:!p-8"><p class="pita-bagian mb-3">Layanan alumni</p><h2 class="font-judul font-familjen text-2xl text-malam mb-4">Bursa Kerja Khusus (BKK)</h2>
+<p class="font-nunito text-tinta-pudar leading-relaxed mb-4">Publikasi sekolah pada 2023 menjelaskan BKK sebagai unit layanan yang membantu alumni memperoleh informasi dan fasilitas penempatan kerja. Alumni yang belum bekerja dapat berkoordinasi dengan BKK mengenai peluang dan informasi pekerjaan.</p>
+<p class="font-nunito text-sm text-tinta-pudar leading-relaxed">Arsip kegiatan BKK juga mencatat workshop penguatan kelembagaan, tracer study alumni, dan partisipasi dalam job fair. Seluruh catatan tersebut bersifat historis.</p>
+<div class="flex flex-wrap gap-3 mt-6"><a class="tombol tombol-ukir !w-auto" href="http://www.smkn1mandau.sch.id/2023/09/struktur-organisasi-bursa-kerja-khusus.html" target="_blank" rel="noopener noreferrer">Struktur BKK asli <span aria-hidden="true">↗</span></a><a class="tombol tombol-garis !w-auto" href="http://www.smkn1mandau.sch.id/2023/09/workshop-penguatan-kelembagaan-bkk-di.html" target="_blank" rel="noopener noreferrer">Publikasi kegiatan BKK <span aria-hidden="true">↗</span></a></div>
+</article>
+<article class="kartu !p-6 md:!p-8"><p class="pita-bagian mb-3">Sertifikasi kompetensi</p><h2 class="font-judul font-familjen text-2xl text-malam mb-4">Lembaga Sertifikasi Profesi (LSP-P1)</h2>
+<p class="font-nunito text-tinta-pudar leading-relaxed mb-4">Arsip publikasi 2023 mencatat kegiatan pemutakhiran perangkat asesmen LSP-P1 pada tujuh program keahlian. Catatan ini tidak menyatakan status sertifikasi atau ruang lingkup terkini.</p>
+<ul class="grid sm:grid-cols-2 gap-2 text-sm text-tinta-pudar">{tujuhProgram.map(program=><li class="rounded-lg border border-malam/10 bg-gading px-3 py-2">{program}</li>)}</ul>
+<div class="flex flex-wrap gap-3 mt-6"><a class="tombol tombol-ukir !w-auto" href="http://www.smkn1mandau.sch.id/2023/05/strukrut-organisasi-lembaga-sertifikasi.html" target="_blank" rel="noopener noreferrer">Struktur LSP-P1 asli <span aria-hidden="true">↗</span></a><a class="tombol tombol-garis !w-auto" href="http://www.smkn1mandau.sch.id/2023/11/kegiatan-pemutakhiran-lsp-p1-7-jurusan.html" target="_blank" rel="noopener noreferrer">Publikasi pemutakhiran <span aria-hidden="true">↗</span></a></div>
+</article></div>
+<div class="kontainer-laman mt-6"><aside class="rounded-2xl border border-ukir/25 bg-gading p-5 md:p-6"><h2 class="font-archivo font-bold text-malam mb-2">Catatan struktur organisasi</h2><p class="text-sm text-tinta-pudar leading-relaxed">Struktur organisasi pada halaman BKK dan LSP-P1 dipublikasikan sebagai gambar. Rincian nama dan jabatan tidak ditranskripsikan karena belum tersedia sebagai teks yang dapat diverifikasi. Gunakan tautan sumber asli untuk melihat materi visual.</p></aside></div>
+</section>
+</LayoutUtama>
