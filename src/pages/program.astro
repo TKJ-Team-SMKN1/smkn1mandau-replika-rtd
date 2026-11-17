@@ -4,26 +4,33 @@ import DaftarProgram from "../components/DaftarProgram.jsx";
 ---
 <LayoutUtama
   judul="Program Keahlian — SMK Negeri 1 Mandau (Replika)"
-  deskripsi="Daftar program keahlian yang tersedia di SMK Negeri 1 Mandau."
+  deskripsi="Daftar nama program keahlian yang tercantum pada publikasi beranda resmi SMK Negeri 1 Mandau. Periksa sumber asli untuk informasi terbaru."
   halamanAktif="program"
 >
   <section class="bg-gradient-to-br from-malam-deep to-rimba-dark text-white py-20">
     <div class="kontainer-laman max-w-[640px]">
-      <p class="font-rapat text-sm tracking-wide text-ukir-light mb-4">Program keahlian</p>
+      <p class="font-rapat text-sm tracking-wide text-ukir-light mb-4">Program keahlian · sumber publik</p>
       <h1 class="font-judul text-4xl md:text-5xl leading-tight mb-5">
-        Pilih jalur keahlian sesuai minat Anda
+        Daftar program yang tercantum pada publikasi sekolah
       </h1>
       <p class="text-gading/85 leading-relaxed text-lg">
-        Daftar nama program di bawah merujuk pada bagian “Program Keahlian” di situs resmi sekolah. Gunakan pencarian untuk menemukan nama atau singkatan program.
+        Daftar nama di bawah merujuk pada bagian “Program Keahlian” di beranda resmi sekolah.
+        Pencarian membantu menemukan nama atau singkatan; halaman ini tidak menyatakan kuota,
+        status penerimaan, atau rincian kurikulum terkini.
       </p>
     </div>
   </section>
 
-  <section class="py-20">
+  <section class="py-16 md:py-20">
     <div class="kontainer-laman">
       <DaftarProgram client:load />
-      <p class="text-xs text-tinta-pudar mt-5">Sumber nama program: <a class="font-bold text-ukir hover:underline" href="https://www.smkn1mandau.sch.id/" target="_blank" rel="noopener noreferrer">beranda resmi SMKN 1 Mandau ↗</a>.</p>
+      <p class="text-xs text-tinta-pudar mt-5">
+        Sumber nama program:
+        <a class="font-bold text-ukir hover:underline" href="https://www.smkn1mandau.sch.id/" target="_blank" rel="noopener noreferrer">
+          beranda resmi SMKN 1 Mandau ↗
+        </a>.
+        Periksa sumber asli untuk memastikan informasi terbaru.
+      </p>
     </div>
   </section>
-
 </LayoutUtama>
