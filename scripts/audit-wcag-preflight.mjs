@@ -56,3 +56,19 @@ if(!globalCss.includes("outline: 3px solid CanvasText")||!globalCss.includes("bo
 if(failures.length) { for(const failure of failures) console.error("CONTRAST:",failure); process.exit(1); }
 console.log("Theme contrast preflight passed: six fallback palettes; text 4.5:1 and control boundaries 3:1.");
 console.warn("Dynamic OS color overrides, gradients, imagery and interactive rendered states still require manual review.");
+
+/* Preferred 44 CSS px target baseline for primary controls. */
+const navSource=await readFile(path.join(root,"src/components/Navigasi.astro"),"utf8");
+const programSource=await readFile(path.join(root,"src/components/DaftarProgram.jsx"),"utf8");
+const noticeSource=await readFile(path.join(root,"src/components/NotifikasiReplika.jsx"),"utf8");
+const targetChecks=[
+  ["primary navigation 44px",navSource.includes("min-height:44px")],
+  ["mobile menu 44px",navSource.includes(".menu-toggle{display:none;width:44px;height:44px;")],
+  ["language selector 44px",navSource.includes(".language-control select{min-height:44px;")],
+  ["SDM filter 44px",globalCss.includes(".sdm-filter { min-height: 44px; }")],
+  ["program search clear 44px",programSource.includes("min-h-11 min-w-11")],
+  ["replica notice close 44px",noticeSource.includes("w-11 h-11 min-w-11 min-h-11")]
+];
+for(const [label,ok] of targetChecks) if(!ok) failures.push("Target baseline missing: "+label);
+if(failures.length) { for(const failure of failures) console.error("A11Y:",failure); process.exit(1); }
+console.log("Primary target baseline passed: 44 CSS px for navigation, language, filters and key controls.");
