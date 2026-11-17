@@ -208,3 +208,20 @@ html[data-theme] :focus-visible{outline-color:var(--focus-color)}
 .theme-preview{display:grid;gap:.75rem;padding:1.25rem;border:1px solid var(--line-color);border-radius:1rem;color:var(--text-primary);background:var(--surface)}
 .theme-preview-bar{height:.45rem;border-radius:99px;background:var(--accent-color)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Dynamic Color: keep text legible when browser system colors resolve to a light canvas. */
+html[data-theme="dynamic"] .site-header,
+html[data-theme="dynamic"] .site-footer { color: var(--text-primary); }
+html[data-theme="dynamic"] .nav-link,
+html[data-theme="dynamic"] .brand-caption,
+html[data-theme="dynamic"] .language-control,
+html[data-theme="dynamic"] .menu-toggle { color: var(--text-primary); }
+html[data-theme="dynamic"] .nav-link.is-active { color: var(--text-primary); }
+html[data-theme="dynamic"] .footer-intro > p,
+html[data-theme="dynamic"] .footer-copy,
+html[data-theme="dynamic"] .footer-status,
+html[data-theme="dynamic"] .footer-links a,
+html[data-theme="dynamic"] .footer-bottom-inner { color: var(--text-muted); }
+html[data-theme="dynamic"] .footer-heading,
+html[data-theme="dynamic"] .footer-official { color: var(--accent-color); }
+html[data-theme="dynamic"] .footer-mark { color: #fff; }
