@@ -119,11 +119,55 @@ else {
     try {
       const dictionaries = vm.runInNewContext("(" + i18n.slice(open, end) + ")", Object.create(null), { timeout: 1000 });
       const languages = ["en", "ms", "zh"];
+
+      function extractObjectLiteralAt(source, openIndex) {
+        let depth = 0, quote = null, escaped = false;
+        for (let i = openIndex; i < source.length; i++) {
+          const ch = source[i], next = source[i + 1];
+          if (quote) {
+            if (escaped) escaped = false;
+            else if (ch === "\\") escaped = true;
+            else if (ch === quote) quote = null;
+            continue;
+          }
+          if (ch === '"' || ch === "'" || ch === String.fromCharCode(96)) { quote = ch; continue; }
+          if (ch === "/" && next === "/") { i = source.indexOf("\n", i); if (i < 0) break; continue; }
+          if (ch === "/" && next === "*") { i = source.indexOf("*/", i + 2); if (i < 0) break; i++; continue; }
+          if (ch === "{") depth++;
+          if (ch === "}") {
+            depth--;
+            if (depth === 0) return source.slice(openIndex, i + 1);
+          }
+        }
+        return null;
+      }
+
+      // Merge every dictionary extension exactly as the browser runtime does.
+      const extensionPattern = /Object\.assign\(translations\.(en|ms|zh),\s*\{/g;
+      for (const match of i18n.matchAll(extensionPattern)) {
+        const objectStart = i18n.indexOf("{", match.index);
+        const extensionLiteral = extractObjectLiteralAt(i18n, objectStart);
+        if (!extensionLiteral) {
+          fail(path.join(dist, "index.html"), "ekstensi kamus " + match[1] + " tidak dapat diparse.");
+          continue;
+        }
+        try {
+          const extension = vm.runInNewContext("(" + extensionLiteral + ")", Object.create(null), { timeout: 1000 });
+          Object.assign(dictionaries[match[1]], extension);
+        } catch (error) {
+          fail(path.join(dist, "index.html"), "ekstensi kamus " + match[1] + " gagal diparse: " + error.message);
+        }
+      }
+
       const keySets = Object.fromEntries(languages.map(language => [language, Object.keys(dictionaries[language] || {})]));
       for (const language of languages) {
         if (!dictionaries[language]) fail(path.join(dist, "index.html"), "kamus bahasa " + language + " tidak ditemukan.");
       }
       const allKeys = new Set(languages.flatMap(language => keySets[language]));
+      for (const language of languages) {
+        const invalid = Object.entries(dictionaries[language] || {}).filter(([, value]) => typeof value !== "string" || !value.trim());
+        if (invalid.length) fail(path.join(dist, "index.html"), "i18n " + language + ": nilai terjemahan kosong atau bukan string: " + invalid.map(([key]) => key).join(" | "));
+      }
 
       const sourceFiles = [];
       async function collectSourceFiles(dir) {
