@@ -1,0 +1,56 @@
+# Phase 2 — Quality and accessibility review
+
+## Scope and limits
+
+Phase 2 adds a repeatable static preflight for generated Astro output and records decisions about font delivery and CSS cleanup. These checks are **not a WCAG 2.2 AA conformance claim**. A complete review still requires keyboard-only testing, browser zoom/reflow checks, contrast measurements for rendered states, and screen-reader testing.
+
+## Automated checks
+
+Run after a production build:
+
+```sh
+npm run build
+npm run audit:html
+```
+
+The audit checks:
+- document language, title, viewport metadata, and exactly one main landmark;
+- duplicate IDs and image alternative-text attributes;
+- accessible names for buttons;
+- safe `rel="noopener"` on links opening new tabs;
+- heading hierarchy warnings;
+- local references that do not resolve in generated output;
+- every font URL referenced by `src/styles/font-library.css`.
+
+Warnings require human review. Static HTML inspection cannot reliably determine contrast, computed accessible names, focus visibility, layout reflow, or whether translations are contextually correct.
+
+## Font delivery decision
+
+The original OTF files and license notices remain authoritative source assets. No OTF files are deleted or overwritten. WOFF2 conversion is deferred until generated files can be validated for glyph coverage, metadata, license obligations, browser rendering, and measurable transfer-size improvement. The current audit verifies that every referenced OTF face exists.
+
+Do not preload every face. Keep preloads limited to fonts used immediately above the fold; extra preloads can compete with critical page resources.
+
+## CSS architecture decision
+
+The current global stylesheet contains legacy utility overrides and theme compatibility mappings. Five theme modes depend on these mappings. Consolidation is staged: identify selector and theme dependencies first, then remove duplicate rules only with visual regression evidence. No blind minification or wholesale rewrite is performed in this phase.
+
+## Manual WCAG 2.2 AA checklist
+
+| Area | Review target | Status |
+|---|---|---|
+| Keyboard | All navigation and controls usable without a pointer | Manual test required |
+| Focus | Visible focus indicator; focus not obscured by sticky navigation | Manual test required |
+| Contrast | 4.5:1 normal text; 3:1 large text and essential UI graphics | Rendered-state measurement required |
+| Reflow | 320 CSS px viewport and 200% text zoom without loss of content/function | Manual test required |
+| Targets | At least 24×24 CSS px unless an exception applies; aim for 44×44 | CSS inspection + device test |
+| Forms | Persistent labels, instructions, and programmatic error association | Manual review |
+| Motion | Reduced-motion preference respected | Source check; runtime confirmation required |
+| Images | Meaningful alt text; decorative images use empty alt | Static preflight |
+| Semantics | Landmarks, heading order, language, and accessible names | Static preflight + screen reader |
+
+## Content integrity
+
+- Keep the project clearly labelled as an independent replica/concept.
+- Treat archived announcements as historical records, never current operational instructions.
+- Do not invent staff status, enrollment details, school statistics, or program facts.
+- Keep source links and the source register available to visitors.
