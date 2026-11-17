@@ -41,11 +41,11 @@ const pengumuman = [
   deskripsi="Arsip pengumuman yang dirangkum dari publikasi situs resmi SMK Negeri 1 Mandau. Periksa sumber asli untuk informasi dan ketentuan lengkap."
   halamanAktif="pengumuman"
 >
-  <section class="bg-gradient-to-br from-malam-deep to-malam text-white py-20 md:py-24">
+  <section class="announcement-hero page-hero bg-gradient-to-br from-malam-deep to-malam text-white py-20 md:py-24">
     <div class="kontainer-laman max-w-4xl">
-      <p class="pita-bagian !text-ukir-light mb-4">Pusat informasi · arsip publik</p>
-      <h1 class="font-judul text-4xl md:text-6xl leading-tight mb-6">Pengumuman sekolah</h1>
-      <p class="max-w-2xl text-gading/85 text-lg leading-relaxed">
+      <p class="pita-bagian font-bagnard !text-ukir-light mb-4">Pusat informasi · arsip publik</p>
+      <h1 class="font-judul font-anton text-4xl md:text-6xl leading-tight mb-6">Pengumuman sekolah</h1>
+      <p class="max-w-2xl font-familjen text-gading/85 text-lg leading-relaxed">
         Ringkasan ini mengambil informasi dari postingan yang tersedia di situs resmi. Halaman ini bukan kanal pengumuman resmi dan tidak menggantikan instruksi pada sumber asli.
       </p>
     </div>
@@ -56,8 +56,8 @@ const pengumuman = [
       <div class="rounded-2xl border border-ukir/25 bg-white p-5 md:p-6 mb-9 flex gap-4 items-start shadow-sm">
         <span class="text-ukir text-xl" aria-hidden="true">i</span>
         <div>
-          <h2 class="font-bold text-malam mb-1">Perhatikan tanggal publikasi</h2>
-          <p class="text-sm text-tinta-pudar leading-relaxed">Semua entri yang ditampilkan di bawah merupakan arsip tahun 2026 atau tahun pelajaran 2025/2026. Jangan menganggap pendaftaran, jadwal, atau tautan lama masih aktif. Selalu periksa situs resmi untuk informasi terbaru.</p>
+          <h2 class="font-archivo font-bold text-malam mb-1">Perhatikan tanggal publikasi</h2>
+          <p class="font-nunito text-sm text-tinta-pudar leading-relaxed">Semua entri yang ditampilkan di bawah merupakan arsip tahun 2026 atau tahun pelajaran 2025/2026. Jangan menganggap pendaftaran, jadwal, atau tautan lama masih aktif. Selalu periksa situs resmi untuk informasi terbaru.</p>
         </div>
       </div>
 
@@ -65,22 +65,22 @@ const pengumuman = [
         {pengumuman.map((item, index) => (
           <article class="kartu !p-5 md:!p-7">
             <div class="flex flex-wrap items-center gap-2 mb-4">
-              <span class="font-rapat text-xs uppercase tracking-widest text-ukir">{item.tanggal}</span>
-              <span class="rounded-full bg-gading px-3 py-1 text-xs font-semibold text-malam">{item.kategori}</span>
-              <span class="rounded-full border border-malam/15 px-3 py-1 text-xs text-tinta-pudar">{item.status}</span>
+              <span class="font-reglo text-xs uppercase tracking-widest text-ukir">{item.tanggal}</span>
+              <span class="font-crimson rounded-full bg-gading px-3 py-1 text-xs font-semibold text-malam">{item.kategori}</span>
+              <span class="font-lora rounded-full border border-malam/15 px-3 py-1 text-xs text-tinta-pudar">{item.status}</span>
             </div>
             <div class="grid md:grid-cols-[1fr_auto] gap-5 items-start">
               <div>
-                <h2 class="font-judul text-xl md:text-2xl text-malam mb-2">{item.judul}</h2>
-                <p class="text-sm text-tinta-pudar leading-relaxed">{item.ringkasan}</p>
+                <h2 class="font-judul font-literata text-xl md:text-2xl text-malam mb-2">{item.judul}</h2>
+                <p class="font-nunito text-sm text-tinta-pudar leading-relaxed">{item.ringkasan}</p>
               </div>
-              <a class="tombol tombol-garis !w-auto whitespace-nowrap" href={item.sumber} target="_blank" rel="noopener noreferrer">Baca sumber asli <span aria-hidden="true">↗</span></a>
+              <a class="tombol font-familjen tombol-garis !w-auto whitespace-nowrap" href={item.sumber} target="_blank" rel="noopener noreferrer">Baca sumber asli <span aria-hidden="true">↗</span></a>
             </div>
           </article>
         ))}
       </div>
       <div class="mt-10 text-center">
-        <a class="tombol tombol-ukir" href="https://www.smkn1mandau.sch.id/search?max-results=100" target="_blank" rel="noopener noreferrer">Lihat seluruh arsip di situs resmi <span aria-hidden="true">↗</span></a>
+        <a class="tombol font-familjen tombol-ukir" href="https://www.smkn1mandau.sch.id/search?max-results=100" target="_blank" rel="noopener noreferrer">Lihat seluruh arsip di situs resmi <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </section>
