@@ -1,7 +1,6 @@
 Reglo
 Copyright (c) 2015 Sebastien Sanfilippo (www.love-letters.be)
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
-Reserved Font Name: Reglo
 
 -----------------------------------------------------------
 SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
