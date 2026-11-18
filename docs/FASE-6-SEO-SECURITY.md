@@ -7,7 +7,7 @@
 - Added a generated XML sitemap after the Astro static build. It is derived from built HTML rather than a manually maintained route list.
 - Added `robots.txt` with `Allow: /` and the sitemap location. The local appearance/preferences page (`/pengaturan`) remains crawlable so crawlers can read its `noindex, nofollow` meta directive; it is excluded from the sitemap.
 - Added a `rel="sitemap"` link in the shared page head. CI validates unique non-empty page titles, non-empty descriptions, canonical uniqueness and route matching, Open Graph fields, Twitter Card, sitemap/canonical consistency, the robots sitemap reference, and the settings page's noindex state.
-- Added a **Content-Security-Policy-Report-Only** response header as a non-blocking baseline. It is intended to expose policy violations in browser developer tools after a future deployment; it does not enforce a CSP and does not replace a full resource-origin audit.
+- Added a **Content-Security-Policy-Report-Only** response header as a non-blocking baseline. It is intended to expose policy violations in browser developer tools; it does not enforce a CSP and does not replace a full resource-origin audit.
 
 ## Dependency advisory — remains open
 
@@ -27,9 +27,22 @@ The current project produces static HTML. The affected package is a transitive b
 
 CSP is intentionally report-only. The shared layout contains inline bootstrap/theme scripts and the site may use inline styles or external resource origins. Enforcing `default-src 'self'` before inventorying those dependencies could break real features. The report-only baseline is a diagnostic step; do not switch it to `Content-Security-Policy` until generated pages and browser interactions have been reviewed and the policy is narrowed to the actual resources.
 
-## Verification limits
+## Production verification update — 19 November 2026
 
-- GitHub Actions checks the generated sitemap, canonical consistency, title/description uniqueness and presence, Open Graph/Twitter metadata, sitemap discovery link, and the settings page's noindex state during the build.
-- Vercel remains paused. Therefore the response headers, public sitemap, robots response, indexing and live browser CSP reports are not claimed as externally verified.
-- SEOcrawl AI and Geekflare were unavailable in this phase because their connected accounts reported exhausted credits.
+- The production deployment was observed in Vercel with state `READY`.
+- A public crawl of all 11 application routes returned HTTP 200. Page metadata included titles and Indonesian language metadata.
+- `/pengaturan` correctly returned `noindex, nofollow`; the other 10 routes returned `index, follow`.
+- Public `/robots.txt` returned HTTP 200 and points to `/sitemap.xml`.
+- Public `/sitemap.xml` returned HTTP 200 and contained 10 URLs. The settings page is correctly excluded.
+- These checks establish public page, robots, and sitemap responses at the time of the crawl. They do not establish search-engine indexing or validate every canonical/response-header value.
+- The Vercel project details response continued to report `live: false` after an unpause request, despite READY production deployments and the public alias responding successfully. The pause/live control-plane state still needs confirmation in the Vercel dashboard.
+- Security response headers were not inspected in this pass. The CSP remains report-only.
+
+## Verification limits and remaining work
+
+- The complete push-triggered GitHub Actions audit workflow was not confirmed passed. See `docs/DEPLOYMENT-AUDIT-2026-11-19.md` for the observed CI status and the full outstanding audit list.
+- No live Lighthouse, Core Web Vitals, or mobile performance score was collected.
+- No full external penetration test or browser security test was performed.
+- SEOcrawl AI and Geekflare were unavailable in the earlier phase because their connected accounts reported exhausted credits.
+- Multilingual text switching does not create separate locale URLs or `hreflang` alternates.
 - This independent replica remains distinct from the school's official website. The existing replica notice is retained.
