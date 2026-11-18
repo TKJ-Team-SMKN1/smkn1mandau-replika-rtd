@@ -25,7 +25,11 @@ Hasil build statis berada di folder `dist/`. `npm run audit:html` memeriksa meta
 
 ## Status deployment
 
-Deployment Vercel proyek ini **aktif kembali** sejak 19 November 2026. Rilis Production terbaru yang tercatat saat pembaruan ini menggunakan commit `d288d16ab45b60fc9a3e465d9d57b815d536371a`; lihat [catatan deployment dan audit](docs/DEPLOYMENT-AUDIT-2026-11-19.md) untuk status verifikasi dan pekerjaan yang masih terbuka. Status aktif deployment tidak mengubah sifat proyek: ini tetap replika/konsep independen, bukan situs resmi sekolah.
+Deployment Production terbaru yang diperiksa berstatus **READY** dan alias publik https://smkn1mandau-replika-rtd.vercel.app merespons HTTP 200 pada audit 19 November 2026. Semua 11 rute aplikasi lolos pemeriksaan HTTP publik; `robots.txt` dan `sitemap.xml` juga merespons HTTP 200.
+
+**Catatan status Vercel:** setelah permintaan unpause, detail proyek masih mengembalikan `live: false`, meskipun deployment Production READY dan alias publik dapat diakses. Status pause/live di control plane masih perlu dikonfirmasi melalui Vercel Dashboard. Lihat [catatan deployment dan audit](docs/DEPLOYMENT-AUDIT-2026-11-19.md) untuk bukti, batas audit, dan pekerjaan terbuka.
+
+Status deployment tidak mengubah sifat proyek: ini tetap replika/konsep independen, bukan situs resmi sekolah.
 
 ## Struktur folder
 
@@ -81,7 +85,6 @@ Salinan halaman hasil scrape disimpan di `data/raw-archive/hasil_scrape_smkn1man
 ## Lisensi font
 
 Font Outfit, Archivo, dan Azeret Mono dimuat dari aset lokal di `public/fonts/`. File lisensi disertakan bersama keluarga font terkait. Pertahankan file lisensi saat font dipindahkan atau didistribusikan.
-
 
 ### Fase 3
 
