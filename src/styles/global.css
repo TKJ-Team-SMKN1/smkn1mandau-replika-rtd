@@ -36,9 +36,9 @@
     margin: 0;
     min-width: 320px;
     overflow-x: clip;
-    background: var(--kapas);
-    color: var(--tinta);
-    font-family: "Josefin Sans", system-ui, sans-serif;
+    background: var(--page-bg, var(--kapas));
+    color: var(--text-primary, var(--tinta));
+    font-family: "Outfit Local", system-ui, sans-serif;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
@@ -77,7 +77,7 @@
 
 /* Layout primitives */
 .kontainer-laman {
-  width: min(100% - 2.5rem, 1200px);
+  width: min(100% - 2.5rem, 1240px);
   margin-inline: auto;
 }
 .pita-bagian {
@@ -102,16 +102,16 @@
   position: relative;
   overflow: hidden;
   border: 1px solid var(--garis);
-  border-radius: var(--radius-kartu);
+  border-radius: 1rem;
   background: rgba(255,255,255,.92);
   padding: clamp(1.35rem, 2.5vw, 2rem);
-  box-shadow: var(--bayang-halus);
+  box-shadow: 0 8px 28px rgba(9,24,58,.055);
   transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
 }
 .kartu:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   border-color: rgba(184,92,20,.3);
-  box-shadow: 0 20px 48px rgba(9,24,58,.12);
+  box-shadow: 0 14px 34px rgba(9,24,58,.09);
 }
 
 /* Buttons */
@@ -123,7 +123,7 @@
   gap: .65rem;
   padding: .8rem 1.25rem;
   border: 1px solid transparent;
-  border-radius: 999px;
+  border-radius: .85rem;
   font-size: .94rem;
   font-weight: 700;
   line-height: 1.2;
@@ -133,14 +133,14 @@
 .tombol:hover { transform: translateY(-2px); }
 .tombol-ukir {
   color: #fff;
-  background: var(--ukir);
-  box-shadow: 0 8px 22px rgba(184,92,20,.22);
+  background: #a84f12;
+  box-shadow: none;
 }
-.tombol-ukir:hover { background: #9f4d10; box-shadow: 0 10px 26px rgba(184,92,20,.3); }
+.tombol-ukir:hover { background: #873d0d; box-shadow: none; }
 .tombol-garis {
   color: var(--malam);
   border-color: rgba(15,37,69,.28);
-  background: rgba(255,255,255,.08);
+  background: #fff;
 }
 .tombol-garis:hover { color: #fff; border-color: var(--malam); background: var(--malam); }
 
@@ -149,13 +149,11 @@ section { scroll-margin-top: 6rem; }
 :target { scroll-margin-top: 6rem; }
 
 @media (max-width: 640px) {
-  .kontainer-laman { width: min(100% - 2rem, 1200px); }
+  .kontainer-laman { width: min(100% - 2rem, 1240px); }
   .tombol { width: 100%; }
 }
 
-@layer base{body{font-family:"Outfit Local",system-ui,sans-serif;background:#f5f7fa}h1,h2,h3,.font-judul{font-family:"Archivo Local","Outfit Local",system-ui,sans-serif;font-weight:700}.font-rapat{font-family:"Azeret Mono Local",monospace}}
-.kontainer-laman{width:min(100% - 2.5rem,1240px)}.kartu{border-radius:1rem;box-shadow:0 8px 28px rgba(9,24,58,.055)}.kartu:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(9,24,58,.09)}
-.tombol{border-radius:.85rem;min-height:46px}.tombol-ukir{background:#a84f12;box-shadow:none}.tombol-ukir:hover{background:#873d0d;box-shadow:none}.tombol-garis{background:#fff}
+/* Typography, layout, cards and buttons are defined once in the base rules above. */
 .site-header{backdrop-filter:blur(18px)}.brand-name{font-family:"Archivo Local",sans-serif;font-weight:700}.brand-mark,.footer-mark{border-radius:.8rem}.nav-link{border-radius:.7rem}
 .page-hero{color:#fff;background:radial-gradient(circle at 85% 20%,rgba(217,132,63,.18),transparent 30%),linear-gradient(120deg,#09183a 0%,#102b50 62%,#164b3d 120%)}.page-hero-inner{padding-block:clamp(4rem,8vw,6.5rem)}
 .page-hero-note{display:inline-block;margin-top:1.5rem;padding:.65rem .9rem;border:1px solid rgba(255,255,255,.2);border-radius:.65rem;color:rgba(246,239,230,.78);font-size:.82rem}
@@ -239,3 +237,11 @@ html[data-theme="dynamic"] .footer-mark { color: #fff; }
 html[data-theme] input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
 html[data-theme] textarea,
 html[data-theme] select { border-color: var(--control-border) !important; }
+
+
+/* Short landscape viewports: avoid letting the sticky header consume the usable height. */
+@media (max-height: 520px), (orientation: landscape) and (max-height: 600px) {
+  .site-header { position: relative; top: auto; }
+  html { scroll-padding-top: 1rem; }
+  :focus { scroll-margin-block-start: 1rem; }
+}
