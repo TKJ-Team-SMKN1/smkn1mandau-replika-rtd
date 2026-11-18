@@ -741,6 +741,23 @@
     "Koleksi font lokal":"本地字体库"
   });
 
+  // Context-aware counter fragments: keep the three locales grammatical when React renders dynamic counts.
+  Object.assign(translations.en, {
+    "Menampilkan": "Showing",
+    "dari": "of",
+    "nama program.": "vocational programs."
+  });
+  Object.assign(translations.ms, {
+    "Menampilkan": "Menunjukkan",
+    "dari": "daripada",
+    "nama program.": "program vokasional."
+  });
+  Object.assign(translations.zh, {
+    "Menampilkan": "显示",
+    "dari": "项，共",
+    "nama program.": "个专业。"
+  });
+
   const original = new WeakMap();
   const originalAttributes = new WeakMap();
   function applyLanguage(lang) {
