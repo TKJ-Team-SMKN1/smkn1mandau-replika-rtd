@@ -32,7 +32,7 @@ Dokumen ini mencatat sumber yang digunakan untuk menyusun konten replika. Pemeri
 
 ## Direktori SDM — peninjauan 17 November 2026
 
-Direktori baru ditranskripsikan dari bagian “Guru dan Pegawai SMKN 1 Mandau” di beranda resmi http://www.smkn1mandau.sch.id/. Daftar publik memuat 127 entri unik setelah pengulangan identik pada halaman sumber dihapus: pimpinan dan koordinator, guru mata pelajaran, administrasi, operator, teknisi, UKS, kebersihan, dan keamanan. Sumber tidak mencantumkan tanggal pembaruan susunan personel; karena itu, direktori replika memberi catatan bahwa masa berlaku jabatan belum dikonfirmasi. Foto personel tidak disalin.
+Direktori ditranskripsikan dari bagian “Guru dan Pegawai SMKN 1 Mandau” di beranda resmi http://www.smkn1mandau.sch.id/. Snapshot 17 November 2026 memuat 127 entri unik: pimpinan dan koordinator, guru mata pelajaran, administrasi, operator, teknisi, UKS, kebersihan, dan keamanan. Ekstraksi agregat langsung dari beranda pada 18 November 2026 menghasilkan 123 entri; selisih empat belum direkonsiliasi dan metode ekstraksi dapat melewatkan konten. Karena sumber tidak mencantumkan tanggal pembaruan susunan personel, dataset diperlakukan sebagai snapshot bertanggal, bukan daftar personel terkini atau bukti status kerja saat ini. Foto personel tidak disalin.
 
 ## Pembaruan materi teknologi
 
