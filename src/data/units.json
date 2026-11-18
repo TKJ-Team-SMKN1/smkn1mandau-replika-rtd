@@ -8,13 +8,14 @@
       "purpose": "Publikasi sekolah menjelaskan BKK sebagai unit layanan yang membantu alumni memperoleh informasi dan fasilitas penempatan kerja.",
       "sourceUrl": "http://www.smkn1mandau.sch.id/2023/09/workshop-penguatan-kelembagaan-bkk-di.html",
       "sourceFile": "071_2023_09_workshop-penguatan-kelembagaan-bkk-di_html.html",
-      "organizationChartStatus": "image-only; names and positions not transcribed",
+      "organizationChartStatus": "image-only; source preview is too small to transcribe roles or names",
       "historicalActivities": [
         "Workshop penguatan kelembagaan BKK",
         "Rapat koordinasi BKK",
         "Tracer study alumni",
         "Partisipasi job fair"
-      ]
+      ],
+      "organizationChartAsset": "1.png (Open Graph preview; 166px)"
     },
     {
       "id": "lsp-p1",
@@ -33,9 +34,20 @@
       ],
       "programsSourceUrl": "http://www.smkn1mandau.sch.id/2023/11/kegiatan-pemutakhiran-lsp-p1-7-jurusan.html",
       "programsSourceFile": "100_2023_11_kegiatan-pemutakhiran-lsp-p1-7-jurusan_html.html",
-      "organizationChartStatus": "public embedded PDF inspected; document is dated 2021-10-05; organization roles are visible but members are not transcribed; not evidence of the current structure",
+      "organizationChartStatus": "OCR-verified historical role labels; no current personnel inference",
       "organizationChartDocumentUrl": "https://drive.google.com/file/d/1P6Wy6x2uhk3AKxmwyeUxmkQmab_vVh2W/view",
-      "organizationChartDocumentDate": "2021-10-05"
+      "organizationChartDocumentDate": "2021-10-05",
+      "organizationChartRoles": [
+        "Dewan Pengarah",
+        "Komite Skema Sertifikasi",
+        "Ketua LSP",
+        "Kepala Bagian Keuangan",
+        "Kepala Bagian Administrasi Sertifikasi",
+        "Kepala Bagian Humas",
+        "Kepala Bagian Mutu",
+        "Asesor Kompetensi"
+      ],
+      "organizationChartOcrNote": "Role labels transcribed from the PDF dated 5 October 2021. This historical document does not establish the current organization or role holders."
     }
   ]
 }

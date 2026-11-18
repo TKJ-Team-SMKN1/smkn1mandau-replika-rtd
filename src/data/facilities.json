@@ -4,7 +4,7 @@
   "currentInventory": {
     "status": "not-verified",
     "items": [],
-    "note": "The archived facilities page is image-led and does not provide a readable text inventory. Do not present these historical counts as current."
+    "note": "No current inventory is verified. The 2022 facilities page contains nine photo assets whose filenames suggest labels, but filename-derived labels are not proof of current availability, condition, or exact function."
   },
   "historicalSnapshot": {
     "period": "Development period described as 2004–2012; exact inventory observation date not stated",
@@ -84,5 +84,44 @@
       }
     ],
     "status": "historical-date-unclear"
-  }
+  },
+  "visualEvidence": [
+    {
+      "label": "Lobi",
+      "sourceFilename": "LOBY.jpg"
+    },
+    {
+      "label": "Kantin",
+      "sourceFilename": "KANTIN.jpg"
+    },
+    {
+      "label": "Laboratorium komputer",
+      "sourceFilename": "LABOR KOMPUTER.jpg"
+    },
+    {
+      "label": "Ruang majelis guru",
+      "sourceFilename": "MAJELIS GURU.jpg"
+    },
+    {
+      "label": "Perpustakaan",
+      "sourceFilename": "PERPUSTAKAAN.jpg"
+    },
+    {
+      "label": "Ruang kelas",
+      "sourceFilename": "RUANG KELAS.jpg"
+    },
+    {
+      "label": "UKS",
+      "sourceFilename": "UKS.jpg"
+    },
+    {
+      "label": "CCTV",
+      "sourceFilename": "CCTV.jpg"
+    },
+    {
+      "label": "Masjid",
+      "sourceFilename": "MESJID.jpg"
+    }
+  ],
+  "visualEvidenceStatus": "labels-derived-from-2022-source-filenames; image contents not independently reviewed; not a current inventory"
 }
