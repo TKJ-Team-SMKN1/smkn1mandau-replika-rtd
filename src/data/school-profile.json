@@ -15,19 +15,22 @@
   "history": [
     {
       "year": "1999",
-      "claim": "Gedung sekolah disebut telah berdiri.",
+      "title": "Gedung sekolah berdiri",
+      "description": "Halaman sejarah sekolah menyebut gedung berdiri sejak 1999 di Jalan Pipa Air Bersih, Desa Simpang Padang, Kecamatan Bathin Solapan, Kabupaten Bengkalis.",
       "sourceUrl": "http://www.smkn1mandau.sch.id/2022/04/sejarah-sekolah.html",
       "sourceFile": "004_2022_04_sejarah-sekolah_html.html"
     },
     {
       "year": "2000-07-08",
-      "claim": "Pendirian SMK Swasta Handayani dicantumkan dengan nomor 05864/109.8.4/MN-2000.",
+      "title": "Pendirian SMK Swasta Handayani",
+      "description": "Publikasi sejarah mencantumkan tanggal pendirian 8 Juli 2000 dan nomor 05864/109.8.4/MN-2000.",
       "sourceUrl": "http://www.smkn1mandau.sch.id/2022/04/sejarah-sekolah.html",
       "sourceFile": "004_2022_04_sejarah-sekolah_html.html"
     },
     {
       "year": "2002",
-      "claim": "Penegerian disebut berdasarkan Keputusan Bupati Bengkalis Nomor 113 Tahun 2002.",
+      "title": "Penegerian menjadi SMKN 1 Mandau",
+      "description": "Publikasi sejarah menyebut Keputusan Bupati Bengkalis Nomor 113 Tahun 2002.",
       "sourceUrl": "http://www.smkn1mandau.sch.id/2022/04/sejarah-sekolah.html",
       "sourceFile": "004_2022_04_sejarah-sekolah_html.html"
     }
