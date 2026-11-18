@@ -4,6 +4,9 @@ import { SITE_URL } from "../site-config.mjs";
 
 const dist = path.resolve("dist");
 const errors = [];
+const canonicalUrls = [];
+const seenTitles = new Map();
+
 async function collectHtml(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
   const files = [];
@@ -14,12 +17,24 @@ async function collectHtml(directory) {
   }
   return files;
 }
+
 function routeFromFile(file) {
   const relative = path.relative(dist, file).split(path.sep).join("/");
   if (relative === "index.html") return "/";
   if (relative.endsWith("/index.html")) return `/${relative.slice(0, -"index.html".length)}`;
   if (relative.endsWith(".html")) return `/${relative.slice(0, -".html".length)}`;
   return null;
+}
+
+function tagsWithAttribute(html, tagName, attribute, value) {
+  const escaped = value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const pattern = new RegExp(`<${tagName}\\b[^>]*\\b${attribute}=["']${escaped}["'][^>]*>`, "gi");
+  return [...html.matchAll(pattern)].map((match) => match[0]);
+}
+
+function attributeValue(tag, attribute) {
+  const match = tag.match(new RegExp(`\\b${attribute}=["']([^"']*)["']`, "i"));
+  return match?.[1] ?? null;
 }
 
 const [sitemap, robots, htmlFiles] = await Promise.all([
@@ -30,6 +45,7 @@ const [sitemap, robots, htmlFiles] = await Promise.all([
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
 if (sitemapUrls.length === 0) errors.push("Sitemap tidak memiliki URL.");
 if (new Set(sitemapUrls).size !== sitemapUrls.length) errors.push("Sitemap memiliki URL duplikat.");
+
 for (const value of sitemapUrls) {
   try {
     const url = new URL(value);
@@ -37,6 +53,7 @@ for (const value of sitemapUrls) {
     if (url.pathname === "/pengaturan" || url.pathname === "/pengaturan/") errors.push("Halaman pengaturan tidak boleh masuk sitemap.");
   } catch { errors.push(`URL sitemap tidak valid: ${value}`); }
 }
+
 if (!robots.includes(`Sitemap: ${new URL("/sitemap.xml", SITE_URL)}`)) errors.push("robots.txt tidak menunjuk sitemap yang benar.");
 if (!robots.includes("Allow: /")) errors.push("robots.txt harus mengizinkan halaman publik.");
 
@@ -44,17 +61,71 @@ for (const file of htmlFiles) {
   const route = routeFromFile(file);
   if (!route || route === "/404") continue;
   const html = await readFile(file, "utf8");
-  const canonicalMatches = [...html.matchAll(/<link\b[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["'][^>]*>/gi)];
-  if (canonicalMatches.length !== 1) {
-    errors.push(`${route}: harus memiliki tepat satu canonical (ditemukan ${canonicalMatches.length}).`);
-    continue;
+
+  const titleMatches = [...html.matchAll(/<title>([\s\S]*?)<\/title>/gi)];
+  if (titleMatches.length !== 1 || !titleMatches[0][1].trim()) {
+    errors.push(`${route}: harus memiliki tepat satu judul halaman yang tidak kosong.`);
+  } else {
+    const title = titleMatches[0][1].trim();
+    const previousRoute = seenTitles.get(title);
+    if (previousRoute) errors.push(`${route}: judul duplikat dengan ${previousRoute}.`);
+    else seenTitles.set(title, route);
   }
-  const expected = new URL(route, SITE_URL).toString();
-  if (canonicalMatches[0][1] !== expected) errors.push(`${route}: canonical tidak cocok dengan ${expected}.`);
-  const hasNoindex = /<meta\b[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(html);
+
+  const descriptionTags = tagsWithAttribute(html, "meta", "name", "description");
+  if (descriptionTags.length !== 1 || !attributeValue(descriptionTags[0] ?? "", "content")?.trim()) {
+    errors.push(`${route}: harus memiliki tepat satu meta description yang tidak kosong.`);
+  }
+
+  const canonicalTags = tagsWithAttribute(html, "link", "rel", "canonical");
+  if (canonicalTags.length !== 1) {
+    errors.push(`${route}: harus memiliki tepat satu canonical (ditemukan ${canonicalTags.length}).`);
+  } else {
+    const canonical = attributeValue(canonicalTags[0], "href");
+    const expected = new URL(route, SITE_URL).toString();
+    if (canonical !== expected) errors.push(`${route}: canonical tidak cocok dengan ${expected}.`);
+    else canonicalUrls.push(canonical);
+  }
+
+  const sitemapLinks = tagsWithAttribute(html, "link", "rel", "sitemap");
+  if (sitemapLinks.length !== 1 || attributeValue(sitemapLinks[0] ?? "", "href") !== "/sitemap.xml") {
+    errors.push(`${route}: harus menautkan /sitemap.xml melalui rel=sitemap.`);
+  }
+
+  for (const property of ["og:title", "og:description", "og:url"]) {
+    const tags = tagsWithAttribute(html, "meta", "property", property);
+    if (tags.length !== 1 || !attributeValue(tags[0] ?? "", "content")?.trim()) {
+      errors.push(`${route}: metadata ${property} harus tersedia tepat satu kali dan tidak kosong.`);
+    }
+    if (property === "og:url" && tags.length === 1) {
+      const canonical = canonicalTags.length === 1 ? attributeValue(canonicalTags[0], "href") : null;
+      if (attributeValue(tags[0], "content") !== canonical) errors.push(`${route}: og:url harus sama dengan canonical.`);
+    }
+  }
+
+  const twitterCards = tagsWithAttribute(html, "meta", "name", "twitter:card");
+  if (twitterCards.length !== 1 || attributeValue(twitterCards[0] ?? "", "content") !== "summary") {
+    errors.push(`${route}: twitter:card harus memiliki satu nilai summary.`);
+  }
+
+  const robotsTags = tagsWithAttribute(html, "meta", "name", "robots");
+  if (robotsTags.length !== 1) errors.push(`${route}: harus memiliki tepat satu meta robots.`);
+  const robotsContent = attributeValue(robotsTags[0] ?? "", "content")?.toLowerCase() ?? "";
   const isSettingsRoute = route === "/pengaturan" || route === "/pengaturan/";
-  if (isSettingsRoute && !hasNoindex) errors.push("Halaman pengaturan harus noindex.");
-  if (!isSettingsRoute && hasNoindex) errors.push(`${route}: halaman publik tidak terduga noindex.`);
+  if (isSettingsRoute && !robotsContent.includes("noindex")) errors.push("Halaman pengaturan harus noindex.");
+  if (!isSettingsRoute && robotsContent.includes("noindex")) errors.push(`${route}: halaman publik tidak terduga noindex.`);
+}
+
+const indexableCanonicalUrls = canonicalUrls.filter((url) => {
+  const pathname = new URL(url).pathname;
+  return pathname !== "/pengaturan" && pathname !== "/pengaturan/" && pathname !== "/404";
+});
+const sitemapSet = new Set(sitemapUrls);
+for (const url of indexableCanonicalUrls) {
+  if (!sitemapSet.has(url)) errors.push(`Canonical halaman publik tidak ada di sitemap: ${url}`);
+}
+for (const url of sitemapUrls) {
+  if (!indexableCanonicalUrls.includes(url)) errors.push(`Sitemap memuat URL yang bukan canonical halaman publik: ${url}`);
 }
 
 if (errors.length) {
@@ -62,4 +133,4 @@ if (errors.length) {
   for (const error of errors) console.error(`- ${error}`);
   process.exit(1);
 }
-console.log(`SEO preflight OK: ${sitemapUrls.length} sitemap URLs; ${htmlFiles.length} HTML files checked.`);
+console.log(`SEO preflight OK: ${sitemapUrls.length} canonical sitemap URLs; ${htmlFiles.length} HTML files checked; unique titles and descriptions, Open Graph, Twitter Card, and sitemap discovery validated.`);
