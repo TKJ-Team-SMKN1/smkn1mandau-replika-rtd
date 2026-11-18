@@ -44,7 +44,8 @@ const phoneHref = `tel:${identity.schoolPhone.replace(/[^\d+]/g, "")}`;
           <li class="relative">
             <span class="absolute -left-[2.18rem] top-1.5 w-4 h-4 rounded-full bg-ukir border-4 border-gading"></span>
             <p class="font-reglo text-sm uppercase tracking-widest text-ukir">{item.year}</p>
-            <h3 class="font-judul font-familjen text-xl text-malam mt-1">{item.claim}</h3>
+            <h3 class="font-judul font-familjen text-xl text-malam mt-1">{item.title}</h3>
+            <p class="font-lora text-sm text-tinta-pudar mt-1">{item.description}</p>
           </li>
         ))}
       </ol>
