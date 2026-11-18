@@ -755,7 +755,8 @@
   Object.assign(translations.zh, {
     "Menampilkan": "显示",
     "dari": "项，共",
-    "nama program.": "个专业。"
+    "nama program.": "个专业。",
+    "entri yang cocok": "条匹配记录"
   });
 
   const original = new WeakMap();
