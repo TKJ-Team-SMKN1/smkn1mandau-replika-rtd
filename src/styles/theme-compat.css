@@ -263,3 +263,45 @@ html[data-theme] .program-search-input:focus-visible { border-color:CanvasText; 
   }
 }
 @media (forced-colors:active) { html[data-theme] :focus-visible { outline:2px solid Highlight; box-shadow:none; } }
+
+
+/* WCAG 2.2 AA: system accent colors are not assumed to be readable as text.
+   Use the OS foreground for text on canvas surfaces, while retaining accent
+   colors for decorative borders and controls with AccentColorText. */
+@supports (color: AccentColor) {
+  html[data-theme="dynamic"] .text-ukir,
+  html[data-theme="dynamic"] .pita-bagian,
+  html[data-theme="dynamic"] .sdm-role,
+  html[data-theme="dynamic"] .sdm-source-note a,
+  html[data-theme="dynamic"] .footer-heading,
+  html[data-theme="dynamic"] .footer-official,
+  html[data-theme="dynamic"] .program-search-clear {
+    color: CanvasText !important;
+  }
+  html[data-theme="dynamic"] .page-hero .pita-bagian,
+  html[data-theme="dynamic"] .page-hero .text-ukir,
+  html[data-theme="dynamic"] .page-hero .text-ukir-light {
+    color: var(--accent-on-dark) !important;
+  }
+  html[data-theme="dynamic"] .tombol-ukir {
+    color: AccentColorText !important;
+  }
+}
+
+/* Safe fallback for browsers without CSS system accent-color support. */
+@supports not (color: AccentColor) {
+  html[data-theme="dynamic"] .text-ukir,
+  html[data-theme="dynamic"] .pita-bagian,
+  html[data-theme="dynamic"] .sdm-role,
+  html[data-theme="dynamic"] .sdm-source-note a,
+  html[data-theme="dynamic"] .footer-heading,
+  html[data-theme="dynamic"] .footer-official,
+  html[data-theme="dynamic"] .program-search-clear {
+    color: var(--text-primary) !important;
+  }
+  html[data-theme="dynamic"] .page-hero .pita-bagian,
+  html[data-theme="dynamic"] .page-hero .text-ukir,
+  html[data-theme="dynamic"] .page-hero .text-ukir-light {
+    color: var(--accent-on-dark) !important;
+  }
+}
