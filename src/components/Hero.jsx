@@ -31,7 +31,7 @@ export default function Hero() {
               Lihat program keahlian <span aria-hidden="true">↗</span>
             </a>
             <a href="/pengumuman" className="tombol tombol-garis hero-secondary">
-              Pengumuman terbaru
+              Arsip pengumuman
             </a>
           </div>
         </div>
