@@ -24,6 +24,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? "https://smkn1man
     <meta name="description" content={deskripsi} />
     <meta name="robots" content={indexable ? "index, follow" : "noindex, nofollow"} />
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="SMK Negeri 1 Mandau — Replika" />
     <meta property="og:title" content={judul} />
