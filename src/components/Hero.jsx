@@ -36,7 +36,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className={`hero-sidecard ${reveal("delay-4")}`} aria-label="Identitas visual replika">
+        <aside className={`hero-sidecard ${reveal("delay-4")}`} aria-label="Identitas visual replika">
           <div className="hero-sidecard-top">
             <span className="hero-seal">1</span>
             <span className="hero-side-label">SMK NEGERI<br />1 MANDAU</span>
@@ -45,7 +45,7 @@ export default function Hero() {
           <p className="hero-side-title">Belajar.<br />Berkarya.<br /><span>Bertumbuh.</span></p>
           <p className="hero-side-note">Ruang pendidikan kejuruan dan pengembangan kompetensi.</p>
           <div className="hero-side-bottom"><span>REPLIKA · KONSEP VISUAL</span><span aria-hidden="true">✳</span></div>
-        </div>
+        </aside>
       </div>
 
       <style>{`
