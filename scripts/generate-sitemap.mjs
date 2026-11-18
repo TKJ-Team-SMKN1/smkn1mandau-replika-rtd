@@ -3,7 +3,7 @@ import path from "node:path";
 import { SITE_URL } from "../site-config.mjs";
 
 const outputDirectory = path.resolve("dist");
-const excludedRoutes = new Set(["/pengaturan", "/404"]);
+const excludedRoutes = new Set(["/pengaturan", "/pengaturan/", "/404"]);
 
 async function collectHtml(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
