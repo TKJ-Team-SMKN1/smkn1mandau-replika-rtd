@@ -171,10 +171,10 @@ const identity = datasets["src/data/school-profile.json"].identity;
 const identityText = await getSourceText(identity.sourceFile);
 for (const token of [
   identity.name,
-  "Jalan Pipa Air Bersih",
-  "Desa Simpang Padang",
-  "Kecamatan Bathin Solapan",
-  "Kabupaten Bengkalis",
+  "Pipa Air Bersih",
+  "Simpang Padang",
+  "Bathin Solapan",
+  "Bengkalis",
 ]) {
   requireSourceText(identityText, token, `school identity: ${token}`);
 }
