@@ -31,6 +31,17 @@ const options = new Set(localeOptions);
 if (options.size !== 4 || !["id", "en", "ms", "zh"].every((locale) => options.has(locale))) {
   errors.push("Language picker must expose exactly the supported ID, EN, MS and ZH options.");
 }
+const countFragments = {
+  en: ['"Menampilkan": "Showing"', '"dari": "of"', '"nama program.": "vocational programs."'],
+  ms: ['"Menampilkan": "Menunjukkan"', '"dari": "daripada"', '"nama program.": "program vokasional."'],
+  zh: ['"Menampilkan": "显示"', '"dari": "项，共"', '"nama program.": "个专业。"'],
+};
+for (const [locale, fragments] of Object.entries(countFragments)) {
+  for (const fragment of fragments) {
+    if (!script.includes(fragment)) errors.push("Missing localized dynamic count fragment for " + locale + ": " + fragment);
+  }
+}
+
 for (const locale of ["en", "ms", "zh"]) {
   if (!declared.some((match) => match[1] === locale) || !counts[locale]) {
     errors.push("Missing or empty translation dictionary: " + locale);
