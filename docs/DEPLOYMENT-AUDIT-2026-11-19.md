@@ -5,17 +5,17 @@
 **Vercel project:** `smkn1mandau-replika-rtd`  
 **Project ID:** `prj_NZb1pWD1q2URox2UtqBC3BBHpPDO`  
 **Team ID:** `team_BLHyfFLCvab9U6fjRg4lvdLO`  
-**Latest verified Production deployment:** `dpl_TNrjjZ6PXFzQHrP6ngeH2zCmNkGQ`  
-**Deployment commit:** `fd141c0ae9ea7455722f299f7b1a52cf5cd43aec`  
-**GitHub Actions run:** [Build validation #177](https://github.com/TKJ-Team-SMKN1/smkn1mandau-replika-rtd/actions/runs/44358032080)  
+**Latest verified Production deployment:** `dpl_gktLzcVGbBh694MxMZL1d2SPYjzX`  
+**Deployment commit:** `c65274d75a2a55f89254ace9faf1457cae836506`  
+**GitHub Actions run:** [Build validation #179](https://github.com/TKJ-Team-SMKN1/smkn1mandau-replika-rtd/actions/runs/44359106844)  
 **Identity notice:** This remains an independent replica/concept. It is not the official SMK Negeri 1 Mandau website and does not represent or claim endorsement by the school.
 
 ## Deployment — completed
 
 - The Vercel `unpause_project` action was requested on 19 November 2026. The API returned `result: null`.
-- The final explicit Production deployment was created from `main` at commit `fd141c0ae9ea7455722f299f7b1a52cf5cd43aec`.
-- Deployment ID: `dpl_TNrjjZ6PXFzQHrP6ngeH2zCmNkGQ`.
-- Deployment URL: https://smkn1mandau-replika-j967uk7jb-hypergarudas-projects.vercel.app
+- The final explicit Production deployment was created from `main` at commit `c65274d75a2a55f89254ace9faf1457cae836506`.
+- Deployment ID: `dpl_gktLzcVGbBh694MxMZL1d2SPYjzX`.
+- Deployment URL: https://smkn1mandau-replika-7opr3qran-hypergarudas-projects.vercel.app
 - Deployment state: **READY**; target: Production; framework: Astro; Node.js 24.x.
 - Primary alias assigned: https://smkn1mandau-replika-rtd.vercel.app
 - Build log confirms 11 static pages generated and 10 indexable routes written to the sitemap.
@@ -25,7 +25,7 @@
 
 ## Public production smoke audit — latest deployment
 
-The public crawl was run after deployment `dpl_TNrjjZ6PXFzQHrP6ngeH2zCmNkGQ` became READY.
+The public crawl was run after deployment `dpl_gktLzcVGbBh694MxMZL1d2SPYjzX` became READY.
 
 - **11/11 application routes returned HTTP 200**:
   - `/`
@@ -48,10 +48,10 @@ The public crawl was run after deployment `dpl_TNrjjZ6PXFzQHrP6ngeH2zCmNkGQ` bec
 
 ## GitHub Actions — full automated run
 
-<badge color="success">Build validation #177 — SUCCESS</badge>
+<badge color="success">Build validation #179 — SUCCESS</badge>
 
-- Run ID: `44358032080`
-- Commit: `fd141c0ae9ea7455722f299f7b1a52cf5cd43aec`
+- Run ID: `44359106844`
+- Commit: `c65274d75a2a55f89254ace9faf1457cae836506`
 - Job: `build`
 - Job status: `completed`; conclusion: `success`.
 - All **15/15 workflow steps** completed successfully.
@@ -84,7 +84,7 @@ The public crawl was run after deployment `dpl_TNrjjZ6PXFzQHrP6ngeH2zCmNkGQ` bec
 ## What is completed
 
 1. Requested Vercel unpause action.
-2. Deployed the latest inspected `main` commit `fd141c0` to Production; deployment reached READY.
+2. Deployed the latest inspected `main` commit `c65274d` to Production; deployment reached READY.
 3. Confirmed primary alias assignment and public HTTP response.
 4. Verified all 11 production routes return HTTP 200.
 5. Verified `robots.txt` and `sitemap.xml` return HTTP 200; sitemap contains 10 indexable URLs.
