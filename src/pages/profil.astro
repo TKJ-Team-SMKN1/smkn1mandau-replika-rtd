@@ -8,7 +8,7 @@ const history = schoolProfile.history;
 const vision = schoolProfile.vision;
 const misi = schoolProfile.mission;
 const program = programData.entries.map((item) => `${item.nama} (${item.singkatan})`);
-const phoneHref = `tel:${identity.schoolPhone.replace(/[^\\d+]/g, "")}`;
+const phoneHref = `tel:${identity.schoolPhone.replace(/[^\d+]/g, "")}`;
 ---
 <LayoutUtama
   judul="Profil Sekolah — SMK Negeri 1 Mandau (Replika Konsep)"
