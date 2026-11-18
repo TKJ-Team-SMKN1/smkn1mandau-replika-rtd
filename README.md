@@ -25,7 +25,7 @@ Hasil build statis berada di folder `dist/`. `npm run audit:html` memeriksa meta
 
 ## Status deployment
 
-Deployment Vercel proyek ini sedang **dipause atas keputusan pemilik proyek**. Pengembangan GitHub pada branch `main` dapat berlanjut, tetapi jangan melakukan deploy atau mengaktifkan kembali proyek tanpa instruksi eksplisit.
+Deployment Vercel proyek ini **aktif kembali** sejak 19 November 2026. Rilis Production terbaru yang tercatat saat pembaruan ini menggunakan commit `d288d16ab45b60fc9a3e465d9d57b815d536371a`; lihat [catatan deployment dan audit](docs/DEPLOYMENT-AUDIT-2026-11-19.md) untuk status verifikasi dan pekerjaan yang masih terbuka. Status aktif deployment tidak mengubah sifat proyek: ini tetap replika/konsep independen, bukan situs resmi sekolah.
 
 ## Struktur folder
 
