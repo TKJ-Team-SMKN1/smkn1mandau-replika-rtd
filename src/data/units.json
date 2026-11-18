@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "1.0.0",
+  "observedAt": "2026-11-18",
+  "units": [
+    {
+      "id": "bkk",
+      "name": "Bursa Kerja Khusus (BKK)",
+      "purpose": "Publikasi sekolah menjelaskan BKK sebagai unit layanan yang membantu alumni memperoleh informasi dan fasilitas penempatan kerja.",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/09/workshop-penguatan-kelembagaan-bkk-di.html",
+      "sourceFile": "071_2023_09_workshop-penguatan-kelembagaan-bkk-di_html.html",
+      "organizationChartStatus": "image-only; names and positions not transcribed",
+      "historicalActivities": [
+        "Workshop penguatan kelembagaan BKK",
+        "Rapat koordinasi BKK",
+        "Tracer study alumni",
+        "Partisipasi job fair"
+      ]
+    },
+    {
+      "id": "lsp-p1",
+      "name": "Lembaga Sertifikasi Profesi Pihak Pertama (LSP-P1)",
+      "vision": "Menjadi Lembaga Sertifikasi Profesi yang profesional dan terpercaya dalam menyelenggarakan sertifikasi kompetensi sehingga menghasilkan calon tenaga kerja tingkat SMK yang kompeten, unggul dan mempunyai daya saing global.",
+      "visionSourceUrl": "http://www.smkn1mandau.sch.id/2023/05/visi-misi-lsp-p1.html",
+      "visionSourceFile": "021_2023_05_visi-misi-lsp-p1_html.html",
+      "programsIn2023Update": [
+        "Teknik Kendaraan Ringan (TKR)",
+        "Analisis Pengujian Laboratorium (APL)",
+        "Teknik Komputer dan Jaringan (TKJ)",
+        "Teknik Pengelasan (TP)",
+        "Teknik Instalasi Tenaga Listrik (TITL)",
+        "Geologi Pertambangan (GP)",
+        "Teknik Audio Video (TAV)"
+      ],
+      "programsSourceUrl": "http://www.smkn1mandau.sch.id/2023/11/kegiatan-pemutakhiran-lsp-p1-7-jurusan.html",
+      "programsSourceFile": "100_2023_11_kegiatan-pemutakhiran-lsp-p1-7-jurusan_html.html",
+      "organizationChartStatus": "image/download placeholder; organization members not transcribed"
+    }
+  ]
+}

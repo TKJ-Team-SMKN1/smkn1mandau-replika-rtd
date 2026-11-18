@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0.0",
+  "observedAt": "2026-11-18",
+  "source": {
+    "url": "http://www.smkn1mandau.sch.id/",
+    "section": "Program Keahlian",
+    "publishedAt": null,
+    "status": "official-homepage-publication"
+  },
+  "note": "Ten names transcribed from the current homepage. This list is separate from the seven-program LSP-P1 update published in November 2023.",
+  "entries": [
+    {
+      "id": "dpib",
+      "nama": "Desain Pemodelan dan Informasi Bangunan",
+      "singkatan": "DPIB",
+      "kataKunci": "desain bangunan konstruksi gambar"
+    },
+    {
+      "id": "tav",
+      "nama": "Teknik Audio Video",
+      "singkatan": "TAV",
+      "kataKunci": "elektronika audio video"
+    },
+    {
+      "id": "titl",
+      "nama": "Teknik Instalasi Tenaga Listrik",
+      "singkatan": "TITL",
+      "kataKunci": "listrik instalasi tenaga"
+    },
+    {
+      "id": "tkr",
+      "nama": "Teknik Kendaraan Ringan",
+      "singkatan": "TKR",
+      "kataKunci": "otomotif mobil kendaraan"
+    },
+    {
+      "id": "tp",
+      "nama": "Teknik Pengelasan",
+      "singkatan": "TP",
+      "kataKunci": "las fabrikasi logam"
+    },
+    {
+      "id": "tbsm",
+      "nama": "Teknik Bisnis Sepeda Motor",
+      "singkatan": "TBSM",
+      "kataKunci": "otomotif sepeda motor bisnis"
+    },
+    {
+      "id": "tkj",
+      "nama": "Teknik Komputer dan Jaringan",
+      "singkatan": "TKJ",
+      "kataKunci": "komputer jaringan server teknologi informasi"
+    },
+    {
+      "id": "gp",
+      "nama": "Geologi Pertambangan",
+      "singkatan": "GP",
+      "kataKunci": "geologi tambang mineral bumi"
+    },
+    {
+      "id": "tpmg",
+      "nama": "Teknik Pemboran Minyak dan Gas",
+      "singkatan": "TPMG",
+      "kataKunci": "pemboran minyak gas energi"
+    },
+    {
+      "id": "apl",
+      "nama": "Analisis Pengujian Laboratorium",
+      "singkatan": "APL",
+      "kataKunci": "analisis pengujian laboratorium kimia"
+    }
+  ]
+}

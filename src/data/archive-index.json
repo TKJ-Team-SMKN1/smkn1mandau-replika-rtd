@@ -1,0 +1,908 @@
+{
+  "schemaVersion": "1.0.0",
+  "observedAt": "2026-11-18",
+  "source": "data/raw-archive/hasil_scrape_smkn1mandau/daftar_halaman.csv",
+  "totalFiles": 100,
+  "items": [
+    {
+      "id": "archive-001",
+      "file": "001_index.html",
+      "sourceUrl": "http://smkn1mandau.sch.id/",
+      "year": null,
+      "type": "homepage",
+      "topic": "homepage",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-002",
+      "file": "002_index.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/",
+      "year": null,
+      "type": "homepage",
+      "topic": "homepage",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-003",
+      "file": "003_search_max-results_100.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/search?max-results=100",
+      "year": null,
+      "type": "search-results",
+      "topic": "search",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-004",
+      "file": "004_2022_04_sejarah-sekolah_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/04/sejarah-sekolah.html",
+      "year": "2022",
+      "type": "profile-or-unit-page",
+      "topic": "sejarah-sekolah",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-005",
+      "file": "005_2022_04_identitas-sekolah_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/04/identitas-sekolah.html",
+      "year": "2022",
+      "type": "profile-or-unit-page",
+      "topic": "identitas-sekolah",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-006",
+      "file": "006_2022_05_visi-misi-smkn-1-mandau_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/05/visi-misi-smkn-1-mandau.html",
+      "year": "2022",
+      "type": "profile-or-unit-page",
+      "topic": "visi-misi-smkn-1-mandau",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-007",
+      "file": "007_2022_05_fasilitas_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/05/fasilitas.html",
+      "year": "2022",
+      "type": "profile-or-unit-page",
+      "topic": "fasilitas",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-008",
+      "file": "008_search_q_kegiatan.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/search?q=kegiatan",
+      "year": null,
+      "type": "search-results",
+      "topic": "search",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-009",
+      "file": "009_search_q_pengumuman.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/search?q=pengumuman",
+      "year": null,
+      "type": "search-results",
+      "topic": "search",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-010",
+      "file": "010_2022_05_ekstrakurikuler_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/05/ekstrakurikuler.html",
+      "year": "2022",
+      "type": "profile-or-unit-page",
+      "topic": "ekstrakurikuler",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-011",
+      "file": "011_search_q_lomba.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/search?q=lomba",
+      "year": null,
+      "type": "search-results",
+      "topic": "search",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-012",
+      "file": "012_2022_06_galeri_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/06/galeri.html",
+      "year": "2022",
+      "type": "profile-or-unit-page",
+      "topic": "galeri",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-013",
+      "file": "013_search_q_penerimaan.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/search?q=penerimaan",
+      "year": null,
+      "type": "search-results",
+      "topic": "search",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-014",
+      "file": "014_search_q_penetapan.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/search?q=penetapan",
+      "year": null,
+      "type": "search-results",
+      "topic": "search",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-015",
+      "file": "015_search_q_mpls.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/search?q=mpls",
+      "year": null,
+      "type": "search-results",
+      "topic": "search",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-016",
+      "file": "016_2023_09_struktur-organisasi-bursa-kerja-khusus_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/09/struktur-organisasi-bursa-kerja-khusus.html",
+      "year": "2023",
+      "type": "profile-or-unit-page",
+      "topic": "struktur-organisasi-bursa-kerja-khusus",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-017",
+      "file": "017_2023_09_visi-misi-bursa-kerja-khusus_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/09/visi-misi-bursa-kerja-khusus.html",
+      "year": "2023",
+      "type": "profile-or-unit-page",
+      "topic": "visi-misi-bursa-kerja-khusus",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-018",
+      "file": "018_search_q_Lowongan.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/search?q=Lowongan",
+      "year": null,
+      "type": "search-results",
+      "topic": "search",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-019",
+      "file": "019_search_q_Kegiatan_20BKK.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/search?q=Kegiatan%20BKK",
+      "year": null,
+      "type": "search-results",
+      "topic": "search",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-020",
+      "file": "020_2023_05_strukrut-organisasi-lembaga-sertifikasi_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/05/strukrut-organisasi-lembaga-sertifikasi.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "strukrut-organisasi-lembaga-sertifikasi",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-021",
+      "file": "021_2023_05_visi-misi-lsp-p1_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/05/visi-misi-lsp-p1.html",
+      "year": "2023",
+      "type": "profile-or-unit-page",
+      "topic": "visi-misi-lsp-p1",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-022",
+      "file": "022_search_q_LSP.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/search?q=LSP",
+      "year": null,
+      "type": "search-results",
+      "topic": "search",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-023",
+      "file": "023_search_q_SMK-PK.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/search?q=(SMK-PK)",
+      "year": null,
+      "type": "search-results",
+      "topic": "search",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-024",
+      "file": "024_2023_07_pengumuman-penetapan-peserta-didik-baru_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/07/pengumuman-penetapan-peserta-didik-baru.html",
+      "year": "2023",
+      "type": "announcement",
+      "topic": "pengumuman-penetapan-peserta-didik-baru",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-025",
+      "file": "025_2023_05_informasi-pnerimaan-peserta-didik-baru_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/05/informasi-pnerimaan-peserta-didik-baru.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "informasi-pnerimaan-peserta-didik-baru",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-026",
+      "file": "026_2023_05_pengumuman-kelulusan-siswa-kelas-xii_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/05/pengumuman-kelulusan-siswa-kelas-xii.html",
+      "year": "2023",
+      "type": "announcement",
+      "topic": "pengumuman-kelulusan-siswa-kelas-xii",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-027",
+      "file": "027_2022_12_workshop-kewirausahaan-berbasis-digital_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/12/workshop-kewirausahaan-berbasis-digital.html",
+      "year": "2022",
+      "type": "article-or-static-page",
+      "topic": "workshop-kewirausahaan-berbasis-digital",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-028",
+      "file": "028_2022_12_hari-guru-nasional-ke-77_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/12/hari-guru-nasional-ke-77.html",
+      "year": "2022",
+      "type": "article-or-static-page",
+      "topic": "hari-guru-nasional-ke-77",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-029",
+      "file": "029_2022_12_gerakan-nasional-aksi-bergizi_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/12/gerakan-nasional-aksi-bergizi.html",
+      "year": "2022",
+      "type": "article-or-static-page",
+      "topic": "gerakan-nasional-aksi-bergizi",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-030",
+      "file": "030_2022_12_kegiatan-workshop-budaya-kerja_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/12/kegiatan-workshop-budaya-kerja.html",
+      "year": "2022",
+      "type": "article-or-static-page",
+      "topic": "kegiatan-workshop-budaya-kerja",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-031",
+      "file": "031_2022_12_penguatan-karakter-berbasis-mindset_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/12/penguatan-karakter-berbasis-mindset.html",
+      "year": "2022",
+      "type": "article-or-static-page",
+      "topic": "penguatan-karakter-berbasis-mindset",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-032",
+      "file": "032_2022_12_penyusunan-dokumen-administrasi-blud_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/12/penyusunan-dokumen-administrasi-blud.html",
+      "year": "2022",
+      "type": "article-or-static-page",
+      "topic": "penyusunan-dokumen-administrasi-blud",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-033",
+      "file": "033_2022_06_sosialisasi-dan-implementasi_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/06/sosialisasi-dan-implementasi.html",
+      "year": "2022",
+      "type": "article-or-static-page",
+      "topic": "sosialisasi-dan-implementasi",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-034",
+      "file": "034_2022_05_penyambutan-penilaian-adiwiyata-pada_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/05/penyambutan-penilaian-adiwiyata-pada.html",
+      "year": "2022",
+      "type": "article-or-static-page",
+      "topic": "penyambutan-penilaian-adiwiyata-pada",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-035",
+      "file": "035_2022_05_pelaksanaan-upacara-bendera-pasca-covid_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/05/pelaksanaan-upacara-bendera-pasca-covid.html",
+      "year": "2022",
+      "type": "article-or-static-page",
+      "topic": "pelaksanaan-upacara-bendera-pasca-covid",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-036",
+      "file": "036_2022_05_pelaksanaan-uji-kompetensi-keahlian-ukk_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/05/pelaksanaan-uji-kompetensi-keahlian-ukk.html",
+      "year": "2022",
+      "type": "article-or-static-page",
+      "topic": "pelaksanaan-uji-kompetensi-keahlian-ukk",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-037",
+      "file": "037_2022_05_kegiatan-pesantren-kilat-ramadhan_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/05/kegiatan-pesantren-kilat-ramadhan.html",
+      "year": "2022",
+      "type": "article-or-static-page",
+      "topic": "kegiatan-pesantren-kilat-ramadhan",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-038",
+      "file": "038_2026_06_masa-pengenalan-lingkungan-sekolah-mpls_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2026/06/masa-pengenalan-lingkungan-sekolah-mpls.html",
+      "year": "2026",
+      "type": "announcement",
+      "topic": "masa-pengenalan-lingkungan-sekolah-mpls",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-039",
+      "file": "039_2026_06_pengumuman-penetapan-final-dan-daftar_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2026/06/pengumuman-penetapan-final-dan-daftar.html",
+      "year": "2026",
+      "type": "announcement",
+      "topic": "pengumuman-penetapan-final-dan-daftar",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-040",
+      "file": "040_2026_05_informasi-penerimaan-murid-baru-tahun_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2026/05/informasi-penerimaan-murid-baru-tahun.html",
+      "year": "2026",
+      "type": "announcement",
+      "topic": "informasi-penerimaan-murid-baru-tahun",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-041",
+      "file": "041_2026_05_pengumuman-kelulusan-siswa-tp-20252026_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2026/05/pengumuman-kelulusan-siswa-tp-20252026.html",
+      "year": "2026",
+      "type": "announcement",
+      "topic": "pengumuman-kelulusan-siswa-tp-20252026",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-042",
+      "file": "042_2025_07_masa-pengenalan-lingkungan-sekolah-mpls_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2025/07/masa-pengenalan-lingkungan-sekolah-mpls.html",
+      "year": "2025",
+      "type": "announcement",
+      "topic": "masa-pengenalan-lingkungan-sekolah-mpls",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-043",
+      "file": "043_2025_07_pengumuman-penetapan-final-dan-daftar_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2025/07/pengumuman-penetapan-final-dan-daftar.html",
+      "year": "2025",
+      "type": "announcement",
+      "topic": "pengumuman-penetapan-final-dan-daftar",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-044",
+      "file": "044_search_updated-max_2025-07-01T17_48_00-07_00_max-results_6.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/search?updated-max=2025-07-01T17:48:00-07:00&max-results=6",
+      "year": null,
+      "type": "search-results",
+      "topic": "search",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-045",
+      "file": "045_2025_06_informasi-penerimaan-peserta-didik-baru_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2025/06/informasi-penerimaan-peserta-didik-baru.html",
+      "year": "2025",
+      "type": "announcement",
+      "topic": "informasi-penerimaan-peserta-didik-baru",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-046",
+      "file": "046_2025_05_pengumuman-kelulusan-siswa_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2025/05/pengumuman-kelulusan-siswa.html",
+      "year": "2025",
+      "type": "announcement",
+      "topic": "pengumuman-kelulusan-siswa",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-047",
+      "file": "047_2024_07_masa-pengenalan-lingkungan-sekolah-mpls_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2024/07/masa-pengenalan-lingkungan-sekolah-mpls.html",
+      "year": "2024",
+      "type": "announcement",
+      "topic": "masa-pengenalan-lingkungan-sekolah-mpls",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-048",
+      "file": "048_2024_07_calon-siswa-yang-belum-melakukan-daftar_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2024/07/calon-siswa-yang-belum-melakukan-daftar.html",
+      "year": "2024",
+      "type": "article-or-static-page",
+      "topic": "calon-siswa-yang-belum-melakukan-daftar",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-049",
+      "file": "049_2024_06_pengumuman-daftar-ulang-ppdb-smkn-1_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2024/06/pengumuman-daftar-ulang-ppdb-smkn-1.html",
+      "year": "2024",
+      "type": "announcement",
+      "topic": "pengumuman-daftar-ulang-ppdb-smkn-1",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-050",
+      "file": "050_2024_06_informasi-penerimaan-peserta-didik-baru_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2024/06/informasi-penerimaan-peserta-didik-baru.html",
+      "year": "2024",
+      "type": "announcement",
+      "topic": "informasi-penerimaan-peserta-didik-baru",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-051",
+      "file": "051_2024_05_pengumuman-kelulusan-siswa-tahun_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2024/05/pengumuman-kelulusan-siswa-tahun.html",
+      "year": "2024",
+      "type": "announcement",
+      "topic": "pengumuman-kelulusan-siswa-tahun",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-052",
+      "file": "052_2024_03_kunjungan-industri-siswa-kelas-xi_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2024/03/kunjungan-industri-siswa-kelas-xi.html",
+      "year": "2024",
+      "type": "article-or-static-page",
+      "topic": "kunjungan-industri-siswa-kelas-xi",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-053",
+      "file": "053_2024_03_lowongan-lpk-japan-training-center_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2024/03/lowongan-lpk-japan-training-center.html",
+      "year": "2024",
+      "type": "article-or-static-page",
+      "topic": "lowongan-lpk-japan-training-center",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-054",
+      "file": "054_2024_03_lowongan-program-magang-ke-jepang_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2024/03/lowongan-program-magang-ke-jepang.html",
+      "year": "2024",
+      "type": "article-or-static-page",
+      "topic": "lowongan-program-magang-ke-jepang",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-055",
+      "file": "055_2024_03_lowongan-kerja-ahass-chaca-motor-honda_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2024/03/lowongan-kerja-ahass-chaca-motor-honda.html",
+      "year": "2024",
+      "type": "article-or-static-page",
+      "topic": "lowongan-kerja-ahass-chaca-motor-honda",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-056",
+      "file": "056_2024_03_study-tiru-tim-bkk-ke-smkn-5-pekanbaru_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2024/03/study-tiru-tim-bkk-ke-smkn-5-pekanbaru.html",
+      "year": "2024",
+      "type": "article-or-static-page",
+      "topic": "study-tiru-tim-bkk-ke-smkn-5-pekanbaru",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-057",
+      "file": "057_2024_01_lowongan-kerja-pt-indrillco-bakti_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2024/01/lowongan-kerja-pt-indrillco-bakti.html",
+      "year": "2024",
+      "type": "article-or-static-page",
+      "topic": "lowongan-kerja-pt-indrillco-bakti",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-058",
+      "file": "058_2024_01_lowongan-kerja-pt-besmindo_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2024/01/lowongan-kerja-pt-besmindo.html",
+      "year": "2024",
+      "type": "article-or-static-page",
+      "topic": "lowongan-kerja-pt-besmindo",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-059",
+      "file": "059_2024_01_lowongan-kerja-pt-mitra-energi-kekal_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2024/01/lowongan-kerja-pt-mitra-energi-kekal.html",
+      "year": "2024",
+      "type": "article-or-static-page",
+      "topic": "lowongan-kerja-pt-mitra-energi-kekal",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-060",
+      "file": "060_2024_01_lowongan-kerja-pt-lambang-azas-mulia_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2024/01/lowongan-kerja-pt-lambang-azas-mulia.html",
+      "year": "2024",
+      "type": "article-or-static-page",
+      "topic": "lowongan-kerja-pt-lambang-azas-mulia",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-061",
+      "file": "061_search_updated-max_2024-01-31T16_49_00-08_00_max-results_100_start_22_by-date_false.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/search?updated-max=2024-01-31T16:49:00-08:00&max-results=100&start=22&by-date=false",
+      "year": null,
+      "type": "search-results",
+      "topic": "search",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-062",
+      "file": "062_2023_09_smk-negeri-1-mandau-berpartisipasi_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/09/smk-negeri-1-mandau-berpartisipasi.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "smk-negeri-1-mandau-berpartisipasi",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-063",
+      "file": "063_2023_09_kegiatan-workshop-pembelajaran-guru_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/09/kegiatan-workshop-pembelajaran-guru.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "kegiatan-workshop-pembelajaran-guru",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-064",
+      "file": "064_2023_11_pendampingan-pk-bersama-politeknik_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/11/pendampingan-pk-bersama-politeknik.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "pendampingan-pk-bersama-politeknik",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-065",
+      "file": "065_2023_11_kegiatan-workshop-teaching-factory_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/11/kegiatan-workshop-teaching-factory.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "kegiatan-workshop-teaching-factory",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-066",
+      "file": "066_2023_09_jurusan-teknik-audio-video-melaksanakan_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/09/jurusan-teknik-audio-video-melaksanakan.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "jurusan-teknik-audio-video-melaksanakan",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-067",
+      "file": "067_2023_10_kegiatan-penyelarasan-kurikulum-dengan_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/10/kegiatan-penyelarasan-kurikulum-dengan.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "kegiatan-penyelarasan-kurikulum-dengan",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-068",
+      "file": "068_2023_09_kegiatan-workshop-dan-penandatanganan_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/09/kegiatan-workshop-dan-penandatanganan.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "kegiatan-workshop-dan-penandatanganan",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-069",
+      "file": "069_2023_09_jurusan-geologi-pertambangan-smk-negeri_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/09/jurusan-geologi-pertambangan-smk-negeri.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "jurusan-geologi-pertambangan-smk-negeri",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-070",
+      "file": "070_2023_09_program-edukasi-e-waste-dan-e-waste_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/09/program-edukasi-e-waste-dan-e-waste.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "program-edukasi-e-waste-dan-e-waste",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-071",
+      "file": "071_2023_09_workshop-penguatan-kelembagaan-bkk-di_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/09/workshop-penguatan-kelembagaan-bkk-di.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "workshop-penguatan-kelembagaan-bkk-di",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-072",
+      "file": "072_2023_10_penanda-tanganan-mou-dengan-alfamart_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/10/penanda-tanganan-mou-dengan-alfamart.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "penanda-tanganan-mou-dengan-alfamart",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-073",
+      "file": "073_2023_11_kegiatan-pelatihan-tenaga-administrasi_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/11/kegiatan-pelatihan-tenaga-administrasi.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "kegiatan-pelatihan-tenaga-administrasi",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-074",
+      "file": "074_2023_11_kegiatan-praktisi-mengajar-dengan-dunia_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/11/kegiatan-praktisi-mengajar-dengan-dunia.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "kegiatan-praktisi-mengajar-dengan-dunia",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-075",
+      "file": "075_2023_10_sosialisasi-kunjungan-industri-jurusan_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/10/sosialisasi-kunjungan-industri-jurusan.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "sosialisasi-kunjungan-industri-jurusan",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-076",
+      "file": "076_2023_09_kegiatan-penyelarasan-kurikulum-dengan_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/09/kegiatan-penyelarasan-kurikulum-dengan.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "kegiatan-penyelarasan-kurikulum-dengan",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-077",
+      "file": "077_2023_10_kunjungan-industri-dpib-ke-pt-nindya_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/10/kunjungan-industri-dpib-ke-pt-nindya.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "kunjungan-industri-dpib-ke-pt-nindya",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-078",
+      "file": "078_2023_11_job-fair-disnakertrans-kab-bengkalis_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/11/job-fair-disnakertrans-kab-bengkalis.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "job-fair-disnakertrans-kab-bengkalis",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-079",
+      "file": "079_search_q_kegiatan_updated-max_2023-11-05T01_51_00-08_00_max-results_20_start_18_by-date_false.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/search?q=kegiatan&updated-max=2023-11-05T01:51:00-08:00&max-results=20&start=18&by-date=false",
+      "year": null,
+      "type": "search-results",
+      "topic": "search",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-080",
+      "file": "080_2022_06_pengumuman-kelulusan-siswa-siswi-kelas_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/06/pengumuman-kelulusan-siswa-siswi-kelas.html",
+      "year": "2022",
+      "type": "announcement",
+      "topic": "pengumuman-kelulusan-siswa-siswi-kelas",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-081",
+      "file": "081_2022_07_pengumuman-penetapan-peserta-didik-baru_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/07/pengumuman-penetapan-peserta-didik-baru.html",
+      "year": "2022",
+      "type": "announcement",
+      "topic": "pengumuman-penetapan-peserta-didik-baru",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-082",
+      "file": "082_2023_09_smk-negeri-1-mandau-gelar-rangkaian_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/09/smk-negeri-1-mandau-gelar-rangkaian.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "smk-negeri-1-mandau-gelar-rangkaian",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-083",
+      "file": "083_2023_09_lomba-pelakat-raimuna-nasional-xii_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/09/lomba-pelakat-raimuna-nasional-xii.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "lomba-pelakat-raimuna-nasional-xii",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-084",
+      "file": "084_2023_09_lomba-kompetensi-siswa-tingkat-provinsi_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/09/lomba-kompetensi-siswa-tingkat-provinsi.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "lomba-kompetensi-siswa-tingkat-provinsi",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-085",
+      "file": "085_2023_09_lomba-kejuaraan-porprov-riau-x-2022_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/09/lomba-kejuaraan-porprov-riau-x-2022.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "lomba-kejuaraan-porprov-riau-x-2022",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-086",
+      "file": "086_2023_09_lomba-turnamen-futsal-antar-smasmk_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/09/lomba-turnamen-futsal-antar-smasmk.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "lomba-turnamen-futsal-antar-smasmk",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-087",
+      "file": "087_2023_09_lomba-peringatan-hut-pramuka-ke-62-se_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/09/lomba-peringatan-hut-pramuka-ke-62-se.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "lomba-peringatan-hut-pramuka-ke-62-se",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-088",
+      "file": "088_2022_06_informasippdb2022_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/06/informasippdb2022.html",
+      "year": "2022",
+      "type": "article-or-static-page",
+      "topic": "informasippdb2022",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-089",
+      "file": "089_2023_07_informasi-masa-pengenalan-lingkungan_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/07/informasi-masa-pengenalan-lingkungan.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "informasi-masa-pengenalan-lingkungan",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-090",
+      "file": "090_2022_07_informasi-masa-pengenalan-lingkungan_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/07/informasi-masa-pengenalan-lingkungan.html",
+      "year": "2022",
+      "type": "article-or-static-page",
+      "topic": "informasi-masa-pengenalan-lingkungan",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-091",
+      "file": "091_2023_10_lowongan-kerja-alfamart_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/10/lowongan-kerja-alfamart.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "lowongan-kerja-alfamart",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-092",
+      "file": "092_2023_11_lowongan-kerja-pt-vadhana-internasional_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/11/lowongan-kerja-pt-vadhana-internasional.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "lowongan-kerja-pt-vadhana-internasional",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-093",
+      "file": "093_2024_01_lowongan-kerja-khusus-wanita_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2024/01/lowongan-kerja-khusus-wanita.html",
+      "year": "2024",
+      "type": "article-or-static-page",
+      "topic": "lowongan-kerja-khusus-wanita",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-094",
+      "file": "094_2023_10_lowongan-kerja-di-perusahaan-kabupaten_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/10/lowongan-kerja-di-perusahaan-kabupaten.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "lowongan-kerja-di-perusahaan-kabupaten",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-095",
+      "file": "095_2023_11_blog-post_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/11/blog-post.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "blog-post",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-096",
+      "file": "096_2023_09_kegiatan-bkk-pat-koordinasi-bursa-kerja_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/09/kegiatan-bkk-pat-koordinasi-bursa-kerja.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "kegiatan-bkk-pat-koordinasi-bursa-kerja",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-097",
+      "file": "097_2023_10_kegiatan-bkk-pembuatan-surat-lamaran_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/10/kegiatan-bkk-pembuatan-surat-lamaran.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "kegiatan-bkk-pembuatan-surat-lamaran",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-098",
+      "file": "098_2023_11_kunjungan-lsp-dan-bkk-ke-smk-negeri-1_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/11/kunjungan-lsp-dan-bkk-ke-smk-negeri-1.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "kunjungan-lsp-dan-bkk-ke-smk-negeri-1",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-099",
+      "file": "099_2023_11_kegiatan-tracer-study-di-smk-negeri-1_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/11/kegiatan-tracer-study-di-smk-negeri-1.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "kegiatan-tracer-study-di-smk-negeri-1",
+      "status": "archived-snapshot"
+    },
+    {
+      "id": "archive-100",
+      "file": "100_2023_11_kegiatan-pemutakhiran-lsp-p1-7-jurusan_html.html",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2023/11/kegiatan-pemutakhiran-lsp-p1-7-jurusan.html",
+      "year": "2023",
+      "type": "article-or-static-page",
+      "topic": "kegiatan-pemutakhiran-lsp-p1-7-jurusan",
+      "status": "archived-snapshot"
+    }
+  ]
+}

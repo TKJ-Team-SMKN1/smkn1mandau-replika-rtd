@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0.0",
+  "observedAt": "2026-11-18",
+  "identity": {
+    "name": "SMK Negeri 1 Mandau",
+    "address": "Jl. Pipa Air Bersih, Desa Simpang Padang, Kecamatan Bathin Solapan, Kabupaten Bengkalis, Riau",
+    "postalCode": "28784",
+    "schoolPhone": "+62 823-8775-8277",
+    "publicEmail": "smknegeri1mandau@gmail.com",
+    "principalAsPublished": "Zulfikar, S.Pd",
+    "sourceUrl": "http://www.smkn1mandau.sch.id/2022/04/identitas-sekolah.html",
+    "sourceFile": "005_2022_04_identitas-sekolah_html.html",
+    "status": "publicly-published-identity; verify before operational use"
+  },
+  "history": [
+    {
+      "year": "1999",
+      "claim": "Gedung sekolah disebut telah berdiri.",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/04/sejarah-sekolah.html",
+      "sourceFile": "004_2022_04_sejarah-sekolah_html.html"
+    },
+    {
+      "year": "2000-07-08",
+      "claim": "Pendirian SMK Swasta Handayani dicantumkan dengan nomor 05864/109.8.4/MN-2000.",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/04/sejarah-sekolah.html",
+      "sourceFile": "004_2022_04_sejarah-sekolah_html.html"
+    },
+    {
+      "year": "2002",
+      "claim": "Penegerian disebut berdasarkan Keputusan Bupati Bengkalis Nomor 113 Tahun 2002.",
+      "sourceUrl": "http://www.smkn1mandau.sch.id/2022/04/sejarah-sekolah.html",
+      "sourceFile": "004_2022_04_sejarah-sekolah_html.html"
+    }
+  ],
+  "vision": {
+    "text": "Menjadi SMK yang unggul dalam prestasi, handal, berakhlak mulia dan berwawasan lingkungan.",
+    "sourceUrl": "http://www.smkn1mandau.sch.id/2022/05/visi-misi-smkn-1-mandau.html",
+    "sourceFile": "006_2022_05_visi-misi-smkn-1-mandau_html.html"
+  },
+  "mission": [
+    "Meningkatkan sumberdaya pendidik dan tenaga kependidikan.",
+    "Melengkapi peralatan praktik yang standar.",
+    "Menyiapkan tamatan berakhlak mulia, berprestasi dalam bekerja.",
+    "Melanjutkan pendidikan dan wirausaha.",
+    "Meningkatkan pelayanan prima kepada warga sekolah dan instansi lain.",
+    "Memberdayakan semua alumni untuk meningkatkan kualitas kompetensi siswa."
+  ],
+  "missionSourceUrl": "http://www.smkn1mandau.sch.id/2022/05/visi-misi-smkn-1-mandau.html"
+}
