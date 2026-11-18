@@ -3,14 +3,15 @@
   "observedAt": "2026-11-18",
   "identity": {
     "name": "SMK Negeri 1 Mandau",
-    "address": "Jl. Pipa Air Bersih, Desa Simpang Padang, Kecamatan Bathin Solapan, Kabupaten Bengkalis, Riau",
+    "address": "Jl. Pipa Air Bersih, Simpang Padang, Bathin Solapan, Bengkalis",
     "postalCode": "28784",
     "schoolPhone": "+62 823-8775-8277",
     "publicEmail": "smknegeri1mandau@gmail.com",
     "principalAsPublished": "Zulfikar, S.Pd",
     "sourceUrl": "http://www.smkn1mandau.sch.id/2022/04/identitas-sekolah.html",
     "sourceFile": "005_2022_04_identitas-sekolah_html.html",
-    "status": "publicly-published-identity; verify before operational use"
+    "status": "publicly-published-identity; verify before operational use",
+    "addressNote": "Halaman identitas 2022 menyebut Simpang Padang sebagai kelurahan, sedangkan footer beranda menyebut desa. Replika memakai nama lokasi netral sampai perbedaan label administratif dikonfirmasi."
   },
   "history": [
     {
