@@ -52,8 +52,9 @@ for (const file of htmlFiles) {
   const expected = new URL(route, SITE_URL).toString();
   if (canonicalMatches[0][1] !== expected) errors.push(`${route}: canonical tidak cocok dengan ${expected}.`);
   const hasNoindex = /<meta\b[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(html);
-  if (route === "/pengaturan" && !hasNoindex) errors.push("Halaman pengaturan harus noindex.");
-  if (route !== "/pengaturan" && hasNoindex) errors.push(`${route}: halaman publik tidak terduga noindex.`);
+  const isSettingsRoute = route === "/pengaturan" || route === "/pengaturan/";
+  if (isSettingsRoute && !hasNoindex) errors.push("Halaman pengaturan harus noindex.");
+  if (!isSettingsRoute && hasNoindex) errors.push(`${route}: halaman publik tidak terduga noindex.`);
 }
 
 if (errors.length) {
