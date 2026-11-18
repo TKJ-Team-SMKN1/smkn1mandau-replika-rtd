@@ -29,6 +29,10 @@ jobs:
           node --check public/scripts/i18n.js
           node --check public/scripts/deteksi-fitur.js
           node --check public/houdini/batik-paint-worklet.js
+      - name: Audit font loading and static performance budgets
+        run: npm run audit:performance
+      - name: Audit localization catalog coverage
+        run: npm run audit:localization
       - name: Build Astro site
         run: npm run build
       - name: Audit generated HTML quality and accessibility preflight
