@@ -17,6 +17,46 @@ const datasets = Object.fromEntries(await Promise.all(
   dataFiles.map(async (file) => [file, await readJson(file)])
 ));
 const errors = [];
+
+const archiveRoot = path.join(root, "data/raw-archive/hasil_scrape_smkn1mandau");
+function decodeEntities(value) {
+  return value
+    .replace(/&nbsp;/gi, " ")
+    .replace(/&amp;/gi, "&")
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;/gi, "'")
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">")
+    .replace(/&#(\\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCodePoint(parseInt(code, 16)));
+}
+function normalizeText(value) {
+  return decodeEntities(value)
+    .replace(/<script\\b[\\s\\S]*?<\\/script>/gi, " ")
+    .replace(/<style\\b[\\s\\S]*?<\\/style>/gi, " ")
+    .replace(/<noscript\\b[\\s\\S]*?<\\/noscript>/gi, " ")
+    .replace(/<!--[\\s\\S]*?-->/g, " ")
+    .replace(/<[^>]+>/g, " ")
+    .normalize("NFKC")
+    .toLocaleLowerCase("id")
+    .replace(/\\s+([,.;:!?])/g, "$1")
+    .replace(/\\s+/g, " ")
+    .trim();
+}
+const sourceTextCache = new Map();
+async function getSourceText(file) {
+  if (!sourceTextCache.has(file)) {
+    const html = await readFile(path.join(archiveRoot, file), "utf8");
+    sourceTextCache.set(file, normalizeText(html));
+  }
+  return sourceTextCache.get(file);
+}
+function requireSourceText(source, expected, label) {
+  if (!source.includes(normalizeText(expected))) {
+    errors.push(`Source content mismatch: ${label} was not found in its archived HTML.`);
+  }
+}
+
 const archiveByFile = new Map(archive.items.map((item) => [item.file, item]));
 
 if (archive.totalFiles !== 100 || archive.items.length !== 100) {
@@ -110,6 +150,42 @@ if (extracurriculars.activities.length !== 0 ||
   errors.push("extracurriculars.json must preserve its explicit verification limitation.");
 }
 
+
+const homepageText = await getSourceText("002_index.html");
+for (const program of programs.entries) {
+  requireSourceText(homepageText, program.nama, `program ${program.singkatan}`);
+}
+
+const historyText = await getSourceText("004_2022_04_sejarah-sekolah_html.html");
+for (const token of [
+  "tahun 1999",
+  "SMK Swasta Handayani",
+  "05864/109.8.4/MN-2000",
+  "08 Juli 2000",
+  "Keputusan Bupati Bengkalis No.113 Tahun 2002",
+]) {
+  requireSourceText(historyText, token, `school history: ${token}`);
+}
+
+const identity = datasets["src/data/school-profile.json"].identity;
+const identityText = await getSourceText(identity.sourceFile);
+for (const token of [
+  identity.name,
+  "Jalan Pipa Air Bersih",
+  "Desa Simpang Padang",
+  "Kecamatan Bathin Solapan",
+  "Kabupaten Bengkalis",
+]) {
+  requireSourceText(identityText, token, `school identity: ${token}`);
+}
+
+const schoolProfile = datasets["src/data/school-profile.json"];
+const visionText = await getSourceText(schoolProfile.vision.sourceFile);
+requireSourceText(visionText, schoolProfile.vision.text, "school vision");
+for (const mission of schoolProfile.mission) {
+  requireSourceText(visionText, mission, `school mission: ${mission}`);
+}
+
 const routeBindings = [
   ["src/pages/profil.astro", ["../data/school-profile.json", "../data/programs.json"]],
   ["src/pages/kegiatan.astro", ["../data/events.json"]],
@@ -140,6 +216,7 @@ if (errors.length) {
   process.exitCode = 1;
 } else {
   console.log(`Content provenance audit passed: ${verifiedReferences} source references resolve to the 100-record archive index.`);
+  console.log(`Source text checks passed: 10 programs, 3 history milestones, school identity, vision, and 6 mission statements.`);
   console.log(`Route/data bindings passed: ${routeBindings.length} page or component bindings.`);
   console.log(`Dataset checks passed: ${staff.entries.length} staff snapshots, ${programs.entries.length} programs, ${events.entries.length} historical events.`);
   console.log("Unverified current inventory and extracurricular data remain explicitly unverified.");
