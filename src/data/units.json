@@ -10,12 +10,91 @@
       "sourceFile": "071_2023_09_workshop-penguatan-kelembagaan-bkk-di_html.html",
       "organizationChartStatus": "image-only; source preview is too small to transcribe roles or names",
       "historicalActivities": [
-        "Workshop penguatan kelembagaan BKK",
-        "Rapat koordinasi BKK",
-        "Tracer study alumni",
-        "Partisipasi job fair"
+        {
+          "date": "2 September 2023",
+          "title": "Workshop penguatan kelembagaan BKK",
+          "summary": "Publikasi membahas fungsi BKK sebagai layanan penempatan kerja bagi alumni serta koordinasi peluang dan informasi pekerjaan.",
+          "sourceUrl": "http://www.smkn1mandau.sch.id/2023/09/workshop-penguatan-kelembagaan-bkk-di.html",
+          "sourceFile": "071_2023_09_workshop-penguatan-kelembagaan-bkk-di_html.html",
+          "evidenceTerms": [
+            "Sabtu (2/9/23)",
+            "fasilitas penempatan kerja untuk alumni"
+          ]
+        },
+        {
+          "date": "7 September 2023",
+          "title": "Rapat koordinasi BKK",
+          "summary": "Rapat membahas koordinasi bidang BKK dan pelaporan penempatan tenaga kerja bagi alumni.",
+          "sourceUrl": "http://www.smkn1mandau.sch.id/2023/09/kegiatan-bkk-pat-koordinasi-bursa-kerja.html",
+          "sourceFile": "096_2023_09_kegiatan-bkk-pat-koordinasi-bursa-kerja_html.html",
+          "evidenceTerms": [
+            "7 September 2023",
+            "Sosialisasi koordinasi bidang BKK"
+          ]
+        },
+        {
+          "date": "9 Oktober 2023",
+          "title": "Pembuatan surat lamaran, CV, dan bimbingan wawancara",
+          "summary": "Kegiatan membekali alumni dalam menyiapkan berkas lamaran kerja dan menghadapi wawancara.",
+          "sourceUrl": "http://www.smkn1mandau.sch.id/2023/10/kegiatan-bkk-pembuatan-surat-lamaran.html",
+          "sourceFile": "097_2023_10_kegiatan-bkk-pembuatan-surat-lamaran_html.html",
+          "evidenceTerms": [
+            "(09/10/23)",
+            "pembuatan surat lamaran kerja, CV"
+          ]
+        },
+        {
+          "date": "18–19 Oktober 2023",
+          "title": "Job Fair Disnakertrans Kabupaten Bengkalis",
+          "summary": "Arsip BKK mencatat kunjungan alumni ke job fair yang berlangsung selama dua hari di Hotel Surya.",
+          "sourceUrl": "http://www.smkn1mandau.sch.id/2023/11/job-fair-disnakertrans-kab-bengkalis.html",
+          "sourceFile": "078_2023_11_job-fair-disnakertrans-kab-bengkalis_html.html",
+          "evidenceTerms": [
+            "(19/10/23)",
+            "18-19 oktober 2023"
+          ]
+        },
+        {
+          "date": "21 Oktober 2023",
+          "title": "Tracer study alumni",
+          "summary": "Kegiatan penelusuran tamatan mengumpulkan informasi alumni yang sudah bekerja maupun yang masih dalam proses mencari pekerjaan.",
+          "sourceUrl": "http://www.smkn1mandau.sch.id/2023/11/kegiatan-tracer-study-di-smk-negeri-1.html",
+          "sourceFile": "099_2023_11_kegiatan-tracer-study-di-smk-negeri-1_html.html",
+          "evidenceTerms": [
+            "(21/10/23)",
+            "penelurusan tamatan"
+          ]
+        },
+        {
+          "date": "11 November 2023",
+          "title": "Studi tiru LSP dan BKK ke SMK Negeri 1 Padang",
+          "summary": "Kunjungan dilakukan untuk berbagi pengalaman dan mempelajari program kerja LSP serta BKK di sekolah tujuan.",
+          "sourceUrl": "http://www.smkn1mandau.sch.id/2023/11/kunjungan-lsp-dan-bkk-ke-smk-negeri-1.html",
+          "sourceFile": "098_2023_11_kunjungan-lsp-dan-bkk-ke-smk-negeri-1_html.html",
+          "evidenceTerms": [
+            "(11/11/23)",
+            "program kerja LSP dan BKK"
+          ]
+        },
+        {
+          "date": "6 Maret 2024",
+          "title": "Studi tiru tim BKK ke SMKN 5 dan SMKN 4 Pekanbaru",
+          "summary": "Publikasi mencatat pembelajaran mengenai fungsi koordinator, administrasi BKK, pelaporan kepada Disnaker, program alumni, dan kerja sama.",
+          "sourceUrl": "http://www.smkn1mandau.sch.id/2024/03/study-tiru-tim-bkk-ke-smkn-5-pekanbaru.html",
+          "sourceFile": "056_2024_03_study-tiru-tim-bkk-ke-smkn-5-pekanbaru_html.html",
+          "evidenceTerms": [
+            "Rabu ( 06/03/2024)",
+            "SMK NEGERI 5 Pekanbaru dan SMK NEGERI 4 Pekanbaru"
+          ]
+        }
       ],
-      "organizationChartAsset": "1.png (Open Graph preview; 166px)"
+      "organizationChartAsset": "1.png (Open Graph preview; 166px)",
+      "organizationChartSourceUrl": "http://www.smkn1mandau.sch.id/2023/09/struktur-organisasi-bursa-kerja-khusus.html",
+      "organizationChartSourceFile": "016_2023_09_struktur-organisasi-bursa-kerja-khusus_html.html",
+      "visionMissionSourceUrl": "http://www.smkn1mandau.sch.id/2023/09/visi-misi-bursa-kerja-khusus.html",
+      "visionMissionSourceFile": "017_2023_09_visi-misi-bursa-kerja-khusus_html.html",
+      "visionMissionStatus": "no-readable-vision-mission-text-in-archived-html",
+      "visionMissionNote": "Arsip halaman visi-misi BKK yang tersimpan tidak memuat pernyataan visi atau misi yang dapat ditranskripsikan dari teks. Ini tidak membuktikan BKK tidak memiliki visi atau misi; replika tidak mengarang isinya."
     },
     {
       "id": "lsp-p1",
@@ -47,7 +126,17 @@
         "Kepala Bagian Mutu",
         "Asesor Kompetensi"
       ],
-      "organizationChartOcrNote": "Role labels transcribed from the PDF dated 5 October 2021. This historical document does not establish the current organization or role holders."
+      "organizationChartOcrNote": "Role labels transcribed from the PDF dated 5 October 2021. This historical document does not establish the current organization or role holders.",
+      "missionSourceUrl": "http://www.smkn1mandau.sch.id/2023/05/visi-misi-lsp-p1.html",
+      "missionSourceFile": "021_2023_05_visi-misi-lsp-p1_html.html",
+      "mission": [
+        "Lembaga Sertifikasi Profesi SMKN 1 Mandau memiliki tenaga profesional yang kompeten dalam mengoperasikan Lembaga Sertifikasi Profesi.",
+        "Manajemen Lembaga Sertifikasi Profesi SMKN 1 Mandau memberikan pelayanan uji kompetensi yang mengutamakan mutu dan kepuasan pelanggan serta menjamin bahwa pekerjaan pengujian dilaksanakan dengan kejujuran teknik, teliti, cepat, tepat dan akurat serta efisien dalam menggunakan sumber daya.",
+        "Menetapkan kebijakan, prosedur, dan administrasi lembaga sertifikasi harus terkait dengan kriteria sertifikasi, harus jujur dan wajar terhadap seluruh calon dan harus memenuhi semua persyaratan dan peraturan perundang-undangan yang berlaku.",
+        "Menghasilkan tenaga kerja bersertifikat kompetensi yang profesional dan berakhlak mulia.",
+        "Lembaga Sertifikasi Profesi SMKN 1 Mandau menggunakan prosedur yang memperlancar akses oleh pemohon dan calon tenaga kerja."
+      ],
+      "missionNote": "Pernyataan visi dan misi berikut disalin dari halaman publikasi LSP-P1 yang diarsipkan pada 2023. Ini adalah dokumen historis, bukan konfirmasi bahwa redaksi atau kebijakan tersebut masih berlaku saat ini."
     }
   ]
 }
