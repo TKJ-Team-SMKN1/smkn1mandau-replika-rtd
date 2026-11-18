@@ -27,7 +27,7 @@ const [sitemap, robots, htmlFiles] = await Promise.all([
   readFile(path.join(dist, "robots.txt"), "utf8"),
   collectHtml(dist)
 ]);
-const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\\/loc>/g)].map((match) => match[1]);
+const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
 if (sitemapUrls.length === 0) errors.push("Sitemap tidak memiliki URL.");
 if (new Set(sitemapUrls).size !== sitemapUrls.length) errors.push("Sitemap memiliki URL duplikat.");
 for (const value of sitemapUrls) {
@@ -44,14 +44,14 @@ for (const file of htmlFiles) {
   const route = routeFromFile(file);
   if (!route || route === "/404") continue;
   const html = await readFile(file, "utf8");
-  const canonicalMatches = [...html.matchAll(/<link\\b[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["'][^>]*>/gi)];
+  const canonicalMatches = [...html.matchAll(/<link\b[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["'][^>]*>/gi)];
   if (canonicalMatches.length !== 1) {
     errors.push(`${route}: harus memiliki tepat satu canonical (ditemukan ${canonicalMatches.length}).`);
     continue;
   }
   const expected = new URL(route, SITE_URL).toString();
   if (canonicalMatches[0][1] !== expected) errors.push(`${route}: canonical tidak cocok dengan ${expected}.`);
-  const hasNoindex = /<meta\\b[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(html);
+  const hasNoindex = /<meta\b[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(html);
   if (route === "/pengaturan" && !hasNoindex) errors.push("Halaman pengaturan harus noindex.");
   if (route !== "/pengaturan" && hasNoindex) errors.push(`${route}: halaman publik tidak terduga noindex.`);
 }

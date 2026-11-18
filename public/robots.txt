@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /pengaturan
 
 Sitemap: https://smkn1mandau-replika-rtd.vercel.app/sitemap.xml
