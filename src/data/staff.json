@@ -11,7 +11,8 @@
     "snapshotDate": "2026-11-17",
     "recheckedAt": "2026-11-18",
     "recheckMethod": "Firecrawl query-based aggregate extraction",
-    "recheckCount": 123
+    "recheckCount": 123,
+    "sourceFile": "002_index.html"
   },
   "counts": {
     "total": 127,
