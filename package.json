@@ -14,7 +14,8 @@
     "audit:archive": "node scripts/audit-source-archive.mjs",
     "audit:performance": "node scripts/audit-performance.mjs",
     "audit:localization": "node scripts/audit-localization.mjs",
-    "audit:seo": "node scripts/audit-seo.mjs"
+    "audit:seo": "node scripts/audit-seo.mjs",
+    "audit:provenance": "node scripts/audit-content-provenance.mjs"
   },
   "dependencies": {
     "astro": "^7.4.8",
