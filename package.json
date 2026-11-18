@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/generate-sitemap.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "audit:html": "node scripts/audit-static-html.mjs",
@@ -13,7 +13,8 @@
     "audit:security": "node scripts/audit-dependencies.mjs",
     "audit:archive": "node scripts/audit-source-archive.mjs",
     "audit:performance": "node scripts/audit-performance.mjs",
-    "audit:localization": "node scripts/audit-localization.mjs"
+    "audit:localization": "node scripts/audit-localization.mjs",
+    "audit:seo": "node scripts/audit-seo.mjs"
   },
   "dependencies": {
     "astro": "^7.4.8",

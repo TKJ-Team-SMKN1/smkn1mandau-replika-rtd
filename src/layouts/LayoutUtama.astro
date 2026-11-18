@@ -10,9 +10,11 @@ interface Props {
   judul: string;
   deskripsi: string;
   halamanAktif?: string;
+  indexable?: boolean;
 }
 
-const { judul, deskripsi, halamanAktif = "" } = Astro.props;
+const { judul, deskripsi, halamanAktif = "", indexable = true } = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? "https://smkn1mandau-replika-rtd.vercel.app").toString();
 ---
 <!DOCTYPE html>
 <html lang="id" dir="ltr">
@@ -20,11 +22,14 @@ const { judul, deskripsi, halamanAktif = "" } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={deskripsi} />
+    <meta name="robots" content={indexable ? "index, follow" : "noindex, nofollow"} />
+    <link rel="canonical" href={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="SMK Negeri 1 Mandau — Replika" />
     <meta property="og:title" content={judul} />
     <meta property="og:description" content={deskripsi} />
     <meta property="og:locale" content="id_ID" />
+    <meta property="og:url" content={canonicalUrl} />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={judul} />
     <meta name="twitter:description" content={deskripsi} />
