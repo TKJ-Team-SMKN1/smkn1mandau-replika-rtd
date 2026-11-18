@@ -227,7 +227,7 @@ if (!bkkUnit || !lspUnit) {
   }
   const lspUpdateText = await getSourceText(lspUnit.programsSourceFile);
   for (const program of lspUnit.programsIn2023Update) {
-    requireSourceText(lspUpdateText, program, `LSP-P1 program: ${program}`);
+    requireSourceText(lspUpdateText, program.split(" (")[0], `LSP-P1 program: ${program}`);
   }
 }
 
