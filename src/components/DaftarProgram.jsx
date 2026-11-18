@@ -47,7 +47,7 @@ export default function DaftarProgram() {
         </div>
       </div>
 
-      <p className="text-sm text-tinta-pudar mb-5" aria-live="polite" aria-atomic="true">
+      <p className="text-sm text-tinta-pudar mb-5" role="status" aria-live="polite" aria-atomic="true">
         Menampilkan <strong className="text-malam">{hasil.length}</strong> dari {DATA_PROGRAM.length} nama program.
       </p>
 
