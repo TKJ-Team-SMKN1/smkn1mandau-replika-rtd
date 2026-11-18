@@ -10,7 +10,7 @@
 
 ## Deployment performed
 
-- The Vercel project was unpaused on 19 November 2026.
+- The Vercel unpause endpoint was invoked on 19 November 2026. The primary custom alias was subsequently assigned to a READY Production deployment; however, the project details response continued to expose `live: false`. Treat the alias assignment as confirmed, but do not use that response alone to claim the project pause flag is fully cleared.
 - A Production deployment was created from GitHub `main`, commit `d288d16ab45b60fc9a3e465d9d57b815d536371a`.
 - Deployment ID: `dpl_HRi7VhB8HD2vo4LdpiC1Rdtzdvhk`.
 - Deployment state: `READY`; target: `production`; framework: Astro; Node.js: 24.x.
