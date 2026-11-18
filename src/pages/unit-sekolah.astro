@@ -1,8 +1,11 @@
 ---
 import LayoutUtama from "../layouts/LayoutUtama.astro";
 import unitsData from "../data/units.json";
+const bkkUnit = unitsData.units.find((unit) => unit.id === "bkk");
+const bkkActivities = bkkUnit?.historicalActivities ?? [];
 const lspUnit = unitsData.units.find((unit) => unit.id === "lsp-p1");
 const lspProgramList = lspUnit?.programsIn2023Update ?? [];
+const lspMissionList = lspUnit?.mission ?? [];
 const lspOrganizationRoles = lspUnit?.organizationChartRoles ?? [];
 ---
 <LayoutUtama judul="Unit Sekolah — SMK Negeri 1 Mandau (Replika)" deskripsi="Ringkasan historis unit Bursa Kerja Khusus dan Lembaga Sertifikasi Profesi dari publikasi sekolah." halamanAktif="unit-sekolah">
@@ -13,12 +16,34 @@ const lspOrganizationRoles = lspUnit?.organizationChartRoles ?? [];
 <section class="py-12 md:py-16"><div class="kontainer-laman grid lg:grid-cols-2 gap-5">
 <article class="kartu !p-6 md:!p-8"><p class="pita-bagian mb-3">Layanan alumni</p><h2 class="font-judul font-familjen text-2xl text-malam mb-4">Bursa Kerja Khusus (BKK)</h2>
 <p class="font-nunito text-tinta-pudar leading-relaxed mb-4">Publikasi sekolah pada 2023 menjelaskan BKK sebagai unit layanan yang membantu alumni memperoleh informasi dan fasilitas penempatan kerja. Alumni yang belum bekerja dapat berkoordinasi dengan BKK mengenai peluang dan informasi pekerjaan.</p>
-<p class="font-nunito text-sm text-tinta-pudar leading-relaxed">Arsip kegiatan BKK juga mencatat workshop penguatan kelembagaan, tracer study alumni, dan partisipasi dalam job fair. Seluruh catatan tersebut bersifat historis.</p>
-<div class="flex flex-wrap gap-3 mt-6"><a class="tombol tombol-ukir !w-auto" href="http://www.smkn1mandau.sch.id/2023/09/struktur-organisasi-bursa-kerja-khusus.html" target="_blank" rel="noopener noreferrer">Struktur BKK asli <span aria-hidden="true">↗</span></a><a class="tombol tombol-garis !w-auto" href="http://www.smkn1mandau.sch.id/2023/09/workshop-penguatan-kelembagaan-bkk-di.html" target="_blank" rel="noopener noreferrer">Publikasi kegiatan BKK <span aria-hidden="true">↗</span></a></div>
+<div class="mt-6">
+<h3 class="font-familjen font-semibold text-malam mb-3">Catatan kegiatan historis</h3>
+<ul class="space-y-3">
+{bkkActivities.map((activity) => <li class="rounded-xl border border-malam/10 bg-gading p-4">
+<p class="font-reglo text-xs uppercase tracking-wide text-ukir">{activity.date}</p>
+<h4 class="font-familjen font-semibold text-malam mt-1">{activity.title}</h4>
+<p class="font-nunito text-sm text-tinta-pudar leading-relaxed mt-2">{activity.summary}</p>
+<a class="inline-flex min-h-10 items-center mt-2 font-familjen font-bold text-ukir hover:underline underline-offset-4" href={activity.sourceUrl} target="_blank" rel="noopener noreferrer">Buka sumber arsip ↗</a>
+</li>)}
+</ul>
+</div>
+<div class="rounded-xl border border-malam/10 bg-gading p-4 mt-5">
+<p class="font-nunito text-sm text-tinta-pudar leading-relaxed">{bkkUnit?.visionMissionNote}</p>
+<a class="inline-flex min-h-10 items-center mt-2 font-familjen font-bold text-ukir hover:underline underline-offset-4" href={bkkUnit?.visionMissionSourceUrl} target="_blank" rel="noopener noreferrer">Periksa arsip visi-misi BKK ↗</a>
+</div>
+<div class="flex flex-wrap gap-3 mt-6"><a class="tombol tombol-ukir !w-auto" href={bkkUnit?.organizationChartSourceUrl} target="_blank" rel="noopener noreferrer">Struktur BKK asli <span aria-hidden="true">↗</span></a><a class="tombol tombol-garis !w-auto" href={bkkUnit?.sourceUrl} target="_blank" rel="noopener noreferrer">Publikasi fungsi BKK <span aria-hidden="true">↗</span></a></div>
 </article>
 <article class="kartu !p-6 md:!p-8"><p class="pita-bagian mb-3">Sertifikasi kompetensi</p><h2 class="font-judul font-familjen text-2xl text-malam mb-4">Lembaga Sertifikasi Profesi (LSP-P1)</h2>
 <p class="font-nunito text-tinta-pudar leading-relaxed mb-4">Arsip publikasi 2023 mencatat kegiatan pemutakhiran perangkat asesmen LSP-P1 pada tujuh program keahlian. Catatan ini tidak menyatakan status sertifikasi atau ruang lingkup terkini.</p>
 <ul class="grid sm:grid-cols-2 gap-2 text-sm text-tinta-pudar">{lspProgramList.map((program) => <li class="rounded-lg border border-malam/10 bg-gading px-3 py-2">{program}</li>)}</ul>
+<div class="rounded-xl border border-malam/10 bg-gading p-4 mt-5">
+<h3 class="font-familjen font-semibold text-malam mb-2">Misi LSP-P1 dalam publikasi 2023</h3>
+<p class="text-xs text-tinta-pudar leading-relaxed mb-3">{lspUnit?.missionNote}</p>
+<ol class="space-y-3 text-sm text-tinta-pudar list-decimal pl-5">
+{lspMissionList.map((mission) => <li class="pl-1">{mission}</li>)}
+</ol>
+<a class="inline-flex min-h-10 items-center mt-3 font-familjen font-bold text-ukir hover:underline underline-offset-4" href={lspUnit?.missionSourceUrl} target="_blank" rel="noopener noreferrer">Sumber visi-misi LSP-P1 ↗</a>
+</div>
 <div class="rounded-xl border border-malam/10 bg-gading p-4 mt-5">
 <p class="font-familjen font-semibold text-malam mb-2">Label jabatan pada dokumen struktur 2021</p>
 <ul class="grid sm:grid-cols-2 gap-2 text-sm text-tinta-pudar">{lspOrganizationRoles.map((role) => <li class="rounded-lg border border-malam/10 bg-white px-3 py-2">{role}</li>)}</ul>
