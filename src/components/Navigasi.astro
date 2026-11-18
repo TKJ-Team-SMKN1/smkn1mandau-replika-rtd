@@ -28,13 +28,17 @@ const jelajahAktif = jelajah.some((item) => item.kunci === halamanAktif);
         <span class="brand-copy"><span class="brand-name">SMK Negeri 1 Mandau</span><span class="brand-caption">Sekolah Menengah Kejuruan Negeri</span></span>
       </a>
       <nav aria-label="Navigasi utama" class="desktop-nav">
-        {taut.map((t) => <a href={t.href} class:list={["nav-link", { "is-active": halamanAktif === t.kunci }]} aria-current={halamanAktif === t.kunci ? "page" : undefined}>{t.label}</a>)}
-        <details class:list={["nav-dropdown", { "is-active": jelajahAktif }]} open={jelajahAktif}>
-          <summary>Jelajah <span aria-hidden="true">⌄</span></summary>
-          <div class="nav-dropdown-menu">
-            {jelajah.map((item) => <a href={item.href} aria-current={halamanAktif === item.kunci ? "page" : undefined}>{item.label}</a>)}
-          </div>
-        </details>
+        <ul class="nav-list">
+          {taut.map((t) => <li><a href={t.href} class:list={["nav-link", { "is-active": halamanAktif === t.kunci }]} aria-current={halamanAktif === t.kunci ? "page" : undefined}>{t.label}</a></li>)}
+          <li>
+            <details class:list={["nav-dropdown", { "is-active": jelajahAktif }]} open={jelajahAktif}>
+              <summary>Jelajah <span aria-hidden="true">⌄</span></summary>
+              <div class="nav-dropdown-menu">
+                {jelajah.map((item) => <a href={item.href} aria-current={halamanAktif === item.kunci ? "page" : undefined}>{item.label}</a>)}
+              </div>
+            </details>
+          </li>
+        </ul>
       </nav>
       <a href="/pengaturan" class:list={["theme-nav-link", { "is-active": halamanAktif === "pengaturan" }]} aria-current={halamanAktif === "pengaturan" ? "page" : undefined}>Tema</a>
       <label class="language-control" aria-label="Pilih bahasa antarmuka">
@@ -65,6 +69,8 @@ const jelajahAktif = jelajah.some((item) => item.kunci === halamanAktif);
 .brand-copy{display:grid;line-height:1.2}.brand-name{font-family:"Archivo Local",sans-serif;font-size:clamp(.9rem,2vw,1.08rem);letter-spacing:-.02em}
 .brand-caption{margin-top:.3rem;color:rgba(246,239,230,.72);font-family:"Azeret Mono Local",monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}
 .desktop-nav{display:flex;align-items:center;gap:.15rem}
+.nav-list{display:flex;align-items:center;gap:.15rem;margin:0;padding:0;list-style:none}
+.nav-list>li{display:flex;align-items:center;min-width:0}
 .nav-link{display:inline-flex;min-height:44px;align-items:center;padding:.62rem .68rem;border:1px solid transparent;border-radius:.7rem;color:rgba(246,239,230,.92);font-size:.8rem;font-weight:600;text-decoration:none}
 .nav-link:hover{color:white;background:rgba(255,255,255,.08)}.nav-link.is-active{color:white;border-color:rgba(217,132,63,.38);background:rgba(184,92,20,.22)}
 .nav-dropdown{position:relative;color:rgba(246,239,230,.92);font-size:.8rem;font-weight:600}
@@ -81,6 +87,7 @@ const jelajahAktif = jelajah.some((item) => item.kunci === halamanAktif);
 .menu-toggle{display:none;width:44px;height:44px;place-items:center;border:1px solid rgba(255,255,255,.18);border-radius:12px;color:white;background:rgba(255,255,255,.06)}
 .icon-close{display:none}.menu-toggle[aria-expanded="true"] .icon-menu{display:none}.menu-toggle[aria-expanded="true"] .icon-close{display:block}
 .mobile-nav{border-top:1px solid rgba(255,255,255,.1);background:#09183a}
+.mobile-nav:not([hidden]){max-height:calc(100vh - 76px);max-height:calc(100svh - 76px);overflow-y:auto;overscroll-behavior:contain}
 .mobile-nav-link{display:flex;min-height:44px;justify-content:space-between;align-items:center;padding:.7rem .2rem;color:rgba(246,239,230,.9);border-bottom:1px solid rgba(255,255,255,.08);text-decoration:none;font-weight:600}
 .mobile-nav-link.is-active{color:#f3b47e}.mobile-nav-heading{margin:.9rem 0 .25rem;color:#efb17b;font-family:"Azeret Mono Local",monospace;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
 .lewati-ke-konten{position:fixed;top:.75rem;left:.75rem;z-index:300;transform:translateY(-160%);padding:.7rem 1rem;border-radius:.5rem;color:#09183a;background:#fff;font-weight:700}
@@ -94,10 +101,27 @@ const jelajahAktif = jelajah.some((item) => item.kunci === halamanAktif);
   const button=document.getElementById("tombol-menu-mobile");
   const menu=document.getElementById("menu-mobile");
   if(!button||!menu)return;
-  const closeMenu=()=>{button.setAttribute("aria-expanded","false");button.setAttribute("aria-label","Buka menu navigasi");menu.hidden=true;};
-  button.addEventListener("click",()=>{const open=button.getAttribute("aria-expanded")!=="true";button.setAttribute("aria-expanded",String(open));button.setAttribute("aria-label",open?"Tutup menu navigasi":"Buka menu navigasi");menu.hidden=!open;});
+  const isOpen=()=>button.getAttribute("aria-expanded")==="true";
+  const closeMenu=({restoreFocus=false}={})=>{
+    if(!isOpen())return;
+    button.setAttribute("aria-expanded","false");
+    button.setAttribute("aria-label","Buka menu navigasi");
+    menu.hidden=true;
+    if(restoreFocus)button.focus();
+  };
+  button.addEventListener("click",()=>{
+    const open=!isOpen();
+    button.setAttribute("aria-expanded",String(open));
+    button.setAttribute("aria-label",open?"Tutup menu navigasi":"Buka menu navigasi");
+    menu.hidden=!open;
+  });
   menu.addEventListener("click",event=>{if(event.target.closest("a"))closeMenu();});
-  document.addEventListener("keydown",event=>{if(event.key==="Escape"){closeMenu();button.focus();}});
+  document.addEventListener("keydown",event=>{
+    if(event.key==="Escape"&&isOpen())closeMenu({restoreFocus:true});
+  });
+  document.addEventListener("pointerdown",event=>{
+    if(isOpen()&&!event.target.closest("#menu-mobile")&&!event.target.closest("#tombol-menu-mobile"))closeMenu();
+  });
   window.addEventListener("resize",()=>{if(window.innerWidth>1180)closeMenu();});
 })();
 </script>
