@@ -41,7 +41,8 @@
   body {
     margin: 0;
     min-width: 320px;
-    overflow-x: clip;
+    /* Avoid clipping content when users increase text spacing or zoom. */
+    overflow-wrap: break-word;
     background: var(--page-bg, var(--kapas));
     color: var(--text-primary, var(--tinta));
     font-family: "Outfit Local", system-ui, sans-serif;
@@ -250,4 +251,28 @@ html[data-theme] select { border-color: var(--control-border) !important; }
   .site-header { position: relative; top: auto; }
   html { scroll-padding-top: 1rem; }
   :focus { scroll-margin-block-start: 1rem; }
+}
+
+
+/* WCAG 1.4.10 / 1.4.12: keep content reflowable when text is enlarged
+   or user-defined spacing is applied. Long identifiers may wrap instead of
+   forcing horizontal page scrolling. */
+:where(p, li, dd, dt, figcaption, blockquote) {
+  overflow-wrap: break-word;
+}
+:where(input, select, textarea, button) {
+  max-width: 100%;
+}
+
+/* WCAG 2.5.8: make footer destinations comfortably operable by touch. */
+.footer-links a {
+  display: inline-flex;
+  min-height: 44px;
+  max-width: 100%;
+  align-items: center;
+  overflow-wrap: anywhere;
+}
+.footer-official {
+  min-height: 44px;
+  align-items: center;
 }
