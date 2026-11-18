@@ -61,7 +61,12 @@ A focused source review covered the shared layout, primary and mobile navigation
 - Confirmed directory result counts use polite status announcements and the search controls retain programmatic labels.
 - Confirmed reduced-motion and forced-colors rules remain present in the source styles; their rendered behavior still requires assistive-technology and browser verification.
 - Reviewed the theme contrast preflight and reflow safeguards as source-level checks only. Dynamic operating-system color combinations, gradients, images, and every interactive state are not proven by this review.
-- No browser, screen-reader, keyboard, zoom, or build test was run in this pass, in accordance with the instruction to avoid prolonged testing.
+- No browser, screen-reader, keyboard, zoom, or build test was run in this pass.
 
-The review does not change the conformance status: WCAG 2.2 AA compliance is **not verified or certified**. The manual verification list above remains open. The Vercel project remains paused; this work does not authorize deployment or reactivation.
+The review does not change the conformance status: WCAG 2.2 AA compliance is **not verified or certified**. The manual verification list above remains open.
 
+## Production status update — 19 November 2026
+
+- A production deployment is READY and the primary project alias returned HTTP 200 during the public route crawl.
+- The project was sent an unpause request. However, the Vercel project details response continued to report `live: false`; see `docs/DEPLOYMENT-AUDIT-2026-11-19.md` for the control-plane discrepancy.
+- The deployment does not change the accessibility status. Manual browser, keyboard, zoom, and assistive-technology verification remains outstanding.
