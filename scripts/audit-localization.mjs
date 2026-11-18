@@ -34,7 +34,7 @@ if (options.size !== 4 || !["id", "en", "ms", "zh"].every((locale) => options.ha
 const countFragments = {
   en: ['"Menampilkan": "Showing"', '"dari": "of"', '"nama program.": "vocational programs."'],
   ms: ['"Menampilkan": "Menunjukkan"', '"dari": "daripada"', '"nama program.": "program vokasional."'],
-  zh: ['"Menampilkan": "显示"', '"dari": "项，共"', '"nama program.": "个专业。"'],
+  zh: ['"Menampilkan": "显示"', '"dari": "项，共"', '"nama program.": "个专业。"', '"entri yang cocok": "条匹配记录"'],
 };
 for (const [locale, fragments] of Object.entries(countFragments)) {
   for (const fragment of fragments) {
