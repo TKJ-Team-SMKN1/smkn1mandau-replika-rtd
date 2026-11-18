@@ -51,3 +51,17 @@ A source-code change or static HTML check cannot establish WCAG conformance. Bef
 7. Any images, media, forms, and future interactive components added after this record.
 
 This document records implementation work, not certification, a legal accessibility statement, or a claim that all WCAG 2.2 AA success criteria have been satisfied.
+
+## Source review update — 18 November 2026
+
+A focused source review covered the shared layout, primary and mobile navigation, footer, program and staff directories, global styles, theme compatibility rules, and the static audit scripts.
+
+- Confirmed the shared shell contains named primary/mobile navigation landmarks, a skip link, a single main-content target, and a separately named footer navigation landmark.
+- Confirmed the mobile disclosure updates its expanded state and accessible name, closes with Escape, restores focus to the menu button on Escape, and closes after navigation or an outside pointer interaction.
+- Confirmed directory result counts use polite status announcements and the search controls retain programmatic labels.
+- Confirmed reduced-motion and forced-colors rules remain present in the source styles; their rendered behavior still requires assistive-technology and browser verification.
+- Reviewed the theme contrast preflight and reflow safeguards as source-level checks only. Dynamic operating-system color combinations, gradients, images, and every interactive state are not proven by this review.
+- No browser, screen-reader, keyboard, zoom, or build test was run in this pass, in accordance with the instruction to avoid prolonged testing.
+
+The review does not change the conformance status: WCAG 2.2 AA compliance is **not verified or certified**. The manual verification list above remains open. The Vercel project remains paused; this work does not authorize deployment or reactivation.
+
