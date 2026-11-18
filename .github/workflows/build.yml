@@ -41,6 +41,8 @@ jobs:
         run: npm run audit:html
       - name: Audit archived source HTML and provenance index
         run: npm run audit:archive
+      - name: Audit source-to-page content provenance
+        run: npm run audit:provenance
       - name: WCAG 2.2 AA static preflight
         run: npm run audit:a11y
       - name: Dependency security audit
