@@ -27,7 +27,7 @@ This pass establishes a repeatable check between structured content, the archive
 
 The automated audit verifies that declared provenance references point to the correct archived HTML records and that the expected application modules consume the data. It does **not** prove that every sentence in the UI is a faithful semantic transcription of the original HTML, nor does it verify that a historical fact remains true today.
 
-The next manual review should compare the text-rich primary records against the rendered page content, prioritizing:
+An initial source-text check now compares all ten program names, the three historical milestones, the school identity location tokens, the vision, and all six mission statements against their archived HTML. The identity page labels Simpang Padang as a kelurahan, while the homepage footer labels it a desa; the profile therefore uses the neutral place name until that administrative-label difference is confirmed. This check verifies the archived text, not present-day administrative status.\n\nThe next manual review should compare the remaining text-rich primary records against the rendered page content, prioritizing:
 
 1. School identity, history, vision, and mission.
 2. The ten program names on the archived homepage.
