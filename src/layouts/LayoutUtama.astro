@@ -20,6 +20,14 @@ const { judul, deskripsi, halamanAktif = "" } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={deskripsi} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SMK Negeri 1 Mandau — Replika" />
+    <meta property="og:title" content={judul} />
+    <meta property="og:description" content={deskripsi} />
+    <meta property="og:locale" content="id_ID" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={judul} />
+    <meta name="twitter:description" content={deskripsi} />
     <meta id="theme-color-meta" name="theme-color" content="#f5f7fa" />
     <meta name="color-scheme" content="light dark" />
     <title>{judul}</title>
@@ -32,7 +40,6 @@ const { judul, deskripsi, halamanAktif = "" } = Astro.props;
         } catch { document.documentElement.dataset.theme = "light"; }
       })();
     </script>
-
 
     <link rel="preload" href="/fonts/Outfit_Complete(1)/Outfit_Complete/Fonts/OTF/Outfit-Regular.otf" as="font" type="font/otf" crossorigin />
     <link rel="preload" href="/fonts/Archivo_Complete/Archivo_Complete/Fonts/OTF/Archivo-Bold.otf" as="font" type="font/otf" crossorigin />
