@@ -23,9 +23,9 @@ Terjemahan pada situs ini adalah lokalisasi konten replika, bukan terjemahan res
 
 ## Pemeriksaan lokalisasi antarmuka — 18 November 2026
 
-- Fragmen penghitung hasil pada direktori program diperiksa sebagai satu kalimat utuh melalui DeepL dengan bahasa sumber Indonesia dan target English (US), Bahasa Melayu, serta Mandarin Sederhana.
-- Fragmen terjemahan diselaraskan agar hasil gabungan tetap gramatikal: “Menampilkan [jumlah] dari [total] nama program.”
-- Pemeriksaan struktur lokalisasi kini mengunci tiga fragmen penghitung untuk setiap bahasa agar perubahan berikutnya tidak mengembalikan campuran bahasa atau susunan kalimat yang janggal.
+- Fragmen penghitung pada direktori program dan direktori SDM diperiksa sebagai kalimat utuh melalui DeepL dengan bahasa sumber Indonesia dan target English (US), Bahasa Melayu, serta Mandarin Sederhana.
+- Fragmen terjemahan diselaraskan agar hasil gabungan tetap gramatikal, termasuk jumlah program dan jumlah entri SDM.
+- Pemeriksaan struktur lokalisasi kini mengunci fragmen penghitung untuk setiap bahasa, termasuk frasa Mandarin bagi entri yang cocok, agar perubahan berikutnya tidak mengembalikan campuran bahasa atau susunan kalimat yang janggal.
 - DeepL diperlakukan sebagai pembuat draf terjemahan. Nama lembaga, istilah teknis, singkatan, dan fakta sekolah tetap mengikuti sumber primer serta rujukan kebahasaan yang tercantum di atas.
 - Pemeriksaan ini hanya mencakup fragmen penghitung tersebut; bukan validasi linguistik menyeluruh untuk seluruh katalog EN, MS, dan ZH.
 
