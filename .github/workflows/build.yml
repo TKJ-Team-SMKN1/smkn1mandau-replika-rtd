@@ -35,6 +35,8 @@ jobs:
         run: npm run audit:localization
       - name: Build Astro site
         run: npm run build
+      - name: Audit generated sitemap and canonical SEO metadata
+        run: npm run audit:seo
       - name: Audit generated HTML quality and accessibility preflight
         run: npm run audit:html
       - name: Audit archived source HTML and provenance index
