@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "1.0.0",
+  "observedAt": "2026-11-18",
+  "currentInventory": {
+    "status": "not-verified",
+    "items": [],
+    "note": "The archived facilities page is image-led and does not provide a readable text inventory. Do not present these historical counts as current."
+  },
+  "historicalSnapshot": {
+    "period": "Development period described as 2004–2012; exact inventory observation date not stated",
+    "sourceUrl": "http://www.smkn1mandau.sch.id/2022/04/sejarah-sekolah.html",
+    "sourceFile": "004_2022_04_sejarah-sekolah_html.html",
+    "facilities": [
+      {
+        "count": 26,
+        "label": "ruang kelas/lokal",
+        "status": "historical"
+      },
+      {
+        "count": 3,
+        "label": "ruang komputer",
+        "status": "historical"
+      },
+      {
+        "count": 6,
+        "label": "bengkel praktik",
+        "status": "historical"
+      },
+      {
+        "count": 1,
+        "label": "ruang aula",
+        "status": "historical"
+      },
+      {
+        "count": 4,
+        "label": "toilet siswa",
+        "status": "historical"
+      },
+      {
+        "count": 3,
+        "label": "toilet guru",
+        "status": "historical"
+      },
+      {
+        "count": 1,
+        "label": "toilet kepala sekolah",
+        "status": "historical"
+      },
+      {
+        "count": 1,
+        "label": "musala",
+        "status": "historical"
+      }
+    ],
+    "note": "The school history page describes 26 local/classrooms, 3 computer rooms, 6 practice workshops, 1 hall, 4 student toilets, 3 teacher toilets, 1 principal toilet, and a mushalla. These figures are a historical narrative, not a current asset register."
+  },
+  "initialSnapshot": {
+    "period": "Initial facilities described in the school history page",
+    "sourceUrl": "http://www.smkn1mandau.sch.id/2022/04/sejarah-sekolah.html",
+    "items": [
+      {
+        "count": 22,
+        "label": "ruang kelas"
+      },
+      {
+        "count": 1,
+        "label": "bengkel bersama"
+      },
+      {
+        "count": 1,
+        "label": "laboratorium komputer"
+      },
+      {
+        "count": 1,
+        "label": "ruang majelis guru"
+      },
+      {
+        "count": 2,
+        "label": "toilet"
+      },
+      {
+        "count": 1,
+        "label": "musala"
+      }
+    ],
+    "status": "historical-date-unclear"
+  }
+}

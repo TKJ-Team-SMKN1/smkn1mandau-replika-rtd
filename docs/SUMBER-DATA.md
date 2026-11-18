@@ -1,6 +1,6 @@
 # Register Sumber Konten — Replika SMKN 1 Mandau
 
-Dokumen ini mencatat sumber yang digunakan untuk menyusun konten replika. Pemeriksaan dilakukan pada 17 November 2026. Tanggal posting yang tercantum pada URL atau halaman sumber tidak boleh disamakan dengan tanggal pemeriksaan.
+Dokumen ini mencatat sumber yang digunakan untuk menyusun konten replika. Pemeriksaan diperbarui pada 18 November 2026. Tanggal posting yang tercantum pada URL atau halaman sumber tidak boleh disamakan dengan tanggal pemeriksaan.
 
 ## Sumber utama
 
@@ -48,3 +48,18 @@ Direktori belajar mandiri memisahkan bahasa pemrograman, teknologi web, platform
 | Arsip kegiatan | http://www.smkn1mandau.sch.id/search?q=kegiatan | Menemukan publikasi kegiatan historis 2023–2024 dan menghubungkan ringkasan dengan artikel aslinya. |
 | BKK | http://www.smkn1mandau.sch.id/2023/09/struktur-organisasi-bursa-kerja-khusus.html | Struktur organisasi berupa gambar; fungsi BKK diringkas dari publikasi kegiatan BKK 2023. |
 | LSP-P1 | http://www.smkn1mandau.sch.id/2023/05/strukrut-organisasi-lembaga-sertifikasi.html | Struktur organisasi berupa gambar; daftar tujuh program berasal dari publikasi pemutakhiran LSP-P1 November 2023. |
+
+
+## Fase 4 — dataset terstruktur dan audit arsip (18 November 2026)
+
+Arsip `data/raw-archive/hasil_scrape_smkn1mandau/` berisi **100 file HTML** dengan manifest `daftar_halaman.csv`. Register terstruktur tersedia di `src/data/archive-index.json`. Setiap record menyimpan nama file asli, URL sumber, tahun dari URL bila tersedia, jenis halaman, topik, dan status sebagai snapshot arsip.
+
+Dataset yang dapat dipakai komponen aplikasi kini dipisahkan di `src/data/`:
+- `staff.json`: 127 entri SDM yang cocok dengan publikasi beranda resmi; tanggal pembaruan daftar tidak dinyatakan sehingga status jabatan saat ini belum dikonfirmasi.
+- `programs.json`: 10 nama program keahlian yang tercantum di beranda resmi. Daftar ini berbeda dari tujuh program yang disebut dalam artikel pemutakhiran LSP-P1 tahun 2023.
+- `events.json`: 20 ringkasan kegiatan historis yang sudah dipublikasikan, dengan URL dan file sumber.
+- `facilities.json`: inventaris historis saja; tidak mengklaim jumlah fasilitas terkini.
+- `extracurriculars.json`: kosong dengan alasan verifikasi karena halaman sumber berupa media visual.
+- `school-profile.json` dan `units.json`: identitas, sejarah, visi-misi, BKK, dan LSP-P1 dengan jejak sumber.
+
+Klasifikasi awal register arsip: {"homepage":2,"search-results":14,"profile-or-unit-page":9,"article-or-static-page":59,"announcement":16}. Jenis ini adalah klasifikasi berdasarkan URL/nama file, bukan penilaian kualitas isi. Lihat `docs/FASE-4-AUDIT.md` untuk temuan, konflik tanggal, dan batasan ekstraksi.
