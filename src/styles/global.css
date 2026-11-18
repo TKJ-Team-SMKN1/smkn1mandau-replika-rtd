@@ -32,6 +32,12 @@
     text-rendering: optimizeLegibility;
   }
 
+  h1, h2, h3, .font-judul {
+    font-family: "Archivo Local", "Outfit Local", system-ui, sans-serif;
+    font-weight: 700;
+  }
+  .font-rapat { font-family: "Azeret Mono Local", monospace; }
+
   body {
     margin: 0;
     min-width: 320px;
