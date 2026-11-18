@@ -61,3 +61,16 @@ File `public/.env` berisi placeholder bercanda untuk `OPENAI_API_KEY`, bukan kre
 - Privacy-by-design benchmark: [NIST Privacy Framework](https://www.nist.gov/privacy-framework).
 
 Klasifikasi tipe arsip: {"homepage":2,"search-results":14,"profile-or-unit-page":9,"article-or-static-page":59,"announcement":16}. Angka tersebut berasal dari aturan klasifikasi nama/URL dan perlu dibaca sebagai indeks audit, bukan ukuran kualitas konten.
+
+
+## Pemeriksaan lanjutan Fase 4.1 — media dan tautan (18 November 2026)
+
+- Firecrawl memetakan halaman BKK dan LSP-P1. Halaman LSP-P1 menyematkan PDF publik Google Drive: [SK Struktur Organisasi LSP-P1](https://drive.google.com/file/d/1P6Wy6x2uhk3AKxmwyeUxmkQmab_vVh2W/view). PDF dapat dibaca dan menyebut tanggal dokumen **5 Oktober 2021**. Dataset hanya menyimpan URL, tanggal, dan status provenance; nama anggota organisasi tidak ditranskripsikan. Dokumen tahun 2021 tidak boleh dipresentasikan sebagai struktur terkini.
+- Halaman fasilitas dan BKK memuat gambar aset template/sidebar yang sama. Aset tersebut tidak cukup untuk membuktikan inventaris fasilitas atau bagan BKK. Karena itu, dataset fasilitas dan anggota BKK tetap tidak ditebak.
+- Geekflare memeriksa 85 tautan di beranda sumber: 77 berhasil, 1 respons 404, 2 forbidden, dan 5 timeout. URL 404 yang teridentifikasi adalah `http://www.blogger.com/openid-server.g`, sebuah endpoint OpenID lama pada template sumber; beberapa kegagalan lain melibatkan layanan pihak ketiga dan tidak otomatis menunjukkan kerusakan halaman replika.
+- Lighthouse mobile Geekflare tidak menghasilkan First Contentful Paint (`NO_FCP`) dan menampilkan `chrome-error://chromewebdata/`. Karena itu tidak ada skor performa yang valid untuk dilaporkan. Pengujian dilakukan pada situs sumber resmi, bukan build replika yang belum di-deploy.
+- Geekflare scrape dan Tavily search mencapai batas penggunaan layanan pada sesi ini. Hasil keduanya ditandai tidak tersedia, bukan dianggap sukses.
+- Refactor Fase 4.1 memindahkan daftar tujuh program LSP-P1 pada halaman Unit Sekolah agar dibaca dari `src/data/units.json`. Daftar tujuh program tetap diberi konteks pembaruan perangkat asesmen tahun 2023, terpisah dari sepuluh program yang tercantum di beranda.
+- Easter egg `.env` aman kini memiliki contoh inert di `docs/easter-eggs/.env.example`. Tidak ada file `.env` di `public/`; contoh ini bukan konfigurasi runtime dan tidak berisi secret.
+
+Pemeriksaan otomatis tetap merupakan preflight. Penilaian visual, navigasi keyboard, pembaca layar, lisensi media, dan validasi kontras pada state yang dirender masih memerlukan pemeriksaan manual sebelum klaim kesesuaian WCAG dibuat.
