@@ -3,9 +3,12 @@ import LayoutUtama from "../layouts/LayoutUtama.astro";
 import schoolProfile from "../data/school-profile.json";
 import programData from "../data/programs.json";
 
+const identity = schoolProfile.identity;
+const history = schoolProfile.history;
+const vision = schoolProfile.vision;
 const misi = schoolProfile.mission;
-
 const program = programData.entries.map((item) => `${item.nama} (${item.singkatan})`);
+const phoneHref = `tel:${identity.schoolPhone.replace(/[^\\d+]/g, "")}`;
 ---
 <LayoutUtama
   judul="Profil Sekolah — SMK Negeri 1 Mandau (Replika Konsep)"
@@ -20,7 +23,7 @@ const program = programData.entries.map((item) => `${item.nama} (${item.singkata
         Informasi profil ini disusun ulang sebagai konsep antarmuka independen dengan merujuk pada halaman sejarah, visi-misi, dan beranda situs resmi sekolah.
       </p>
       <div class="flex flex-wrap gap-3 mt-8">
-        <a class="tombol tombol-ukir" href="https://www.smkn1mandau.sch.id/" target="_blank" rel="noopener noreferrer">Situs resmi sekolah <span aria-hidden="true">↗</span></a>
+        <a class="tombol tombol-ukir" href={programData.source.url} target="_blank" rel="noopener noreferrer">Situs resmi sekolah <span aria-hidden="true">↗</span></a>
         <a class="tombol tombol-garis" href="#sejarah">Baca sejarah</a>
       </div>
     </div>
@@ -34,27 +37,16 @@ const program = programData.entries.map((item) => `${item.nama} (${item.singkata
         <p class="font-lora text-tinta-pudar leading-relaxed">
           Menurut halaman sejarah yang dipublikasikan sekolah, gedung sekolah telah berdiri sejak 1999. Lembaga ini didirikan pada 2000 sebagai SMK Swasta Handayani sebelum menjadi sekolah negeri pada 2002.
         </p>
-        <a class="inline-flex mt-5 font-bold text-ukir hover:underline" href="http://www.smkn1mandau.sch.id/2022/04/sejarah-sekolah.html" target="_blank" rel="noopener noreferrer">Baca sejarah pada sumber asli ↗</a>
+        <a class="inline-flex mt-5 font-bold text-ukir hover:underline" href={history[0].sourceUrl} target="_blank" rel="noopener noreferrer">Baca sejarah pada sumber asli ↗</a>
       </div>
       <ol class="relative border-l-2 border-ukir/30 pl-7 space-y-8">
-        <li class="relative">
-          <span class="absolute -left-[2.18rem] top-1.5 w-4 h-4 rounded-full bg-ukir border-4 border-gading"></span>
-          <p class="font-reglo text-sm uppercase tracking-widest text-ukir">1999</p>
-          <h3 class="font-judul font-familjen text-xl text-malam mt-1">Gedung sekolah berdiri</h3>
-          <p class="font-lora text-sm text-tinta-pudar mt-1">Lokasi yang disebut dalam riwayat sekolah berada di Jalan Pipa Air Bersih, Simpang Padang.</p>
-        </li>
-        <li class="relative">
-          <span class="absolute -left-[2.18rem] top-1.5 w-4 h-4 rounded-full bg-ukir border-4 border-gading"></span>
-          <p class="font-reglo text-sm uppercase tracking-widest text-ukir">8 Juli 2000</p>
-          <h3 class="font-judul font-familjen text-xl text-malam mt-1">Pendirian SMK Swasta Handayani</h3>
-          <p class="font-lora text-sm text-tinta-pudar mt-1">Halaman sejarah mencantumkan tanggal pendirian 8 Juli 2000 dan nomor 05864/109.8.4/MN-2000.</p>
-        </li>
-        <li class="relative">
-          <span class="absolute -left-[2.18rem] top-1.5 w-4 h-4 rounded-full bg-ukir border-4 border-gading"></span>
-          <p class="font-reglo text-sm uppercase tracking-widest text-ukir">2002</p>
-          <h3 class="font-judul font-familjen text-xl text-malam mt-1">Penegerian menjadi SMKN 1 Mandau</h3>
-          <p class="font-lora text-sm text-tinta-pudar mt-1">Publikasi sejarah menyebut Keputusan Bupati Bengkalis Nomor 113 Tahun 2002.</p>
-        </li>
+        {history.map((item) => (
+          <li class="relative">
+            <span class="absolute -left-[2.18rem] top-1.5 w-4 h-4 rounded-full bg-ukir border-4 border-gading"></span>
+            <p class="font-reglo text-sm uppercase tracking-widest text-ukir">{item.year}</p>
+            <h3 class="font-judul font-familjen text-xl text-malam mt-1">{item.claim}</h3>
+          </li>
+        ))}
       </ol>
     </div>
   </section>
@@ -65,9 +57,9 @@ const program = programData.entries.map((item) => `${item.nama} (${item.singkata
         <p class="pita-bagian mb-3">Arah sekolah</p>
         <h2 class="font-judul text-2xl text-malam mb-4">Visi</h2>
         <blockquote class="font-literata border-l-4 border-ukir pl-5 text-lg text-malam leading-relaxed">
-          Menjadi SMK yang unggul dalam prestasi, handal, berakhlak mulia dan berwawasan lingkungan.
+          {vision.text}
         </blockquote>
-        <a class="inline-flex mt-6 text-sm font-bold text-ukir hover:underline" href="http://www.smkn1mandau.sch.id/2022/05/visi-misi-smkn-1-mandau.html" target="_blank" rel="noopener noreferrer">Sumber visi-misi resmi ↗</a>
+        <a class="inline-flex mt-6 text-sm font-bold text-ukir hover:underline" href={vision.sourceUrl} target="_blank" rel="noopener noreferrer">Sumber visi-misi resmi ↗</a>
       </article>
       <article class="kartu !p-7 md:!p-9">
         <p class="pita-bagian mb-3">Enam butir misi</p>
@@ -77,6 +69,7 @@ const program = programData.entries.map((item) => `${item.nama} (${item.singkata
             <li class="flex gap-3"><span class="font-rapat text-ukir font-bold">{String(index + 1).padStart(2, "0")}</span><span>{item}</span></li>
           ))}
         </ol>
+        <a class="inline-flex mt-5 text-sm font-bold text-ukir hover:underline" href={schoolProfile.missionSourceUrl} target="_blank" rel="noopener noreferrer">Sumber misi resmi ↗</a>
       </article>
     </div>
   </section>
@@ -96,7 +89,7 @@ const program = programData.entries.map((item) => `${item.nama} (${item.singkata
           </div>
         ))}
       </div>
-      <a class="inline-flex mt-7 font-bold text-ukir hover:underline" href="https://www.smkn1mandau.sch.id/" target="_blank" rel="noopener noreferrer">Periksa daftar pada beranda resmi ↗</a>
+      <a class="inline-flex mt-7 font-bold text-ukir hover:underline" href={programData.source.url} target="_blank" rel="noopener noreferrer">Periksa daftar pada beranda resmi ↗</a>
     </div>
   </section>
 
@@ -108,10 +101,10 @@ const program = programData.entries.map((item) => `${item.nama} (${item.singkata
         <p class="text-gading/75 text-sm leading-relaxed">Data kontak berikut tercantum pada situs resmi. Pastikan kembali sebelum mengirim dokumen atau informasi pribadi.</p>
       </div>
       <address class="font-nunito not-italic rounded-2xl border border-white/15 bg-white/5 p-6 space-y-4 text-sm">
-        <div><p class="text-ukir-light text-xs uppercase tracking-widest mb-1">Alamat</p><p>Jl. Pipa Air Bersih, Simpang Padang, Duri, Kabupaten Bengkalis, Riau</p></div>
-        <div><p class="text-ukir-light text-xs uppercase tracking-widest mb-1">Telepon</p><a href="tel:+6282387758277" class="font-office-code-pro hover:underline">+62 823-8775-8277</a></div>
-        <div><p class="text-ukir-light text-xs uppercase tracking-widest mb-1">Email</p><a href="mailto:smknegeri1mandau@gmail.com" class="font-office-code-pro hover:underline break-all">smknegeri1mandau@gmail.com</a></div>
-        <a class="inline-flex font-bold text-ukir-light hover:underline" href="https://www.smkn1mandau.sch.id/" target="_blank" rel="noopener noreferrer">Buka situs resmi ↗</a>
+        <div><p class="text-ukir-light text-xs uppercase tracking-widest mb-1">Alamat</p><p>{identity.address}</p></div>
+        <div><p class="text-ukir-light text-xs uppercase tracking-widest mb-1">Telepon</p><a href={phoneHref} class="font-office-code-pro hover:underline">{identity.schoolPhone}</a></div>
+        <div><p class="text-ukir-light text-xs uppercase tracking-widest mb-1">Email</p><a href={`mailto:${identity.publicEmail}`} class="font-office-code-pro hover:underline break-all">{identity.publicEmail}</a></div>
+        <a class="inline-flex font-bold text-ukir-light hover:underline" href={programData.source.url} target="_blank" rel="noopener noreferrer">Buka situs resmi ↗</a>
       </address>
     </div>
   </section>
@@ -119,7 +112,7 @@ const program = programData.entries.map((item) => `${item.nama} (${item.singkata
   <section class="py-8">
     <div class="kontainer-laman font-lora flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-xs text-tinta-pudar">
       <p>Catatan sumber: konten diringkas dari halaman resmi sekolah, bukan pernyataan baru dari pihak sekolah.</p>
-      <a class="font-bold text-ukir hover:underline" href="http://www.smkn1mandau.sch.id/2022/04/sejarah-sekolah.html" target="_blank" rel="noopener noreferrer">Riwayat asli ↗</a>
+      <a class="font-bold text-ukir hover:underline" href={history[0].sourceUrl} target="_blank" rel="noopener noreferrer">Riwayat asli ↗</a>
     </div>
   </section>
 </LayoutUtama>
