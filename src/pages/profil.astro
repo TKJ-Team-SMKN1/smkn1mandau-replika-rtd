@@ -1,27 +1,11 @@
 ---
 import LayoutUtama from "../layouts/LayoutUtama.astro";
+import schoolProfile from "../data/school-profile.json";
+import programData from "../data/programs.json";
 
-const misi = [
-  "Meningkatkan sumberdaya pendidik dan tenaga kependidikan.",
-  "Melengkapi peralatan praktik yang standar.",
-  "Menyiapkan tamatan berakhlak mulia, berprestasi dalam bekerja.",
-  "Melanjutkan pendidikan dan wirausaha.",
-  "Meningkatkan pelayanan prima kepada warga sekolah dan instansi lain.",
-  "Memberdayakan semua alumni untuk meningkatkan kualitas kompetensi siswa."
-];
+const misi = schoolProfile.mission;
 
-const program = [
-  "Desain Pemodelan dan Informasi Bangunan (DPIB)",
-  "Teknik Audio Video (TAV)",
-  "Teknik Instalasi Tenaga Listrik (TITL)",
-  "Teknik Kendaraan Ringan (TKR)",
-  "Teknik Pengelasan (TP)",
-  "Teknik Bisnis Sepeda Motor (TBSM)",
-  "Teknik Komputer dan Jaringan (TKJ)",
-  "Geologi Pertambangan (GP)",
-  "Teknik Pemboran Minyak dan Gas (TPMG)",
-  "Analisis Pengujian Laboratorium (APL)"
-];
+const program = programData.entries.map((item) => `${item.nama} (${item.singkatan})`);
 ---
 <LayoutUtama
   judul="Profil Sekolah — SMK Negeri 1 Mandau (Replika Konsep)"

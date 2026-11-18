@@ -1,17 +1,7 @@
 import { useMemo, useState } from "react";
+import programData from "../data/programs.json";
 
-const DATA_PROGRAM = [
-  { id: "dpib", nama: "Desain Pemodelan dan Informasi Bangunan", singkatan: "DPIB", kataKunci: "desain bangunan konstruksi gambar" },
-  { id: "tav", nama: "Teknik Audio Video", singkatan: "TAV", kataKunci: "elektronika audio video" },
-  { id: "titl", nama: "Teknik Instalasi Tenaga Listrik", singkatan: "TITL", kataKunci: "listrik instalasi tenaga" },
-  { id: "tkr", nama: "Teknik Kendaraan Ringan", singkatan: "TKR", kataKunci: "otomotif mobil kendaraan" },
-  { id: "tp", nama: "Teknik Pengelasan", singkatan: "TP", kataKunci: "las fabrikasi logam" },
-  { id: "tbsm", nama: "Teknik Bisnis Sepeda Motor", singkatan: "TBSM", kataKunci: "otomotif sepeda motor bisnis" },
-  { id: "tkj", nama: "Teknik Komputer dan Jaringan", singkatan: "TKJ", kataKunci: "komputer jaringan server teknologi informasi" },
-  { id: "gp", nama: "Geologi Pertambangan", singkatan: "GP", kataKunci: "geologi tambang mineral bumi" },
-  { id: "tpmg", nama: "Teknik Pemboran Minyak dan Gas", singkatan: "TPMG", kataKunci: "pemboran minyak gas energi" },
-  { id: "apl", nama: "Analisis Pengujian Laboratorium", singkatan: "APL", kataKunci: "analisis pengujian laboratorium kimia" }
-];
+const DATA_PROGRAM = programData.entries;
 
 export default function DaftarProgram() {
   const [kataKunci, setKataKunci] = useState("");

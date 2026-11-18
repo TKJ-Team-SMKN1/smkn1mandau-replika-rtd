@@ -10,7 +10,8 @@
     "check": "astro check",
     "audit:html": "node scripts/audit-static-html.mjs",
     "audit:a11y": "node scripts/audit-wcag-preflight.mjs",
-    "audit:security": "node scripts/audit-dependencies.mjs"
+    "audit:security": "node scripts/audit-dependencies.mjs",
+    "audit:archive": "node scripts/audit-source-archive.mjs"
   },
   "dependencies": {
     "astro": "^7.4.8",

@@ -1,11 +1,7 @@
 ---
 import LayoutUtama from "../layouts/LayoutUtama.astro";
-const catatan = [
-  { angka: "26", label: "ruang kelas/lokal" }, { angka: "3", label: "ruang komputer" },
-  { angka: "6", label: "bengkel praktik" }, { angka: "1", label: "ruang aula" },
-  { angka: "4", label: "toilet siswa" }, { angka: "3", label: "toilet guru" },
-  { angka: "1", label: "toilet kepala sekolah" }, { angka: "1", label: "musala" }
-];
+import facilitiesData from "../data/facilities.json";
+const catatan = facilitiesData.historicalSnapshot.facilities;
 ---
 <LayoutUtama judul="Fasilitas — SMK Negeri 1 Mandau (Replika)" deskripsi="Catatan historis fasilitas berdasarkan halaman sejarah dan publikasi fasilitas sekolah." halamanAktif="fasilitas">
 <section class="page-hero"><div class="kontainer-laman page-hero-inner max-w-4xl">
@@ -19,7 +15,7 @@ const catatan = [
 <p class="font-nunito text-sm text-tinta-pudar leading-relaxed">Daftar fasilitas historis yang disebut pada halaman sejarah sekolah mencakup ruang kelas, laboratorium komputer, bengkel praktik, aula, toilet, musala, serta jaringan internet dan Wi-Fi. Rincian tersebut menggambarkan perkembangan hingga periode 2012 dan tidak boleh dianggap sebagai inventaris terkini.</p>
 </aside>
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-4">
-{catatan.map(item=><article class="kartu !p-4 md:!p-5"><p class="font-reglo text-3xl md:text-4xl text-ukir">{item.angka}</p><h3 class="font-familjen font-semibold text-malam mt-2 leading-snug">{item.label}</h3><p class="text-xs text-tinta-pudar mt-2">Catatan historis</p></article>)}
+{catatan.map(item=><article class="kartu !p-4 md:!p-5"><p class="font-reglo text-3xl md:text-4xl text-ukir">{item.count}</p><h3 class="font-familjen font-semibold text-malam mt-2 leading-snug">{item.label}</h3><p class="text-xs text-tinta-pudar mt-2">Catatan historis</p></article>)}
 </div>
 <div class="kartu mt-8 !p-6 md:!p-8">
 <h2 class="font-judul font-familjen text-2xl text-malam mb-3">Perkembangan yang dicatat</h2>

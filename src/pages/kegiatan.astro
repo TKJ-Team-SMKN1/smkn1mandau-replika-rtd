@@ -1,27 +1,7 @@
 ---
 import LayoutUtama from "../layouts/LayoutUtama.astro";
-const kegiatan = [
-{tanggal:"2 September 2023",judul:"Workshop Penguatan Kelembagaan BKK (SMK PK)",ringkasan:"Publikasi membahas penguatan pemahaman tentang fungsi Bursa Kerja Khusus sebagai unit layanan informasi dan penempatan kerja bagi alumni.",sumber:"http://www.smkn1mandau.sch.id/2023/09/workshop-penguatan-kelembagaan-bkk-di.html"},
-{tanggal:"9 September 2023",judul:"Partisipasi dalam Kegiatan HAORNAS Ke-40",ringkasan:"Siswa dan guru mengikuti kegiatan jalan santai yang diselenggarakan Dinas Pendidikan Wilayah II bersama Gubernur Riau di kawasan Koramil Pokok Jengkol.",sumber:"http://www.smkn1mandau.sch.id/2023/09/smk-negeri-1-mandau-berpartisipasi.html"},
-{tanggal:"8–10 September 2023",judul:"Kunjungan Industri Geologi Pertambangan",ringkasan:"Arsip mencatat kunjungan ke Balai Diklat Tambang Bawah Tanah Sawahlunto dan PT Ansar Terang Crushsindo di Pangkalan.",sumber:"http://www.smkn1mandau.sch.id/2023/09/jurusan-geologi-pertambangan-smk-negeri.html"},
-{tanggal:"15 September 2023",judul:"Penyelarasan Kurikulum Dunia Kerja Jurusan TAV",ringkasan:"Guru produktif Teknik Audio Video mengikuti pembahasan penyelarasan materi pembelajaran dengan kebutuhan dunia kerja bersama narasumber dari layanan servis elektronik.",sumber:"http://www.smkn1mandau.sch.id/2023/09/jurusan-teknik-audio-video-melaksanakan.html"},
-{tanggal:"19–21 September 2023",judul:"Workshop Pembelajaran Guru (SMK PK)",ringkasan:"Workshop untuk guru produktif dan guru mata pelajaran membahas capaian pembelajaran, model pembelajaran, tujuan pembelajaran, pembelajaran berdiferensiasi, dan asesmen.",sumber:"http://www.smkn1mandau.sch.id/2023/09/kegiatan-workshop-pembelajaran-guru.html"},
-{tanggal:"22 September 2023",judul:"Penyelarasan Kurikulum Jurusan DPIB",ringkasan:"Guru produktif DPIB berdiskusi dengan PT Yodya Karya mengenai alur tujuan pembelajaran, SKKNI/okupasi, SOP workshop, dan soal UKK.",sumber:"http://www.smkn1mandau.sch.id/2023/09/kegiatan-penyelarasan-kurikulum-dengan.html"},
-{tanggal:"23 September 2023",judul:"E-waste Collection bersama Bank Sampah Mengajar",ringkasan:"Publikasi mendokumentasikan edukasi limbah elektronik dan pengumpulan perangkat elektronik bekas untuk proses perbaikan atau daur ulang lebih lanjut.",sumber:"http://www.smkn1mandau.sch.id/2023/09/program-edukasi-e-waste-dan-e-waste.html"},
-{tanggal:"26 September 2023",judul:"Workshop dan Penandatanganan MOU dengan PT Smartfren",ringkasan:"Arsip mencatat workshop pengembangan kerja sama dengan dunia kerja dan penandatanganan nota kesepahaman bersama PT Smartfren.",sumber:"http://www.smkn1mandau.sch.id/2023/09/kegiatan-workshop-dan-penandatanganan.html"},
-{tanggal:"3 Oktober 2023",judul:"Sosialisasi Kunjungan Industri Jurusan DPIB",ringkasan:"Guru dan wali murid kelas XI DPIB membahas rencana kunjungan industri, pengenalan K3LH, ruang lingkup kegiatan, dan pembentukan panitia.",sumber:"http://www.smkn1mandau.sch.id/2023/10/sosialisasi-kunjungan-industri-jurusan.html"},
-{tanggal:"6 Oktober 2023",judul:"Penyelarasan Kurikulum Jurusan TKJ bersama PT Lintas Arta",ringkasan:"Guru produktif TKJ berdiskusi mengenai kesesuaian materi pembelajaran dengan kebutuhan layanan komunikasi data, internet, dan IT Services.",sumber:"http://www.smkn1mandau.sch.id/2023/10/kegiatan-penyelarasan-kurikulum-dengan.html"},
-{tanggal:"10 Oktober 2023",judul:"Kunjungan Industri DPIB ke PT Nindya Karya",ringkasan:"Siswa kelas XI DPIB mengikuti pengenalan perusahaan, K3LH/HSE, dan peninjauan proyek pembangunan gedung pascasarjana.",sumber:"http://www.smkn1mandau.sch.id/2023/10/kunjungan-industri-dpib-ke-pt-nindya.html"},
-{tanggal:"13 Oktober 2023",judul:"Penandatanganan MOU dengan Alfamart dan Tes Lowongan Kerja",ringkasan:"Publikasi mendokumentasikan kerja sama dan kegiatan informasi lowongan serta tes kerja yang ditujukan bagi alumni dan masyarakat umum.",sumber:"http://www.smkn1mandau.sch.id/2023/10/penanda-tanganan-mou-dengan-alfamart.html"},
-{tanggal:"18–19 Oktober 2023",judul:"Job Fair Disnakertrans Kabupaten Bengkalis",ringkasan:"Arsip BKK mencatat partisipasi alumni dalam kegiatan job fair yang berlangsung selama dua hari di Hotel Surya.",sumber:"http://www.smkn1mandau.sch.id/2023/11/job-fair-disnakertrans-kab-bengkalis.html"},
-{tanggal:"20 Oktober 2023",judul:"Praktisi Mengajar dengan Dunia Industri",ringkasan:"Siswa Geologi Pertambangan menerima materi dari praktisi industri tentang peledakan dan survei pemetaan, kemudian mengikuti praktik lapangan.",sumber:"http://www.smkn1mandau.sch.id/2023/11/kegiatan-praktisi-mengajar-dengan-dunia.html"},
-{tanggal:"21 Oktober 2023",judul:"Kegiatan Tracer Study",ringkasan:"Majelis guru mengikuti kegiatan penelusuran tamatan untuk mengumpulkan informasi alumni yang telah bekerja atau melanjutkan pendidikan.",sumber:"http://www.smkn1mandau.sch.id/2023/11/kegiatan-tracer-study-di-smk-negeri-1.html"},
-{tanggal:"23 Oktober 2023",judul:"Pendampingan PK bersama Politeknik Akamigas Palembang",ringkasan:"Pendampingan untuk jurusan Geologi Pertambangan membahas rapor pendidikan, kesiapan sarana, dan hubungan kerja sama dengan dunia kerja.",sumber:"http://www.smkn1mandau.sch.id/2023/11/pendampingan-pk-bersama-politeknik.html"},
-{tanggal:"23 Oktober 2023",judul:"Pelatihan Tenaga Administrasi Sekolah",ringkasan:"Tenaga Tata Usaha mengikuti pelatihan yang membahas substansi teknis tugas administrasi dan kompetensi manajerial, teknis, sosial, serta kepribadian.",sumber:"http://www.smkn1mandau.sch.id/2023/11/kegiatan-pelatihan-tenaga-administrasi.html"},
-{tanggal:"24 Oktober 2023",judul:"Workshop Teaching Factory bersama Guru Produktif",ringkasan:"Workshop membahas dasar, prinsip, kategori, dan hubungan Teaching Factory dengan BLUD; guru produktif menyusun rencana produk untuk didiskusikan.",sumber:"http://www.smkn1mandau.sch.id/2023/11/kegiatan-workshop-teaching-factory.html"},
-{tanggal:"7 November 2023",judul:"Pemutakhiran LSP-P1 pada Tujuh Program Keahlian",ringkasan:"Publikasi menyebut pemutakhiran perangkat asesmen untuk TKR, APL, TKJ, Teknik Pengelasan, TITL, Geologi Pertambangan, dan TAV.",sumber:"http://www.smkn1mandau.sch.id/2023/11/kegiatan-pemutakhiran-lsp-p1-7-jurusan.html"},
-{tanggal:"5 Maret 2024",judul:"Kunjungan Industri Jurusan TITL ke PLN Batam",ringkasan:"Arsip mencatat kunjungan dua hari yang mencakup pengarahan, materi K3 kelistrikan, prospek kerja, dan peninjauan proses produksi/generator.",sumber:"http://www.smkn1mandau.sch.id/2024/03/kunjungan-industri-siswa-kelas-xi.html"}
-];
+import eventsData from "../data/events.json";
+const kegiatan = eventsData.entries;
 ---
 <LayoutUtama judul="Kegiatan Sekolah — SMK Negeri 1 Mandau (Replika)" deskripsi="Katalog historis kegiatan sekolah yang diringkas dari arsip publikasi resmi tahun 2023–2024." halamanAktif="kegiatan">
 <section class="page-hero"><div class="kontainer-laman page-hero-inner max-w-4xl">
@@ -33,9 +13,9 @@ const kegiatan = [
 <div class="rounded-2xl border border-ukir/25 bg-gading p-5 md:p-6 mb-8"><h2 class="font-archivo font-bold text-malam mb-2">Status arsip</h2><p class="text-sm text-tinta-pudar leading-relaxed">Tanggal mengikuti isi publikasi sumber. Ringkasan disusun ulang agar mudah dipindai; untuk konteks lengkap, foto, dan keterangan resmi, buka postingan asli. Tidak ada jadwal kegiatan yang ditampilkan sebagai agenda aktif.</p></div>
 <div class="grid md:grid-cols-2 gap-4">
 {kegiatan.map(item=><article class="kartu !p-5 md:!p-6 flex flex-col">
-<p class="font-reglo text-xs uppercase tracking-wider text-ukir mb-3">{item.tanggal}</p><h2 class="font-judul font-literata text-xl text-malam mb-3">{item.judul}</h2>
-<p class="font-nunito text-sm text-tinta-pudar leading-relaxed flex-1">{item.ringkasan}</p>
-<a class="inline-flex min-h-11 items-center gap-2 mt-5 font-familjen font-bold text-ukir hover:underline underline-offset-4" href={item.sumber} target="_blank" rel="noopener noreferrer">Baca publikasi asli <span aria-hidden="true">↗</span></a>
+<p class="font-reglo text-xs uppercase tracking-wider text-ukir mb-3">{item.date}</p><h2 class="font-judul font-literata text-xl text-malam mb-3">{item.title}</h2>
+<p class="font-nunito text-sm text-tinta-pudar leading-relaxed flex-1">{item.summary}</p>
+<a class="inline-flex min-h-11 items-center gap-2 mt-5 font-familjen font-bold text-ukir hover:underline underline-offset-4" href={item.sourceUrl} target="_blank" rel="noopener noreferrer">Baca publikasi asli <span aria-hidden="true">↗</span></a>
 </article>)}
 </div></div></section>
 </LayoutUtama>
