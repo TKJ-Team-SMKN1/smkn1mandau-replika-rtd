@@ -303,7 +303,7 @@ if (errors.length) {
   process.exitCode = 1;
 } else {
   console.log(`Content provenance audit passed: ${verifiedReferences} source references resolve to the 100-record archive index.`);
-  console.log(`Source text checks passed: 10 programs, 3 history milestones, school identity, vision, and 6 mission statements.`);
+  console.log(`Source text checks passed: 10 school programs, 3 history milestones, school identity and vision/mission, 20 events, 7 BKK activities, LSP-P1 vision/5 missions/7 program names, historical facilities, 9 facility image labels, and 14 extracurricular image assets.`);
   console.log(`Route/data bindings passed: ${routeBindings.length} page or component bindings.`);
   console.log(`Dataset checks passed: ${staff.entries.length} staff snapshots, ${programs.entries.length} programs, ${events.entries.length} historical events.`);
   console.log("Unverified current inventory and extracurricular data remain explicitly unverified.");
