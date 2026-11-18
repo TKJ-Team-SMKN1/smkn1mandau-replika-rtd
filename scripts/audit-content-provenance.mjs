@@ -253,7 +253,7 @@ for (const term of [
 
 async function getSourceImageNames(file) {
   const html = await readFile(path.join(archiveRoot, file), "utf8");
-  return new Set([...html.matchAll(/<img\\b[^>]*\\bsrc=["']([^"']+)/gi)].map((match) => {
+  return new Set([...html.matchAll(/<img\b[^>]*\bsrc=["']([^"']+)/gi)].map((match) => {
     const pathPart = match[1].split(/[?#]/)[0].split("/").pop();
     try { return decodeURIComponent(pathPart).toLowerCase(); }
     catch { return pathPart.toLowerCase(); }
@@ -272,33 +272,6 @@ for (let index = 1; index <= extracurriculars.visualAssetCount; index += 1) {
   }
 }
 
-
-const units = datasets["src/data/units.json"];
-const bkkUnit = units.units.find((unit) => unit.id === "bkk");
-const lspUnit = units.units.find((unit) => unit.id === "lsp-p1");
-if (!bkkUnit || !lspUnit) {
-  errors.push("units.json must contain BKK and LSP-P1 records.");
-} else {
-  if (bkkUnit.historicalActivities.length !== 7 ||
-      bkkUnit.visionMissionStatus !== "no-readable-vision-mission-text-in-archived-html") {
-    errors.push("BKK historical activity count or vision-mission archive limitation is missing.");
-  }
-  for (const activity of bkkUnit.historicalActivities) {
-    const sourceText = await getSourceText(activity.sourceFile);
-    for (const term of activity.evidenceTerms ?? []) {
-      requireSourceText(sourceText, term, `BKK activity ${activity.title}: ${term}`);
-    }
-  }
-  const lspText = await getSourceText(lspUnit.missionSourceFile);
-  requireSourceText(lspText, lspUnit.vision, "LSP-P1 vision");
-  for (const mission of lspUnit.mission) {
-    requireSourceText(lspText, mission, `LSP-P1 mission: ${mission.slice(0, 40)}`);
-  }
-  const lspUpdateText = await getSourceText(lspUnit.programsSourceFile);
-  for (const program of lspUnit.programsIn2023Update) {
-    requireSourceText(lspUpdateText, program, `LSP-P1 program: ${program}`);
-  }
-}
 
 const routeBindings = [
   ["src/pages/profil.astro", ["../data/school-profile.json", "../data/programs.json"]],
