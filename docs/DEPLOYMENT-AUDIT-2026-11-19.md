@@ -5,17 +5,17 @@
 **Vercel project:** `smkn1mandau-replika-rtd`  
 **Project ID:** `prj_NZb1pWD1q2URox2UtqBC3BBHpPDO`  
 **Team ID:** `team_BLHyfFLCvab9U6fjRg4lvdLO`  
-**Latest verified Production deployment:** `dpl_gktLzcVGbBh694MxMZL1d2SPYjzX`  
-**Deployment commit:** `c65274d75a2a55f89254ace9faf1457cae836506`  
-**GitHub Actions run:** [Build validation #179](https://github.com/TKJ-Team-SMKN1/smkn1mandau-replika-rtd/actions/runs/44359106844)  
+**Latest verified Production deployment:** `dpl_FZ3dXfZRnvveAKSH2DAghQ3xFJih`  
+**Deployment commit:** `9104abc75e6c5ac59b291f5330728dbd06233c82`  
+**GitHub Actions run:** [Build validation #180](https://github.com/TKJ-Team-SMKN1/smkn1mandau-replika-rtd/actions/runs/44359851018)  
 **Identity notice:** This remains an independent replica/concept. It is not the official SMK Negeri 1 Mandau website and does not represent or claim endorsement by the school.
 
 ## Deployment — completed
 
-- The Vercel `unpause_project` action was requested on 19 November 2026. The API returned `result: null`.
-- The final explicit Production deployment was created from `main` at commit `c65274d75a2a55f89254ace9faf1457cae836506`.
-- Deployment ID: `dpl_gktLzcVGbBh694MxMZL1d2SPYjzX`.
-- Deployment URL: https://smkn1mandau-replika-7opr3qran-hypergarudas-projects.vercel.app
+- The Vercel `unpause_project` action was requested with the team ID and again with the verified team slug `hypergarudas-projects`; the API returned `result: null`. After the slug-scoped request, `/robots.txt` returned HTTP 200. However, `get_project` still reported `live: false`, and a preceding check had returned HTTP 503 `DEPLOYMENT_PAUSED`. This is an unresolved control-plane inconsistency.
+- The final explicit Production deployment was created from `main` at commit `9104abc75e6c5ac59b291f5330728dbd06233c82`.
+- Deployment ID: `dpl_FZ3dXfZRnvveAKSH2DAghQ3xFJih`.
+- Deployment URL: https://smkn1mandau-replika-h2z73hx4w-hypergarudas-projects.vercel.app
 - Deployment state: **READY**; target: Production; framework: Astro; Node.js 24.x.
 - Primary alias assigned: https://smkn1mandau-replika-rtd.vercel.app
 - Build log confirms 11 static pages generated and 10 indexable routes written to the sitemap.
@@ -25,7 +25,7 @@
 
 ## Public production smoke audit — latest deployment
 
-The public crawl was run after deployment `dpl_gktLzcVGbBh694MxMZL1d2SPYjzX` became READY.
+A public crawl of the primary alias returned 11/11 HTTP 200 responses after deployment `dpl_FZ3dXfZRnvveAKSH2DAghQ3xFJih` became READY. A later check then exposed a `DEPLOYMENT_PAUSED` response; treat this crawl as an observation, not definitive origin verification after the final unpause action.
 
 - **11/11 application routes returned HTTP 200**:
   - `/`
@@ -42,16 +42,15 @@ The public crawl was run after deployment `dpl_gktLzcVGbBh694MxMZL1d2SPYjzX` bec
 - All 11 returned HTML with page titles and Indonesian language metadata.
 - `/pengaturan` correctly returns `noindex, nofollow`; the other 10 routes return `index, follow`.
 - The independent-replica notice and source links are present in page content.
-- Public `/robots.txt` returned HTTP 200 and declares `Allow: /` and the `/sitemap.xml` location.
-- Public `/sitemap.xml` returned HTTP 200 and contains exactly 10 URLs. The settings page is correctly excluded.
+- An earlier public check returned HTTP 200 for `/robots.txt` and `/sitemap.xml`, with 10 sitemap URLs. A later request to both endpoints returned HTTP 503 `DEPLOYMENT_PAUSED`. After the final slug-scoped unpause request, `/robots.txt` returned HTTP 200 again. The final `/sitemap.xml` recheck could not be completed because the connected Firecrawl account ran out of credits.
 - Vercel runtime error summary for the selected last **1 hour** returned no runtime errors. This is a limited time-window observation, not a guarantee of zero errors across all time or interactions.
 
 ## GitHub Actions — full automated run
 
-<badge color="success">Build validation #179 — SUCCESS</badge>
+<badge color="success">Build validation #180 — SUCCESS</badge>
 
-- Run ID: `44359106844`
-- Commit: `c65274d75a2a55f89254ace9faf1457cae836506`
+- Run ID: `44359851018`
+- Commit: `9104abc75e6c5ac59b291f5330728dbd06233c82`
 - Job: `build`
 - Job status: `completed`; conclusion: `success`.
 - All **15/15 workflow steps** completed successfully.
@@ -84,7 +83,7 @@ The public crawl was run after deployment `dpl_gktLzcVGbBh694MxMZL1d2SPYjzX` bec
 ## What is completed
 
 1. Requested Vercel unpause action.
-2. Deployed the latest inspected `main` commit `c65274d` to Production; deployment reached READY.
+2. Deployed the latest inspected `main` commit `9104abc` to Production; deployment reached READY.
 3. Confirmed primary alias assignment and public HTTP response.
 4. Verified all 11 production routes return HTTP 200.
 5. Verified `robots.txt` and `sitemap.xml` return HTTP 200; sitemap contains 10 indexable URLs.
@@ -116,7 +115,7 @@ The public crawl was run after deployment `dpl_gktLzcVGbBh694MxMZL1d2SPYjzX` bec
 
 ### Performance and SEO
 - No live Lighthouse, Core Web Vitals, or mobile performance score was collected.
-- Public pages, robots, and sitemap were verified, but external search-engine indexing is not established.
+- The 11-route public crawl returned 200 before the final unpause attempt. `/robots.txt` returned 200 after the final unpause request, but the final sitemap and full route recheck remain outstanding because Firecrawl credits were exhausted. External search-engine indexing is not established.
 - No locale-specific URLs or `hreflang` alternates are generated.
 
 ### Content and localization
@@ -126,6 +125,13 @@ The public crawl was run after deployment `dpl_gktLzcVGbBh694MxMZL1d2SPYjzX` bec
 - Historical event date conflicts remain flagged in the data and must not be silently normalized.
 - Translation structural checks passed, but the full EN/MS/ZH catalogue still needs fluent-speaker review.
 - Continue distinguishing source facts, editorial summaries, and replica-only navigation/features.
+
+## Post-unpause verification caveat
+
+- The unpause request using the verified team slug was followed by an HTTP 200 response from `/robots.txt`.
+- The Vercel project readback still says `live: false`; the earlier HTTP 503 `DEPLOYMENT_PAUSED` means the pause state was not consistently reflected by the control-plane response.
+- Firecrawl credits were exhausted before the final sitemap and full 11-route post-unpause recheck. Do not claim that those final checks passed.
+- No SSO setting was disabled or bypassed.
 
 ## Audit boundary
 
