@@ -33,6 +33,8 @@ jobs:
         run: npm run build
       - name: Audit generated HTML quality and accessibility preflight
         run: npm run audit:html
+      - name: Audit archived source HTML and provenance index
+        run: npm run audit:archive
       - name: WCAG 2.2 AA static preflight
         run: npm run audit:a11y
       - name: Dependency security audit
