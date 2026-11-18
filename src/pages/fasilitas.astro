@@ -2,6 +2,7 @@
 import LayoutUtama from "../layouts/LayoutUtama.astro";
 import facilitiesData from "../data/facilities.json";
 const catatan = facilitiesData.historicalSnapshot.facilities;
+const fotoSumber = facilitiesData.visualEvidence ?? [];
 ---
 <LayoutUtama judul="Fasilitas — SMK Negeri 1 Mandau (Replika)" deskripsi="Catatan historis fasilitas berdasarkan halaman sejarah dan publikasi fasilitas sekolah." halamanAktif="fasilitas">
 <section class="page-hero"><div class="kontainer-laman page-hero-inner max-w-4xl">
@@ -17,6 +18,11 @@ const catatan = facilitiesData.historicalSnapshot.facilities;
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-4">
 {catatan.map(item=><article class="kartu !p-4 md:!p-5"><p class="font-reglo text-3xl md:text-4xl text-ukir">{item.count}</p><h3 class="font-familjen font-semibold text-malam mt-2 leading-snug">{item.label}</h3><p class="text-xs text-tinta-pudar mt-2">Catatan historis</p></article>)}
 </div>
+<div class="rounded-2xl border border-malam/10 bg-white p-5 md:p-6 mt-8">
+<h2 class="font-archivo font-bold text-malam text-xl mb-2">Label berkas foto pada publikasi fasilitas 2022</h2>
+<p class="font-nunito text-sm text-tinta-pudar leading-relaxed mb-4">Nama berikut berasal dari nama berkas gambar pada halaman sumber, bukan hasil verifikasi inventaris atau kondisi fasilitas saat ini.</p>
+<ul class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm text-tinta-pudar">{fotoSumber.map(item => <li class="rounded-lg border border-malam/10 bg-gading px-3 py-2">{item.label}</li>)}</ul>
+</div>
 <div class="kartu mt-8 !p-6 md:!p-8">
 <h2 class="font-judul font-familjen text-2xl text-malam mb-3">Perkembangan yang dicatat</h2>
 <p class="font-lora text-tinta-pudar leading-relaxed mb-4">Halaman sejarah sekolah menyebut bahwa pada awalnya tersedia 22 ruang kelas, satu bengkel bersama, satu laboratorium komputer, ruang majelis guru, dua toilet, dan musala. Dalam periode pembangunan 2004–2012, publikasi tersebut mencatat perkembangan menjadi 26 lokal, tiga ruang komputer, enam bengkel praktik, aula, toilet untuk siswa dan guru, serta fasilitas pendukung lainnya.</p>
@@ -25,6 +31,6 @@ const catatan = facilitiesData.historicalSnapshot.facilities;
 <a class="tombol tombol-ukir !w-auto" href="http://www.smkn1mandau.sch.id/2022/04/sejarah-sekolah.html" target="_blank" rel="noopener noreferrer">Baca halaman sejarah asli <span aria-hidden="true">↗</span></a>
 <a class="tombol tombol-garis !w-auto" href="http://www.smkn1mandau.sch.id/2022/05/fasilitas.html" target="_blank" rel="noopener noreferrer">Buka publikasi fasilitas <span aria-hidden="true">↗</span></a>
 </div></div>
-<p class="text-xs text-tinta-pudar mt-6">Halaman fasilitas resmi yang diarsipkan menampilkan media visual tanpa daftar teks fasilitas yang dapat diverifikasi. Replika ini tidak mengisi nama ruang, jumlah unit, atau kondisi terkini berdasarkan perkiraan.</p>
+<p class="text-xs text-tinta-pudar mt-6">Publikasi fasilitas 2022 memuat sembilan aset foto dengan label yang diambil dari nama berkas. Isi foto belum ditinjau satu per satu; label ini tidak membuktikan inventaris, jumlah unit, fungsi ruang, atau kondisi fasilitas sekarang.</p>
 </div></section>
 </LayoutUtama>

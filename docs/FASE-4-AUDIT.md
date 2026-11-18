@@ -9,7 +9,7 @@
 - Manifest `daftar_halaman.csv` memuat **100 file HTML**; semuanya memiliki pasangan file dalam arsip pada branch yang diaudit.
 - Register `src/data/archive-index.json` menyimpan URL asli, file lokal, tahun bila ada pada URL, tipe halaman, topik, dan status snapshot.
 - Beranda resmi berhasil diambil melalui Firecrawl pada 18 November 2026; hasil ekstraksi teks sekitar 93 KB.
-- Direktori SDM yang ada di aplikasi berisi **127 entri** (18 pimpinan/koordinator, 82 guru, 27 layanan). Nama-nama tersebut cocok dengan teks publik beranda saat pemeriksaan. Sumber tidak menyatakan tanggal pembaruan daftar, sehingga kecocokan teks bukan konfirmasi status kerja atau jabatan terkini.
+- Snapshot direktori SDM berisi **127 entri** (18 pimpinan/koordinator, 82 guru, 27 layanan) dari peninjauan 17 November 2026. Ekstraksi agregat langsung pada 18 November 2026 menghasilkan **123 entri**; selisih empat belum direkonsiliasi. Karena itu, klaim bahwa seluruh 127 entri cocok dengan beranda terkini ditarik kembali. Sumber tidak mencantumkan tanggal pembaruan personel.
 - Beranda resmi menampilkan **10 nama program keahlian**. Artikel pemutakhiran LSP-P1 pada 7 November 2023 hanya menyebut **7 program** untuk konteks perangkat asesmen LSP; keduanya tidak boleh dicampur atau dianggap saling membantah.
 - Katalog kegiatan berisi **20 ringkasan historis** yang terhubung ke sumber masing-masing.
 
@@ -19,7 +19,7 @@
 |---|---|---|
 | Identitas dan sejarah | Halaman identitas, sejarah, dan visi-misi memiliki teks yang dapat dibaca. | Diekstrak ke `school-profile.json` dengan URL dan nama file sumber. |
 | Program keahlian | Beranda resmi menampilkan sepuluh nama program. | Diekstrak ke `programs.json`; kata kunci pencarian tetap metadata UI, bukan klasifikasi resmi. |
-| Guru dan pegawai | Bagian beranda memuat nama dan label jabatan; seluruh 127 entri aplikasi cocok dengan teks yang diekstrak. | Dipindahkan ke `staff.json`; status masa berlaku diberi batasan karena tanggal pembaruan tidak tersedia. Foto tidak disalin. |
+| Guru dan pegawai | Snapshot 17 November memuat 127 entri; ekstraksi agregat langsung 18 November menghasilkan 123. Selisih belum direkonsiliasi. | `staff.json` dipertahankan sebagai snapshot bertanggal, bukan direktori personel terkini. Foto tidak disalin. |
 | Fasilitas | Halaman fasilitas 2022 berbasis media visual. Halaman sejarah memberi angka historis, termasuk 26 ruang kelas/lokal, 3 ruang komputer, dan 6 bengkel praktik pada uraian perkembangan 2004–2012. | Hanya dicatat sebagai snapshot historis; inventaris saat ini tetap kosong/tidak terverifikasi. |
 | Ekstrakurikuler | Halaman ekstrakurikuler dalam arsip tidak memberi daftar teks yang bisa diverifikasi. | Tidak mengarang nama kegiatan, pembina, atau jadwal; dataset `extracurriculars.json` menyimpan alasan kekosongan. |
 | BKK | Fungsi BKK dijelaskan dalam artikel 2023; halaman struktur organisasi berupa gambar. | Fungsi dan aktivitas historis diekstrak; anggota struktur tidak ditebak dari gambar. |
@@ -35,7 +35,7 @@
 3. **Fasilitas:** angka dari sejarah sekolah bukan inventaris sekarang. Halaman fasilitas terarsip tidak menyediakan teks yang cukup untuk memverifikasi daftar dan kondisi fasilitas saat ini.
 4. **Ekstrakurikuler:** nama kegiatan tidak diekstrak karena bukti arsip berbasis gambar tanpa keterangan tekstual yang memadai.
 5. **BKK/LSP:** diagram organisasi berupa gambar atau tautan unduhan. Nama anggota dan pembagian jabatan tidak disimpulkan dari gambar.
-6. **Staff freshness:** teks beranda saat pemeriksaan cocok dengan 127 entri, tetapi tanggal pembaruan tidak dipublikasikan. Data ini tidak boleh dipakai untuk menyatakan seseorang masih aktif bekerja di jabatan tersebut.
+6. **Staff freshness:** snapshot 17 November memuat 127 entri; ekstraksi agregat 18 November menghasilkan 123. Selisih empat belum direkonsiliasi dan tanggal pembaruan personel tidak dipublikasikan. Data ini tidak boleh dipakai untuk menyatakan seseorang masih aktif bekerja di jabatan tersebut.
 7. **Pengumuman dan lowongan:** halaman 2022–2026 yang sudah lewat tetap menjadi bukti sejarah publikasi, bukan instruksi operasional.
 
 ## Perlindungan data dan batasan publikasi
@@ -74,3 +74,15 @@ Klasifikasi tipe arsip: {"homepage":2,"search-results":14,"profile-or-unit-page"
 - Easter egg `.env` aman kini memiliki contoh inert di `docs/easter-eggs/.env.example`. Tidak ada file `.env` di `public/`; contoh ini bukan konfigurasi runtime dan tidak berisi secret.
 
 Pemeriksaan otomatis tetap merupakan preflight. Penilaian visual, navigasi keyboard, pembaca layar, lisensi media, dan validasi kontras pada state yang dirender masih memerlukan pemeriksaan manual sebelum klaim kesesuaian WCAG dibuat.
+
+
+## Pemeriksaan lanjutan Fase 4.2 — OCR, media, dan rekonsiliasi (18 November 2026)
+
+- **LSP-P1:** PDF struktur organisasi yang disematkan pada halaman sumber berhasil diekstrak. Dokumen menyebut SK Nomor `SK-01/LSP.SMKN1/X/2021/02`, tanggal 5 Oktober 2021. Label peran yang terbaca: Dewan Pengarah, Komite Skema Sertifikasi, Ketua LSP, Kepala Bagian Keuangan, Kepala Bagian Administrasi Sertifikasi, Kepala Bagian Humas, Kepala Bagian Mutu, dan Asesor Kompetensi. Dataset menyimpan label peran dan URL dokumen; tidak menyimpulkan pemegang jabatan saat ini.
+- **BKK:** pratinjau gambar struktur yang terdeteksi hanya berupa aset kecil 166 px dan tidak cukup terbaca untuk OCR yang dapat dipertanggungjawabkan. Nama dan jabatan tetap tidak diekstrak.
+- **Fasilitas:** HTML arsip memuat sembilan nama berkas foto: `LOBY.jpg`, `KANTIN.jpg`, `LABOR KOMPUTER.jpg`, `MAJELIS GURU.jpg`, `PERPUSTAKAAN.jpg`, `RUANG KELAS.jpg`, `UKS.jpg`, `CCTV.jpg`, dan `MESJID.jpg`. Label yang ditampilkan diturunkan dari nama berkas saja; foto belum ditinjau satu per satu dan bukan inventaris terkini.
+- **Ekstrakurikuler:** ditemukan 14 aset gambar bernomor `1.jpg` sampai `14.jpg`. Tidak ada label kegiatan, pembina, atau jadwal yang dapat diverifikasi dari teks arsip; nama kegiatan tidak ditebak.
+- **Rekonsiliasi SDM:** ekstraksi agregat langsung beranda pada 18 November mengembalikan 123 entri, sedangkan snapshot terstruktur tanggal 17 November berisi 127. Selisih empat dicatat sebagai unresolved; data tetap snapshot, bukan roster aktif.
+- **Sumber metodologi:** [W3C WCAG-EM 2.0](https://www.w3.org/TR/wcag-em/), [Section 508 — Alternative Text](https://www.section508.gov/create/alternative-text/), [Library of Congress — OCR limitations](https://www.loc.gov/collections/chronicling-america/about-this-collection/technical-information), dan studi aksesibilitas arsip web bagi pengguna tunanetra ([DOI 10.1007/978-3-031-72437-4_12](https://doi.org/10.1007/978-3-031-72437-4_12)).
+- **Status UX/a11y:** label kontrol pencarian, `aria-live` untuk hasil filter, heading semantik, dan daftar teks untuk label struktur diterapkan. Audit otomatis adalah preflight saja; uji pembaca layar, keyboard manual, zoom 200%, dan kontras state visual belum diselesaikan.
+- **Layanan riset:** Exa, Firecrawl, dan Parallel memberi bukti sumber; Geekflare Lighthouse mengembalikan `NO_FCP` sehingga tidak ada skor performa valid. Screenshot Geekflare gagal. Tavily menolak permintaan karena batas penggunaan. Kegagalan alat dicatat sebagai keterbatasan pengumpulan, bukan keberhasilan audit.

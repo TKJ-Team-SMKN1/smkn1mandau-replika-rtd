@@ -5,9 +5,13 @@
     "url": "http://www.smkn1mandau.sch.id/",
     "section": "Guru dan Pegawai SMKN 1 Mandau",
     "publishedAt": null,
-    "verifiedAgainstCurrentHomepage": true,
-    "status": "official-publication-date-not-stated",
-    "note": "All 127 names in this dataset matched the current public homepage scrape; the source does not state when the personnel list was last updated, so current employment or role status is not independently confirmed."
+    "verifiedAgainstCurrentHomepage": false,
+    "status": "snapshot-count-discrepancy-unresolved",
+    "note": "This dataset preserves 127 unique entries from the 17 November 2026 source snapshot. A fresh aggregate extraction of the live homepage on 18 November 2026 returned 123 staff/personnel entries. The difference of four has not been reconciled; the extraction method may omit content. Treat all entries as a dated public snapshot, not a current personnel register.",
+    "snapshotDate": "2026-11-17",
+    "recheckedAt": "2026-11-18",
+    "recheckMethod": "Firecrawl query-based aggregate extraction",
+    "recheckCount": 123
   },
   "counts": {
     "total": 127,

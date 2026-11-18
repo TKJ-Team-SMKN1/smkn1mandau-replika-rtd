@@ -1,7 +1,9 @@
 ---
 import LayoutUtama from "../layouts/LayoutUtama.astro";
 import unitsData from "../data/units.json";
-const lspProgramList = unitsData.units.find((unit) => unit.id === "lsp-p1")?.programsIn2023Update ?? [];
+const lspUnit = unitsData.units.find((unit) => unit.id === "lsp-p1");
+const lspProgramList = lspUnit?.programsIn2023Update ?? [];
+const lspOrganizationRoles = lspUnit?.organizationChartRoles ?? [];
 ---
 <LayoutUtama judul="Unit Sekolah — SMK Negeri 1 Mandau (Replika)" deskripsi="Ringkasan historis unit Bursa Kerja Khusus dan Lembaga Sertifikasi Profesi dari publikasi sekolah." halamanAktif="unit-sekolah">
 <section class="page-hero"><div class="kontainer-laman page-hero-inner max-w-4xl">
@@ -17,8 +19,14 @@ const lspProgramList = unitsData.units.find((unit) => unit.id === "lsp-p1")?.pro
 <article class="kartu !p-6 md:!p-8"><p class="pita-bagian mb-3">Sertifikasi kompetensi</p><h2 class="font-judul font-familjen text-2xl text-malam mb-4">Lembaga Sertifikasi Profesi (LSP-P1)</h2>
 <p class="font-nunito text-tinta-pudar leading-relaxed mb-4">Arsip publikasi 2023 mencatat kegiatan pemutakhiran perangkat asesmen LSP-P1 pada tujuh program keahlian. Catatan ini tidak menyatakan status sertifikasi atau ruang lingkup terkini.</p>
 <ul class="grid sm:grid-cols-2 gap-2 text-sm text-tinta-pudar">{lspProgramList.map((program) => <li class="rounded-lg border border-malam/10 bg-gading px-3 py-2">{program}</li>)}</ul>
+<div class="rounded-xl border border-malam/10 bg-gading p-4 mt-5">
+<p class="font-familjen font-semibold text-malam mb-2">Label jabatan pada dokumen struktur 2021</p>
+<ul class="grid sm:grid-cols-2 gap-2 text-sm text-tinta-pudar">{lspOrganizationRoles.map((role) => <li class="rounded-lg border border-malam/10 bg-white px-3 py-2">{role}</li>)}</ul>
+<p class="text-xs text-tinta-pudar leading-relaxed mt-3">Teks jabatan dibaca dari PDF bertanggal 5 Oktober 2021. Ini adalah struktur historis, bukan konfirmasi struktur atau pemegang jabatan saat ini.</p>
+<a class="inline-flex min-h-11 items-center mt-2 font-familjen font-bold text-ukir hover:underline underline-offset-4" href={lspUnit?.organizationChartDocumentUrl} target="_blank" rel="noopener noreferrer">Buka dokumen struktur LSP-P1 (PDF) ↗</a>
+</div>
 <div class="flex flex-wrap gap-3 mt-6"><a class="tombol tombol-ukir !w-auto" href="http://www.smkn1mandau.sch.id/2023/05/strukrut-organisasi-lembaga-sertifikasi.html" target="_blank" rel="noopener noreferrer">Struktur LSP-P1 asli <span aria-hidden="true">↗</span></a><a class="tombol tombol-garis !w-auto" href="http://www.smkn1mandau.sch.id/2023/11/kegiatan-pemutakhiran-lsp-p1-7-jurusan.html" target="_blank" rel="noopener noreferrer">Publikasi pemutakhiran <span aria-hidden="true">↗</span></a></div>
 </article></div>
-<div class="kontainer-laman mt-6"><aside class="rounded-2xl border border-ukir/25 bg-gading p-5 md:p-6"><h2 class="font-archivo font-bold text-malam mb-2">Catatan struktur organisasi</h2><p class="text-sm text-tinta-pudar leading-relaxed">Struktur organisasi pada halaman BKK dan LSP-P1 dipublikasikan sebagai gambar. Rincian nama dan jabatan tidak ditranskripsikan karena belum tersedia sebagai teks yang dapat diverifikasi. Gunakan tautan sumber asli untuk melihat materi visual.</p></aside></div>
+<div class="kontainer-laman mt-6"><aside class="rounded-2xl border border-ukir/25 bg-gading p-5 md:p-6"><h2 class="font-archivo font-bold text-malam mb-2">Catatan struktur organisasi</h2><p class="text-sm text-tinta-pudar leading-relaxed">Halaman struktur BKK hanya memberi pratinjau gambar kecil yang tidak cukup terbaca untuk menyalin nama atau jabatan. Untuk LSP-P1, PDF historis bertanggal 5 Oktober 2021 berhasil dibaca dan label jabatannya ditampilkan di atas. Tidak ada nama pemegang jabatan yang disimpulkan, dan dokumen lama tidak membuktikan susunan terkini.</p></aside></div>
 </section>
 </LayoutUtama>

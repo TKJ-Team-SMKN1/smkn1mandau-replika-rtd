@@ -5,8 +5,11 @@
     "url": "http://www.smkn1mandau.sch.id/2022/05/ekstrakurikuler.html",
     "sourceFile": "010_2022_05_ekstrakurikuler_html.html",
     "section": "Ekstrakurikuler SMKN 1 Mandau",
-    "status": "image-led-no-readable-list"
+    "status": "image-led-14-numbered-image-assets-no-readable-activity-labels"
   },
   "activities": [],
-  "note": "The archived source page does not expose a verifiable text list of activities, supervisors, schedules, or active status. An empty list means the data could not be verified from the archived text; it does not mean the school has no extracurricular activities."
+  "note": "The archived source page does not expose a verifiable text list of activities, supervisors, schedules, or active status. An empty list means the data could not be verified from the archived text; it does not mean the school has no extracurricular activities.",
+  "visualAssetCount": 14,
+  "visualAssetPattern": "1.jpg through 14.jpg",
+  "visualAssetNote": "Fourteen numbered image files were found in the archived HTML. Activity labels, subjects, supervisors, schedules, and current status have not been verified; no activity names are inferred."
 }
