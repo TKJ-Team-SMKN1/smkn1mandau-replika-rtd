@@ -70,13 +70,13 @@ A public crawl of the primary alias returned 11/11 HTTP 200 responses after depl
 | Archive audit | PASS | 100 HTML files; manifest/index match; 0 duplicate-content groups; no `public/.env` in webroot |
 | Provenance audit | PASS | 44 source references; 7 page/data bindings; 127 staff snapshots, 10 programs, 20 historical events |
 | WCAG static preflight | PASS | 11 pages; 174 OTF faces; 19 font families; six fallback palettes; contrast thresholds and 44 CSS px target baseline passed |
-| Dependency security audit | PASS | npm audit totals: 0; no unreviewed High/Critical findings |
+| Dependency security audit | PASS | npm audit totals: 0; no Critical/High advisories reported |
 
 ### Warnings and qualifications
 
 - GitHub warns that `actions/checkout@v4` and `actions/setup-node@v4` target Node.js 20 and are being forced to Node.js 24 by the runner. Update to action releases that officially target the supported runtime when available.
 - Node emitted a `punycode` deprecation warning.
-- The dependency audit code still explicitly records the known Picomatch advisory chain as open; the successful run means no unreviewed High/Critical findings blocked CI, not that the advisory was remediated.
+- The previous dependency audit script had a special-case exception for Picomatch advisory `GHSA-fc5q-39xc-vjpf`. GitHub withdrew that advisory on 18 November 2026 after an upstream dispute. The updated audit script removes the exception and blocks on any Critical/High finding reported by `npm audit`.
 - Localization structural checks passed, but linguistic completeness still requires human review.
 - WCAG static preflight passed, but it is not a WCAG 2.2 AA certification.
 
@@ -108,14 +108,15 @@ A public crawl of the primary alias returned 11/11 HTTP 200 responses after depl
 - Future or conditional media, forms, and interactive states need review.
 
 ### Security
-- Picomatch advisory `GHSA-fc5q-39xc-vjpf` / `CVE-2026-112366` remains documented as unresolved/known-open. Do not invent an override or claim it is fixed.
+- The lockfile includes Picomatch 4.0.7 and 2.3.2. GitHub withdrew advisory `GHSA-fc5q-39xc-vjpf` / `CVE-2026-112366` on 18 November 2026 after an upstream dispute. It is no longer treated as an active GitHub-reviewed advisory; no downgrade or speculative override was applied.
+- Third-party scanners may retain stale copies of the withdrawn record. Verify the current primary advisory status before treating a repeat alert as active.
+- The dependency audit now blocks on Critical/High findings reported by `npm audit`, without a special-case exception for the withdrawn advisory.
 - CSP remains `Content-Security-Policy-Report-Only`, not an enforced CSP.
-- HTTP security response headers were not independently inspected.
 - No full external penetration test or browser security test was performed.
 
 ### Performance and SEO
 - No live Lighthouse, Core Web Vitals, or mobile performance score was collected.
-- The 11-route public crawl returned 200 before the final unpause attempt. `/robots.txt` returned 200 after the final unpause request, but the final sitemap and full route recheck remain outstanding because Firecrawl credits were exhausted. External search-engine indexing is not established.
+- The 11-route public crawl returned 200 before the final unpause attempt. `/robots.txt` returned 200 after the final unpause request, but the final sitemap and full 11-route post-unpause recheck remain outstanding because Firecrawl credits were exhausted. External search-engine indexing is not established.
 - No locale-specific URLs or `hreflang` alternates are generated.
 
 ### Content and localization

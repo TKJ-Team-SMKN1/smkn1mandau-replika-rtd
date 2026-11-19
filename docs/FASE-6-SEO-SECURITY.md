@@ -9,13 +9,18 @@
 - Added a `rel="sitemap"` link in the shared page head. CI validates unique non-empty page titles, non-empty descriptions, canonical uniqueness and route matching, Open Graph fields, Twitter Card, sitemap/canonical consistency, the robots sitemap reference, and the settings page's noindex state.
 - Added a **Content-Security-Policy-Report-Only** response header as a non-blocking baseline. It is intended to expose policy violations in browser developer tools; it does not enforce a CSP and does not replace a full resource-origin audit.
 
-## Dependency advisory — remains open
+## Dependency advisory — withdrawn
 
-The lockfile resolves `picomatch@4.0.7`. GitHub Advisory `GHSA-fc5q-39xc-vjpf` / `CVE-2026-112366` identifies versions through 4.0.7 as affected and currently lists no first patched version. The upstream proposed remediation, [picomatch PR #238](https://github.com/micromatch/picomatch/pull/238), was still open and unmerged at the time of this review (2026-11-18). It is not safe to claim the dependency is fixed or to invent an override version.
+The lockfile currently resolves `picomatch@4.0.7` and a nested `picomatch@2.3.2`. GitHub Advisory `GHSA-fc5q-39xc-vjpf` / `CVE-2026-112366`, which had described a ReDoS issue in Picomatch, was **withdrawn by GitHub on 18 November 2026**. In the upstream discussion, the Picomatch maintainer disputed the vulnerability claim; a subsequent upstream comment confirms that GitHub and VulnCheck withdrew their advisories.
 
-The current project produces static HTML. The affected package is a transitive build dependency, not an application request-time glob endpoint in the generated static site. This reduces the direct runtime exposure but does **not** remove the build/CI dependency risk. The existing dependency audit continues to report this advisory as unresolved and fails on unrelated high/critical findings.
+References:
+- [GitHub Advisory — withdrawn status](https://github.com/advisories/GHSA-fc5q-39xc-vjpf)
+- [Picomatch upstream discussion #235](https://github.com/micromatch/picomatch/pull/235)
+- [GitHub Advisory Database withdrawal follow-up](https://github.com/github/advisory-database/pull/11405)
 
-**Follow-up:** update the dependency chain when the upstream project publishes a patched release, then remove the known-open exception from the dependency audit and require a clean audit.
+**Disposition:** do not downgrade Picomatch, add a speculative npm override, or claim a patched release exists. This finding is no longer treated as an active GitHub-reviewed advisory. Some third-party scanners or cached vulnerability feeds may continue to show stale copies, so verify the source advisory's current status when triaging a future alert. The normal dependency audit now fails on any Critical/High advisory reported by `npm audit`, without a special-case allowlist for this withdrawn GHSA.
+
+The presence of a package in the lockfile alone does not establish exploitable application exposure. The project is built as static HTML; this repository has no user-facing runtime glob endpoint identified in this review. That is a scope observation, not a substitute for reviewing future dependency or application changes.
 
 ## Social preview and structured data decision
 
