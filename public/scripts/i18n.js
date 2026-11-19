@@ -1015,6 +1015,31 @@
     "Contoh: TKJ atau Teknik Komputer":"例如：TKJ或计算机技术"
   });
 
+  Object.assign(translations.en, {
+    "@placeholder:Contoh: TKJ atau Teknik Komputer":"Example: TKJ or Computer Engineering",
+    "@placeholder:Contoh: guru, tata usaha, TKJ...":"Example: teacher, administration, TKJ...",
+    "@aria-label:Hapus kata pencarian":"Clear search term",
+    "@aria-label:Filter kategori SDM":"Filter staff categories",
+    "@aria-label:Navigasi utama":"Main navigation",
+    "@aria-label:Navigasi mobile":"Mobile navigation"
+  });
+  Object.assign(translations.ms, {
+    "@placeholder:Contoh: TKJ atau Teknik Komputer":"Contoh: TKJ atau Teknologi Komputer",
+    "@placeholder:Contoh: guru, tata usaha, TKJ...":"Contoh: guru, pentadbiran, TKJ...",
+    "@aria-label:Hapus kata pencarian":"Padam kata carian",
+    "@aria-label:Filter kategori SDM":"Tapis kategori kakitangan",
+    "@aria-label:Navigasi utama":"Navigasi utama",
+    "@aria-label:Navigasi mobile":"Navigasi mudah alih"
+  });
+  Object.assign(translations.zh, {
+    "@placeholder:Contoh: TKJ atau Teknik Komputer":"例如：TKJ或计算机技术",
+    "@placeholder:Contoh: guru, tata usaha, TKJ...":"例如：教师、行政人员、TKJ……",
+    "@aria-label:Hapus kata pencarian":"清除搜索词",
+    "@aria-label:Filter kategori SDM":"筛选员工类别",
+    "@aria-label:Navigasi utama":"主导航",
+    "@aria-label:Navigasi mobile":"移动导航"
+  });
+
   // Dynamic data labels: translate descriptions and roles, but preserve personal names and official acronyms.
   const dataTranslations = {
     en: {
