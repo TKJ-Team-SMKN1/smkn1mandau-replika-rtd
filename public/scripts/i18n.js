@@ -1054,6 +1054,7 @@
   for (const lang of ["en", "ms", "zh"]) Object.assign(translations[lang], dataTranslations[lang]);
 
   const original = new WeakMap();
+  const translatedNodes = new WeakMap();
   const originalAttributes = new WeakMap();
   function applyLanguage(lang) {
     const dict = translations[lang] || {};
@@ -1106,7 +1107,7 @@
     if (picker) picker.addEventListener("change", () => applyLanguage(picker.value));
     applyLanguage(lang);
     const observer = new MutationObserver(() => applyLanguage(lang));
-    observer.observe(document.body, { childList: true, subtree: true });
+    observer.observe(document.body, { childList: true, characterData: true, subtree: true });
     document.addEventListener("change", e => {
       if (e.target.matches("[data-language-picker]")) { lang = e.target.value; applyLanguage(lang); }
     });
