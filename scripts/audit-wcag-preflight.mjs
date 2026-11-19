@@ -26,9 +26,9 @@ const fonts=await readFile(path.join(root,"src/styles/font-library.css"),"utf8")
 if(faces!==174)errors.push("Jumlah font face berubah: "+faces);if(families.size!==19)errors.push("Jumlah keluarga font berubah: "+families.size);
 const css=await readFile(path.join(root,"src/styles/global.css"),"utf8")+await readFile(path.join(root,"src/styles/theme-compat.css"),"utf8");
 if(!/:focus-visible/.test(css))errors.push("focus-visible tidak ditemukan.");if(!/prefers-reduced-motion/.test(css))errors.push("reduced-motion tidak ditemukan.");if(!/forced-colors/.test(css))warnings.push("forced-colors perlu pemeriksaan manual.");if(!/--focus-color/.test(css))errors.push("focus token tidak ditemukan.");
-if(!/prefers-contrast:\\s*more/.test(css))errors.push("prefers-contrast enhancement tidak ditemukan.");
-if(!/forced-colors:\\s*active/.test(css))errors.push("forced-colors fallback tidak ditemukan.");
-if(!/a:not\\(\\[class\\]\\)/.test(css))errors.push("inline link underline baseline tidak ditemukan.");
+if(!css.includes("prefers-contrast: more"))errors.push("prefers-contrast enhancement tidak ditemukan.");
+if(!css.includes("forced-colors: active"))errors.push("forced-colors fallback tidak ditemukan.");
+if(!css.includes("a:not([class])"))errors.push("inline link underline baseline tidak ditemukan.");
 console.log("WCAG 2.2 AA static preflight: "+htmlFiles.length+" halaman; "+faces+" face OTF; "+families.size+" keluarga font.");
 for(const w of warnings)console.warn("WARNING:",w);for(const e of errors)console.error("ERROR:",e);
 if(errors.length)process.exit(1);console.log("Static preflight passed; this is not WCAG certification.");
