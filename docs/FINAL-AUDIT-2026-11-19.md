@@ -97,7 +97,7 @@ The source of the configured audit scripts was reviewed. Their intended scope is
 - **SEO:** sitemap, canonical URLs, unique titles, descriptions, Open Graph/Twitter metadata, robots, and sitemap discovery.
 - **Archive:** 100-file source archive manifest, source host, archive presence, index consistency, and absence of `public/.env`.
 - **Content provenance:** dataset metadata/counts, source references, selected archived text evidence, image references, and page/data bindings.
-- **Dependency security:** npm audit findings, with a documented exception path for the known Picomatch advisory chain.
+- **Dependency security:** `npm audit` Critical/High findings. The previous special-case exception for Picomatch GHSA-fc5q-39xc-vjpf has been removed because GitHub withdrew that advisory on 18 November 2026.
 
 ### CI execution status
 
@@ -139,8 +139,9 @@ The source of the configured audit scripts was reviewed. Their intended scope is
 - Review media, forms, and all interactive states.
 
 ### Security
-- The transitive Picomatch advisory `GHSA-fc5q-39xc-vjpf` / `CVE-2026-112366` remains documented as unresolved in `docs/FASE-6-SEO-SECURITY.md`.
-- The Vercel install log's `found 0 vulnerabilities` line is not the dedicated `npm run audit:security` result.
+- The lockfile includes Picomatch 4.0.7 and 2.3.2. The previously cited GitHub advisory `GHSA-fc5q-39xc-vjpf` / `CVE-2026-112366` was withdrawn by GitHub on 18 November 2026 after an upstream dispute. It is no longer tracked as an active GitHub-reviewed advisory; no dependency downgrade or speculative override was applied.
+- Third-party scanners may retain stale copies of the withdrawn record. Check the current primary advisory status before treating a repeat alert as active.
+- The dependency audit now blocks on Critical/High findings reported by `npm audit`, without a special-case exception for the withdrawn advisory.
 - CSP remains report-only.
 - No external penetration test or comprehensive browser security test was performed.
 
