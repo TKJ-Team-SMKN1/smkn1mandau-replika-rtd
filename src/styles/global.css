@@ -276,3 +276,39 @@ html[data-theme] select { border-color: var(--control-border) !important; }
   min-height: 44px;
   align-items: center;
 }
+
+
+/* WCAG 2.2 AA reinforcement: link recognition, contrast modes and forced colors. */
+a:not([class]) {
+  text-decoration-line: underline;
+  text-decoration-thickness: .08em;
+  text-underline-offset: .18em;
+}
+
+@media (prefers-contrast: more) {
+  :focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 3px Canvas;
+  }
+  button, input, select, textarea, summary,
+  .kartu, .sdm-card, .sdm-tools { border-color: currentColor; }
+}
+
+@media (forced-colors: active) {
+  :focus-visible { outline: 3px solid Highlight; outline-offset: 3px; box-shadow: none; }
+  a { color: LinkText; }
+  button, input, select, textarea, summary { border: 1px solid ButtonText; }
+  button:disabled, input:disabled, select:disabled, textarea:disabled {
+    color: GrayText; border-color: GrayText;
+  }
+  .tombol-ukir, .sdm-filter.is-active {
+    color: ButtonText; background: ButtonFace; border: 2px solid Highlight;
+  }
+  .site-header, .site-footer, .mobile-nav {
+    color: CanvasText; background: Canvas; border-color: CanvasText;
+  }
+}
+
+:where(button, a, summary, label) { overflow-wrap: anywhere; }
+:where(p, li, dd, dt, figcaption, blockquote) { max-width: 100%; }
