@@ -72,7 +72,7 @@ export default function Hero() {
         .hero-side-title { margin:0; color:#fff; font-family:"Literata Local","Crimson Pro Local",serif; font-size:2rem; line-height:1.35; }
         .hero-side-title span { color:#efb17b; }
         .hero-side-note { margin:1rem 0 1.5rem; color:rgba(246,239,230,.78); font-size:.9rem; line-height:1.7; }
-        .hero-side-bottom { display:flex; justify-content:space-between; align-items:center; padding-top:1rem; border-top:1px solid rgba(255,255,255,.13); color:rgba(246,239,230,.65); font-family:"Azeret Mono Local",monospace; font-size:.68rem; letter-spacing:.12em; }
+        .hero-side-bottom { display:flex; justify-content:space-between; align-items:center; padding-top:1rem; border-top:1px solid rgba(255,255,255,.13); color:rgba(246,239,230,.78); font-family:"Azeret Mono Local",monospace; font-size:.68rem; letter-spacing:.12em; }
         .hero-side-bottom span:last-child { color:#efb17b; font-size:1.2rem; }
         .hero-reveal { opacity:0; transform:translateY(14px); animation:hero-enter .65s cubic-bezier(.2,.7,.2,1) both; }
         @keyframes hero-enter { to { opacity:1; transform:translateY(0); } }
