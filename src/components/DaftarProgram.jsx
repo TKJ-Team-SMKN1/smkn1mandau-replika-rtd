@@ -31,7 +31,7 @@ export default function DaftarProgram() {
             onChange={(event) => setKataKunci(event.target.value)}
             placeholder="Contoh: TKJ atau Teknik Komputer"
             aria-describedby="petunjuk-cari-program"
-            className="program-search-input w-full min-h-12 rounded-xl border px-4 py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-ukir/20"
+            className="program-search-input w-full min-h-12 rounded-xl border px-4 pr-16 py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-ukir/20"
             autoComplete="off"
           />
           {kataKunci && (
