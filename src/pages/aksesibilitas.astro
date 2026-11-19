@@ -1,0 +1,60 @@
+---
+import LayoutUtama from "../layouts/LayoutUtama.astro";
+---
+<LayoutUtama
+  judul="Aksesibilitas — SMK Negeri 1 Mandau (Replika)"
+  deskripsi="Pernyataan aksesibilitas dan pendekatan WCAG 2.2 AA pada situs replika independen SMK Negeri 1 Mandau."
+  halamanAktif="aksesibilitas"
+>
+  <section class="page-hero" aria-labelledby="judul-aksesibilitas">
+    <div class="kontainer-laman page-hero-inner max-w-4xl">
+      <p class="pita-bagian !text-ukir-light mb-4">Aksesibilitas digital</p>
+      <h1 id="judul-aksesibilitas" class="font-judul text-4xl md:text-5xl leading-tight mb-5">Akses untuk semua</h1>
+      <p class="max-w-2xl text-gading/90 text-lg leading-relaxed">
+        Replika independen ini dikembangkan dengan mengacu pada Web Content Accessibility Guidelines
+        (WCAG) 2.2 tingkat AA. Tujuannya adalah membuat informasi dan navigasi dapat digunakan oleh
+        sebanyak mungkin orang, termasuk pengguna teknologi bantu.
+      </p>
+    </div>
+  </section>
+  <section class="py-14 md:py-20" aria-labelledby="status-kesesuaian">
+    <div class="kontainer-laman max-w-4xl">
+      <div class="kartu mb-8">
+        <p class="pita-bagian mb-3">Status transparan</p>
+        <h2 id="status-kesesuaian" class="font-judul text-2xl md:text-3xl text-malam mb-3">Target pengembangan: WCAG 2.2 AA</h2>
+        <p class="text-tinta-pudar leading-relaxed">
+          Situs menerapkan sejumlah praktik aksesibilitas dan pemeriksaan otomatis. Namun, belum ada
+          audit menyeluruh oleh evaluator independen maupun pengujian lengkap dengan pembaca layar,
+          perangkat input alternatif, dan seluruh kombinasi browser. Karena itu, situs ini
+          <strong>tidak menyatakan atau menjamin sertifikasi maupun kesesuaian penuh WCAG 2.2 AA</strong>.
+        </p>
+      </div>
+      <h2 class="font-judul text-2xl text-malam mb-5">Fitur aksesibilitas yang diterapkan</h2>
+      <ul class="grid sm:grid-cols-2 gap-4 mb-10">
+        <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Navigasi keyboard</h3><p class="text-tinta-pudar text-sm">Tautan lewati konten, urutan fokus alami, indikator fokus yang terlihat, dan menu mobile yang dapat ditutup dengan Escape.</p></li>
+        <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Struktur semantik</h3><p class="text-tinta-pudar text-sm">Bahasa halaman, landmark utama, hierarki heading, label kontrol, serta teks alternatif untuk gambar informatif.</p></li>
+        <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Kontras dan tampilan</h3><p class="text-tinta-pudar text-sm">Pemeriksaan rasio kontras token tema, batas kontrol yang terlihat, dan dukungan preferensi kontras sistem.</p></li>
+        <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Gerak dan reflow</h3><p class="text-tinta-pudar text-sm">Menghormati prefers-reduced-motion, tata letak responsif, dan upaya mencegah teks memaksa scroll horizontal.</p></li>
+        <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Target interaksi</h3><p class="text-tinta-pudar text-sm">Kontrol utama ditargetkan berukuran 44 CSS px; WCAG 2.2 AA menetapkan minimum 24 × 24 CSS px atau pengecualian jarak yang sesuai.</p></li>
+        <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Tema sistem</h3><p class="text-tinta-pudar text-sm">Mode terang/gelap, Dynamic Color, serta fallback untuk forced-colors pada sistem yang mendukungnya.</p></li>
+      </ul>
+      <h2 class="font-judul text-2xl text-malam mb-4">Cara membantu meningkatkan aksesibilitas</h2>
+      <p class="text-tinta-pudar leading-relaxed mb-4">
+        Jika menemukan bagian yang sulit digunakan, catat alamat halaman, browser dan perangkat,
+        cara mengulang kendala, serta hasil yang diharapkan. Hindari menyertakan informasi pribadi
+        atau data sensitif dalam laporan.
+      </p>
+      <p class="text-tinta-pudar leading-relaxed mb-8">
+        Situs ini merupakan proyek replika independen, bukan kanal resmi sekolah. Untuk informasi
+        sekolah yang terverifikasi, gunakan
+        <a class="font-bold underline underline-offset-4" href="https://www.smkn1mandau.sch.id/" target="_blank" rel="noopener noreferrer">situs resmi SMK Negeri 1 Mandau</a>.
+      </p>
+      <h2 class="font-judul text-2xl text-malam mb-4">Referensi standar</h2>
+      <ul class="space-y-3 text-tinta-pudar">
+        <li><a class="font-bold underline underline-offset-4" href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener noreferrer">W3C — Web Content Accessibility Guidelines (WCAG) 2.2</a></li>
+        <li><a class="font-bold underline underline-offset-4" href="https://www.w3.org/WAI/WCAG22/quickref/" target="_blank" rel="noopener noreferrer">W3C WAI — WCAG 2.2 Quick Reference</a></li>
+        <li><a class="font-bold underline underline-offset-4" href="https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html" target="_blank" rel="noopener noreferrer">W3C WAI — Understanding Target Size (Minimum)</a></li>
+      </ul>
+    </div>
+  </section>
+</LayoutUtama>
