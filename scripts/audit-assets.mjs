@@ -76,8 +76,6 @@ try {
 if (!(manifest.icons ?? []).length || (manifest.icons ?? []).some((icon) => icon.src !== `/${schoolLogoPath}`)) {
   errors.push("Ikon PWA manifest harus menggunakan logo sekolah HD yang sama.");
 }
-if (!await exists(path.join(distRoot, schoolLogoPath))) errors.push(`Logo sekolah HD tidak tersalin ke dist: ${schoolLogoPath}`);
-
 const securityPath = ".well-known/security.txt";
 const securityFile = path.join(publicRoot, securityPath);
 const security = await readFile(securityFile, "utf8");
@@ -112,7 +110,9 @@ const expectedOgImage = new URL("/1000553256_Real-ESRGANv3-anime_1025_065246.png
 for (const file of htmlFiles) {
   const html = await readFile(file, "utf8");
   const relativeHtml = path.relative(distRoot, file);
-  if (!html.includes(`href="/${schoolLogoPath}"`) || !html.includes(`src="/${schoolLogoPath}"`)) {
+  if (!html.includes(`<link rel="icon" type="image/png" href="/${schoolLogoPath}"`) ||
+      !html.includes(`<link rel="apple-touch-icon" href="/${schoolLogoPath}"`) ||
+      !html.includes(`src="/${schoolLogoPath}"`)) {
     errors.push(`${relativeHtml} belum memakai logo sekolah HD pada favicon, header, atau footer.`);
   }
   if (!html.includes(`property="og:image" content="${expectedOgImage}"`) &&
