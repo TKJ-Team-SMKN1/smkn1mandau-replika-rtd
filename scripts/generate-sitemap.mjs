@@ -1,4 +1,4 @@
-import { readdir, writeFile } from "node:fs/promises";
+import { readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { SITE_URL } from "../site-config.mjs";
 
@@ -16,6 +16,14 @@ async function collectHtml(directory) {
   return files;
 }
 
+async function isGoogleVerificationFile(file) {
+  const relative = path.relative(outputDirectory, file).split(path.sep).join("/");
+  if (!/^google[0-9a-f]+\.html$/i.test(relative)) return false;
+  const filename = path.basename(file);
+  const content = await readFile(file, "utf8");
+  return content.trim() === `google-site-verification: ${filename}`;
+}
+
 function routeFromFile(file) {
   const relative = path.relative(outputDirectory, file).split(path.sep).join("/");
   if (relative === "index.html") return "/";
@@ -24,8 +32,12 @@ function routeFromFile(file) {
   return null;
 }
 
-const files = await collectHtml(outputDirectory);
-const routes = [...new Set(files.map(routeFromFile).filter(Boolean))]
+const allHtmlFiles = await collectHtml(outputDirectory);
+const publicHtmlFiles = [];
+for (const file of allHtmlFiles) {
+  if (!await isGoogleVerificationFile(file)) publicHtmlFiles.push(file);
+}
+const routes = [...new Set(publicHtmlFiles.map(routeFromFile).filter(Boolean))]
   .filter((route) => !excludedRoutes.has(route))
   .sort((a, b) => a === "/" ? -1 : b === "/" ? 1 : a.localeCompare(b));
 
@@ -37,4 +49,4 @@ const entries = routes.map((route) => {
 }).join("\n");
 const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries}\n</urlset>\n`;
 await writeFile(path.join(outputDirectory, "sitemap.xml"), xml, "utf8");
-console.log(`Sitemap generated: ${routes.length} indexable routes.`);
+console.log(`Sitemap generated: ${routes.length} indexable routes; Google Search Console verification files excluded.`);
