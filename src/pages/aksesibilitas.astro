@@ -3,7 +3,7 @@ import LayoutUtama from "../layouts/LayoutUtama.astro";
 ---
 <LayoutUtama
   judul="Aksesibilitas — SMK Negeri 1 Mandau (Replika)"
-  deskripsi="Pernyataan aksesibilitas dan pendekatan WCAG 2.2 AA pada situs replika independen SMK Negeri 1 Mandau."
+  deskripsi="Pernyataan aksesibilitas dan target WCAG 2.2 Level A dan AA pada situs replika independen SMK Negeri 1 Mandau."
   halamanAktif="aksesibilitas"
 >
   <section class="page-hero" aria-labelledby="judul-aksesibilitas">
@@ -12,7 +12,7 @@ import LayoutUtama from "../layouts/LayoutUtama.astro";
       <h1 id="judul-aksesibilitas" class="font-judul text-4xl md:text-5xl leading-tight mb-5">Akses untuk semua</h1>
       <p class="max-w-2xl text-gading/90 text-lg leading-relaxed">
         Replika independen ini dikembangkan dengan mengacu pada Web Content Accessibility Guidelines
-        (WCAG) 2.2 tingkat AA. Tujuannya adalah membuat informasi dan navigasi dapat digunakan oleh
+        (WCAG) 2.2 Level A dan AA. Tujuannya adalah membuat informasi dan navigasi dapat digunakan oleh
         sebanyak mungkin orang, termasuk pengguna teknologi bantu.
       </p>
     </div>
@@ -39,6 +39,9 @@ import LayoutUtama from "../layouts/LayoutUtama.astro";
         <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Fokus dan target interaksi</h3><p class="text-tinta-pudar text-sm">Fokus harus terlihat dan tidak tertutup konten tetap. Target minimum 24 × 24 CSS px mengikuti SC 2.5.8 beserta pengecualiannya; desain ini mengutamakan 44 CSS px.</p></li>
         <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Spasi teks</h3><p class="text-tinta-pudar text-sm">Konten harus tetap terbaca saat pengguna mengubah tinggi baris, jarak paragraf, huruf, dan kata sesuai SC 1.4.12.</p></li>
         <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Tema sistem</h3><p class="text-tinta-pudar text-sm">Mode terang/gelap, Dynamic Color, serta fallback untuk forced-colors pada sistem yang mendukungnya.</p></li>
+        <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Kontras minimum</h3><p class="text-tinta-pudar text-sm">Teks normal menargetkan 4.5:1, teks besar 3:1, dan batas komponen atau grafik informatif 3:1. Setiap tema dan state tetap perlu diuji.</p></li>
+        <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Konten hover dan fokus</h3><p class="text-tinta-pudar text-sm">Menu dan konten tambahan tidak boleh bergantung pada hover saja; harus dapat dijangkau keyboard, ditutup, dan tetap tersedia saat pointer berpindah.</p></li>
+        <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Gestur dan formulir</h3><p class="text-tinta-pudar text-sm">Fitur saat ini tidak memakai drag-and-drop, login, atau formulir bertahap. Jika fungsi itu ditambahkan, alternatif tanpa dragging serta kriteria pengisian dan autentikasi menjadi gerbang penerimaan.</p></li>
       </ul>
       <h2 class="font-judul text-2xl text-malam mb-4">Cara membantu meningkatkan aksesibilitas</h2>
       <p class="text-tinta-pudar leading-relaxed mb-4">

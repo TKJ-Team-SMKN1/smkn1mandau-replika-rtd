@@ -70,3 +70,31 @@ The review does not change the conformance status: WCAG 2.2 AA compliance is **n
 - A production deployment is READY and the primary project alias returned HTTP 200 during the public route crawl.
 - The project was sent an unpause request. However, the Vercel project details response continued to report `live: false`; see `docs/DEPLOYMENT-AUDIT-2026-11-19.md` for the control-plane discrepancy.
 - The deployment does not change the accessibility status. Manual browser, keyboard, zoom, and assistive-technology verification remains outstanding.
+
+## WCAG 2.2 criteria added to the release gate — 20 November 2026
+
+The release target is the complete set of Level A and Level AA success criteria for every applicable page and state. The list above is an implementation summary, not a reduced conformance subset.
+
+Additional WCAG 2.2 criteria explicitly tracked:
+
+- **1.3.4 Orientation (AA):** content is not locked to portrait or landscape unless that orientation is essential.
+- **1.3.5 Identify Input Purpose (AA):** apply autocomplete purpose tokens when a field collects information about the user; the current search and language controls do not collect personal profile data.
+- **1.4.11 Non-text Contrast (AA):** meaningful control boundaries, icons, and state indicators require at least 3:1 against adjacent colors.
+- **1.4.13 Content on Hover or Focus (AA):** supplemental content must be dismissible, hoverable, and persistent; navigation must remain operable by keyboard.
+- **2.5.7 Dragging Movements (AA):** no current feature requires dragging. Any future drag interaction must also provide a single-pointer alternative that does not require dragging, unless an exception applies.
+- **3.1.2 Language of Parts (AA):** passages that differ from the document language need an appropriate lang attribute where the language can be programmatically determined.
+- **3.2.6 Consistent Help (A):** if help mechanisms are provided on multiple pages, they must keep a consistent relative order.
+- **3.3.7 Redundant Entry (A):** a multi-step process must reuse or allow selection of information already entered, unless an exception applies. No multi-step data-entry flow is currently provided.
+- **3.3.8 Accessible Authentication (Minimum) (AA):** authentication must not rely solely on cognitive-function tests without an allowed alternative. The public replica currently has no sign-in flow.
+
+The current site also has no drag-and-drop workflow or multi-step data-entry flow. These are feature-based applicability notes, not blanket waivers: introducing such a feature makes the corresponding criterion part of its release gate. Media criteria (1.2.1–1.2.5) must be checked against each actual audio/video asset rather than assumed not applicable.
+
+**AAA distinction:** 2.4.12 Focus Not Obscured (Enhanced) and 2.4.13 Focus Appearance are Level AAA in WCAG 2.2, not Level AA. The project may exceed AA voluntarily, but they are not represented as AA requirements.
+
+## Development verification update — 20 November 2026
+
+- GitHub Actions completed the build, sitemap/SEO, generated HTML, archive provenance, WCAG 2.2 static preflight, and dependency audit successfully on the development branch.
+- The build materialized all 174 referenced OTF Git LFS objects, verified pointer-declared byte lengths and SHA-256 values, then checked the generated dist font signatures.
+- The CJK font audit verified 101 Noto Sans SC WOFF2 faces, 108 Noto Sans TC WOFF2 faces, and seven Source Han Serif HK OTF faces.
+- Automated checks do not replace manual keyboard, screen-reader, contrast-state, 200% zoom, 320 CSS px reflow, text-spacing, reduced-motion, forced-colors, and cross-browser verification.
+
