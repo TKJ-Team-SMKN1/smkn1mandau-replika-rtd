@@ -1,4 +1,3 @@
-
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "astro",
@@ -6,7 +5,7 @@
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "git": {
-    "deploymentEnabled": true
+    "deploymentEnabled": false
   },
   "headers": [
     {
