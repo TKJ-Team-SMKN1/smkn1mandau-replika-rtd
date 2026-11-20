@@ -79,7 +79,18 @@ if (canonicalLine?.slice("Canonical:".length).trim() !== expectedSecurityUrl) {
 }
 if (!await exists(path.join(distRoot, securityPath))) errors.push("security.txt tidak tersalin ke dist.");
 
-const htmlFiles = await collectHtml(distRoot);
+const allHtmlFiles = await collectHtml(distRoot);
+const htmlFiles = [];
+for (const file of allHtmlFiles) {
+  const relative = path.relative(distRoot, file).split(path.sep).join("/");
+  if (!/^google[0-9a-f]+\\.html$/i.test(relative)) {
+    htmlFiles.push(file);
+    continue;
+  }
+  const filename = path.basename(file);
+  const content = await readFile(file, "utf8");
+  if (content.trim() !== `google-site-verification: ${filename}`) htmlFiles.push(file);
+}
 const expectedOgImage = new URL("/android-chrome-512x512.png", SITE_URL).toString();
 for (const file of htmlFiles) {
   const html = await readFile(file, "utf8");
