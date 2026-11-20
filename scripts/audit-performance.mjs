@@ -47,7 +47,8 @@ const i18n = await readFile(i18nPath, "utf8");
 const i18nBytes = (await stat(i18nPath)).size;
 if (i18nBytes > 128 * 1024) warnings.push("i18n.js exceeds 128 KiB; consider locale chunking before adding more dictionaries.");
 if (!i18n.includes("observer?.disconnect();")) errors.push("i18n MutationObserver must disconnect before applying translations to prevent a self-triggering mutation loop.");
-if (!i18n.includes("} finally {") || !i18n.includes("observer?.observe(document.body, { childList: true, characterData: true, subtree: true });")) errors.push("i18n MutationObserver must resume observation in finally after translation updates.");
+if (!i18n.includes("} finally {") || !(i18n.includes("observer?.observe(document.body, observerOptions);") || i18n.includes("observer?.observe(document.body, { childList: true, characterData: true, subtree: true });"))) errors.push("i18n MutationObserver must resume observation in finally after translation updates.");
+if (!i18n.includes("function handleMutations(records)") || !i18n.includes("for (const node of changedNodes) translateSubtree(node, dictionary);")) errors.push("i18n MutationObserver must process changed/added nodes incrementally rather than rescanning the full document.");
 const clientLoadCount = (layout.match(/\bclient:load\b/g) || []).length;
 if (clientLoadCount > 1) warnings.push("More than one client:load island is present in the shared layout.");
 
