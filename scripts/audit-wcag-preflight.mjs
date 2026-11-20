@@ -4,6 +4,19 @@ const root=process.cwd(), dist=path.join(root,"dist"), errors=[], warnings=[], h
 async function walk(dir){let entries;try{entries=await readdir(dir,{withFileTypes:true});}catch{errors.push("Folder dist tidak ditemukan.");return;}for(const e of entries){const f=path.join(dir,e.name);if(e.isDirectory())await walk(f);else if(e.isFile()&&e.name.endsWith(".html"))htmlFiles.push(f);}}
 const attr=(tag,name)=>{const m=tag.match(new RegExp(name + "\\s*=\\s*[\"']([^\"']*)[\"']", "i"));return m?m[1]:null;};
 await walk(dist);
+// Google Search Console ownership tokens are not content pages. Exclude only
+// root-level files whose filename and exact body match Google's token format.
+const publicHtmlFiles=[];
+for(const file of htmlFiles){
+ const relative=path.relative(dist,file).split(path.sep).join("/");
+ if(/^google[0-9a-f]+\.html$/i.test(relative)){
+  const filename=path.basename(file), body=await readFile(file,"utf8");
+  if(body.trim()===`google-site-verification: ${filename}`)continue;
+ }
+ publicHtmlFiles.push(file);
+}
+htmlFiles.length=0;
+htmlFiles.push(...publicHtmlFiles);
 for(const file of htmlFiles){
  const html=await readFile(file,"utf8"), count=p=>[...html.matchAll(p)].length;
  const fail=m=>errors.push(path.relative(root,file)+": "+m);
@@ -29,7 +42,7 @@ if(!/:focus-visible/.test(css))errors.push("focus-visible tidak ditemukan.");if(
 if(!css.includes("prefers-contrast: more"))errors.push("prefers-contrast enhancement tidak ditemukan.");
 if(!css.includes("forced-colors: active"))errors.push("forced-colors fallback tidak ditemukan.");
 if(!css.includes("a:not([class])"))errors.push("inline link underline baseline tidak ditemukan.");
-console.log("WCAG 2.2 AA static preflight: "+htmlFiles.length+" halaman; "+faces+" face OTF; "+families.size+" keluarga font.");
+console.log("WCAG 2.2 AA static preflight: "+htmlFiles.length+" halaman publik; Google verification tokens excluded; "+faces+" face OTF; "+families.size+" keluarga font.");
 for(const w of warnings)console.warn("WARNING:",w);for(const e of errors)console.error("ERROR:",e);
 if(errors.length)process.exit(1);console.log("Static preflight passed; this is not WCAG certification.");
 
