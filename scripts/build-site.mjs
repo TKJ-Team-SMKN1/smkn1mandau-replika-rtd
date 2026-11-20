@@ -47,6 +47,7 @@ try {
   run("Astro build", astro, ["build"]);
   run("Built font audit", process.execPath, ["scripts/audit-built-fonts.mjs"]);
   run("Sitemap generation", process.execPath, ["scripts/generate-sitemap.mjs"]);
+  run("PNG, social preview, and security.txt audit", process.execPath, ["scripts/audit-assets.mjs"]);
 } finally {
   for (const [source, archived] of moved.reverse()) {
     if (await exists(archived)) {
