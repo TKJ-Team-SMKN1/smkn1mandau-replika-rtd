@@ -18,6 +18,14 @@ async function collectHtml(directory) {
   return files;
 }
 
+async function isGoogleVerificationFile(file) {
+  const relative = path.relative(dist, file).split(path.sep).join("/");
+  if (!/^google[0-9a-f]+\.html$/i.test(relative)) return false;
+  const filename = path.basename(file);
+  const content = await readFile(file, "utf8");
+  return content.trim() === `google-site-verification: ${filename}`;
+}
+
 function routeFromFile(file) {
   const relative = path.relative(dist, file).split(path.sep).join("/");
   if (relative === "index.html") return "/";
@@ -37,11 +45,15 @@ function attributeValue(tag, attribute) {
   return match?.[1] ?? null;
 }
 
-const [sitemap, robots, htmlFiles] = await Promise.all([
+const [sitemap, robots, allHtmlFiles] = await Promise.all([
   readFile(path.join(dist, "sitemap.xml"), "utf8"),
   readFile(path.join(dist, "robots.txt"), "utf8"),
   collectHtml(dist)
 ]);
+const htmlFiles = [];
+for (const file of allHtmlFiles) {
+  if (!await isGoogleVerificationFile(file)) htmlFiles.push(file);
+}
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
 if (sitemapUrls.length === 0) errors.push("Sitemap tidak memiliki URL.");
 if (new Set(sitemapUrls).size !== sitemapUrls.length) errors.push("Sitemap memiliki URL duplikat.");
@@ -133,4 +145,4 @@ if (errors.length) {
   for (const error of errors) console.error(`- ${error}`);
   process.exit(1);
 }
-console.log(`SEO preflight OK: ${sitemapUrls.length} canonical sitemap URLs; ${htmlFiles.length} HTML files checked; unique titles and descriptions, Open Graph, Twitter Card, and sitemap discovery validated.`);
+console.log(`SEO preflight OK: ${sitemapUrls.length} canonical sitemap URLs; ${htmlFiles.length} public HTML files checked; Google Search Console verification files excluded; unique titles and descriptions, Open Graph, Twitter Card, and sitemap discovery validated.`);
