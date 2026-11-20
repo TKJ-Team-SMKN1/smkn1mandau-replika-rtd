@@ -31,6 +31,23 @@ function fail(file, message) { errors.push(path.relative(dist, file) + ": " + me
 function warn(file, message) { warnings.push(path.relative(dist, file) + ": " + message); }
 
 await walk(dist);
+
+// Google Search Console verification files are plain-text ownership tokens, not
+// content pages. Exclude only root-level files whose name and exact body match
+// Google's verification format; keep the public verification file untouched.
+const publicHtmlFiles = [];
+for (const file of htmlFiles) {
+  const relative = path.relative(dist, file).split(path.sep).join("/");
+  if (/^google[0-9a-f]+\\.html$/i.test(relative)) {
+    const filename = path.basename(file);
+    const content = await readFile(file, "utf8");
+    if (content.trim() === `google-site-verification: ${filename}`) continue;
+  }
+  publicHtmlFiles.push(file);
+}
+htmlFiles.length = 0;
+htmlFiles.push(...publicHtmlFiles);
+
 if (!htmlFiles.length) {
   console.error("Audit gagal: dist/ tidak ditemukan atau tidak berisi HTML. Jalankan npm run build terlebih dahulu.");
   process.exit(1);
@@ -193,7 +210,7 @@ else {
   }
 }
 
-console.log("Static audit: " + htmlFiles.length + " halaman HTML; " + fontUrls.length + " referensi font.");
+console.log("Static audit: " + htmlFiles.length + " halaman HTML publik; Google Search Console verification files excluded; " + fontUrls.length + " referensi font.");
 if (warnings.length) {
   console.warn("\nWarnings (" + warnings.length + "):");
   for (const warning of warnings) console.warn(" - " + warning);
