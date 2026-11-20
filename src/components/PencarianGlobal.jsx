@@ -7,18 +7,18 @@ import profileData from "../data/school-profile.json";
 import unitData from "../data/units.json";
 
 const pageEntries = [
-  { id: "page-home", title: "Beranda", href: "/", context: "Halaman sekolah", terms: "home sekolah school utama maklumat information" },
-  { id: "page-profile", title: "Profil Sekolah", href: "/profil", context: "Profil sekolah", terms: "profil sejarah history visi misi identitas identity alamat address kontak contact" },
-  { id: "page-programs", title: "Program Keahlian", href: "/program", context: "Program Keahlian", terms: "program keahlian vokasi vocational" },
-  { id: "page-staff", title: "SDM & Guru", href: "/sdm", context: "SDM & Guru", terms: "guru tenaga pendidik staf staff teachers personnel kepala sekolah" },
-  { id: "page-notices", title: "Pengumuman", href: "/pengumuman", context: "Pengumuman", terms: "pengumuman berita announcement notice pendaftaran penerimaan murid baru kelulusan" },
-  { id: "page-facilities", title: "Fasilitas", href: "/fasilitas", context: "Fasilitas", terms: "fasilitas ruang kelas laboratorium bengkel perpustakaan kantin masjid" },
-  { id: "page-extracurriculars", title: "Ekstrakurikuler", href: "/ekstrakurikuler", context: "Ekstrakurikuler", terms: "ekstrakurikuler kegiatan siswa klub extracurricular activities" },
-  { id: "page-events", title: "Kegiatan", href: "/kegiatan", context: "Kegiatan", terms: "kegiatan acara event aktivitas sekolah" },
-  { id: "page-units", title: "Unit Sekolah", href: "/unit-sekolah", context: "Unit sekolah", terms: "unit bkk bursa kerja khusus lsp sertifikasi services" },
-  { id: "page-about", title: "Tentang Replika", href: "/tentang", context: "Tentang proyek", terms: "tentang proyek sumber data source project" },
-  { id: "page-accessibility", title: "Aksesibilitas", href: "/aksesibilitas", context: "Aksesibilitas", terms: "aksesibilitas accessibility wcag keyboard screen reader" },
-  { id: "page-settings", title: "Pengaturan", href: "/pengaturan", context: "Pengaturan", terms: "pengaturan tema settings display" }
+  { id: "page-home", title: "Beranda", href: "/", context: "Halaman sekolah", terms: "home sekolah school utama laman utama maklumat information 主页 首页" },
+  { id: "page-profile", title: "Profil Sekolah", href: "/profil", context: "Profil sekolah", terms: "profil sejarah history visi misi identitas identity alamat address kontak contact profile school history 学校简介 历史 使命" },
+  { id: "page-programs", title: "Program Keahlian", href: "/program", context: "Program Keahlian", terms: "program keahlian vokasi vocational program pengajian course 专业 课程" },
+  { id: "page-staff", title: "SDM & Guru", href: "/sdm", context: "SDM & Guru", terms: "guru tenaga pendidik staf staff teachers personnel kepala sekolah kakitangan 教师 员工" },
+  { id: "page-notices", title: "Pengumuman", href: "/pengumuman", context: "Pengumuman", terms: "pengumuman berita announcement notice pendaftaran penerimaan murid baru kelulusan 通知 公告" },
+  { id: "page-facilities", title: "Fasilitas", href: "/fasilitas", context: "Fasilitas", terms: "fasilitas kemudahan ruang kelas laboratorium bengkel perpustakaan kantin masjid facilities 设施 设备" },
+  { id: "page-extracurriculars", title: "Ekstrakurikuler", href: "/ekstrakurikuler", context: "Ekstrakurikuler", terms: "ekstrakurikuler aktiviti kokurikulum kegiatan siswa klub extracurricular activities 课外活动" },
+  { id: "page-events", title: "Kegiatan", href: "/kegiatan", context: "Kegiatan", terms: "kegiatan aktiviti acara event events aktivitas sekolah 活动" },
+  { id: "page-units", title: "Unit Sekolah", href: "/unit-sekolah", context: "Unit sekolah", terms: "unit bkk bursa kerja khusus lsp sertifikasi services perkhidmatan sekolah 单位 就业服务 职业认证" },
+  { id: "page-about", title: "Tentang Replika", href: "/tentang", context: "Tentang proyek", terms: "tentang mengenai proyek sumber data source project about 关于 项目" },
+  { id: "page-accessibility", title: "Aksesibilitas", href: "/aksesibilitas", context: "Aksesibilitas", terms: "aksesibilitas kebolehcapaian accessibility wcag keyboard screen reader 无障碍 键盘 屏幕阅读器" },
+  { id: "page-settings", title: "Pengaturan", href: "/pengaturan", context: "Pengaturan", terms: "pengaturan tetapan tema settings display 设置 主题" }
 ];
 
 const dataEntries = [
@@ -27,49 +27,49 @@ const dataEntries = [
     title: item.nama,
     href: "/program",
     context: "Program Keahlian",
-    terms: [item.singkatan, item.kataKunci, "program vocational course"].join(" ")
+    terms: [item.singkatan, item.kataKunci, "program vocational course pengajian 专业 课程"].join(" ")
   })),
   ...staffData.entries.map((item) => ({
     id: "staff-" + item.id,
     title: item.name,
     href: "/sdm",
     context: "SDM · snapshot sumber 17 Nov 2026",
-    terms: [item.role, "guru staff teacher"].join(" ")
+    terms: [item.role, "guru staff teacher kakitangan 教师 员工"].join(" ")
   })),
   ...eventData.entries.map((item, index) => ({
     id: "event-" + index,
     title: item.title,
     href: "/kegiatan",
     context: "Kegiatan · arsip historis",
-    terms: [item.date, item.summary, "event activity kegiatan"].join(" ")
+    terms: [item.date, item.summary, "event activity kegiatan aktiviti 活动"].join(" ")
   })),
   ...unitData.units.map((item) => ({
     id: "unit-" + item.id,
     title: item.name,
     href: "/unit-sekolah",
     context: "Unit sekolah",
-    terms: [item.purpose, "school service unit"].join(" ")
+    terms: [item.purpose, "school service unit perkhidmatan 服务 单位"].join(" ")
   })),
   ...profileData.history.map((item, index) => ({
     id: "history-" + index,
     title: item.title,
     href: "/profil",
     context: "Sejarah sekolah",
-    terms: [item.year, item.description, "school history"].join(" ")
+    terms: [item.year, item.description, "school history sejarah 历史"].join(" ")
   })),
   ...profileData.mission.map((item, index) => ({
     id: "mission-" + index,
     title: item,
     href: "/profil",
     context: "Misi sekolah",
-    terms: "mission school"
+    terms: "mission school misi 使命"
   })),
   ...facilityData.historicalSnapshot.facilities.map((item, index) => ({
     id: "facility-" + index,
     title: item.count + " " + item.label,
     href: "/fasilitas",
     context: "Fasilitas · catatan historis",
-    terms: "historical facilities " + item.label
+    terms: "historical facilities kemudahan 设施 " + item.label
   }))
 ];
 
