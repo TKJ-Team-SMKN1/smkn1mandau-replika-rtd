@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node scripts/generate-sitemap.mjs",
+    "build": "astro build && node scripts/audit-built-fonts.mjs && node scripts/generate-sitemap.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "audit:html": "node scripts/audit-static-html.mjs",
@@ -15,7 +15,10 @@
     "audit:performance": "node scripts/audit-performance.mjs",
     "audit:localization": "node scripts/audit-localization.mjs",
     "audit:seo": "node scripts/audit-seo.mjs",
-    "audit:provenance": "node scripts/audit-content-provenance.mjs"
+    "audit:provenance": "node scripts/audit-content-provenance.mjs",
+    "predev": "node scripts/materialize-lfs-fonts.mjs",
+    "prebuild": "node scripts/materialize-lfs-fonts.mjs",
+    "audit:fonts": "node scripts/audit-built-fonts.mjs"
   },
   "dependencies": {
     "astro": "^7.4.8",

@@ -34,6 +34,8 @@ jobs:
       - name: Audit localization catalog coverage
         run: npm run audit:localization
       - name: Build Astro site
+        env:
+          FONT_LFS_REF: ${{ github.event.pull_request.head.sha || github.sha }}
         run: npm run build
       - name: Audit generated sitemap and canonical SEO metadata
         run: npm run audit:seo
