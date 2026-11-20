@@ -38,7 +38,7 @@ await walk(dist);
 const publicHtmlFiles = [];
 for (const file of htmlFiles) {
   const relative = path.relative(dist, file).split(path.sep).join("/");
-  if (/^google[0-9a-f]+\\.html$/i.test(relative)) {
+  if (/^google[0-9a-f]+\.html$/i.test(relative)) {
     const filename = path.basename(file);
     const content = await readFile(file, "utf8");
     if (content.trim() === `google-site-verification: ${filename}`) continue;
