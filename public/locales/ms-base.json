@@ -426,8 +426,7 @@
   "Ruang majelis guru": "Bilik guru",
   "Perpustakaan": "Perpustakaan",
   "Ruang kelas": "Bilik darjah",
-  "Masjid": "Masjid"
-,
+  "Masjid": "Masjid",
   "Aksesibilitas": "Kebolehcapaian",
   "Preferensi tampilan": "Keutamaan paparan",
   "Tutup": "Tutup",
@@ -441,8 +440,7 @@
   "Tampilan baca sederhana: mati": "Paparan bacaan ringkas: tidak aktif",
   "Tampilan baca sederhana: aktif": "Paparan bacaan ringkas: aktif",
   "Atur ulang": "Tetapkan semula",
-  "@aria-label:Tutup preferensi aksesibilitas": "Tutup keutamaan kebolehcapaian"
-,
+  "@aria-label:Tutup preferensi aksesibilitas": "Tutup keutamaan kebolehcapaian",
   "Preferensi dan kebutuhan pengguna": "Keutamaan dan keperluan pengguna",
   "Tuli dan pengguna nonverbal": "Pengguna pekak dan bukan verbal",
   "Sediakan informasi teks, subtitle untuk video bersuara, transkrip yang relevan, notifikasi visual, dan kanal bantuan tertulis. Bahasa isyarat dapat ditambahkan bila materi dan penerjemah yang kompeten tersedia.": "Sediakan maklumat bertulis, sari kata untuk video bersuara, transkrip yang berkaitan, pemberitahuan visual dan saluran bantuan bertulis. Kandungan bahasa isyarat boleh ditambah apabila bahan dan jurubahasa yang berkelayakan tersedia.",
@@ -463,5 +461,15 @@
   "Preferensi tampilan yang dapat dikendalikan": "Keutamaan paparan yang boleh dikawal",
   "Panel Aksesibilitas menyediakan pengaturan ukuran teks, kontras tinggi, pengurangan gerakan, dan tampilan baca sederhana. Pengaturan bersifat opsional, dapat diatur ulang, dan disimpan secara lokal pada perangkat. Panel ini tidak menggantikan pengaturan aksesibilitas sistem operasi atau pengujian dengan teknologi bantu.": "Panel Kebolehcapaian menyediakan tetapan saiz teks, kontras tinggi, pengurangan gerakan dan paparan bacaan ringkas. Tetapan adalah pilihan pengguna, boleh ditetapkan semula dan disimpan pada peranti. Panel ini tidak menggantikan tetapan kebolehcapaian sistem operasi atau ujian teknologi bantuan.",
   "Evaluasi dan keterbatasan": "Penilaian dan batasan",
-  "Simulasi warna, pemeriksaan otomatis, dan matriks statis hanya membantu menemukan sebagian masalah. Rilis tetap memerlukan pemeriksaan keyboard, screen reader, subtitle, media berkedip, zoom/reflow, kontras semua state, serta evaluasi dengan pengguna yang memiliki kebutuhan akses berbeda. Preferensi tampilan tidak menjamin kesesuaian untuk setiap individu.": "Simulasi warna, pemeriksaan automatik dan matriks statik hanya membantu mengesan sebahagian masalah. Keluaran masih memerlukan pemeriksaan papan kekunci, pembaca skrin, sari kata, media berkelip, zum/aliran semula, kontras semua keadaan serta penilaian bersama pengguna yang mempunyai keperluan akses berbeza. Keutamaan paparan tidak menjamin kesesuaian untuk setiap individu."
+  "Simulasi warna, pemeriksaan otomatis, dan matriks statis hanya membantu menemukan sebagian masalah. Rilis tetap memerlukan pemeriksaan keyboard, screen reader, subtitle, media berkedip, zoom/reflow, kontras semua state, serta evaluasi dengan pengguna yang memiliki kebutuhan akses berbeda. Preferensi tampilan tidak menjamin kesesuaian untuk setiap individu.": "Simulasi warna, pemeriksaan automatik dan matriks statik hanya membantu mengesan sebahagian masalah. Keluaran masih memerlukan pemeriksaan papan kekunci, pembaca skrin, sari kata, media berkelip, zum/aliran semula, kontras semua keadaan serta penilaian bersama pengguna yang mempunyai keperluan akses berbeza. Keutamaan paparan tidak menjamin kesesuaian untuk setiap individu.",
+  "Penanda warna: mati": "Penunjuk warna: dimatikan",
+  "Penanda warna: aktif": "Penunjuk warna: aktif",
+  "Penanda warna": "Penanda warna",
+  "Preferensi penanda warna diperbarui.": "Keutamaan penanda warna telah dikemas kini.",
+  "Ukuran teks diperbarui.": "Saiz teks telah dikemas kini.",
+  "Preferensi aksesibilitas diatur ulang.": "Pilihan kebolehcapaian telah diset semula.",
+  "Preferensi kontras diperbarui.": "Tetapan kontras telah dikemas kini.",
+  "Preferensi gerakan diperbarui.": "Keutamaan pergerakan telah dikemas kini.",
+  "Preferensi tampilan baca diperbarui.": "Pilihan paparan bacaan telah dikemas kini.",
+  "Bantuan visual ini menambahkan garis bawah pada tautan dan penanda bentuk pada elemen status. Informasi tidak boleh dibedakan melalui warna saja.": "Alat visual ini menambah garisan bawah pada pautan dan penanda bentuk pada elemen status. Maklumat tidak boleh dibezakan hanya berdasarkan warna."
 }
