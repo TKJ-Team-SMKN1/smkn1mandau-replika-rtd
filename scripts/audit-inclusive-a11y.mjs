@@ -40,6 +40,12 @@ for (const [file, needles] of required) {
   catch { errors.push("Missing required file: " + file); continue; }
   for (const needle of needles) if (!content.includes(needle)) errors.push(file + " missing: " + needle);
 }
+let built = "";
+try { built = await readFile("dist/index.html", "utf8"); }
+catch { errors.push("Missing generated dist/index.html; run the build before this audit."); }
+for (const needle of ['name="google-site-verification"', 'FXEeMYJjK8H-7Umv_-T9nwn6mB3St0NFqROlj15T4SY', 'Aksesibilitas', 'a11y-options']) {
+  if (!built.includes(needle)) errors.push("Generated homepage is missing: " + needle);
+}
 if (errors.length) {
   for (const error of errors) console.error("INCLUSIVE A11Y:", error);
   process.exit(1);
