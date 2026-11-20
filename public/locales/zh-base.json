@@ -425,4 +425,19 @@
   "Perpustakaan": "图书馆",
   "Ruang kelas": "教室",
   "Masjid": "清真寺"
+,
+  "Aksesibilitas": "无障碍功能",
+  "Preferensi tampilan": "显示偏好",
+  "Tutup": "关闭",
+  "Pilih pengaturan yang membantu Anda. Preferensi disimpan hanya di perangkat ini.": "请选择适合您的设置。偏好设置仅保存在此设备上。",
+  "Perbesar teks": "放大文字",
+  "Perkecil teks": "缩小文字",
+  "Kontras tinggi: mati": "高对比度：关闭",
+  "Kontras tinggi: aktif": "高对比度：开启",
+  "Kurangi gerakan: mati": "减少动态效果：关闭",
+  "Kurangi gerakan: aktif": "减少动态效果：开启",
+  "Tampilan baca sederhana: mati": "简化阅读：关闭",
+  "Tampilan baca sederhana: aktif": "简化阅读：开启",
+  "Atur ulang": "重置",
+  "@aria-label:Tutup preferensi aksesibilitas": "关闭无障碍偏好设置"
 }
