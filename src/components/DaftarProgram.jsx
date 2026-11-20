@@ -1,10 +1,22 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import programData from "../data/programs.json";
 
 const DATA_PROGRAM = programData.entries;
 
 export default function DaftarProgram() {
   const [kataKunci, setKataKunci] = useState("");
+  const [locale, setLocale] = useState("id-ID");
+
+  useEffect(() => {
+    const updateLocale = () => setLocale(document.documentElement.lang || "id-ID");
+    updateLocale();
+    const observer = new MutationObserver(updateLocale);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+    return () => observer.disconnect();
+  }, []);
+
+  const numberFormat = useMemo(() => new Intl.NumberFormat(locale), [locale]);
+  const ordinalFormat = useMemo(() => new Intl.NumberFormat(locale, { minimumIntegerDigits: 2, useGrouping: false }), [locale]);
 
   const hasil = useMemo(() => {
     const q = kataKunci.trim().toLocaleLowerCase("id");
@@ -48,7 +60,7 @@ export default function DaftarProgram() {
       </div>
 
       <p className="text-sm text-tinta-pudar mb-5" role="status" aria-live="polite" aria-atomic="true">
-        Menampilkan <strong className="text-malam">{hasil.length}</strong> dari {DATA_PROGRAM.length} nama program.
+        Menampilkan <strong className="text-malam">{numberFormat.format(hasil.length)}</strong> dari {numberFormat.format(DATA_PROGRAM.length)} nama program.
       </p>
 
       {hasil.length > 0 ? (
@@ -56,7 +68,7 @@ export default function DaftarProgram() {
           {hasil.map((program, index) => (
             <article key={program.id} className="kartu !p-6">
               <div className="flex items-center justify-between gap-3 mb-5">
-                <span className="font-office-code-pro text-xs tracking-widest text-ukir">PROGRAM {String(index + 1).padStart(2, "0")}</span>
+                <span className="font-office-code-pro text-xs tracking-widest text-ukir">PROGRAM {ordinalFormat.format(index + 1)}</span>
                 <span className="rounded-full bg-gading px-3 py-1 text-xs font-bold font-reglo text-malam">{program.singkatan}</span>
               </div>
               <h2 className="font-judul font-familjen text-xl text-malam leading-snug">{program.nama}</h2>
