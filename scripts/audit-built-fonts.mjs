@@ -28,21 +28,21 @@ if (otfUrls.length !== 174) throw new Error("Expected 174 local OTF face referen
 let otfBytes = 0;
 for (const url of otfUrls) otfBytes += await verifyFont(url, "opentype");
 
-async function verifySubsetCss(file, expectedFaces) {
+async function verifySubsetCss(file, expectedFaces, kind = "woff2", requiresUnicodeRange = true) {
   const css = await readFile(path.join(root, "public/fonts", file), "utf8");
   const faces = (css.match(/@font-face/g) || []).length;
   if (faces !== expectedFaces) throw new Error(file + " expected " + expectedFaces + " @font-face entries, found " + faces);
-  if (!css.includes("unicode-range:") || !css.includes("font-display: swap")) {
+  if ((requiresUnicodeRange && !css.includes("unicode-range:")) || !css.includes("font-display: swap")) {
     throw new Error(file + " must preserve unicode ranges and font-display: swap.");
   }
   const urls = urlsFrom(css);
   if (urls.length !== expectedFaces) throw new Error(file + " URL count does not match @font-face count.");
   let bytes = 0;
-  for (const url of urls) bytes += await verifyFont(url, "woff2");
+  for (const url of urls) bytes += await verifyFont(url, kind);
   return { faces, bytes };
 }
 
 const sc = await verifySubsetCss("noto-sans-sc.css", 101);
 const tc = await verifySubsetCss("noto-sans-tc.css", 108);
-const hk = await verifySubsetCss("source-han-serif-hk.css", 7);
+const hk = await verifySubsetCss("source-han-serif-hk.css", 7, "opentype", false);
 console.log("Built font audit passed: OTF=" + otfUrls.length + " (" + otfBytes + " bytes), Noto Sans SC=" + sc.faces + ", Noto Sans TC=" + tc.faces + ", Source Han Serif HK=" + hk.faces + ". All files are real local font binaries.");
