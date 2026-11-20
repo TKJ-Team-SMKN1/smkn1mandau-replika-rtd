@@ -34,7 +34,7 @@ jobs:
           git lfs pull
           git lfs fsck
 
-          mapfile -d '' FONT_PATHS < <(git ls-files -z | grep -zEi '\\.(otf|ttf|woff|woff2|eot)$' || true)
+          mapfile -d '' FONT_PATHS < <(git ls-files -z | grep -zEi '\.(otf|ttf|woff|woff2|eot)$' || true)
           COUNT="${#FONT_PATHS[@]}"
           echo "Tracked font files: $COUNT"
           if [[ "$COUNT" -ne 6087 ]]; then
@@ -43,9 +43,9 @@ jobs:
           fi
 
           python3 - <<'PY'
-          import os, sys
-          paths = os.popen("git ls-files -z | grep -zEi '\\.(otf|ttf|woff|woff2|eot)$'").read().split("\\0")
-          paths = [p for p in paths if p]
+          import os, subprocess
+          raw = subprocess.check_output(["git", "ls-files", "-z"])
+          paths = [p for p in raw.decode().split("\0") if p.lower().endswith((".otf", ".ttf", ".woff", ".woff2", ".eot"))]
           total = 0
           largest = 0
           for path in paths:
