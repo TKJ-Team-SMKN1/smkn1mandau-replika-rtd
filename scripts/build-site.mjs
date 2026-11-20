@@ -26,6 +26,7 @@ function run(label, command, args) {
 
 const moved = [];
 try {
+  // Recover any archive left by an interrupted local build before starting a new one.
   for (const [source, archived] of directories) {
     if (await exists(archived) && !(await exists(source))) {
       await mkdir(path.dirname(source), { recursive: true });
@@ -34,6 +35,7 @@ try {
   }
   await rm(archiveRoot, { recursive: true, force: true });
 
+  // Keep only the variable Noto subsets used by the local unicode-range stylesheets in the deployment.
   for (const [source, archived] of directories) {
     if (!(await exists(source))) continue;
     await mkdir(path.dirname(archived), { recursive: true });
