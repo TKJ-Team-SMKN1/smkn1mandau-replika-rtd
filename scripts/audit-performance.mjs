@@ -6,6 +6,7 @@ const layoutPath = path.join(root, "src/layouts/LayoutUtama.astro");
 const fontCssPath = path.join(root, "src/styles/font-library.css");
 const configPath = path.join(root, "astro.config.mjs");
 const i18nPath = path.join(root, "public/scripts/i18n.js");
+const packagePath = path.join(root, "package.json");
 const layout = await readFile(layoutPath, "utf8");
 const fontCss = await readFile(fontCssPath, "utf8");
 const config = await readFile(configPath, "utf8");
@@ -30,7 +31,19 @@ for (const tag of fontPreloads) {
     continue;
   }
   try {
-    totalPreloadBytes += (await stat(filePath)).size;
+    const bytes = await readFile(filePath);
+    const pointerText = bytes.subarray(0, 160).toString("utf8");
+    if (pointerText.startsWith("version https://git-lfs.github.com/spec/v1")) {
+      const declaredSize = Number(pointerText.match(/^size (\\d+)$/m)?.[1]);
+      const declaredOid = pointerText.match(/^oid sha256:[a-f0-9]{64}$/m);
+      if (!declaredSize || !declaredOid) {
+        errors.push("Malformed Git LFS pointer for preloaded font: " + href);
+      } else {
+        totalPreloadBytes += declaredSize;
+      }
+    } else {
+      totalPreloadBytes += bytes.byteLength;
+    }
   } catch {
     errors.push("Preloaded font file is missing: " + href);
   }
@@ -43,6 +56,8 @@ const missingSwap = fontFaces.filter((face) => !/font-display\s*:\s*swap\s*;/.te
 if (missingSwap) errors.push(missingSwap + " font-face rules do not use font-display: swap.");
 if (!/output\s*:\s*["']static["']/.test(config)) errors.push("Astro output must remain static.");
 
+const packageJson = JSON.parse(await readFile(packagePath, "utf8"));
+if (!packageJson.scripts?.prebuild?.includes("materialize-lfs-fonts")) errors.push("Prebuild must materialize referenced Git LFS font binaries before Astro build.");
 const i18n = await readFile(i18nPath, "utf8");
 const i18nBytes = (await stat(i18nPath)).size;
 if (i18nBytes > 128 * 1024) warnings.push("i18n.js exceeds 128 KiB; consider locale chunking before adding more dictionaries.");
