@@ -1,0 +1,8 @@
+{
+  "WCAG 2.2 Level A dan AA menjadi kriteria penerimaan untuk struktur, konten, komponen, navigasi, serta interaksi website. Pemeriksaan otomatis hanya menjadi preflight; keyboard, screen reader, kontras, zoom, reflow, dan perangkat nyata tetap perlu ditinjau.": "WCAG 2.2 A级和AA级标准是网站结构、内容、组件、导航以及交互功能的验收标准。自动检测仅作为初步检查；键盘操作、屏幕阅读器、对比度、缩放、重排以及实际设备仍需进行审查。",
+  "Menghormati prefers-reduced-motion, mendukung pembesaran teks hingga 200%, dan menargetkan reflow pada lebar 320 CSS px tanpa kehilangan fungsi.": "遵循“prefers-reduced-motion”属性，支持将文本放大至200%，并在320 CSS像素宽度下进行重排，同时不影响功能。",
+  "Fokus harus terlihat dan tidak tertutup konten tetap. Target minimum 24 × 24 CSS px mengikuti SC 2.5.8 beserta pengecualiannya; desain ini mengutamakan 44 CSS px.": "焦点区域必须清晰可见，且不得被固定内容遮挡。根据SC 2.5.8及其例外规定，最小尺寸应为24 × 24 CSS像素；本设计采用44 CSS像素作为优先值。",
+  "Konten harus tetap terbaca saat pengguna mengubah tinggi baris, jarak paragraf, huruf, dan kata sesuai SC 1.4.12.": "根据SC 1.4.12的要求，当用户调整行高、段落间距、字符间距和单词间距时，内容仍应保持可读。",
+  "Mulai ketik untuk mencari halaman sekolah.": "开始输入以搜索学校页面。",
+  "Tidak ada halaman yang cocok.": "没有匹配的页面。"
+}

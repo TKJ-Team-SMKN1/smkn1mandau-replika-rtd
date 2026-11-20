@@ -1,0 +1,8 @@
+{
+  "WCAG 2.2 Level A dan AA menjadi kriteria penerimaan untuk struktur, konten, komponen, navigasi, serta interaksi website. Pemeriksaan otomatis hanya menjadi preflight; keyboard, screen reader, kontras, zoom, reflow, dan perangkat nyata tetap perlu ditinjau.": "WCAG 2.2 Tahap A dan AA berfungsi sebagai kriteria penerimaan bagi struktur, kandungan, komponen, navigasi dan interaksi sesebuah laman web. Semakan automatik hanyalah semakan pra-penerbangan; capaian papan kekunci, pembaca skrin, kontras, zum, susun semula dan peranti sebenar masih perlu disemak.",
+  "Menghormati prefers-reduced-motion, mendukung pembesaran teks hingga 200%, dan menargetkan reflow pada lebar 320 CSS px tanpa kehilangan fungsi.": "Menghormati sifat 'prefers-reduced-motion', menyokong penskalaan teks sehingga 200 peratus, dan mensasarkan semula susun atur pada lebar 320 CSS px tanpa menjejaskan fungsi.",
+  "Fokus harus terlihat dan tidak tertutup konten tetap. Target minimum 24 × 24 CSS px mengikuti SC 2.5.8 beserta pengecualiannya; desain ini mengutamakan 44 CSS px.": "Fokus mesti kelihatan dan tidak disembunyikan oleh kandungan statik. Saiz sasaran minimum ialah 24 × 24 CSS px, mengikut SC 2.5.8 dan pengecualiannya; reka bentuk ini memprioritaskan 44 CSS px.",
+  "Konten harus tetap terbaca saat pengguna mengubah tinggi baris, jarak paragraf, huruf, dan kata sesuai SC 1.4.12.": "Kandungan mesti kekal boleh dibaca apabila pengguna melaraskan ketinggian baris, jarak perenggan, saiz fon dan jarak perkataan selaras dengan SC 1.4.12.",
+  "Mulai ketik untuk mencari halaman sekolah.": "Mulakan menaip untuk mencari halaman sekolah.",
+  "Tidak ada halaman yang cocok.": "Tiada halaman yang sepadan ditemui."
+}
