@@ -19,7 +19,7 @@ This document records user-needs-led practices in addition to the normative WCAG
 
 ## User-controlled preference panel
 
-The shared site shell provides optional controls for text size, higher contrast, reduced motion, and a simplified reading presentation. Preferences are stored locally on the current device and can be reset. They do not replace browser/OS accessibility settings, captions, assistive technology, or user testing. The panel itself must remain keyboard and screen-reader operable.
+The shared site shell provides optional controls for text size up to 200%, higher contrast, reduced motion, a simplified reading presentation, and color-independent visual reinforcement for links and common status hooks. The visual aid reinforces underlines and outlines; it is not a color-vision simulator and does not guarantee that every chart or status is understandable without color. Preferences are stored locally on the current device and can be reset. They do not replace browser/OS accessibility settings, captions, assistive technology, or user testing. The panel itself must remain keyboard and screen-reader operable.
 
 ## Release verification
 
