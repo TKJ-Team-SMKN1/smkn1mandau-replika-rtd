@@ -42,3 +42,9 @@ CJK stylesheets are loaded on demand when the corresponding language is selected
 
 ## Font failure triage
 For a reported failure, record the exact requested URL and locale, browser/device and OS, HTTP status and response content type, CORS/security-checkpoint state, console decoding errors, and whether fallback glyphs render. A screenshot alone cannot distinguish a missing asset, blocked request, invalid MIME, decoding failure, or missing glyph.
+
+## Build artifact size control
+
+The repository retains the static Noto Sans SC/TC variants for source completeness, but the build wrapper temporarily moves the duplicate static directories out of public during Astro build and restores them afterwards. Only the 101 SC and 108 TC variable subset faces referenced by the local unicode-range stylesheets are shipped. This avoids copying the redundant static weight/format matrix into dist while keeping the source assets intact.
+
+The CI font audit reported 53,605,000 bytes across the 174 OTF faces, and verified the generated output contains real OTF/WOFF2 binaries rather than Git LFS pointer text.

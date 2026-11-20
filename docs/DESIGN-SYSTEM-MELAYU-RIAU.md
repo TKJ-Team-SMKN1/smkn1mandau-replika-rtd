@@ -55,3 +55,7 @@ The project remains a replica/concept, not an official school channel. Historica
 
 ## Verification
 Static audits are preflight checks, not WCAG certification. Release review still requires keyboard-only walkthroughs, screen-reader spot checks, contrast measurement for every theme/state, 200% zoom and 320 CSS px reflow, reduced-motion and forced-colors checks, browser/device checks, and font Network inspection for status/MIME/CORS/glyph coverage.
+
+### Deployment-size control
+
+The duplicate static Noto Sans SC/TC weight-and-format trees are retained in the repository but are not copied into the deployment. The build wrapper temporarily moves those static trees out of the public directory, builds with the complete variable unicode-range subsets, runs the font audit, and restores the source trees in a finally block. The deployed subset path keeps 101 SC and 108 TC WOFF2 faces; the static copies are not needed by the local subset CSS.
