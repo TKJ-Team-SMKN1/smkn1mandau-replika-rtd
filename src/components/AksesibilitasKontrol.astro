@@ -1,0 +1,99 @@
+---
+---
+<div class="a11y-panel" data-a11y-panel>
+  <button class="a11y-trigger" type="button" aria-expanded="false" aria-controls="a11y-options">
+    <span aria-hidden="true">◉</span> Aksesibilitas
+  </button>
+  <section id="a11y-options" class="a11y-options" aria-label="Preferensi aksesibilitas" hidden>
+    <div class="a11y-heading">
+      <h2>Preferensi tampilan</h2>
+      <button type="button" class="a11y-close" aria-label="Tutup preferensi aksesibilitas">Tutup</button>
+    </div>
+    <p>Pilih pengaturan yang membantu Anda. Preferensi disimpan hanya di perangkat ini.</p>
+    <div class="a11y-controls">
+      <button type="button" data-a11y-action="text-up">Perbesar teks</button>
+      <button type="button" data-a11y-action="text-down">Perkecil teks</button>
+      <button type="button" data-a11y-toggle="contrast" aria-pressed="false">Kontras tinggi: mati</button>
+      <button type="button" data-a11y-toggle="motion" aria-pressed="false">Kurangi gerakan: mati</button>
+      <button type="button" data-a11y-toggle="reading" aria-pressed="false">Tampilan baca sederhana: mati</button>
+      <button type="button" data-a11y-action="reset">Atur ulang</button>
+    </div>
+    <p class="a11y-status" role="status" aria-live="polite"></p>
+  </section>
+</div>
+<script is:inline>
+(() => {
+  const panel = document.querySelector("[data-a11y-panel]");
+  if (!panel || panel.dataset.initialized === "true") return;
+  panel.dataset.initialized = "true";
+  const trigger = panel.querySelector(".a11y-trigger");
+  const options = panel.querySelector("#a11y-options");
+  const status = panel.querySelector(".a11y-status");
+  const key = "smkn1mandau-a11y";
+  const defaults = { text: 100, contrast: false, motion: false, reading: false };
+  let prefs = { ...defaults };
+  try {
+    const stored = JSON.parse(localStorage.getItem(key) || "null");
+    if (stored && typeof stored === "object") prefs = {
+      text: [100, 112, 125, 150].includes(stored.text) ? stored.text : 100,
+      contrast: stored.contrast === true,
+      motion: stored.motion === true,
+      reading: stored.reading === true
+    };
+  } catch { /* Keep in-memory defaults when storage is unavailable. */ }
+  const announce = (message) => { if (status) status.textContent = message; };
+  const apply = (message) => {
+    const root = document.documentElement;
+    root.dataset.a11yText = String(prefs.text);
+    root.toggleAttribute("data-a11y-contrast", prefs.contrast);
+    root.toggleAttribute("data-a11y-motion", prefs.motion);
+    root.toggleAttribute("data-a11y-reading", prefs.reading);
+    panel.querySelectorAll("[data-a11y-toggle]").forEach((button) => {
+      const name = button.dataset.a11yToggle;
+      const active = Boolean(prefs[name]);
+      button.setAttribute("aria-pressed", String(active));
+      const label = name === "contrast" ? "Kontras tinggi" : name === "motion" ? "Kurangi gerakan" : "Tampilan baca sederhana";
+      button.textContent = label + ": " + (active ? "aktif" : "mati");
+    });
+    try { localStorage.setItem(key, JSON.stringify(prefs)); } catch { /* Preferences remain active for this page. */ }
+    if (message) announce(message);
+  };
+  const close = (restoreFocus = false) => {
+    options.hidden = true;
+    trigger.setAttribute("aria-expanded", "false");
+    if (restoreFocus) trigger.focus();
+  };
+  trigger.addEventListener("click", () => {
+    const open = options.hidden;
+    options.hidden = !open;
+    trigger.setAttribute("aria-expanded", String(open));
+    if (open) options.querySelector("button")?.focus();
+  });
+  panel.querySelector(".a11y-close").addEventListener("click", () => close(true));
+  options.addEventListener("click", (event) => {
+    const button = event.target.closest("button");
+    if (!button) return;
+    if (button.dataset.a11yToggle) {
+      const name = button.dataset.a11yToggle;
+      prefs[name] = !prefs[name];
+      apply("Preferensi " + (name === "contrast" ? "kontras" : name === "motion" ? "gerakan" : "tampilan baca") + " diperbarui.");
+    } else if (button.dataset.a11yAction === "text-up") {
+      prefs.text = Math.min(150, prefs.text + 12);
+      apply("Ukuran teks " + prefs.text + " persen.");
+    } else if (button.dataset.a11yAction === "text-down") {
+      prefs.text = Math.max(100, prefs.text - 12);
+      apply("Ukuran teks " + prefs.text + " persen.");
+    } else if (button.dataset.a11yAction === "reset") {
+      prefs = { ...defaults };
+      apply("Preferensi aksesibilitas diatur ulang.");
+    }
+  });
+  options.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") close(true);
+  });
+  document.addEventListener("pointerdown", (event) => {
+    if (!panel.contains(event.target)) close(false);
+  });
+  apply("");
+})();
+</script>
