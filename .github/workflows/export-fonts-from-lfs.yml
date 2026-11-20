@@ -1,0 +1,80 @@
+name: Export font binaries from Git LFS
+
+on:
+  push:
+    branches:
+      - maintenance/export-fonts-from-lfs
+
+permissions:
+  contents: write
+
+concurrency:
+  group: export-fonts-from-lfs
+  cancel-in-progress: false
+
+jobs:
+  export-fonts:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout repository and hydrate LFS objects
+        uses: actions/checkout@v4
+        with:
+          ref: maintenance/export-fonts-from-lfs
+          fetch-depth: 0
+          lfs: true
+          persist-credentials: true
+
+      - name: Verify all font binaries and export from LFS
+        shell: bash
+        run: |
+          set -euo pipefail
+          git lfs install
+          git lfs pull
+          git lfs fsck
+
+          mapfile -d '' FONT_PATHS < <(git ls-files -z | grep -zEi '\\.(otf|ttf|woff|woff2|eot)$' || true)
+          COUNT="${#FONT_PATHS[@]}"
+          echo "Tracked font files: $COUNT"
+          if [[ "$COUNT" -ne 6087 ]]; then
+            echo "::error::Expected 6087 tracked font files; found $COUNT. Stop without modifying files."
+            exit 1
+          fi
+
+          python3 - <<'PY'
+          import os, sys
+          paths = os.popen("git ls-files -z | grep -zEi '\\.(otf|ttf|woff|woff2|eot)$'").read().split("\\0")
+          paths = [p for p in paths if p]
+          total = 0
+          largest = 0
+          for path in paths:
+              if not os.path.isfile(path):
+                  raise SystemExit(f"Missing hydrated file: {path}")
+              size = os.path.getsize(path)
+              with open(path, "rb") as f:
+                  head = f.read(160)
+              if head.startswith(b"version https://git-lfs.github.com/spec/v1"):
+                  raise SystemExit(f"Still an LFS pointer, not a binary: {path}")
+              if size >= 100 * 1024 * 1024:
+                  raise SystemExit(f"GitHub per-file 100 MiB limit would be exceeded: {path} ({size} bytes)")
+              total += size
+              largest = max(largest, size)
+          print(f"Verified binaries: {len(paths)}")
+          print(f"Total binary size: {total} bytes ({total / 1024**3:.3f} GiB)")
+          print(f"Largest font: {largest} bytes")
+          if total > 4 * 1024**3:
+              raise SystemExit("Total font payload exceeds the 4 GiB safety ceiling; no conversion commit created.")
+          PY
+
+          for ext in ttf otf ttc otc woff woff2 eot dfont pfa pfb; do
+            git lfs untrack "*.$ext" || true
+          done
+
+          git add -- .gitattributes
+          git add -f -- "${FONT_PATHS[@]}"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(fonts): export all font binaries from Git LFS [skip ci]"
+          git push origin HEAD:maintenance/export-fonts-from-lfs
