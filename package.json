@@ -16,6 +16,7 @@
     "audit:localization": "node scripts/audit-localization.mjs",
     "audit:seo": "node scripts/audit-seo.mjs",
     "audit:assets": "node scripts/audit-assets.mjs",
+    "audit:fonts": "node scripts/audit-built-fonts.mjs",
     "audit:provenance": "node scripts/audit-content-provenance.mjs",
     "audit:fonts": "node scripts/audit-built-fonts.mjs",
     "audit:wcag-matrix": "node scripts/audit-wcag-matrix.mjs",
