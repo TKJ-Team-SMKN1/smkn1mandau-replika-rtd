@@ -443,4 +443,19 @@
   "Perpustakaan": "Library",
   "Ruang kelas": "Classroom",
   "Masjid": "Mosque"
+,
+  "Aksesibilitas": "Accessibility",
+  "Preferensi tampilan": "Display preferences",
+  "Tutup": "Close",
+  "Pilih pengaturan yang membantu Anda. Preferensi disimpan hanya di perangkat ini.": "Choose the settings that help you. Preferences are stored only on this device.",
+  "Perbesar teks": "Increase text size",
+  "Perkecil teks": "Decrease text size",
+  "Kontras tinggi: mati": "High contrast: off",
+  "Kontras tinggi: aktif": "High contrast: on",
+  "Kurangi gerakan: mati": "Reduce motion: off",
+  "Kurangi gerakan: aktif": "Reduce motion: on",
+  "Tampilan baca sederhana: mati": "Simplified reading: off",
+  "Tampilan baca sederhana: aktif": "Simplified reading: on",
+  "Atur ulang": "Reset",
+  "@aria-label:Tutup preferensi aksesibilitas": "Close accessibility preferences"
 }
