@@ -104,7 +104,7 @@ for (const file of htmlFiles) {
     errors.push(`${route}: harus menautkan /sitemap.xml melalui rel=sitemap.`);
   }
 
-  for (const property of ["og:title", "og:description", "og:url"]) {
+  for (const property of ["og:title", "og:description", "og:url", "og:image"]) {
     const tags = tagsWithAttribute(html, "meta", "property", property);
     if (tags.length !== 1 || !attributeValue(tags[0] ?? "", "content")?.trim()) {
       errors.push(`${route}: metadata ${property} harus tersedia tepat satu kali dan tidak kosong.`);
@@ -113,11 +113,25 @@ for (const file of htmlFiles) {
       const canonical = canonicalTags.length === 1 ? attributeValue(canonicalTags[0], "href") : null;
       if (attributeValue(tags[0], "content") !== canonical) errors.push(`${route}: og:url harus sama dengan canonical.`);
     }
+    if (property === "og:image" && tags.length === 1) {
+      const expectedImage = new URL("/android-chrome-512x512.png", SITE_URL).toString();
+      if (attributeValue(tags[0], "content") !== expectedImage) errors.push(`${route}: og:image harus menunjuk PNG social preview yang benar.`);
+      const altTags = tagsWithAttribute(html, "meta", "property", "og:image:alt");
+      if (altTags.length !== 1 || !attributeValue(altTags[0] ?? "", "content")?.trim()) {
+        errors.push(`${route}: og:image:alt harus tersedia tepat satu kali dan tidak kosong.`);
+      }
+    }
   }
 
   const twitterCards = tagsWithAttribute(html, "meta", "name", "twitter:card");
-  if (twitterCards.length !== 1 || attributeValue(twitterCards[0] ?? "", "content") !== "summary") {
+  if (twitterCards.length !== 1 || attributeValue(twitterCards[0] ?? "", "content") !== "summary_large_image") {
     errors.push(`${route}: twitter:card harus memiliki satu nilai summary.`);
+  }
+
+  const twitterImages = tagsWithAttribute(html, "meta", "name", "twitter:image");
+  const expectedTwitterImage = new URL("/android-chrome-512x512.png", SITE_URL).toString();
+  if (twitterImages.length !== 1 || attributeValue(twitterImages[0] ?? "", "content") !== expectedTwitterImage) {
+    errors.push(`${route}: twitter:image harus menunjuk PNG social preview yang benar.`);
   }
 
   const robotsTags = tagsWithAttribute(html, "meta", "name", "robots");
