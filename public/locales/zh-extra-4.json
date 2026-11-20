@@ -7,5 +7,14 @@
   "Tidak ada halaman yang cocok.": "没有匹配的页面。",
   "Halaman sejarah sekolah menyebut bahwa pada awalnya tersedia 22 ruang kelas, satu bengkel bersama, satu laboratorium komputer, ruang majelis guru, dua toilet, dan musala. Dalam periode pembangunan 2004–2012, publikasi tersebut mencatat perkembangan menjadi 26 lokal, tiga ruang komputer, enam bengkel praktik, aula, toilet untuk siswa dan guru, serta fasilitas pendukung lainnya.": "学校历史页面提到，最初学校设有22间教室、一间共用实训室、一间计算机实验室、一间教师会议室、两间卫生间和一间祷告室。在2004年至2012年的建设期间，该资料记载学校发展为26间教室、三间计算机室、六间实训室、一间礼堂、供学生和教师使用的卫生间，以及其他配套设施。",
   "Publikasi sejarah juga menyebut pembangunan gerbang dan pagar pada tahun pelajaran 2011/2012 serta pemasangan jaringan internet dan Wi-Fi. Semua keterangan ini adalah rekam historis yang ditulis pada sumber sekolah, bukan konfirmasi bahwa jumlah dan kondisi tersebut masih sama sekarang.": "历史文献还提到，在2011/2012学年修建了校门和围墙，并铺设了互联网和Wi-Fi网络。所有这些信息均源自学校档案中的历史记载，并不意味着当前的数量和状况仍与当时相同。",
-  "Publikasi fasilitas 2022 memuat sembilan aset foto dengan label yang diambil dari nama berkas. Isi foto belum ditinjau satu per satu; label ini tidak membuktikan inventaris, jumlah unit, fungsi ruang, atau kondisi fasilitas sekarang.": "2022年设施出版物收录了九张照片，其标签取自文件名。照片内容尚未逐一审核；这些标签不能证明设施的清单、数量、空间功能或当前状况。"
+  "Publikasi fasilitas 2022 memuat sembilan aset foto dengan label yang diambil dari nama berkas. Isi foto belum ditinjau satu per satu; label ini tidak membuktikan inventaris, jumlah unit, fungsi ruang, atau kondisi fasilitas sekarang.": "2022年设施出版物收录了九张照片，其标签取自文件名。照片内容尚未逐一审核；这些标签不能证明设施的清单、数量、空间功能或当前状况。",
+  "Pernyataan aksesibilitas dan target WCAG 2.2 Level A dan AA pada situs replika independen SMK Negeri 1 Mandau.": "曼道第一国立职业高中独立复刻网站的无障碍声明及WCAG 2.2 A级和AA级目标。",
+  "Replika independen ini dikembangkan dengan mengacu pada Web Content Accessibility Guidelines (WCAG) 2.2 Level A dan AA. Tujuannya adalah membuat informasi dan navigasi dapat digunakan oleh sebanyak mungkin orang, termasuk pengguna teknologi bantu.": "该独立复刻版是参照《网络内容无障碍指南》（WCAG）2.2版A级和AA级标准开发的。其目的是让尽可能多的人，包括辅助技术用户，都能使用其中的信息和导航功能。",
+  "Acuan implementasi: WCAG 2.2 Level A dan AA": "实施依据：WCAG 2.2 A级和AA级",
+  "Kontras minimum": "最小对比度",
+  "Teks normal menargetkan 4.5:1, teks besar 3:1, dan batas komponen atau grafik informatif 3:1. Setiap tema dan state tetap perlu diuji.": "常规文本的目标比例为4.5:1，大号文本为3:1，组件边框或信息图表为3:1。每个主题和状态仍需进行测试。",
+  "Konten hover dan fokus": "悬停和焦点内容",
+  "Menu dan konten tambahan tidak boleh bergantung pada hover saja; harus dapat dijangkau keyboard, ditutup, dan tetap tersedia saat pointer berpindah.": "菜单和附加内容不应仅依赖鼠标悬停；必须能够通过键盘访问、关闭，并在指针移动时仍保持可用。",
+  "Gestur dan formulir": "手势与表单",
+  "Fitur saat ini tidak memakai drag-and-drop, login, atau formulir bertahap. Jika fungsi itu ditambahkan, alternatif tanpa dragging serta kriteria pengisian dan autentikasi menjadi gerbang penerimaan.": "当前该功能不支持拖放、登录或分步表单。如果添加了这些功能，则无需拖放的替代方案以及表单填写和身份验证标准将成为用户接受的关键因素。"
 }
