@@ -52,6 +52,7 @@ for (const [relative, width, height] of expectedPngs) {
   if (!await exists(path.join(distRoot, relative))) errors.push(`PNG tidak tersalin ke dist: ${relative}`);
 }
 
+const schoolLogoPath = "1000553256_Real-ESRGANv3-anime_1025_065246.png";
 const manifest = JSON.parse(await readFile(path.join(publicRoot, "site.webmanifest"), "utf8"));
 for (const icon of manifest.icons ?? []) {
   const relative = icon.src.replace(/^\//, "");
@@ -61,7 +62,6 @@ for (const icon of manifest.icons ?? []) {
   if (icon.type !== "image/png") errors.push(`Tipe ikon manifest harus image/png: ${icon.src}`);
 }
 
-const schoolLogoPath = "1000553256_Real-ESRGANv3-anime_1025_065246.png";
 const schoolLogoFile = path.join(publicRoot, schoolLogoPath);
 try {
   const logoData = await readFile(schoolLogoFile);
@@ -72,6 +72,11 @@ try {
 } catch {
   errors.push(`Logo sekolah HD tidak ditemukan: public/${schoolLogoPath}`);
 }
+
+if (!(manifest.icons ?? []).length || (manifest.icons ?? []).some((icon) => icon.src !== `/${schoolLogoPath}`)) {
+  errors.push("Ikon PWA manifest harus menggunakan logo sekolah HD yang sama.");
+}
+if (!await exists(path.join(distRoot, schoolLogoPath))) errors.push(`Logo sekolah HD tidak tersalin ke dist: ${schoolLogoPath}`);
 
 const securityPath = ".well-known/security.txt";
 const securityFile = path.join(publicRoot, securityPath);
@@ -106,6 +111,10 @@ for (const file of allHtmlFiles) {
 const expectedOgImage = new URL("/1000553256_Real-ESRGANv3-anime_1025_065246.png", SITE_URL).toString();
 for (const file of htmlFiles) {
   const html = await readFile(file, "utf8");
+  const relativeHtml = path.relative(distRoot, file);
+  if (!html.includes(`href="/${schoolLogoPath}"`) || !html.includes(`src="/${schoolLogoPath}"`)) {
+    errors.push(`${relativeHtml} belum memakai logo sekolah HD pada favicon, header, atau footer.`);
+  }
   if (!html.includes(`property="og:image" content="${expectedOgImage}"`) &&
       !html.includes(`content="${expectedOgImage}" property="og:image"`)) {
     errors.push(`${path.relative(distRoot, file)} tidak memiliki og:image PNG yang benar.`);
