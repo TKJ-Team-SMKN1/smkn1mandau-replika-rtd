@@ -9,8 +9,8 @@
   --brand-focus: #f0a84b;
   --font-display-riau: "Anton Local", "Archivo Local", system-ui, sans-serif;
   --font-heading-riau: "Archivo Local", "Familjen Grotesk Local", system-ui, sans-serif;
-  --font-body-riau: "Outfit Local", "M PLUS 1 Local", "M PLUS 2 Local", system-ui, sans-serif;
-  --font-tech-riau: "Azeret Mono Local", "Office Code Pro Local", "M PLUS 1 Code Local", monospace;
+  --font-body-riau: "Outfit Local", "M PLUS 1 Local", "M PLUS 2 Local", "M PLUS U Local", system-ui, sans-serif;
+  --font-tech-riau: "Azeret Mono Local", "Office Code Pro Local", "M PLUS 1 Code Local", "M PLUS Code Latin 60 Local", "M PLUS Code Latin 50 Local", monospace;
 }
 html { scroll-padding-top: 6.5rem; }
 body { font-family: var(--font-body-riau); line-height: 1.65; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
@@ -86,7 +86,12 @@ code,pre,kbd,samp,.font-rapat,.font-office-code-pro { font-family: "Office Code 
 .font-nunito { font-family: "Nunito Local","Outfit Local",sans-serif; }
 .font-lora { font-family: "Lora Local","Literata Local",Georgia,serif; }
 .font-familjen { font-family: "Familjen Grotesk Local","Outfit Local",sans-serif; }
-.font-mplus-1,.font-mplus-2,.font-mplus-u { font-synthesis: none; }
+.font-mplus-1 { font-family: "M PLUS 1 Local", "M PLUS 2 Local", system-ui, sans-serif; font-synthesis: none; }
+.font-mplus-2 { font-family: "M PLUS 2 Local", "M PLUS U Local", system-ui, sans-serif; font-synthesis: none; }
+.font-mplus-u { font-family: "M PLUS U Local", "M PLUS 2 Local", system-ui, sans-serif; font-synthesis: none; }
+.font-mplus-1-code { font-family: "M PLUS 1 Code Local", "M PLUS Code Latin 60 Local", monospace; font-synthesis: none; }
+.font-mplus-code-50 { font-family: "M PLUS Code Latin 50 Local", "M PLUS 1 Code Local", monospace; font-synthesis: none; }
+.font-mplus-code-60 { font-family: "M PLUS Code Latin 60 Local", "M PLUS 1 Code Local", monospace; font-synthesis: none; }
 .site-footer { color: #f7f3e9; background: var(--brand-riau-navy); }
 .site-footer a { color: #f7f3e9; }
 .site-footer a:hover { color: #f2c879; }

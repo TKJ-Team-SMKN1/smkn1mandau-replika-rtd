@@ -4,11 +4,11 @@
 Identitas visual menggabungkan bahasa visual institusi pendidikan teknik dengan aksen Melayu-Riau yang terkendali. Palet utama menggunakan navy teknikal, biru, hijau, gading, tembaga dan emas. Motif pucuk rebung/songket ditempatkan sebagai aksen tepi, garis pembatas, atau ornamen latar berkontras rendah; bukan sebagai tekstur di belakang paragraf.
 
 Referensi budaya:
-- [Pucuk Rebung Riau — iWareBatik](https://www.iwarebatik.org/pucuk-rebung-riau-royal)
+- [Tenun Siak — basis data Warisan Budaya Takbenda Indonesia, Kementerian Kebudayaan](https://budaya.data.kemdikbud.go.id/wbtb/objek/AA000349)\n- [Pucuk Rebung Riau — iWareBatik](https://www.iwarebatik.org/pucuk-rebung-riau-royal)
 - [Songket — UNESCO Intangible Cultural Heritage](https://ich.unesco.org/en/RL/songket-01505)
 - [Kajian motif songket Melayu Indragiri Hulu (2024)](https://jurnal.isi-ska.ac.id/index.php/brikolase/article/download/5805/4106/18518)
 
-## Typography roles
+Catatan penggunaan budaya: Tenun Siak ialah rujukan warisan tenun yang terdokumentasi di Riau. Pucuk rebung mempunyai variasi bentuk dan penempatan; jangan menganggap satu tafsiran simbolik mewakili semua komuniti atau semua motif. Gunakan motif sebagai aksen geometri yang terkawal, dan dapatkan kebenaran serta kredit jika menggunakan foto atau corak tekstil milik pengkarya.\n\n## Typography roles
 Seluruh 19 keluarga font OTF tetap tersedia melalui `font-library.css`; 174 face OTF dideklarasikan dengan `font-display: swap`. Berkas OTF disimpan sebagai objek Git LFS. Skrip `prebuild` mematerialisasikan objek sebenar ke dalam folder awam menggunakan rujukan commit yang dipinkan, kemudian mengesahkan saiz dan SHA-256 sebelum Astro membina laman. Audit selepas binaan menolak sebarang pointer LFS yang tertinggal dalam output. Keluarga tidak dipaksa tampil serentak.
 
 | Family | Role |
