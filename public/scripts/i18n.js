@@ -53,6 +53,7 @@
   
   
 
+  const translations = { id: {}, en: {}, ms: {}, zh: {} };
   const baseLocaleFiles = {
     en: "/locales/en-base.json",
     ms: "/locales/ms-base.json",
