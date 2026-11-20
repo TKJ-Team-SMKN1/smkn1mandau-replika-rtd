@@ -427,4 +427,19 @@
   "Perpustakaan": "Perpustakaan",
   "Ruang kelas": "Bilik darjah",
   "Masjid": "Masjid"
+,
+  "Aksesibilitas": "Kebolehcapaian",
+  "Preferensi tampilan": "Keutamaan paparan",
+  "Tutup": "Tutup",
+  "Pilih pengaturan yang membantu Anda. Preferensi disimpan hanya di perangkat ini.": "Pilih tetapan yang membantu anda. Keutamaan disimpan pada peranti ini sahaja.",
+  "Perbesar teks": "Besarkan teks",
+  "Perkecil teks": "Kecilkan teks",
+  "Kontras tinggi: mati": "Kontras tinggi: tidak aktif",
+  "Kontras tinggi: aktif": "Kontras tinggi: aktif",
+  "Kurangi gerakan: mati": "Kurangkan gerakan: tidak aktif",
+  "Kurangi gerakan: aktif": "Kurangkan gerakan: aktif",
+  "Tampilan baca sederhana: mati": "Paparan bacaan ringkas: tidak aktif",
+  "Tampilan baca sederhana: aktif": "Paparan bacaan ringkas: aktif",
+  "Atur ulang": "Tetapkan semula",
+  "@aria-label:Tutup preferensi aksesibilitas": "Tutup keutamaan kebolehcapaian"
 }
