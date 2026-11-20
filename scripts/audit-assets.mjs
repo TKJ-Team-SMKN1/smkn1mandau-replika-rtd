@@ -83,7 +83,7 @@ const allHtmlFiles = await collectHtml(distRoot);
 const htmlFiles = [];
 for (const file of allHtmlFiles) {
   const relative = path.relative(distRoot, file).split(path.sep).join("/");
-  if (!/^google[0-9a-f]+\\.html$/i.test(relative)) {
+  if (!/^google[0-9a-f]+\.html$/i.test(relative)) {
     htmlFiles.push(file);
     continue;
   }
