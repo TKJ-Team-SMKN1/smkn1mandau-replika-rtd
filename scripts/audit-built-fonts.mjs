@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -21,6 +21,15 @@ async function verifyFont(url, kind) {
   const valid = kind === "woff2" ? magic === "774f4632" : kind === "opentype" ? magic === "4f54544f" || magic === "00010000" : false;
   if (!valid || bytes.byteLength < 1000) throw new Error("Invalid " + kind + " font asset: " + url);
   return bytes.byteLength;
+}
+
+for (const directory of ["fonts/noto-sans-sc/static", "fonts/noto-sans-tc/static"]) {
+  try {
+    await access(path.join(dist, directory));
+    throw new Error("Redundant static CJK font copies must not ship in dist: " + directory);
+  } catch (error) {
+    if (error.code !== "ENOENT") throw error;
+  }
 }
 
 const otfUrls = [...new Set(urlsFrom(fontLibrary).filter((url) => url.startsWith("/fonts/")))];
