@@ -15,12 +15,13 @@
     "audit:performance": "node scripts/audit-performance.mjs",
     "audit:localization": "node scripts/audit-localization.mjs",
     "audit:seo": "node scripts/audit-seo.mjs",
+    "audit:assets": "node scripts/audit-assets.mjs",
     "audit:provenance": "node scripts/audit-content-provenance.mjs",
-    "predev": "node scripts/materialize-lfs-fonts.mjs",
-    "prebuild": "node scripts/materialize-lfs-fonts.mjs",
     "audit:fonts": "node scripts/audit-built-fonts.mjs",
     "audit:wcag-matrix": "node scripts/audit-wcag-matrix.mjs",
-    "audit:inclusive-a11y": "node scripts/audit-inclusive-a11y.mjs"
+    "audit:inclusive-a11y": "node scripts/audit-inclusive-a11y.mjs",
+    "predev": "node scripts/materialize-lfs-fonts.mjs",
+    "prebuild": "node scripts/materialize-lfs-fonts.mjs"
   },
   "dependencies": {
     "astro": "^7.4.8",
