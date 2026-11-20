@@ -39,7 +39,7 @@ CJK assets are retained separately: Noto Sans SC subset assets for Simplified Ch
 WCAG 2.2 Level A and AA are the acceptance target, not an automatic certification claim.
 - Text contrast: 4.5:1 normal, 3:1 large text (SC 1.4.3).
 - Non-text contrast: 3:1 for required UI boundaries and states (SC 1.4.11).
-- Keyboard operation, visible focus, focus not obscured, logical order and skip link (SC 2.1.1, 2.4.7, 2.4.11, 2.4.12).
+- Keyboard operation, visible focus, focus not obscured, logical order and skip link (SC 2.1.1, 2.4.7, 2.4.11).
 - Minimum target size 24 × 24 CSS px or a documented exception (SC 2.5.8); this system prefers 44 px.
 - Reflow at 320 CSS px, text resize to 200%, and text-spacing overrides without loss of content/function (SC 1.4.10, 1.4.4, 1.4.12).
 - Respect `prefers-reduced-motion`; do not rely on animation to convey information.
