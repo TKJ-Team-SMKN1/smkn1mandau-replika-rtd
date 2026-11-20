@@ -424,8 +424,7 @@
   "Ruang majelis guru": "教师办公室",
   "Perpustakaan": "图书馆",
   "Ruang kelas": "教室",
-  "Masjid": "清真寺"
-,
+  "Masjid": "清真寺",
   "Aksesibilitas": "无障碍功能",
   "Preferensi tampilan": "显示偏好",
   "Tutup": "关闭",
@@ -439,8 +438,7 @@
   "Tampilan baca sederhana: mati": "简化阅读：关闭",
   "Tampilan baca sederhana: aktif": "简化阅读：开启",
   "Atur ulang": "重置",
-  "@aria-label:Tutup preferensi aksesibilitas": "关闭无障碍偏好设置"
-,
+  "@aria-label:Tutup preferensi aksesibilitas": "关闭无障碍偏好设置",
   "Preferensi dan kebutuhan pengguna": "用户需求与偏好",
   "Tuli dan pengguna nonverbal": "聋人及非口语使用者",
   "Sediakan informasi teks, subtitle untuk video bersuara, transkrip yang relevan, notifikasi visual, dan kanal bantuan tertulis. Bahasa isyarat dapat ditambahkan bila materi dan penerjemah yang kompeten tersedia.": "提供文字信息、带声音视频的字幕、相关文字稿、视觉通知和书面帮助渠道。如有合适材料及合格译员，可增加手语内容。",
@@ -461,5 +459,15 @@
   "Preferensi tampilan yang dapat dikendalikan": "可由用户控制的显示偏好",
   "Panel Aksesibilitas menyediakan pengaturan ukuran teks, kontras tinggi, pengurangan gerakan, dan tampilan baca sederhana. Pengaturan bersifat opsional, dapat diatur ulang, dan disimpan secara lokal pada perangkat. Panel ini tidak menggantikan pengaturan aksesibilitas sistem operasi atau pengujian dengan teknologi bantu.": "无障碍面板提供文字大小、高对比度、减少动态效果和简化阅读设置。设置为可选项，可重置并仅保存在本设备上。该面板不能替代操作系统的无障碍设置或辅助技术测试。",
   "Evaluasi dan keterbatasan": "评估与限制",
-  "Simulasi warna, pemeriksaan otomatis, dan matriks statis hanya membantu menemukan sebagian masalah. Rilis tetap memerlukan pemeriksaan keyboard, screen reader, subtitle, media berkedip, zoom/reflow, kontras semua state, serta evaluasi dengan pengguna yang memiliki kebutuhan akses berbeda. Preferensi tampilan tidak menjamin kesesuaian untuk setiap individu.": "色觉模拟、自动检查和静态矩阵只能发现部分问题。发布前仍需进行键盘、屏幕阅读器、字幕、闪烁媒体、缩放与重排、所有状态的对比度检查，并邀请具有不同访问需求的用户参与评估。显示偏好无法保证适合每个人。"
+  "Simulasi warna, pemeriksaan otomatis, dan matriks statis hanya membantu menemukan sebagian masalah. Rilis tetap memerlukan pemeriksaan keyboard, screen reader, subtitle, media berkedip, zoom/reflow, kontras semua state, serta evaluasi dengan pengguna yang memiliki kebutuhan akses berbeda. Preferensi tampilan tidak menjamin kesesuaian untuk setiap individu.": "色觉模拟、自动检查和静态矩阵只能发现部分问题。发布前仍需进行键盘、屏幕阅读器、字幕、闪烁媒体、缩放与重排、所有状态的对比度检查，并邀请具有不同访问需求的用户参与评估。显示偏好无法保证适合每个人。",
+  "Penanda warna: mati": "颜色标记：关闭",
+  "Penanda warna: aktif": "颜色标记：已启用",
+  "Penanda warna": "颜色标记",
+  "Preferensi penanda warna diperbarui.": "颜色标记的偏好设置已更新。",
+  "Ukuran teks diperbarui.": "文字大小已更新。",
+  "Preferensi aksesibilitas diatur ulang.": "辅助功能偏好设置已重置。",
+  "Preferensi kontras diperbarui.": "对比度偏好设置已更新。",
+  "Preferensi gerakan diperbarui.": "动态效果偏好设置已更新。",
+  "Preferensi tampilan baca diperbarui.": "阅读显示偏好设置已更新。",
+  "Bantuan visual ini menambahkan garis bawah pada tautan dan penanda bentuk pada elemen status. Informasi tidak boleh dibedakan melalui warna saja.": "此视觉辅助功能会在链接上添加下划线，并在状态元素上添加形状标记。信息不应仅通过颜色来区分。"
 }
