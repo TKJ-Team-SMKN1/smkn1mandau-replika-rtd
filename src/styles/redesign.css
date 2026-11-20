@@ -151,3 +151,21 @@ code,pre,kbd,samp,.font-rapat,.font-office-code-pro { font-family: "Office Code 
 .site-search-result-copy { display: grid; min-width: 0; gap: .12rem; }
 .site-search-result-copy strong { overflow-wrap: anywhere; }
 .site-search-result-copy small { color: var(--text-muted,#586174); font-size: .78rem; line-height: 1.35; }
+
+/* CJK fonts are loaded on demand by the language controller. */
+html[lang="zh-CN"] body {
+  font-family: "Noto Sans SC Local", "M PLUS 2 Local", "Microsoft YaHei", sans-serif;
+}
+html[lang="zh-CN"] code,
+html[lang="zh-CN"] pre,
+html[lang="zh-CN"] kbd,
+html[lang="zh-CN"] samp {
+  font-family: "Office Code Pro Local", "Noto Sans SC Local", monospace;
+}
+html[lang="zh-Hant"] body {
+  font-family: "Noto Sans TC Local", "Source Han Serif HK Local", "M PLUS 2 Local", sans-serif;
+}
+html[lang="zh-Hant"] blockquote,
+html[lang="zh-Hant"] .font-source-han-hk {
+  font-family: "Source Han Serif HK Local", "Noto Sans TC Local", serif;
+}

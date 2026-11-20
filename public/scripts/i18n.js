@@ -1113,6 +1113,23 @@
     ms: ["/locales/ms-extra-1.json", "/locales/ms-extra-2.json", "/locales/ms-extra-3.json", "/locales/ms-extra-4.json"],
     zh: ["/locales/zh-extra-1.json", "/locales/zh-extra-2.json", "/locales/zh-extra-3.json", "/locales/zh-extra-4.json"]
   };
+  const localeFontStylesheets = {
+    zh: ["/fonts/noto-sans-sc.css"],
+    "zh-Hant": ["/fonts/noto-sans-tc.css", "/fonts/source-han-serif-hk.css"]
+  };
+
+  function loadLocaleFontStylesheets(lang) {
+    for (const href of localeFontStylesheets[lang] || []) {
+      if (document.querySelector('link[data-locale-font-href="' + href + '"]')) continue;
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = href;
+      link.dataset.localeFontHref = href;
+      link.onerror = () => link.remove();
+      document.head.appendChild(link);
+    }
+  }
+
   const loadedExtraLocales = new Set();
   let languageRequestId = 0;
 
@@ -1192,15 +1209,16 @@
   }
 
   async function applyLanguage(lang) {
-    const requestedLanguage = Object.prototype.hasOwnProperty.call(translations, lang) ? lang : "id";
+    const requestedLanguage = Object.prototype.hasOwnProperty.call(translations, lang) ? lang : (lang === "zh-Hant" ? "zh" : "id");
     const requestId = ++languageRequestId;
     await loadExtraTranslations(requestedLanguage);
     if (requestId !== languageRequestId) return;
     activeLanguage = requestedLanguage;
+    loadLocaleFontStylesheets(lang === "zh-Hant" ? "zh-Hant" : requestedLanguage);
     const dictionary = getDictionary();
     observer?.disconnect();
     try {
-      document.documentElement.lang = documentLanguage(activeLanguage);
+      document.documentElement.lang = lang === "zh-Hant" ? "zh-Hant" : documentLanguage(activeLanguage);
       translateSubtree(document.body, dictionary);
       syncLanguageControls(activeLanguage);
 
