@@ -1,0 +1,4 @@
+Contact: https://github.com/TKJ-Team-SMKN1/smkn1mandau-replika-rtd/security/advisories/new
+Expires: 2027-11-19T23:59:59Z
+Preferred-Languages: id, en
+Canonical: https://smkn1mandau.vercel.app/.well-known/security.txt
