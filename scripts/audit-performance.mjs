@@ -43,8 +43,11 @@ const missingSwap = fontFaces.filter((face) => !/font-display\s*:\s*swap\s*;/.te
 if (missingSwap) errors.push(missingSwap + " font-face rules do not use font-display: swap.");
 if (!/output\s*:\s*["']static["']/.test(config)) errors.push("Astro output must remain static.");
 
+const i18n = await readFile(i18nPath, "utf8");
 const i18nBytes = (await stat(i18nPath)).size;
 if (i18nBytes > 128 * 1024) warnings.push("i18n.js exceeds 128 KiB; consider locale chunking before adding more dictionaries.");
+if (!/observer\\?\.disconnect\\(\\)/.test(i18n)) errors.push("i18n MutationObserver must disconnect before applying translations to prevent a self-triggering mutation loop.");
+if (!/finally\\s*\\{[\\s\\S]*?observer\\?\.observe\\(document\\.body,\\s*\\{\\s*childList:\\s*true,\\s*characterData:\\s*true,\\s*subtree:\\s*true\\s*\\}\\)/.test(i18n)) errors.push("i18n MutationObserver must resume observation in finally after translation updates.");
 const clientLoadCount = (layout.match(/\bclient:load\b/g) || []).length;
 if (clientLoadCount > 1) warnings.push("More than one client:load island is present in the shared layout.");
 

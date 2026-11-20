@@ -2,6 +2,14 @@
 
 Proyek antarmuka berbasis **Astro + React + TypeScript + Tailwind CSS + CSS Houdini**. Ini adalah replika/konsep independen untuk pengembangan dan peninjauan UX/UI, **bukan situs resmi SMK Negeri 1 Mandau dan tidak mewakili pihak sekolah**.
 
+## Lisensi proyek
+
+Kode asli yang dikembangkan khusus untuk proyek ini dilisensikan berdasarkan **GNU Affero General Public License v3.0 (AGPL-3.0-only)**. Teks lisensi lengkap tersedia di [LICENSE](./LICENSE).
+
+Lisensi proyek ini **tidak mengganti atau mengambil alih lisensi/hak pihak ketiga**. Library dan framework pada dependency, berkas font beserta pemberitahuan lisensi upstream-nya, arsip HTML dan konten yang berasal dari situs sekolah, serta aset pihak ketiga lainnya tetap mengikuti lisensi atau hak masing-masing. Jangan menghapus atau mengubah pemberitahuan lisensi yang menyertai komponen tersebut.
+
+Karena AGPL-3.0 memiliki ketentuan interaksi jaringan pada bagian 13, tautan **Source code & license** tersedia di footer website dan mengarah ke repositori publik ini.
+
 Konten profil, daftar program, dan ringkasan arsip pengumuman merujuk pada publikasi situs resmi. Setiap pengunjung tetap diarahkan ke sumber asli untuk ketentuan dan informasi terbaru. Lihat [register sumber dan kebijakan konten](docs/SUMBER-DATA.md).
 
 ## Menjalankan secara lokal

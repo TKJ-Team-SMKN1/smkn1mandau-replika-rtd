@@ -1081,8 +1081,13 @@
   const original = new WeakMap();
   const translatedNodes = new WeakMap();
   const originalAttributes = new WeakMap();
+  let observer = null;
+
   function applyLanguage(lang) {
-    const dict = translations[lang] || {};
+    // Disconnect while translating so our own text mutations cannot retrigger the observer.
+    observer?.disconnect();
+    try {
+      const dict = translations[lang] || {};
     document.documentElement.lang = lang === "zh" ? "zh-CN" : lang;
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     while (walker.nextNode()) {
@@ -1123,19 +1128,23 @@
       const baseDescription = saved.content;
       description.setAttribute("content", dict[baseDescription] || baseDescription);
     }
-    try { localStorage.setItem(KEY, lang); } catch {}
+      try { localStorage.setItem(KEY, lang); } catch {}
+    } finally {
+      // Resume observation after our own synchronous DOM writes are complete.
+      observer?.observe(document.body, { childList: true, characterData: true, subtree: true });
+    }
   }
   function init() {
     const picker = document.querySelector("[data-language-picker]");
     let lang = "id";
     try { lang = localStorage.getItem(KEY) || "id"; } catch {}
-    if (picker) picker.addEventListener("change", () => applyLanguage(picker.value));
-    applyLanguage(lang);
-    const observer = new MutationObserver(() => applyLanguage(lang));
-    observer.observe(document.body, { childList: true, characterData: true, subtree: true });
-    document.addEventListener("change", e => {
-      if (e.target.matches("[data-language-picker]")) { lang = e.target.value; applyLanguage(lang); }
+    if (picker) picker.addEventListener("change", () => {
+      lang = picker.value;
+      applyLanguage(lang);
     });
+    observer = new MutationObserver(() => applyLanguage(lang));
+    observer.observe(document.body, { childList: true, characterData: true, subtree: true });
+    applyLanguage(lang);
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init, { once: true });
   else init();
