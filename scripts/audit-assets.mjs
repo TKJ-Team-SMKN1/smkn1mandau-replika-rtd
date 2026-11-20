@@ -61,6 +61,18 @@ for (const icon of manifest.icons ?? []) {
   if (icon.type !== "image/png") errors.push(`Tipe ikon manifest harus image/png: ${icon.src}`);
 }
 
+const schoolLogoPath = "1000553256_Real-ESRGANv3-anime_1025_065246.png";
+const schoolLogoFile = path.join(publicRoot, schoolLogoPath);
+try {
+  const logoData = await readFile(schoolLogoFile);
+  const validLogoPng = logoData.length >= 24 &&
+    logoData.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]));
+  if (!validLogoPng) errors.push(`Logo sekolah bukan PNG valid: public/${schoolLogoPath}`);
+  if (!await exists(path.join(distRoot, schoolLogoPath))) errors.push(`Logo sekolah tidak tersalin ke dist: ${schoolLogoPath}`);
+} catch {
+  errors.push(`Logo sekolah HD tidak ditemukan: public/${schoolLogoPath}`);
+}
+
 const securityPath = ".well-known/security.txt";
 const securityFile = path.join(publicRoot, securityPath);
 const security = await readFile(securityFile, "utf8");
@@ -91,7 +103,7 @@ for (const file of allHtmlFiles) {
   const content = await readFile(file, "utf8");
   if (content.trim() !== `google-site-verification: ${filename}`) htmlFiles.push(file);
 }
-const expectedOgImage = new URL("/android-chrome-512x512.png", SITE_URL).toString();
+const expectedOgImage = new URL("/1000553256_Real-ESRGANv3-anime_1025_065246.png", SITE_URL).toString();
 for (const file of htmlFiles) {
   const html = await readFile(file, "utf8");
   if (!html.includes(`property="og:image" content="${expectedOgImage}"`) &&
