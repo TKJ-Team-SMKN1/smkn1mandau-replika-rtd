@@ -442,8 +442,7 @@
   "Ruang majelis guru": "Teachers' room",
   "Perpustakaan": "Library",
   "Ruang kelas": "Classroom",
-  "Masjid": "Mosque"
-,
+  "Masjid": "Mosque",
   "Aksesibilitas": "Accessibility",
   "Preferensi tampilan": "Display preferences",
   "Tutup": "Close",
@@ -457,8 +456,7 @@
   "Tampilan baca sederhana: mati": "Simplified reading: off",
   "Tampilan baca sederhana: aktif": "Simplified reading: on",
   "Atur ulang": "Reset",
-  "@aria-label:Tutup preferensi aksesibilitas": "Close accessibility preferences"
-,
+  "@aria-label:Tutup preferensi aksesibilitas": "Close accessibility preferences",
   "Preferensi dan kebutuhan pengguna": "User preferences and needs",
   "Tuli dan pengguna nonverbal": "Deaf and non-speaking users",
   "Sediakan informasi teks, subtitle untuk video bersuara, transkrip yang relevan, notifikasi visual, dan kanal bantuan tertulis. Bahasa isyarat dapat ditambahkan bila materi dan penerjemah yang kompeten tersedia.": "Provide text information, captions for videos with audio, relevant transcripts, visual notifications, and written support channels. Sign-language content may be added when suitable materials and qualified interpreters are available.",
@@ -479,5 +477,15 @@
   "Preferensi tampilan yang dapat dikendalikan": "User-controlled display preferences",
   "Panel Aksesibilitas menyediakan pengaturan ukuran teks, kontras tinggi, pengurangan gerakan, dan tampilan baca sederhana. Pengaturan bersifat opsional, dapat diatur ulang, dan disimpan secara lokal pada perangkat. Panel ini tidak menggantikan pengaturan aksesibilitas sistem operasi atau pengujian dengan teknologi bantu.": "The Accessibility panel offers text sizing, higher contrast, reduced motion, and simplified reading. Settings are optional, resettable, and stored locally on the device. The panel does not replace operating-system accessibility settings or assistive-technology testing.",
   "Evaluasi dan keterbatasan": "Evaluation and limitations",
-  "Simulasi warna, pemeriksaan otomatis, dan matriks statis hanya membantu menemukan sebagian masalah. Rilis tetap memerlukan pemeriksaan keyboard, screen reader, subtitle, media berkedip, zoom/reflow, kontras semua state, serta evaluasi dengan pengguna yang memiliki kebutuhan akses berbeda. Preferensi tampilan tidak menjamin kesesuaian untuk setiap individu.": "Color simulations, automated checks, and static matrices reveal only some issues. Release still requires keyboard, screen-reader, caption, flashing-media, zoom/reflow, and all-state contrast checks, plus evaluation with users who have varied access needs. Display preferences cannot guarantee suitability for every individual."
+  "Simulasi warna, pemeriksaan otomatis, dan matriks statis hanya membantu menemukan sebagian masalah. Rilis tetap memerlukan pemeriksaan keyboard, screen reader, subtitle, media berkedip, zoom/reflow, kontras semua state, serta evaluasi dengan pengguna yang memiliki kebutuhan akses berbeda. Preferensi tampilan tidak menjamin kesesuaian untuk setiap individu.": "Color simulations, automated checks, and static matrices reveal only some issues. Release still requires keyboard, screen-reader, caption, flashing-media, zoom/reflow, and all-state contrast checks, plus evaluation with users who have varied access needs. Display preferences cannot guarantee suitability for every individual.",
+  "Penanda warna: mati": "Color indicator: off",
+  "Penanda warna: aktif": "Color indicator: active",
+  "Penanda warna": "Color markers",
+  "Preferensi penanda warna diperbarui.": "Color marker preferences have been updated.",
+  "Ukuran teks diperbarui.": "Text size has been updated.",
+  "Preferensi aksesibilitas diatur ulang.": "Accessibility preferences have been reset.",
+  "Preferensi kontras diperbarui.": "Contrast preferences have been updated.",
+  "Preferensi gerakan diperbarui.": "Movement preferences have been updated.",
+  "Preferensi tampilan baca diperbarui.": "Reading view preferences have been updated.",
+  "Bantuan visual ini menambahkan garis bawah pada tautan dan penanda bentuk pada elemen status. Informasi tidak boleh dibedakan melalui warna saja.": "This visual aid adds underlines to links and shape markers to status elements. Information should not be distinguished by color alone."
 }
