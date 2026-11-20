@@ -34,7 +34,7 @@ for (const tag of fontPreloads) {
     const bytes = await readFile(filePath);
     const pointerText = bytes.subarray(0, 160).toString("utf8");
     if (pointerText.startsWith("version https://git-lfs.github.com/spec/v1")) {
-      const declaredSize = Number(pointerText.match(/^size (\\d+)$/m)?.[1]);
+      const declaredSize = Number(pointerText.match(/^size (\d+)$/m)?.[1]);
       const declaredOid = pointerText.match(/^oid sha256:[a-f0-9]{64}$/m);
       if (!declaredSize || !declaredOid) {
         errors.push("Malformed Git LFS pointer for preloaded font: " + href);
