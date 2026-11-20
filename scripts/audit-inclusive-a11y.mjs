@@ -12,6 +12,8 @@ const required = [
     'data-a11y-toggle="contrast"',
     'data-a11y-toggle="motion"',
     'data-a11y-toggle="reading"',
+    'data-a11y-toggle="color"',
+    'textSteps = [100, 112, 124, 136, 148, 160, 172, 184, 196, 200]',
     'data-a11y-action="text-up"',
     'data-a11y-action="reset"'
   ]],
@@ -19,6 +21,8 @@ const required = [
     'html[data-a11y-contrast]',
     'html[data-a11y-motion]',
     'html[data-a11y-reading]',
+    'html[data-a11y-color]',
+    'html[data-a11y-text="200"]',
     '@media(forced-colors:active)'
   ]],
   ["src/pages/aksesibilitas.astro", [
@@ -39,6 +43,25 @@ for (const [file, needles] of required) {
   try { content = await readFile(file, "utf8"); }
   catch { errors.push("Missing required file: " + file); continue; }
   for (const needle of needles) if (!content.includes(needle)) errors.push(file + " missing: " + needle);
+}
+for (const locale of ["en", "ms", "zh"]) {
+  const file = "public/locales/" + locale + "-base.json";
+  try {
+    const dictionary = JSON.parse(await readFile(file, "utf8"));
+    for (const key of [
+      "Penanda warna: mati",
+      "Penanda warna: aktif",
+      "Preferensi penanda warna diperbarui.",
+      "Ukuran teks diperbarui.",
+      "Preferensi aksesibilitas diatur ulang.",
+      "Preferensi kontras diperbarui.",
+      "Preferensi gerakan diperbarui.",
+      "Preferensi tampilan baca diperbarui.",
+      "Bantuan visual ini menambahkan garis bawah pada tautan dan penanda bentuk pada elemen status. Informasi tidak boleh dibedakan melalui warna saja."
+    ]) {
+      if (typeof dictionary[key] !== "string" || !dictionary[key].trim()) errors.push(file + " missing translation: " + key);
+    }
+  } catch { errors.push("Invalid locale JSON: " + file); }
 }
 let built = "";
 try { built = await readFile("dist/index.html", "utf8"); }
