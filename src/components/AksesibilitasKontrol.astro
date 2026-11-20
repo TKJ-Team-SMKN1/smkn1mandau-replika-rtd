@@ -35,7 +35,7 @@
   try {
     const stored = JSON.parse(localStorage.getItem(key) || "null");
     if (stored && typeof stored === "object") prefs = {
-      text: [100, 112, 125, 150].includes(stored.text) ? stored.text : 100,
+      text: [100, 112, 124, 136, 148].includes(stored.text) ? stored.text : 100,
       contrast: stored.contrast === true,
       motion: stored.motion === true,
       reading: stored.reading === true
@@ -78,7 +78,7 @@
       prefs[name] = !prefs[name];
       apply("Preferensi " + (name === "contrast" ? "kontras" : name === "motion" ? "gerakan" : "tampilan baca") + " diperbarui.");
     } else if (button.dataset.a11yAction === "text-up") {
-      prefs.text = Math.min(150, prefs.text + 12);
+      prefs.text = Math.min(148, prefs.text + 12);
       apply("Ukuran teks " + prefs.text + " persen.");
     } else if (button.dataset.a11yAction === "text-down") {
       prefs.text = Math.max(100, prefs.text - 12);
