@@ -29,7 +29,7 @@ for (const locale of ["ms", "zh"]) {
 
 const options = new Set(localeOptions);
 if (options.size !== 4 || !["id", "en", "ms", "zh"].every((locale) => options.has(locale))) {
-  errors.push("Language picker must expose exactly the supported ID, EN, MS and ZH options.");
+  errors.push("Language picker must expose exactly the supported ID, EN, MY and ZH options.");
 }
 const countFragments = {
   en: ['"Menampilkan": "Showing"', '"dari": "of"', '"nama program.": "vocational programs."'],
@@ -47,8 +47,8 @@ for (const locale of ["en", "ms", "zh"]) {
     errors.push("Missing or empty translation dictionary: " + locale);
   }
 }
-if (!script.includes('document.documentElement.lang = lang === "zh" ? "zh-CN" : lang;')) {
-  errors.push("The active document language is not synchronized with the selected locale.");
+if (!script.includes('ms: "ms-MY"') || !script.includes('zh: "zh-CN"') || !script.includes('en: "en"')) {
+  errors.push("The active document language is not synchronized with ID-ID, EN, MS-MY and ZH-CN locale tags.");
 }
 if (!script.includes('const KEY = "smkn1mandau-language";')) {
   errors.push("The language preference key is missing.");

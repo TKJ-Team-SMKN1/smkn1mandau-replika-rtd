@@ -160,6 +160,16 @@
       "dalam rumpun ":"within a family ",
       "Teknologi":"Technology",
       "Bisnis":"Business"
+      "Telusuri informasi sekolah":"Search school information",
+      "Masukkan kata kunci":"Enter a keyword",
+      "Telusuri":"Search",
+      "Tutup pencarian":"Close search",
+      "Hasil pencarian":"Search results",
+      "Mulai ketik untuk mencari halaman sekolah.":"Start typing to search school pages.",
+      "Tidak ada halaman yang cocok.":"No matching pages found.",
+      "@aria-label:Pencarian situs":"Site search",
+      "@aria-label:Cari informasi sekolah":"Search school information"
+
     },
     ms: {
       "Pengaturan":"Tetapan","Tema":"Tema","Pengaturan tampilan":"Tetapan paparan","Preferensi antarmuka":"Keutamaan antara muka","Theme engine":"Enjin tema","Lima mode tampilan":"Lima mod paparan","Pilih tema yang paling nyaman. Preferensi disimpan secara lokal di perangkat dan tidak dikirim ke server.":"Pilih tema yang paling selesa. Pilihan anda disimpan secara setempat pada peranti ini dan tidak dihantar ke pelayan.","Dynamic Color menggunakan warna sistem browser apabila didukung. Jika tidak, tema memakai palet fallback.":"Dynamic Color menggunakan warna sistem pelayar jika disokong. Jika tidak, palet sandaran akan digunakan.","Tema website":"Tema laman web","Pratinjau warna mengikuti tema yang dipilih.":"Pratonton warna mengikut tema yang dipilih.","Aksi utama":"Tindakan utama","Komponen sekunder":"Komponen sekunder",
@@ -222,6 +232,16 @@
       "Berkarya.": "Berkarya.",
       "Bertumbuh.": "Berkembang.",
       "program keahlian": "program pengajian",
+      "Telusuri informasi sekolah":"Cari maklumat sekolah",
+      "Masukkan kata kunci":"Masukkan kata kunci",
+      "Telusuri":"Cari",
+      "Tutup pencarian":"Tutup carian",
+      "Hasil pencarian":"Hasil carian",
+      "Mulai ketik untuk mencari halaman sekolah.":"Mula menaip untuk mencari halaman sekolah.",
+      "Tidak ada halaman yang cocok.":"Tiada halaman yang sepadan.",
+      "@aria-label:Pencarian situs":"Carian laman",
+      "@aria-label:Cari informasi sekolah":"Cari maklumat sekolah"
+
     },
     zh: {
       "Pengaturan":"设置","Tema":"主题","Pengaturan tampilan":"显示设置","Preferensi antarmuka":"界面偏好","Theme engine":"主题引擎","Lima mode tampilan":"五种显示模式","Pilih tema yang paling nyaman. Preferensi disimpan secara lokal di perangkat dan tidak dikirim ke server.":"选择你偏好的主题。偏好设置仅保存在此设备本地，不会发送到服务器。","Dynamic Color menggunakan warna sistem browser apabila didukung. Jika tidak, tema memakai palet fallback.":"如果浏览器支持，动态颜色会使用系统颜色；否则使用备用配色。","Tema website":"网站主题","Pratinjau warna mengikuti tema yang dipilih.":"预览颜色会随所选主题变化。","Aksi utama":"主要操作","Komponen sekunder":"次要组件",
@@ -364,6 +384,16 @@
       "Berkarya.": "创作。",
       "Bertumbuh.": "成长。",
       "program keahlian": "专业课程",
+      "Telusuri informasi sekolah":"搜索学校信息",
+      "Masukkan kata kunci":"输入关键词",
+      "Telusuri":"搜索",
+      "Tutup pencarian":"关闭搜索",
+      "Hasil pencarian":"搜索结果",
+      "Mulai ketik untuk mencari halaman sekolah.":"开始输入以搜索学校页面。",
+      "Tidak ada halaman yang cocok.":"没有找到匹配的页面。",
+      "@aria-label:Pencarian situs":"网站搜索",
+      "@aria-label:Cari informasi sekolah":"搜索学校信息"
+
     }
   };
 
@@ -1079,73 +1109,136 @@
   for (const lang of ["en", "ms", "zh"]) Object.assign(translations[lang], dataTranslations[lang]);
 
   const original = new WeakMap();
-  const translatedNodes = new WeakMap();
   const originalAttributes = new WeakMap();
+  const attributeNames = ["placeholder", "aria-label", "title", "aria-description"];
+  const observerOptions = { childList: true, characterData: true, attributes: true, attributeFilter: attributeNames, subtree: true };
   let observer = null;
+  let activeLanguage = "id";
 
-  function applyLanguage(lang) {
-    // Disconnect while translating so our own text mutations cannot retrigger the observer.
-    observer?.disconnect();
-    try {
-      const dict = translations[lang] || {};
-    document.documentElement.lang = lang === "zh" ? "zh-CN" : lang;
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-    while (walker.nextNode()) {
-      const node = walker.currentNode;
-      if (!original.has(node)) original.set(node, node.nodeValue);
-      const base = original.get(node);
-      const trimmed = base.trim();
-      if (!trimmed) continue;
-      const normalized = trimmed.replace(/\s+/g, " ");
-      const translated = dict[trimmed] || dict[normalized];
-      if (translated) node.nodeValue = base.replace(trimmed, translated);
-      else node.nodeValue = base;
-    }
-    document.querySelectorAll("[placeholder], [aria-label], [title], [aria-description]").forEach(el => {
-      for (const attr of ["placeholder", "aria-label", "title", "aria-description"]) {
-        if (!el.hasAttribute(attr)) continue;
-        let saved = originalAttributes.get(el);
-        if (!saved) { saved = {}; originalAttributes.set(el, saved); }
-        if (!(attr in saved)) saved[attr] = el.getAttribute(attr);
+  const getDictionary = () => translations[activeLanguage] || {};
+  const documentLanguage = (lang) => ({ id: "id-ID", en: "en", ms: "ms-MY", zh: "zh-CN" })[lang] || "id-ID";
+
+  function translateTextNode(node, dictionary) {
+    if (!node || node.nodeType !== Node.TEXT_NODE || !node.parentElement) return;
+    const parent = node.parentElement;
+    if (parent.closest("script, style, noscript, textarea, code, pre, [data-no-translate]")) return;
+    if (!original.has(node)) original.set(node, node.nodeValue || "");
+    const base = original.get(node);
+    const trimmed = base.trim();
+    if (!trimmed) return;
+    const translated = dictionary[trimmed] || dictionary[trimmed.replace(/\s+/g, " ")];
+    const nextValue = translated ? base.replace(trimmed, translated) : base;
+    if (node.nodeValue !== nextValue) node.nodeValue = nextValue;
+  }
+
+  function translateAttributes(root, dictionary) {
+    if (!root || root.nodeType !== Node.ELEMENT_NODE) return;
+    const elements = [root, ...root.querySelectorAll("[placeholder], [aria-label], [title], [aria-description]")];
+    for (const element of elements) {
+      for (const attr of attributeNames) {
+        if (!element.hasAttribute(attr)) continue;
+        let saved = originalAttributes.get(element);
+        if (!saved) { saved = {}; originalAttributes.set(element, saved); }
+        if (!(attr in saved)) saved[attr] = element.getAttribute(attr) || "";
         const base = saved[attr];
-        const translated = dict[`@${attr}:${base}`];
-        if (translated) el.setAttribute(attr, translated);
-        else el.setAttribute(attr, base);
+        const translated = dictionary[`@${attr}:${base}`];
+        const nextValue = translated || base;
+        if (element.getAttribute(attr) !== nextValue) element.setAttribute(attr, nextValue);
       }
-    });
-    document.querySelectorAll("[data-language-picker]").forEach(el => { el.value = lang; });
-    const pageTitle = document.querySelector("title");
-    if (pageTitle) {
-      if (!original.has(pageTitle)) original.set(pageTitle, pageTitle.textContent || "");
-      const baseTitle = original.get(pageTitle);
-      pageTitle.textContent = dict[baseTitle] || baseTitle;
-    }
-    const description = document.querySelector('meta[name="description"]');
-    if (description) {
-      let saved = originalAttributes.get(description);
-      if (!saved) { saved = {}; originalAttributes.set(description, saved); }
-      if (!("content" in saved)) saved.content = description.getAttribute("content") || "";
-      const baseDescription = saved.content;
-      description.setAttribute("content", dict[baseDescription] || baseDescription);
-    }
-      try { localStorage.setItem(KEY, lang); } catch {}
-    } finally {
-      // Resume observation after our own synchronous DOM writes are complete.
-      observer?.observe(document.body, { childList: true, characterData: true, subtree: true });
     }
   }
+
+  function translateSubtree(root, dictionary) {
+    if (!root) return;
+    if (root.nodeType === Node.TEXT_NODE) {
+      translateTextNode(root, dictionary);
+      return;
+    }
+    if (root.nodeType !== Node.ELEMENT_NODE && root.nodeType !== Node.DOCUMENT_FRAGMENT_NODE) return;
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    while (walker.nextNode()) translateTextNode(walker.currentNode, dictionary);
+    if (root.nodeType === Node.ELEMENT_NODE) translateAttributes(root, dictionary);
+    else for (const child of root.children || []) translateAttributes(child, dictionary);
+  }
+
+  function syncLanguageControls(lang) {
+    document.querySelectorAll("[data-language-picker]").forEach((picker) => {
+      if (picker.value !== lang) picker.value = lang;
+    });
+  }
+
+  function applyLanguage(lang) {
+    activeLanguage = Object.prototype.hasOwnProperty.call(translations, lang) ? lang : "id";
+    const dictionary = getDictionary();
+    observer?.disconnect();
+    try {
+      document.documentElement.lang = documentLanguage(activeLanguage);
+      translateSubtree(document.body, dictionary);
+      syncLanguageControls(activeLanguage);
+
+      const pageTitle = document.querySelector("title");
+      if (pageTitle) {
+        if (!original.has(pageTitle)) original.set(pageTitle, pageTitle.textContent || "");
+        const baseTitle = original.get(pageTitle);
+        const nextTitle = dictionary[baseTitle] || baseTitle;
+        if (pageTitle.textContent !== nextTitle) pageTitle.textContent = nextTitle;
+      }
+
+      const description = document.querySelector('meta[name="description"]');
+      if (description) {
+        let saved = originalAttributes.get(description);
+        if (!saved) { saved = {}; originalAttributes.set(description, saved); }
+        if (!("content" in saved)) saved.content = description.getAttribute("content") || "";
+        const baseDescription = saved.content;
+        const nextDescription = dictionary[baseDescription] || baseDescription;
+        if (description.getAttribute("content") !== nextDescription) description.setAttribute("content", nextDescription);
+      }
+      try { localStorage.setItem(KEY, activeLanguage); } catch { /* Language remains active for this view. */ }
+    } finally {
+      observer?.observe(document.body, observerOptions);
+    }
+  }
+
+  function handleMutations(records) {
+    const changedNodes = new Set();
+    const changedAttributes = new Set();
+    for (const record of records) {
+      if (record.type === "characterData") {
+        original.set(record.target, record.target.nodeValue || "");
+        changedNodes.add(record.target);
+      } else if (record.type === "attributes") {
+        let saved = originalAttributes.get(record.target);
+        if (!saved) { saved = {}; originalAttributes.set(record.target, saved); }
+        saved[record.attributeName] = record.target.getAttribute(record.attributeName) || "";
+        changedAttributes.add(record.target);
+      } else {
+        for (const node of record.addedNodes) changedNodes.add(node);
+      }
+    }
+    if (!changedNodes.size && !changedAttributes.size) return;
+    observer?.disconnect();
+    try {
+      const dictionary = getDictionary();
+      for (const node of changedNodes) translateSubtree(node, dictionary);
+      for (const element of changedAttributes) translateAttributes(element, dictionary);
+    } finally {
+      observer?.observe(document.body, observerOptions);
+    }
+  }
+
   function init() {
     const picker = document.querySelector("[data-language-picker]");
     let lang = "id";
-    try { lang = localStorage.getItem(KEY) || "id"; } catch {}
-    if (picker) picker.addEventListener("change", () => {
-      lang = picker.value;
-      applyLanguage(lang);
-    });
-    observer = new MutationObserver(() => applyLanguage(lang));
-    observer.observe(document.body, { childList: true, characterData: true, subtree: true });
+    try {
+      const saved = localStorage.getItem(KEY);
+      if (saved && Object.prototype.hasOwnProperty.call(translations, saved)) lang = saved;
+    } catch { /* Default to Indonesian when local storage is unavailable. */ }
+
+    picker?.addEventListener("change", () => applyLanguage(picker.value));
+    observer = new MutationObserver(handleMutations);
     applyLanguage(lang);
   }
+
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init, { once: true });
   else init();
 })();
