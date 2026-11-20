@@ -147,3 +147,7 @@ code,pre,kbd,samp,.font-rapat,.font-office-code-pro { font-family: "Office Code 
   background-position: center;
 }
 .footer-batik { min-height: 6px; background-image: url("/images/pucuk-rebung.svg"); background-size: 150px 50px; }
+
+.site-search-result-copy { display: grid; min-width: 0; gap: .12rem; }
+.site-search-result-copy strong { overflow-wrap: anywhere; }
+.site-search-result-copy small { color: var(--text-muted,#586174); font-size: .78rem; line-height: 1.35; }

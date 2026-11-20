@@ -8,6 +8,12 @@ const errors = [];
 const localeOptions = [...navigation.matchAll(/<option\s+value="([a-z]{2})"/g)].map((match) => match[1]);
 const declared = [...script.matchAll(/^\s{4}([a-z]{2}):\s*\{/gm)];
 const counts = {};
+const extraLocaleFiles = {
+  en: ["public/locales/en-extra-1.json", "public/locales/en-extra-2.json", "public/locales/en-extra-3.json", "public/locales/en-extra-4.json"],
+  ms: ["public/locales/ms-extra-1.json", "public/locales/ms-extra-2.json", "public/locales/ms-extra-3.json", "public/locales/ms-extra-4.json"],
+  zh: ["public/locales/zh-extra-1.json", "public/locales/zh-extra-2.json", "public/locales/zh-extra-3.json", "public/locales/zh-extra-4.json"]
+};
+const extraCounts = {};
 
 for (let index = 0; index < declared.length; index += 1) {
   const locale = declared[index][1];
@@ -25,6 +31,23 @@ for (const locale of ["ms", "zh"]) {
     const block = script.slice(start + marker.length, end < 0 ? script.length : end);
     counts[locale] = (counts[locale] || 0) + (block.match(/"(?:\\.|[^"\\])*"\s*:/g) || []).length;
   }
+}
+
+for (const [locale, relativePaths] of Object.entries(extraLocaleFiles)) {
+  const merged = {};
+  for (const relativePath of relativePaths) {
+    try {
+      const extra = JSON.parse(await readFile(path.join(root, relativePath), "utf8"));
+      Object.assign(merged, extra);
+    } catch {
+      errors.push("Missing or invalid extra locale JSON: " + relativePath);
+    }
+  }
+  extraCounts[locale] = Object.keys(merged).length;
+  for (const key of ["Kegiatan sekolah · arsip publik", "Fasilitas sekolah", "Bursa Kerja Khusus (BKK)"]) {
+    if (!Object.prototype.hasOwnProperty.call(merged, key)) errors.push("Missing locale chunk key for " + locale + ": " + key);
+  }
+  if (Object.values(merged).some((value) => typeof value !== "string" || !value.trim())) errors.push("Locale chunk contains an empty/non-text translation: " + locale);
 }
 
 const options = new Set(localeOptions);
@@ -54,7 +77,7 @@ if (!script.includes('const KEY = "smkn1mandau-language";')) {
   errors.push("The language preference key is missing.");
 }
 
-console.log("Localization catalog preflight: ID is the source language; translated entries EN=" + (counts.en || 0) + ", MS=" + (counts.ms || 0) + ", ZH=" + (counts.zh || 0) + ".");
+console.log("Localization catalog preflight: ID is the source language; translated entries EN=" + (counts.en || 0) + ", MS=" + (counts.ms || 0) + ", ZH=" + (counts.zh || 0) + "; on-demand extras EN=" + (extraCounts.en || 0) + ", MS=" + (extraCounts.ms || 0) + ", ZH=" + (extraCounts.zh || 0) + ".");
 console.log("Locale picker: " + localeOptions.join(", ") + ". Runtime translation does not create separate indexable locale URLs.");
 for (const error of errors) console.error("ERROR:", error);
 if (errors.length) process.exit(1);

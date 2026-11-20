@@ -1108,6 +1108,30 @@
   };
   for (const lang of ["en", "ms", "zh"]) Object.assign(translations[lang], dataTranslations[lang]);
 
+  const extraLocaleFiles = {
+    en: ["/locales/en-extra-1.json", "/locales/en-extra-2.json", "/locales/en-extra-3.json", "/locales/en-extra-4.json"],
+    ms: ["/locales/ms-extra-1.json", "/locales/ms-extra-2.json", "/locales/ms-extra-3.json", "/locales/ms-extra-4.json"],
+    zh: ["/locales/zh-extra-1.json", "/locales/zh-extra-2.json", "/locales/zh-extra-3.json", "/locales/zh-extra-4.json"]
+  };
+  const loadedExtraLocales = new Set();
+  let languageRequestId = 0;
+
+  async function loadExtraTranslations(lang) {
+    const urls = extraLocaleFiles[lang];
+    if (!urls || loadedExtraLocales.has(lang)) return;
+    try {
+      const responses = await Promise.all(urls.map((url) => fetch(url, { credentials: "same-origin", cache: "force-cache" })));
+      if (responses.some((response) => !response.ok)) return;
+      const chunks = await Promise.all(responses.map((response) => response.json()));
+      for (const extra of chunks) {
+        if (extra && typeof extra === "object" && !Array.isArray(extra)) Object.assign(translations[lang], extra);
+      }
+      loadedExtraLocales.add(lang);
+    } catch {
+      // Base dictionary remains available when the network or an optional locale chunk fails.
+    }
+  }
+
   const original = new WeakMap();
   const originalAttributes = new WeakMap();
   const attributeNames = ["placeholder", "aria-label", "title", "aria-description"];
@@ -1167,8 +1191,12 @@
     });
   }
 
-  function applyLanguage(lang) {
-    activeLanguage = Object.prototype.hasOwnProperty.call(translations, lang) ? lang : "id";
+  async function applyLanguage(lang) {
+    const requestedLanguage = Object.prototype.hasOwnProperty.call(translations, lang) ? lang : "id";
+    const requestId = ++languageRequestId;
+    await loadExtraTranslations(requestedLanguage);
+    if (requestId !== languageRequestId) return;
+    activeLanguage = requestedLanguage;
     const dictionary = getDictionary();
     observer?.disconnect();
     try {
@@ -1236,6 +1264,7 @@
 
     picker?.addEventListener("change", () => applyLanguage(picker.value));
     observer = new MutationObserver(handleMutations);
+    observer.observe(document.body, observerOptions);
     applyLanguage(lang);
   }
 
