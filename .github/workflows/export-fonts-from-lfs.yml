@@ -47,10 +47,10 @@ jobs:
           import subprocess
           raw = subprocess.check_output(["git", "ls-tree", "-r", "-z", "-l", "HEAD"])
           rows = []
-          for entry in raw.split(b"\\0"):
+          for entry in raw.split(b"\0"):
               if not entry:
                   continue
-              meta, path_bytes = entry.split(b"\\t", 1)
+              meta, path_bytes = entry.split(b"\t", 1)
               fields = meta.decode().split()
               path = path_bytes.decode("utf-8", "surrogateescape")
               size = int(fields[3]) if fields[3] != "-" else 0
