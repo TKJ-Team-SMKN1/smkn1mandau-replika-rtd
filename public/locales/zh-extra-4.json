@@ -4,5 +4,8 @@
   "Fokus harus terlihat dan tidak tertutup konten tetap. Target minimum 24 × 24 CSS px mengikuti SC 2.5.8 beserta pengecualiannya; desain ini mengutamakan 44 CSS px.": "焦点区域必须清晰可见，且不得被固定内容遮挡。根据SC 2.5.8及其例外规定，最小尺寸应为24 × 24 CSS像素；本设计采用44 CSS像素作为优先值。",
   "Konten harus tetap terbaca saat pengguna mengubah tinggi baris, jarak paragraf, huruf, dan kata sesuai SC 1.4.12.": "根据SC 1.4.12的要求，当用户调整行高、段落间距、字符间距和单词间距时，内容仍应保持可读。",
   "Mulai ketik untuk mencari halaman sekolah.": "开始输入以搜索学校页面。",
-  "Tidak ada halaman yang cocok.": "没有匹配的页面。"
+  "Tidak ada halaman yang cocok.": "没有匹配的页面。",
+  "Halaman sejarah sekolah menyebut bahwa pada awalnya tersedia 22 ruang kelas, satu bengkel bersama, satu laboratorium komputer, ruang majelis guru, dua toilet, dan musala. Dalam periode pembangunan 2004–2012, publikasi tersebut mencatat perkembangan menjadi 26 lokal, tiga ruang komputer, enam bengkel praktik, aula, toilet untuk siswa dan guru, serta fasilitas pendukung lainnya.": "学校历史页面提到，最初学校设有22间教室、一间共用实训室、一间计算机实验室、一间教师会议室、两间卫生间和一间祷告室。在2004年至2012年的建设期间，该资料记载学校发展为26间教室、三间计算机室、六间实训室、一间礼堂、供学生和教师使用的卫生间，以及其他配套设施。",
+  "Publikasi sejarah juga menyebut pembangunan gerbang dan pagar pada tahun pelajaran 2011/2012 serta pemasangan jaringan internet dan Wi-Fi. Semua keterangan ini adalah rekam historis yang ditulis pada sumber sekolah, bukan konfirmasi bahwa jumlah dan kondisi tersebut masih sama sekarang.": "历史文献还提到，在2011/2012学年修建了校门和围墙，并铺设了互联网和Wi-Fi网络。所有这些信息均源自学校档案中的历史记载，并不意味着当前的数量和状况仍与当时相同。",
+  "Publikasi fasilitas 2022 memuat sembilan aset foto dengan label yang diambil dari nama berkas. Isi foto belum ditinjau satu per satu; label ini tidak membuktikan inventaris, jumlah unit, fungsi ruang, atau kondisi fasilitas sekarang.": "2022年设施出版物收录了九张照片，其标签取自文件名。照片内容尚未逐一审核；这些标签不能证明设施的清单、数量、空间功能或当前状况。"
 }
