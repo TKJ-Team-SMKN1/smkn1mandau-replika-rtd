@@ -159,7 +159,7 @@
       "program keahlian":"vocational program",
       "dalam rumpun ":"within a family ",
       "Teknologi":"Technology",
-      "Bisnis":"Business"
+      "Bisnis":"Business",
       "Telusuri informasi sekolah":"Search school information",
       "Masukkan kata kunci":"Enter a keyword",
       "Telusuri":"Search",

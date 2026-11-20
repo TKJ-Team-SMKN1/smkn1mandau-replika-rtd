@@ -137,3 +137,13 @@ code,pre,kbd,samp,.font-rapat,.font-office-code-pro { font-family: "Office Code 
   .hero-content { padding-block: 3rem; }
   .hero-copy > p:first-child { font-size: .72rem; }
 }
+
+/* Pucuk rebung-inspired border motif: decorative only, never placed behind body copy. */
+.hero-pattern {
+  opacity: .16;
+  background-image: url("/images/pucuk-rebung.svg");
+  background-repeat: repeat;
+  background-size: 180px 60px;
+  background-position: center;
+}
+.footer-batik { min-height: 6px; background-image: url("/images/pucuk-rebung.svg"); background-size: 150px 50px; }
