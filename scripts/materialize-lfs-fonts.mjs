@@ -45,7 +45,7 @@ async function materialize(urlPath) {
     throw new Error("Malformed Git LFS pointer: " + urlPath);
   }
 
-  const encodedPath = relativePath.split("/").map(encodeSegment).join("/");
+  const encodedPath = ["public", ...relativePath.split("/")].map(encodeSegment).join("/");
   const mediaUrl = "https://media.githubusercontent.com/media/TKJ-Team-SMKN1/smkn1mandau-replika-rtd/" + encodeSegment(ref) + "/" + encodedPath;
   let response;
   for (let attempt = 0; attempt < 3; attempt += 1) {
