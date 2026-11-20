@@ -19,8 +19,8 @@ interface Props {
 
 const { judul, deskripsi, halamanAktif = "", indexable = true } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, SITE_URL).toString();
-const socialImageUrl = new URL("/android-chrome-512x512.png", SITE_URL).toString();
-const socialImageAlt = "Ikon identitas visual Replika SMK Negeri 1 Mandau";
+const socialImageUrl = new URL("/1000553256_Real-ESRGANv3-anime_1025_065246.png", SITE_URL).toString();
+const socialImageAlt = "Logo SMK Negeri 1 Mandau versi HD";
 ---
 <!DOCTYPE html>
 <html lang="id" dir="ltr">
@@ -45,8 +45,6 @@ const socialImageAlt = "Ikon identitas visual Replika SMK Negeri 1 Mandau";
     <meta property="og:image" content={socialImageUrl} />
     <meta property="og:image:secure_url" content={socialImageUrl} />
     <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="512" />
-    <meta property="og:image:height" content="512" />
     <meta property="og:image:alt" content={socialImageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={judul} />

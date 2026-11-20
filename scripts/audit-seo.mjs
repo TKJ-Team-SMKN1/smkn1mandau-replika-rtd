@@ -114,7 +114,7 @@ for (const file of htmlFiles) {
       if (attributeValue(tags[0], "content") !== canonical) errors.push(`${route}: og:url harus sama dengan canonical.`);
     }
     if (property === "og:image" && tags.length === 1) {
-      const expectedImage = new URL("/android-chrome-512x512.png", SITE_URL).toString();
+      const expectedImage = new URL("/1000553256_Real-ESRGANv3-anime_1025_065246.png", SITE_URL).toString();
       if (attributeValue(tags[0], "content") !== expectedImage) errors.push(`${route}: og:image harus menunjuk PNG social preview yang benar.`);
       const altTags = tagsWithAttribute(html, "meta", "property", "og:image:alt");
       if (altTags.length !== 1 || !attributeValue(altTags[0] ?? "", "content")?.trim()) {
@@ -129,7 +129,7 @@ for (const file of htmlFiles) {
   }
 
   const twitterImages = tagsWithAttribute(html, "meta", "name", "twitter:image");
-  const expectedTwitterImage = new URL("/android-chrome-512x512.png", SITE_URL).toString();
+  const expectedTwitterImage = new URL("/1000553256_Real-ESRGANv3-anime_1025_065246.png", SITE_URL).toString();
   if (twitterImages.length !== 1 || attributeValue(twitterImages[0] ?? "", "content") !== expectedTwitterImage) {
     errors.push(`${route}: twitter:image harus menunjuk PNG social preview yang benar.`);
   }
