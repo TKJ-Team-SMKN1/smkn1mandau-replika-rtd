@@ -32,8 +32,10 @@ Additional CJK assets:
 | Office Code Pro D | Technical code display |
 | Office Code Pro | Code and identifiers |
 
-## CJK loading caution
-Noto Sans SC and Noto Sans TC are distributed as many subset files. Do not load all subsets on every route, and do not register one subset as though it covers the whole writing system. Preserve the correct unicode-range map when integrating these assets. Until that map is verified, keep installed system CJK fonts as fallback. Source Han Serif HK should be reserved for HK Traditional Chinese and not substituted indiscriminately for Simplified Chinese.
+## CJK subset integration and verification
+Noto Sans SC is mapped through 101 local WOFF2 subset faces; Noto Sans TC through 108 local WOFF2 subset faces. The CSS retains upstream unicode-range declarations and uses local repository URLs only. Source Han Serif HK is mapped through seven local OTF weights (200–900). A repository-tree comparison verified that all 216 WOFF2 subset URLs and all seven OTF URLs exist, with zero missing paths and zero remote font URLs.
+
+CJK stylesheets are loaded on demand when the corresponding language is selected. Simplified Chinese uses Noto Sans SC; Traditional Chinese can use Noto Sans TC and Source Han Serif HK. Do not substitute the HK serif face indiscriminately for Simplified Chinese.
 
 ## Font failure triage
 For a reported failure, record the exact requested URL and locale, browser/device and OS, HTTP status and response content type, CORS/security-checkpoint state, console decoding errors, and whether fallback glyphs render. A screenshot alone cannot distinguish a missing asset, blocked request, invalid MIME, decoding failure, or missing glyph.

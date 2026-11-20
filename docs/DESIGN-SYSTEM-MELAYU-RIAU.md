@@ -33,7 +33,7 @@ Seluruh 19 keluarga font OTF lokal tetap tersedia melalui `font-library.css`; 17
 | Office Code Pro D | Technical/editorial code display |
 | Office Code Pro | Code, preformatted content, identifiers |
 
-CJK assets are retained separately: Noto Sans SC subset assets for Simplified Chinese, Noto Sans TC subset assets for Traditional Chinese, and Source Han Serif HK OTF faces. Do not load the entire subset collection on every route. Do not register one arbitrary subset as if it covers the whole writing system; preserve upstream unicode-range mapping. Until the subset-to-unicode map is verified, retain installed system CJK fallbacks to prevent missing-glyph regressions.
+CJK font integration is now local and subset-aware: Noto Sans SC uses 101 local WOFF2 faces, Noto Sans TC uses 108 local WOFF2 faces, and Source Han Serif HK exposes seven local OTF weights. All 216 CSS font-face URLs were checked against repository paths; no remote font URLs remain. Unicode ranges are preserved from the upstream Google Fonts CSS. Noto Sans SC is loaded only when Simplified Chinese is selected; Noto Sans TC and Source Han Serif HK are available for Traditional Chinese.
 
 ## Accessibility acceptance baseline
 WCAG 2.2 Level A and AA are the acceptance target, not an automatic certification claim.
