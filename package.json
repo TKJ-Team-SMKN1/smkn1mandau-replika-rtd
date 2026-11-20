@@ -19,7 +19,8 @@
     "predev": "node scripts/materialize-lfs-fonts.mjs",
     "prebuild": "node scripts/materialize-lfs-fonts.mjs",
     "audit:fonts": "node scripts/audit-built-fonts.mjs",
-    "audit:wcag-matrix": "node scripts/audit-wcag-matrix.mjs"
+    "audit:wcag-matrix": "node scripts/audit-wcag-matrix.mjs",
+    "audit:inclusive-a11y": "node scripts/audit-inclusive-a11y.mjs"
   },
   "dependencies": {
     "astro": "^7.4.8",
