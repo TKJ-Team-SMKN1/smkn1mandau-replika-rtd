@@ -45,11 +45,14 @@ jobs:
           # Verify the index/tree payload itself, not just the hydrated worktree.
           python3 - <<'PY'
           import subprocess
-          raw = subprocess.check_output(["git", "ls-tree", "-r", "-l", "HEAD"])
+          raw = subprocess.check_output(["git", "ls-tree", "-r", "-z", "-l", "HEAD"])
           rows = []
-          for line in raw.decode().splitlines():
-              meta, path = line.split("\\t", 1)
-              fields = meta.split()
+          for entry in raw.split(b"\\0"):
+              if not entry:
+                  continue
+              meta, path_bytes = entry.split(b"\\t", 1)
+              fields = meta.decode().split()
+              path = path_bytes.decode("utf-8", "surrogateescape")
               size = int(fields[3]) if fields[3] != "-" else 0
               lower = path.lower()
               if lower.endswith((".otf", ".ttf", ".woff", ".woff2", ".eot", ".ttc", ".otc", ".dfont", ".pfa", ".pfb")):
