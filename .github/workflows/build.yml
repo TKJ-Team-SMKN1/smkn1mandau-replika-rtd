@@ -45,7 +45,9 @@ jobs:
         run: npm run audit:archive
       - name: Audit source-to-page content provenance
         run: npm run audit:provenance
-      - name: WCAG 2.2 AA static preflight
+      - name: Verify complete WCAG 2.2 Level A and AA release matrix
+        run: npm run audit:wcag-matrix
+      - name: WCAG 2.2 A/AA static preflight
         run: npm run audit:a11y
       - name: Dependency security audit
         run: npm run audit:security
