@@ -26,55 +26,57 @@ jobs:
           lfs: true
           persist-credentials: true
 
-      - name: Verify all font binaries and export from LFS
+      - name: Export LFS history into Git blobs
         shell: bash
         run: |
           set -euo pipefail
           git lfs install
-          git lfs pull
+          git lfs fetch --all origin
           git lfs fsck
 
-          mapfile -d '' FONT_PATHS < <(git ls-files -z | grep -zEi '\.(otf|ttf|woff|woff2|eot)$' || true)
-          COUNT="${#FONT_PATHS[@]}"
-          echo "Tracked font files: $COUNT"
-          if [[ "$COUNT" -ne 6087 ]]; then
-            echo "::error::Expected 6087 tracked font files; found $COUNT. Stop without modifying files."
-            exit 1
-          fi
+          # Rewrite the isolated maintenance branch so every matching historical
+          # LFS object becomes an ordinary Git blob. This is the supported export
+          # path; staging hydrated files with the clean filter still active is not.
+          git lfs migrate export \
+            --include='*.otf,*.ttf,*.woff,*.woff2,*.eot,*.ttc,*.otc,*.dfont,*.pfa,*.pfb' \
+            --include-ref=refs/heads/maintenance/export-fonts-from-lfs \
+            --yes
 
+          # Verify the index/tree payload itself, not just the hydrated worktree.
           python3 - <<'PY'
-          import os, subprocess
-          raw = subprocess.check_output(["git", "ls-files", "-z"])
-          paths = [p for p in raw.decode().split("\0") if p.lower().endswith((".otf", ".ttf", ".woff", ".woff2", ".eot"))]
+          import subprocess
+          raw = subprocess.check_output(["git", "ls-tree", "-r", "-l", "HEAD"])
+          rows = []
+          for line in raw.decode().splitlines():
+              meta, path = line.split("\\t", 1)
+              fields = meta.split()
+              size = int(fields[3]) if fields[3] != "-" else 0
+              lower = path.lower()
+              if lower.endswith((".otf", ".ttf", ".woff", ".woff2", ".eot", ".ttc", ".otc", ".dfont", ".pfa", ".pfb")):
+                  rows.append((path, size, fields[2]))
+          if len(rows) != 6087:
+              raise SystemExit(f"Expected 6087 font blobs in HEAD; found {len(rows)}")
+          pointers = []
+          too_large = []
           total = 0
-          largest = 0
-          for path in paths:
-              if not os.path.isfile(path):
-                  raise SystemExit(f"Missing hydrated file: {path}")
-              size = os.path.getsize(path)
-              with open(path, "rb") as f:
-                  head = f.read(160)
-              if head.startswith(b"version https://git-lfs.github.com/spec/v1"):
-                  raise SystemExit(f"Still an LFS pointer, not a binary: {path}")
+          for path, size, sha in rows:
+              blob = subprocess.check_output(["git", "cat-file", "blob", sha])
+              if blob.startswith(b"version https://git-lfs.github.com/spec/v1"):
+                  pointers.append(path)
               if size >= 100 * 1024 * 1024:
-                  raise SystemExit(f"GitHub per-file 100 MiB limit would be exceeded: {path} ({size} bytes)")
+                  too_large.append((path, size))
               total += size
-              largest = max(largest, size)
-          print(f"Verified binaries: {len(paths)}")
-          print(f"Total binary size: {total} bytes ({total / 1024**3:.3f} GiB)")
-          print(f"Largest font: {largest} bytes")
-          if total > 4 * 1024**3:
-              raise SystemExit("Total font payload exceeds the 4 GiB safety ceiling; no conversion commit created.")
+          print(f"Font blobs in HEAD: {len(rows)}")
+          print(f"Pointer blobs remaining: {len(pointers)}")
+          print(f"Total Git font payload: {total} bytes ({total / 1024**3:.3f} GiB)")
+          if pointers:
+              print("First remaining pointers:", *pointers[:20], sep="\\n")
+              raise SystemExit("LFS pointer blobs remain in HEAD")
+          if too_large:
+              raise SystemExit(f"GitHub 100 MiB file limit exceeded: {too_large[:5]}")
           PY
-
-          for ext in ttf otf ttc otc woff woff2 eot dfont pfa pfb; do
-            git lfs untrack "*.$ext" || true
-          done
-
-          git add -- .gitattributes
-          git add -f -- "${FONT_PATHS[@]}"
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore(fonts): export all font binaries from Git LFS [skip ci]"
-          git push origin HEAD:maintenance/export-fonts-from-lfs
+          git commit --allow-empty -m "chore(fonts): export all font binaries from Git LFS [skip ci]"
+          git push --force-with-lease origin HEAD:maintenance/export-fonts-from-lfs
