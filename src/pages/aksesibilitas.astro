@@ -3,7 +3,7 @@ import LayoutUtama from "../layouts/LayoutUtama.astro";
 ---
 <LayoutUtama
   judul="Aksesibilitas — SMK Negeri 1 Mandau (Replika)"
-  deskripsi="Pernyataan aksesibilitas dan pendekatan WCAG 2.2 AA pada situs replika independen SMK Negeri 1 Mandau."
+  deskripsi="Pernyataan aksesibilitas dan target WCAG 2.2 Level A dan AA pada situs replika independen SMK Negeri 1 Mandau."
   halamanAktif="aksesibilitas"
 >
   <section class="page-hero" aria-labelledby="judul-aksesibilitas">
@@ -12,7 +12,7 @@ import LayoutUtama from "../layouts/LayoutUtama.astro";
       <h1 id="judul-aksesibilitas" class="font-judul text-4xl md:text-5xl leading-tight mb-5">Akses untuk semua</h1>
       <p class="max-w-2xl text-gading/90 text-lg leading-relaxed">
         Replika independen ini dikembangkan dengan mengacu pada Web Content Accessibility Guidelines
-        (WCAG) 2.2 tingkat AA. Tujuannya adalah membuat informasi dan navigasi dapat digunakan oleh
+        (WCAG) 2.2 Level A dan AA. Tujuannya adalah membuat informasi dan navigasi dapat digunakan oleh
         sebanyak mungkin orang, termasuk pengguna teknologi bantu.
       </p>
     </div>
@@ -21,13 +21,13 @@ import LayoutUtama from "../layouts/LayoutUtama.astro";
     <div class="kontainer-laman max-w-4xl">
       <div class="kartu mb-8">
         <p class="pita-bagian mb-3">Status transparan</p>
-        <h2 id="status-kesesuaian" class="font-judul text-2xl md:text-3xl text-malam mb-3">Acuan implementasi: WCAG 2.2 Level AA</h2>
+        <h2 id="status-kesesuaian" class="font-judul text-2xl md:text-3xl text-malam mb-3">Acuan implementasi: WCAG 2.2 Level A dan AA</h2>
         <p class="text-tinta-pudar leading-relaxed">
-          WCAG 2.2 Level AA menjadi acuan teknis dalam perancangan dan pengembangan struktur,
-          konten, komponen, navigasi, serta interaksi website. Setiap perubahan fitur perlu
-          mempertimbangkan kriteria yang relevan, bukan hanya mengandalkan pemeriksaan otomatis.
-          Halaman ini mendokumentasikan pendekatan implementasi; bukan sertifikat atau klaim
-          bahwa sebuah proses verifikasi telah dilakukan.
+          WCAG 2.2 Level A dan AA menjadi kriteria penerimaan untuk struktur, konten, komponen,
+          navigasi, serta interaksi website. Pemeriksaan otomatis hanya menjadi preflight; keyboard,
+          screen reader, kontras, zoom, reflow, dan perangkat nyata tetap perlu ditinjau.
+          Halaman ini mendokumentasikan target implementasi, bukan sertifikat atau klaim bahwa
+          seluruh kriteria telah diverifikasi secara independen.
         </p>
       </div>
       <h2 class="font-judul text-2xl text-malam mb-5">Fitur aksesibilitas yang diterapkan</h2>
@@ -35,9 +35,13 @@ import LayoutUtama from "../layouts/LayoutUtama.astro";
         <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Navigasi keyboard</h3><p class="text-tinta-pudar text-sm">Tautan lewati konten, urutan fokus alami, indikator fokus yang terlihat, dan menu mobile yang dapat ditutup dengan Escape.</p></li>
         <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Struktur semantik</h3><p class="text-tinta-pudar text-sm">Bahasa halaman, landmark utama, hierarki heading, label kontrol, serta teks alternatif untuk gambar informatif.</p></li>
         <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Kontras dan tampilan</h3><p class="text-tinta-pudar text-sm">Pemeriksaan rasio kontras token tema, batas kontrol yang terlihat, dan dukungan preferensi kontras sistem.</p></li>
-        <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Gerak dan reflow</h3><p class="text-tinta-pudar text-sm">Menghormati prefers-reduced-motion, tata letak responsif, dan upaya mencegah teks memaksa scroll horizontal.</p></li>
-        <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Target interaksi</h3><p class="text-tinta-pudar text-sm">Kontrol utama ditargetkan berukuran 44 CSS px; WCAG 2.2 AA menetapkan minimum 24 × 24 CSS px atau pengecualian jarak yang sesuai.</p></li>
+        <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Gerak, zoom dan reflow</h3><p class="text-tinta-pudar text-sm">Menghormati prefers-reduced-motion, mendukung pembesaran teks hingga 200%, dan menargetkan reflow pada lebar 320 CSS px tanpa kehilangan fungsi.</p></li>
+        <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Fokus dan target interaksi</h3><p class="text-tinta-pudar text-sm">Fokus harus terlihat dan tidak tertutup konten tetap. Target minimum 24 × 24 CSS px mengikuti SC 2.5.8 beserta pengecualiannya; desain ini mengutamakan 44 CSS px.</p></li>
+        <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Spasi teks</h3><p class="text-tinta-pudar text-sm">Konten harus tetap terbaca saat pengguna mengubah tinggi baris, jarak paragraf, huruf, dan kata sesuai SC 1.4.12.</p></li>
         <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Tema sistem</h3><p class="text-tinta-pudar text-sm">Mode terang/gelap, Dynamic Color, serta fallback untuk forced-colors pada sistem yang mendukungnya.</p></li>
+        <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Kontras minimum</h3><p class="text-tinta-pudar text-sm">Teks normal menargetkan 4.5:1, teks besar 3:1, dan batas komponen atau grafik informatif 3:1. Setiap tema dan state tetap perlu diuji.</p></li>
+        <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Konten hover dan fokus</h3><p class="text-tinta-pudar text-sm">Menu dan konten tambahan tidak boleh bergantung pada hover saja; harus dapat dijangkau keyboard, ditutup, dan tetap tersedia saat pointer berpindah.</p></li>
+        <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Gestur dan formulir</h3><p class="text-tinta-pudar text-sm">Fitur saat ini tidak memakai drag-and-drop, login, atau formulir bertahap. Jika fungsi itu ditambahkan, alternatif tanpa dragging serta kriteria pengisian dan autentikasi menjadi gerbang penerimaan.</p></li>
       </ul>
       <h2 class="font-judul text-2xl text-malam mb-4">Cara membantu meningkatkan aksesibilitas</h2>
       <p class="text-tinta-pudar leading-relaxed mb-4">
@@ -50,6 +54,21 @@ import LayoutUtama from "../layouts/LayoutUtama.astro";
         sekolah yang terverifikasi, gunakan
         <a class="font-bold underline underline-offset-4" href="https://www.smkn1mandau.sch.id/" target="_blank" rel="noopener noreferrer">situs resmi SMK Negeri 1 Mandau</a>.
       </p>
+      <h2 class="font-judul text-2xl text-malam mb-5">Preferensi dan kebutuhan pengguna</h2>
+      <div class="grid sm:grid-cols-2 gap-4 mb-10">
+        <article class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Tuli dan pengguna nonverbal</h3><p class="text-tinta-pudar text-sm">Sediakan informasi teks, subtitle untuk video bersuara, transkrip yang relevan, notifikasi visual, dan kanal bantuan tertulis. Bahasa isyarat dapat ditambahkan bila materi dan penerjemah yang kompeten tersedia.</p></article>
+        <article class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Autisme dan kebutuhan kognitif</h3><p class="text-tinta-pudar text-sm">Utamakan navigasi konsisten, instruksi literal dan bertahap, struktur yang jelas, kontrol pengguna, serta minim kejutan visual. Kebutuhan tiap orang berbeda; tidak ada satu mode yang cocok untuk semua.</p></article>
+        <article class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Fotosensitivitas dan kejang</h3><p class="text-tinta-pudar text-sm">Hindari efek strobo dan kilatan dekoratif. Semua video, GIF, dan animasi yang berpotensi berkedip harus ditinjau terhadap WCAG 2.3.1; batas frekuensi saja bukan jaminan aman.</p></article>
+        <article class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Buta warna</h3><p class="text-tinta-pudar text-sm">Status, grafik, tautan, dan instruksi tidak boleh dibedakan melalui warna saja. Gunakan label, ikon, pola, atau bentuk tambahan dan uji simulasi defisiensi penglihatan warna.</p></article>
+        <article class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Low vision dan kontras</h3><p class="text-tinta-pudar text-sm">Target kontras teks normal 4.5:1, teks besar 3:1, dan komponen non-teks relevan 3:1. Pengguna mengatur ukuran teks dan kontras; website tidak mengubah brightness perangkat.</p></article>
+        <article class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Usia dan kemudahan penggunaan</h3><p class="text-tinta-pudar text-sm">Teks mudah dibaca, tombol berlabel jelas, formulir sederhana, navigasi konsisten, dan informasi sekolah mudah ditemukan tanpa mengasumsikan kemampuan berdasarkan usia.</p></article>
+        <article class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Motorik dan teknologi bantu</h3><p class="text-tinta-pudar text-sm">Fungsi utama dapat dioperasikan dengan keyboard, fokus terlihat, target sentuh memadai, dan tidak ada fungsi yang hanya dapat dilakukan dengan dragging.</p></article>
+        <article class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Koneksi dan perangkat terbatas</h3><p class="text-tinta-pudar text-sm">Konten utama tetap terbaca saat aset gagal dimuat, media dioptimalkan, dan antarmuka tetap ringan pada ponsel serta koneksi lambat.</p></article>
+      </div>
+      <h2 class="font-judul text-2xl text-malam mb-4">Preferensi tampilan yang dapat dikendalikan</h2>
+      <p class="text-tinta-pudar leading-relaxed mb-4">Panel Aksesibilitas menyediakan pengaturan ukuran teks hingga 200%, kontras tinggi, pengurangan gerakan, tampilan baca sederhana, dan penanda visual tambahan untuk tautan serta elemen status. Penanda warna memperkuat garis bawah dan bentuk, bukan simulasi buta warna; informasi tetap harus dapat dipahami tanpa warna. Pengaturan bersifat opsional, dapat diatur ulang, dan disimpan secara lokal pada perangkat. Panel ini tidak menggantikan pengaturan aksesibilitas sistem operasi atau pengujian dengan teknologi bantu.</p>
+      <h2 class="font-judul text-2xl text-malam mb-4">Evaluasi dan keterbatasan</h2>
+      <p class="text-tinta-pudar leading-relaxed mb-8">Simulasi warna, pemeriksaan otomatis, dan matriks statis hanya membantu menemukan sebagian masalah. Rilis tetap memerlukan pemeriksaan keyboard, screen reader, subtitle, media berkedip, zoom/reflow, kontras semua state, serta evaluasi dengan pengguna yang memiliki kebutuhan akses berbeda. Preferensi tampilan tidak menjamin kesesuaian untuk setiap individu.</p>
       <h2 class="font-judul text-2xl text-malam mb-4">Referensi standar</h2>
       <ul class="space-y-3 text-tinta-pudar">
         <li><a class="font-bold underline underline-offset-4" href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener noreferrer">W3C — Web Content Accessibility Guidelines (WCAG) 2.2</a></li>

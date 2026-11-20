@@ -1,0 +1,13 @@
+{
+  "name": "Replika SMK Negeri 1 Mandau",
+  "short_name": "SMKN 1 Mandau",
+  "description": "Konsep pengembangan independen, bukan kanal resmi sekolah.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#102A43",
+  "theme_color": "#102A43",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

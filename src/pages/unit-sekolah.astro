@@ -1,8 +1,9 @@
 ---
 import LayoutUtama from "../layouts/LayoutUtama.astro";
 import unitsData from "../data/units.json";
+import { parseIndonesianDateRange } from "../utils/formatIndonesianDate.js";
 const bkkUnit = unitsData.units.find((unit) => unit.id === "bkk");
-const bkkActivities = bkkUnit?.historicalActivities ?? [];
+const bkkActivities = (bkkUnit?.historicalActivities ?? []).map((activity) => ({ ...activity, dateRange: parseIndonesianDateRange(activity.date) }));
 const lspUnit = unitsData.units.find((unit) => unit.id === "lsp-p1");
 const lspProgramList = lspUnit?.programsIn2023Update ?? [];
 const lspMissionList = lspUnit?.mission ?? [];
@@ -20,7 +21,7 @@ const lspOrganizationRoles = lspUnit?.organizationChartRoles ?? [];
 <h3 class="font-familjen font-semibold text-malam mb-3">Catatan kegiatan historis</h3>
 <ul class="space-y-3">
 {bkkActivities.map((activity) => <li class="rounded-xl border border-malam/10 bg-gading p-4">
-<p class="font-reglo text-xs uppercase tracking-wide text-ukir">{activity.date}</p>
+{activity.dateRange ? <time class="font-reglo text-xs uppercase tracking-wide text-ukir" datetime={activity.dateRange.start} data-locale-date data-date-start={activity.dateRange.start} data-date-end={activity.dateRange.end ?? ""} data-no-translate>{activity.date}</time> : <p class="font-reglo text-xs uppercase tracking-wide text-ukir">{activity.date}</p>}
 <h4 class="font-familjen font-semibold text-malam mt-1">{activity.title}</h4>
 <p class="font-nunito text-sm text-tinta-pudar leading-relaxed mt-2">{activity.summary}</p>
 <a class="inline-flex min-h-10 items-center mt-2 font-familjen font-bold text-ukir hover:underline underline-offset-4" href={activity.sourceUrl} target="_blank" rel="noopener noreferrer">Buka sumber arsip ↗</a>

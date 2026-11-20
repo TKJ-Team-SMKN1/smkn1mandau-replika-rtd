@@ -1,7 +1,8 @@
 ---
 import LayoutUtama from "../layouts/LayoutUtama.astro";
 import eventsData from "../data/events.json";
-const kegiatan = eventsData.entries;
+import { parseIndonesianDateRange } from "../utils/formatIndonesianDate.js";
+const kegiatan = eventsData.entries.map((item) => ({ ...item, dateRange: parseIndonesianDateRange(item.date) }));
 ---
 <LayoutUtama judul="Kegiatan Sekolah — SMK Negeri 1 Mandau (Replika)" deskripsi="Katalog historis kegiatan sekolah yang diringkas dari arsip publikasi resmi tahun 2023–2024." halamanAktif="kegiatan">
 <section class="page-hero"><div class="kontainer-laman page-hero-inner max-w-4xl">
@@ -13,7 +14,7 @@ const kegiatan = eventsData.entries;
 <div class="rounded-2xl border border-ukir/25 bg-gading p-5 md:p-6 mb-8"><h2 class="font-archivo font-bold text-malam mb-2">Status arsip</h2><p class="text-sm text-tinta-pudar leading-relaxed">Tanggal mengikuti isi publikasi sumber. Ringkasan disusun ulang agar mudah dipindai; untuk konteks lengkap, foto, dan keterangan resmi, buka postingan asli. Tidak ada jadwal kegiatan yang ditampilkan sebagai agenda aktif.</p></div>
 <div class="grid md:grid-cols-2 gap-4">
 {kegiatan.map(item=><article class="kartu !p-5 md:!p-6 flex flex-col">
-<p class="font-reglo text-xs uppercase tracking-wider text-ukir mb-3">{item.date}</p><h2 class="font-judul font-literata text-xl text-malam mb-3">{item.title}</h2>
+{item.dateRange ? <time class="font-reglo text-xs uppercase tracking-wider text-ukir mb-3" datetime={item.dateRange.start} data-locale-date data-date-start={item.dateRange.start} data-date-end={item.dateRange.end ?? ""} data-no-translate>{item.date}</time> : <p class="font-reglo text-xs uppercase tracking-wider text-ukir mb-3">{item.date}</p>}<h2 class="font-judul font-literata text-xl text-malam mb-3">{item.title}</h2>
 <p class="font-nunito text-sm text-tinta-pudar leading-relaxed flex-1">{item.summary}</p>
 <a class="inline-flex min-h-11 items-center gap-2 mt-5 font-familjen font-bold text-ukir hover:underline underline-offset-4" href={item.sourceUrl} target="_blank" rel="noopener noreferrer">Baca publikasi asli <span aria-hidden="true">↗</span></a>
 </article>)}
