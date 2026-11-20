@@ -9,7 +9,7 @@ Referensi budaya:
 - [Kajian motif songket Melayu Indragiri Hulu (2024)](https://jurnal.isi-ska.ac.id/index.php/brikolase/article/download/5805/4106/18518)
 
 ## Typography roles
-Seluruh 19 keluarga font OTF lokal tetap tersedia melalui `font-library.css`; 174 face OTF dideklarasikan dengan `font-display: swap`. Keluarga tidak dipaksa tampil serentak.
+Seluruh 19 keluarga font OTF tetap tersedia melalui `font-library.css`; 174 face OTF dideklarasikan dengan `font-display: swap`. Berkas OTF disimpan sebagai objek Git LFS. Skrip `prebuild` mematerialisasikan objek sebenar ke dalam folder awam menggunakan rujukan commit yang dipinkan, kemudian mengesahkan saiz dan SHA-256 sebelum Astro membina laman. Audit selepas binaan menolak sebarang pointer LFS yang tertinggal dalam output. Keluarga tidak dipaksa tampil serentak.
 
 | Family | Role |
 |---|---|
@@ -33,7 +33,7 @@ Seluruh 19 keluarga font OTF lokal tetap tersedia melalui `font-library.css`; 17
 | Office Code Pro D | Technical/editorial code display |
 | Office Code Pro | Code, preformatted content, identifiers |
 
-CJK font integration is now local and subset-aware: Noto Sans SC uses 101 local WOFF2 faces, Noto Sans TC uses 108 local WOFF2 faces, and Source Han Serif HK exposes seven local OTF weights. All 216 CSS font-face URLs were checked against repository paths; no remote font URLs remain. Unicode ranges are preserved from the upstream Google Fonts CSS. Noto Sans SC is loaded only when Simplified Chinese is selected; Noto Sans TC and Source Han Serif HK are available for Traditional Chinese.
+CJK font integration is local and subset-aware: Noto Sans SC uses 101 local WOFF2 faces, Noto Sans TC uses 108 local WOFF2 faces, and Source Han Serif HK exposes seven local OTF weights. All 216 CSS font-face URLs were checked against repository paths; no remote font URLs remain. Unicode ranges are preserved from upstream Google Fonts CSS. Noto Sans SC is loaded only when Simplified Chinese is selected; Noto Sans TC and Source Han Serif HK are available for Traditional Chinese. CJK binaries are regular repository assets, while the 174 OTF family faces are materialized from verified Git LFS objects during build.
 
 ## Accessibility acceptance baseline
 WCAG 2.2 Level A and AA are the acceptance target, not an automatic certification claim.
