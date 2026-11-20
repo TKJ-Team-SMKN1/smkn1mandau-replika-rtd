@@ -1,13 +1,3 @@
-*.ttf filter=lfs diff=lfs merge=lfs -text
-*.otf filter=lfs diff=lfs merge=lfs -text
-*.ttc filter=lfs diff=lfs merge=lfs -text
-*.otc filter=lfs diff=lfs merge=lfs -text
-*.woff filter=lfs diff=lfs merge=lfs -text
-*.woff2 filter=lfs diff=lfs merge=lfs -text
-*.eot filter=lfs diff=lfs merge=lfs -text
-*.dfont filter=lfs diff=lfs merge=lfs -text
-*.pfa filter=lfs diff=lfs merge=lfs -text
-*.pfb filter=lfs diff=lfs merge=lfs -text
 *.otf !text !filter !merge !diff
 *.ttf !text !filter !merge !diff
 *.woff !text !filter !merge !diff
