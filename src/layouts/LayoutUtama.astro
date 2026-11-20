@@ -4,6 +4,7 @@ import Navigasi from "../components/Navigasi.astro";
 import Footer from "../components/Footer.astro";
 import PencarianGlobal from "../components/PencarianGlobal.jsx";
 import AksesibilitasKontrol from "../components/AksesibilitasKontrol.astro";
+import { SITE_URL } from "../../site-config.mjs";
 import "../styles/global.css";
 import "../styles/font-library.css";
 import "../styles/theme-compat.css";
@@ -17,7 +18,9 @@ interface Props {
 }
 
 const { judul, deskripsi, halamanAktif = "", indexable = true } = Astro.props;
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? "https://smkn1mandau-replika-rtd.vercel.app").toString();
+const canonicalUrl = new URL(Astro.url.pathname, SITE_URL).toString();
+const socialImageUrl = new URL("/android-chrome-512x512.png", SITE_URL).toString();
+const socialImageAlt = "Ikon identitas visual Replika SMK Negeri 1 Mandau";
 ---
 <!DOCTYPE html>
 <html lang="id" dir="ltr">
@@ -39,9 +42,17 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? "https://smkn1man
     <meta property="og:description" content={deskripsi} />
     <meta property="og:locale" content="id_ID" />
     <meta property="og:url" content={canonicalUrl} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:secure_url" content={socialImageUrl} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content={socialImageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={judul} />
     <meta name="twitter:description" content={deskripsi} />
+    <meta name="twitter:image" content={socialImageUrl} />
+    <meta name="twitter:image:alt" content={socialImageAlt} />
     <meta id="theme-color-meta" name="theme-color" content="#f5f7fa" />
     <meta name="color-scheme" content="light dark" />
     <title>{judul}</title>
