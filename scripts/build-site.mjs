@@ -26,7 +26,6 @@ function run(label, command, args) {
 
 const moved = [];
 try {
-  // Recover any archive left by an interrupted local build before starting a new one.
   for (const [source, archived] of directories) {
     if (await exists(archived) && !(await exists(source))) {
       await mkdir(path.dirname(source), { recursive: true });
@@ -35,7 +34,6 @@ try {
   }
   await rm(archiveRoot, { recursive: true, force: true });
 
-  // Keep only the variable Noto subsets used by the local unicode-range stylesheets in the deployment.
   for (const [source, archived] of directories) {
     if (!(await exists(source))) continue;
     await mkdir(path.dirname(archived), { recursive: true });
@@ -47,6 +45,7 @@ try {
   run("Astro build", astro, ["build"]);
   run("Built font audit", process.execPath, ["scripts/audit-built-fonts.mjs"]);
   run("Sitemap generation", process.execPath, ["scripts/generate-sitemap.mjs"]);
+  run("PNG, social preview, and security.txt audit", process.execPath, ["scripts/audit-assets.mjs"]);
 } finally {
   for (const [source, archived] of moved.reverse()) {
     if (await exists(archived)) {
