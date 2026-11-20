@@ -16,8 +16,10 @@
       <button type="button" data-a11y-toggle="contrast" aria-pressed="false">Kontras tinggi: mati</button>
       <button type="button" data-a11y-toggle="motion" aria-pressed="false">Kurangi gerakan: mati</button>
       <button type="button" data-a11y-toggle="reading" aria-pressed="false">Tampilan baca sederhana: mati</button>
+      <button type="button" data-a11y-toggle="color" aria-pressed="false">Penanda warna: mati</button>
       <button type="button" data-a11y-action="reset">Atur ulang</button>
     </div>
+    <p class="a11y-help">Bantuan visual ini menambahkan garis bawah pada tautan dan penanda bentuk pada elemen status. Informasi tidak boleh dibedakan melalui warna saja.</p>
     <p class="a11y-status" role="status" aria-live="polite"></p>
   </section>
 </div>
@@ -30,15 +32,17 @@
   const options = panel.querySelector("#a11y-options");
   const status = panel.querySelector(".a11y-status");
   const key = "smkn1mandau-a11y";
-  const defaults = { text: 100, contrast: false, motion: false, reading: false };
+  const textSteps = [100, 112, 124, 136, 148, 160, 172, 184, 196, 200];
+  const defaults = { text: 100, contrast: false, motion: false, reading: false, color: false };
   let prefs = { ...defaults };
   try {
     const stored = JSON.parse(localStorage.getItem(key) || "null");
     if (stored && typeof stored === "object") prefs = {
-      text: [100, 112, 124, 136, 148].includes(stored.text) ? stored.text : 100,
+      text: textSteps.includes(stored.text) ? stored.text : 100,
       contrast: stored.contrast === true,
       motion: stored.motion === true,
-      reading: stored.reading === true
+      reading: stored.reading === true,
+      color: stored.color === true
     };
   } catch { /* Keep in-memory defaults when storage is unavailable. */ }
   const announce = (message) => { if (status) status.textContent = message; };
@@ -48,11 +52,12 @@
     root.toggleAttribute("data-a11y-contrast", prefs.contrast);
     root.toggleAttribute("data-a11y-motion", prefs.motion);
     root.toggleAttribute("data-a11y-reading", prefs.reading);
+    root.toggleAttribute("data-a11y-color", prefs.color);
     panel.querySelectorAll("[data-a11y-toggle]").forEach((button) => {
       const name = button.dataset.a11yToggle;
       const active = Boolean(prefs[name]);
       button.setAttribute("aria-pressed", String(active));
-      const label = name === "contrast" ? "Kontras tinggi" : name === "motion" ? "Kurangi gerakan" : "Tampilan baca sederhana";
+      const label = name === "contrast" ? "Kontras tinggi" : name === "motion" ? "Kurangi gerakan" : name === "reading" ? "Tampilan baca sederhana" : "Penanda warna";
       button.textContent = label + ": " + (active ? "aktif" : "mati");
     });
     try { localStorage.setItem(key, JSON.stringify(prefs)); } catch { /* Preferences remain active for this page. */ }
@@ -76,13 +81,14 @@
     if (button.dataset.a11yToggle) {
       const name = button.dataset.a11yToggle;
       prefs[name] = !prefs[name];
-      apply("Preferensi " + (name === "contrast" ? "kontras" : name === "motion" ? "gerakan" : "tampilan baca") + " diperbarui.");
+      const messages = { contrast: "Preferensi kontras diperbarui.", motion: "Preferensi gerakan diperbarui.", reading: "Preferensi tampilan baca diperbarui.", color: "Preferensi penanda warna diperbarui." };
+      apply(messages[name]);
     } else if (button.dataset.a11yAction === "text-up") {
-      prefs.text = Math.min(148, prefs.text + 12);
-      apply("Ukuran teks " + prefs.text + " persen.");
+      prefs.text = textSteps[Math.min(textSteps.length - 1, textSteps.indexOf(prefs.text) + 1)];
+      apply("Ukuran teks diperbarui.");
     } else if (button.dataset.a11yAction === "text-down") {
-      prefs.text = Math.max(100, prefs.text - 12);
-      apply("Ukuran teks " + prefs.text + " persen.");
+      prefs.text = textSteps[Math.max(0, textSteps.indexOf(prefs.text) - 1)];
+      apply("Ukuran teks diperbarui.");
     } else if (button.dataset.a11yAction === "reset") {
       prefs = { ...defaults };
       apply("Preferensi aksesibilitas diatur ulang.");
