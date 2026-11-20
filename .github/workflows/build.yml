@@ -49,5 +49,7 @@ jobs:
         run: npm run audit:wcag-matrix
       - name: WCAG 2.2 A/AA static preflight
         run: npm run audit:a11y
+      - name: Inclusive accessibility integration preflight
+        run: npm run audit:inclusive-a11y
       - name: Dependency security audit
         run: npm run audit:security
