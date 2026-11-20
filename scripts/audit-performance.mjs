@@ -46,8 +46,8 @@ if (!/output\s*:\s*["']static["']/.test(config)) errors.push("Astro output must 
 const i18n = await readFile(i18nPath, "utf8");
 const i18nBytes = (await stat(i18nPath)).size;
 if (i18nBytes > 128 * 1024) warnings.push("i18n.js exceeds 128 KiB; consider locale chunking before adding more dictionaries.");
-if (!/observer\\?\.disconnect\\(\\)/.test(i18n)) errors.push("i18n MutationObserver must disconnect before applying translations to prevent a self-triggering mutation loop.");
-if (!/finally\\s*\\{[\\s\\S]*?observer\\?\.observe\\(document\\.body,\\s*\\{\\s*childList:\\s*true,\\s*characterData:\\s*true,\\s*subtree:\\s*true\\s*\\}\\)/.test(i18n)) errors.push("i18n MutationObserver must resume observation in finally after translation updates.");
+if (!i18n.includes("observer?.disconnect();")) errors.push("i18n MutationObserver must disconnect before applying translations to prevent a self-triggering mutation loop.");
+if (!i18n.includes("} finally {") || !i18n.includes("observer?.observe(document.body, { childList: true, characterData: true, subtree: true });")) errors.push("i18n MutationObserver must resume observation in finally after translation updates.");
 const clientLoadCount = (layout.match(/\bclient:load\b/g) || []).length;
 if (clientLoadCount > 1) warnings.push("More than one client:load island is present in the shared layout.");
 
