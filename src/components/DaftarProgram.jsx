@@ -22,7 +22,7 @@ export default function DaftarProgram() {
     const q = kataKunci.trim().toLocaleLowerCase("id");
     if (!q) return DATA_PROGRAM;
     return DATA_PROGRAM.filter((p) =>
-      [p.nama, p.singkatan, p.kataKunci].join(" ").toLocaleLowerCase("id").includes(q)
+      [p.nama, p.singkatan, p.kataKunci, p.deskripsi].join(" ").toLocaleLowerCase("id").includes(q)
     );
   }, [kataKunci]);
 
@@ -33,7 +33,7 @@ export default function DaftarProgram() {
           Cari program keahlian
         </label>
         <p id="petunjuk-cari-program" className="text-sm text-tinta-pudar mb-3">
-          Masukkan nama lengkap atau singkatan program.
+          Masukkan nama, singkatan, atau bidang yang ingin diketahui.
         </p>
         <div className="relative">
           <input
@@ -41,7 +41,7 @@ export default function DaftarProgram() {
             type="search"
             value={kataKunci}
             onChange={(event) => setKataKunci(event.target.value)}
-            placeholder="Contoh: TKJ atau Teknik Komputer"
+            placeholder="Contoh: TKJ, jaringan, atau laboratorium"
             aria-describedby="petunjuk-cari-program"
             className="program-search-input w-full min-h-12 rounded-xl border px-4 pr-16 py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-ukir/20"
             autoComplete="off"
@@ -72,13 +72,17 @@ export default function DaftarProgram() {
                 <span className="rounded-full bg-gading px-3 py-1 text-xs font-bold font-reglo text-malam">{program.singkatan}</span>
               </div>
               <h2 className="font-judul font-familjen text-xl text-malam leading-snug">{program.nama}</h2>
+              <p className="mt-3 text-sm leading-relaxed text-tinta-pudar">{program.deskripsi}</p>
+              <p className="mt-4 border-t border-current/10 pt-3 text-xs leading-relaxed text-tinta-pudar">
+                Gambaran umum bidang keahlian
+              </p>
             </article>
           ))}
         </div>
       ) : (
         <div className="program-empty rounded-2xl border border-dashed px-6 py-12 text-center">
           <p className="font-judul font-literata text-xl text-malam mb-2">Program tidak ditemukan</p>
-          <p className="text-sm text-tinta-pudar mb-5">Periksa ejaan atau coba singkatan yang berbeda.</p>
+          <p className="text-sm text-tinta-pudar mb-5">Periksa ejaan atau coba nama bidang yang berbeda.</p>
           <button type="button" onClick={() => setKataKunci("")} className="tombol tombol-ukir !w-auto">
             Tampilkan semua program
           </button>
@@ -87,8 +91,9 @@ export default function DaftarProgram() {
 
       <p className="text-xs text-tinta-pudar mt-7 leading-relaxed">
         Nama program mengacu pada daftar “Program Keahlian” di beranda situs resmi SMK Negeri 1 Mandau.
-        Pengelompokan dan kata kunci pencarian hanya bantuan navigasi pada replika ini, bukan klasifikasi
-        resmi sekolah. Periksa sumber asli untuk memastikan informasi terbaru.
+        Uraian di setiap kartu merupakan ringkasan umum bidang keahlian untuk membantu orientasi pembaca,
+        bukan rincian kurikulum atau pernyataan resmi sekolah. Kata kunci pencarian hanya bantuan navigasi.
+        Periksa sumber asli untuk memastikan nama dan informasi terbaru.
       </p>
     </div>
   );
