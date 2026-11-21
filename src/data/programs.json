@@ -8,67 +8,77 @@
     "status": "official-homepage-publication",
     "sourceFile": "002_index.html"
   },
-  "note": "Ten names transcribed from the current homepage. This list is separate from the seven-program LSP-P1 update published in November 2023.",
+  "note": "Sepuluh nama program ditranskripsikan dari beranda sekolah. Deskripsi merupakan gambaran umum bidang keahlian untuk orientasi pembaca, bukan kutipan kurikulum, daftar kompetensi resmi, atau informasi penerimaan terkini. Daftar ini terpisah dari pembaruan tujuh program LSP-P1 yang diterbitkan pada November 2023.",
   "entries": [
     {
       "id": "dpib",
       "nama": "Desain Pemodelan dan Informasi Bangunan",
       "singkatan": "DPIB",
-      "kataKunci": "desain bangunan konstruksi gambar"
+      "kataKunci": "desain bangunan konstruksi gambar",
+      "deskripsi": "Mempelajari proses menggambar dan memodelkan bangunan, membaca gambar teknik, serta menyajikan informasi perencanaan bangunan dengan bantuan perangkat desain."
     },
     {
       "id": "tav",
       "nama": "Teknik Audio Video",
       "singkatan": "TAV",
-      "kataKunci": "elektronika audio video"
+      "kataKunci": "elektronika audio video",
+      "deskripsi": "Berfokus pada dasar elektronika dan perangkat audio-video, termasuk pemahaman rangkaian, pemeriksaan fungsi, perakitan, serta perawatan peralatan."
     },
     {
       "id": "titl",
       "nama": "Teknik Instalasi Tenaga Listrik",
       "singkatan": "TITL",
-      "kataKunci": "listrik instalasi tenaga"
+      "kataKunci": "listrik instalasi tenaga",
+      "deskripsi": "Mengenal instalasi dan distribusi tenaga listrik, gambar serta komponen instalasi, pengukuran dasar, keselamatan kerja, dan pemeliharaan sistem kelistrikan."
     },
     {
       "id": "tkr",
       "nama": "Teknik Kendaraan Ringan",
       "singkatan": "TKR",
-      "kataKunci": "otomotif mobil kendaraan"
+      "kataKunci": "otomotif mobil kendaraan",
+      "deskripsi": "Mempelajari sistem dan komponen kendaraan ringan, pemeriksaan kondisi kendaraan, perawatan berkala, serta dasar diagnosis gangguan otomotif."
     },
     {
       "id": "tp",
       "nama": "Teknik Pengelasan",
       "singkatan": "TP",
-      "kataKunci": "las fabrikasi logam"
+      "kataKunci": "las fabrikasi logam",
+      "deskripsi": "Berfokus pada proses penyambungan logam, pengenalan peralatan dan bahan, pembacaan gambar kerja, persiapan benda kerja, serta penerapan keselamatan pengelasan."
     },
     {
       "id": "tbsm",
       "nama": "Teknik Bisnis Sepeda Motor",
       "singkatan": "TBSM",
-      "kataKunci": "otomotif sepeda motor bisnis"
+      "kataKunci": "otomotif sepeda motor bisnis",
+      "deskripsi": "Mempelajari sistem sepeda motor, pemeriksaan dan perawatan berkala, dasar penanganan gangguan, serta pengenalan layanan dan pengelolaan usaha bidang sepeda motor."
     },
     {
       "id": "tkj",
       "nama": "Teknik Komputer dan Jaringan",
       "singkatan": "TKJ",
-      "kataKunci": "komputer jaringan server teknologi informasi"
+      "kataKunci": "komputer jaringan server teknologi informasi",
+      "deskripsi": "Berfokus pada perakitan dan pemeliharaan komputer, sistem operasi, instalasi serta konfigurasi jaringan, layanan server, dan pemecahan masalah konektivitas."
     },
     {
       "id": "gp",
       "nama": "Geologi Pertambangan",
       "singkatan": "GP",
-      "kataKunci": "geologi tambang mineral bumi"
+      "kataKunci": "geologi tambang mineral bumi",
+      "deskripsi": "Mengenal ilmu kebumian, batuan dan mineral, pemetaan geologi, kondisi lapangan, serta dasar kegiatan eksplorasi dan pertambangan yang memperhatikan keselamatan dan lingkungan."
     },
     {
       "id": "tpmg",
       "nama": "Teknik Pemboran Minyak dan Gas",
       "singkatan": "TPMG",
-      "kataKunci": "pemboran minyak gas energi"
+      "kataKunci": "pemboran minyak gas energi",
+      "deskripsi": "Mempelajari pengenalan operasi pemboran, peralatan dan sistem pendukungnya, istilah dasar industri minyak dan gas, serta prinsip keselamatan kerja di lingkungan operasi."
     },
     {
       "id": "apl",
       "nama": "Analisis Pengujian Laboratorium",
       "singkatan": "APL",
-      "kataKunci": "analisis pengujian laboratorium kimia"
+      "kataKunci": "analisis pengujian laboratorium kimia",
+      "deskripsi": "Berfokus pada dasar kerja laboratorium, penggunaan alat ukur dan peralatan uji, penyiapan sampel, prosedur pengujian, pencatatan hasil, serta keselamatan laboratorium."
     }
   ]
 }
