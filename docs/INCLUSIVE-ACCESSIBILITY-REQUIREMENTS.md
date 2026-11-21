@@ -43,3 +43,16 @@ WCAG success criteria are normative conformance requirements. Autism-friendly pa
 - [WAI Supplemental Guidance](https://www.w3.org/WAI/WCAG2/supplemental/)
 - [Making Content Usable for People with Cognitive and Learning Disabilities](https://www.w3.org/TR/coga-usable/)
 - [WCAG Evaluation Methodology (WCAG-EM) 2.0](https://www.w3.org/TR/wcag-em-2/)
+
+
+## Current real-user validation status — 21 November 2026
+
+- The project does **not** currently have real users with varied access needs participating as accessibility testers.
+- Keyboard, screen-reader, low-vision, Deaf/hard-of-hearing, neurodivergent, and motor-access workflows have not been validated through direct user testing for this release.
+- Existing source checks, automated audits, and static WCAG matrices are engineering preflight only. They do not establish usability or WCAG 2.2 AA conformance.
+- The public accessibility page must state this limitation plainly and must not claim that the website is accessible to everyone or certified.
+- Feedback intake through public GitHub Issues must warn contributors not to publish diagnoses, medical records, addresses, or other sensitive personal information.
+- Physical school accommodations (accessible routes, toilets, quiet rooms, assistance, event seating, or other on-campus services) are outside the verified scope of this independent website replica. Do not imply they exist without confirmation from an official school source.
+- The Eurofurence accessibility page is used as a reference for transparent communication about available accommodations, limitations, content warnings, venue access, and feedback. Its event-specific services must not be attributed to SMK Negeri 1 Mandau.
+
+A future manual evaluation should invite volunteers with varied access needs, compensate or otherwise respect their time where possible, obtain informed consent, avoid collecting unnecessary health information, document barriers without identifying participants, and retest fixes with the people affected.
