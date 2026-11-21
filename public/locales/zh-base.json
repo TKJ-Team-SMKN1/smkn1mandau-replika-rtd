@@ -469,5 +469,22 @@
   "Preferensi kontras diperbarui.": "对比度偏好设置已更新。",
   "Preferensi gerakan diperbarui.": "动态效果偏好设置已更新。",
   "Preferensi tampilan baca diperbarui.": "阅读显示偏好设置已更新。",
-  "Bantuan visual ini menambahkan garis bawah pada tautan dan penanda bentuk pada elemen status. Informasi tidak boleh dibedakan melalui warna saja.": "此视觉辅助功能会在链接上添加下划线，并在状态元素上添加形状标记。信息不应仅通过颜色来区分。"
+  "Bantuan visual ini menambahkan garis bawah pada tautan dan penanda bentuk pada elemen status. Informasi tidak boleh dibedakan melalui warna saja.": "此视觉辅助功能会在链接上添加下划线，并在状态元素上添加形状标记。信息不应仅通过颜色来区分。",
+  "Status pengujian": "测试状态",
+  "Status pengujian saat ini": "当前测试状态",
+  "Fitur telah dibangun, tetapi belum diuji oleh pengguna dengan kebutuhan akses yang beragam.": "这些功能已经开发，但尚未由具有不同访问需求的用户进行测试。",
+  "Belum ada tester pengguna nyata. Audit otomatis dan pemeriksaan kode hanya membantu menemukan sebagian masalah. Belum ada validasi langsung bersama pengguna screen reader, keyboard-only, low vision, tuli, neurodivergen, atau kebutuhan motorik.": "目前还没有真实用户无障碍测试人员。自动审计和代码检查只能发现部分问题。尚未与屏幕阅读器用户、仅使用键盘的用户、低视力用户、聋人、神经多样性用户或有运动操作需求的用户进行直接验证。",
+  "Karena itu, kami tidak menyatakan situs ini telah memenuhi WCAG 2.2 AA. Statusnya adalah masih dalam pengembangan dan membutuhkan pengujian nyata.": "因此，我们不会声称本网站符合 WCAG 2.2 AA。目前仍在开发中，需要真实用户测试。",
+  "Referensi praktik": "实践参考",
+  "Pelajaran dari Eurofurence": "Eurofurence 的经验",
+  "Eurofurence mempublikasikan informasi praktis tentang akses prioritas, tempat duduk yang dapat diakses, quiet room, peringatan konten dan efek cahaya, akses venue, serta keterbatasan caption dan interpretasi bahasa isyarat.": "Eurofurence 会公布优先通行、无障碍座位、安静室、内容与灯光效果警告、场地通行，以及字幕和手语翻译方面的限制等实用信息。",
+  "Kami mengadaptasi prinsip transparansi tersebut untuk website sekolah: jelaskan dukungan yang benar-benar tersedia, batasannya, dan cara memberi masukan. Informasi Eurofurence bukan bukti bahwa fasilitas serupa tersedia di SMK Negeri 1 Mandau.": "我们将这种透明原则应用于学校网站：说明实际提供的支持、相关限制以及反馈方式。Eurofurence 的信息并不能证明 SMK Negeri 1 Mandau 提供类似设施。",
+  "Baca halaman aksesibilitas Eurofurence": "阅读 Eurofurence 无障碍页面",
+  "Yang belum dapat kami pastikan": "目前无法确认的事项",
+  "Replika ini membahas aksesibilitas digital. Informasi tentang akses fisik di lingkungan sekolah—seperti jalur kursi roda, toilet aksesibel, ruang tenang, pendampingan, atau pengaturan kegiatan—belum diverifikasi melalui sumber resmi yang memadai.": "本仿制网站讨论的是数字无障碍。有关校园实体通行的信息——例如轮椅通道、无障碍卫生间、安静室、协助服务或活动安排——尚未通过充分的官方来源核实。",
+  "Jangan menganggap fasilitas atau akomodasi tersebut tersedia hanya karena dibahas di halaman ini. Untuk kebutuhan di lokasi sekolah, konfirmasikan langsung kepada pihak sekolah melalui kanal resminya.": "不要仅因本页面提及这些设施或便利措施，就认为学校已经提供。对于校园现场需求，请通过学校官方渠道直接确认。",
+  "Kirim masukan aksesibilitas": "提交无障碍反馈",
+  "Laporkan URL halaman, browser dan perangkat, langkah untuk mengulang kendala, serta hasil yang diharapkan. Tidak perlu menyebutkan diagnosis atau menjelaskan kondisi pribadi.": "请提供页面 URL、浏览器和设备、重现问题的步骤以及预期结果。无需提供诊断信息或描述个人情况。",
+  "Jangan sertakan diagnosis, dokumen medis, alamat, atau informasi pribadi. Pelacak isu GitHub bersifat publik dan mungkin memerlukan akun GitHub.": "请勿提供诊断、医疗文件、地址或个人信息。GitHub 问题跟踪区是公开的，可能需要 GitHub 账户。",
+  "Forum isu GitHub (publik)": "公开 GitHub 问题跟踪区"
 }
