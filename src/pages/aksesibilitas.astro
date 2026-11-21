@@ -30,6 +30,31 @@ import LayoutUtama from "../layouts/LayoutUtama.astro";
           seluruh kriteria telah diverifikasi secara independen.
         </p>
       </div>
+      <section class="kartu mb-8" aria-labelledby="status-pengujian-nyata">
+        <p class="pita-bagian mb-3">Status pengujian</p>
+        <h2 id="status-pengujian-nyata" class="font-judul text-2xl text-malam mb-3">Status pengujian saat ini</h2>
+        <p class="text-tinta-pudar leading-relaxed mb-3">Fitur telah dibangun, tetapi belum diuji oleh pengguna dengan kebutuhan akses yang beragam.</p>
+        <p class="text-tinta-pudar leading-relaxed mb-3">Belum ada tester pengguna nyata. Audit otomatis dan pemeriksaan kode hanya membantu menemukan sebagian masalah. Belum ada validasi langsung bersama pengguna screen reader, keyboard-only, low vision, tuli, neurodivergen, atau kebutuhan motorik.</p>
+        <p class="text-tinta-pudar leading-relaxed font-semibold">Karena itu, kami tidak menyatakan situs ini telah memenuhi WCAG 2.2 AA. Statusnya adalah masih dalam pengembangan dan membutuhkan pengujian nyata.</p>
+      </section>
+      <section class="kartu mb-8" aria-labelledby="pelajaran-eurofurence">
+        <p class="pita-bagian mb-3">Referensi praktik</p>
+        <h2 id="pelajaran-eurofurence" class="font-judul text-2xl text-malam mb-3">Pelajaran dari Eurofurence</h2>
+        <p class="text-tinta-pudar leading-relaxed mb-3">Eurofurence mempublikasikan informasi praktis tentang akses prioritas, tempat duduk yang dapat diakses, quiet room, peringatan konten dan efek cahaya, akses venue, serta keterbatasan caption dan interpretasi bahasa isyarat.</p>
+        <p class="text-tinta-pudar leading-relaxed mb-3">Kami mengadaptasi prinsip transparansi tersebut untuk website sekolah: jelaskan dukungan yang benar-benar tersedia, batasannya, dan cara memberi masukan. Informasi Eurofurence bukan bukti bahwa fasilitas serupa tersedia di SMK Negeri 1 Mandau.</p>
+        <a class="font-bold underline underline-offset-4" href="https://www.eurofurence.org/EF31/accessibility" target="_blank" rel="noopener noreferrer">Baca halaman aksesibilitas Eurofurence</a>
+      </section>
+      <section class="kartu mb-8" aria-labelledby="batas-layanan-fisik">
+        <h2 id="batas-layanan-fisik" class="font-judul text-2xl text-malam mb-3">Yang belum dapat kami pastikan</h2>
+        <p class="text-tinta-pudar leading-relaxed mb-3">Replika ini membahas aksesibilitas digital. Informasi tentang akses fisik di lingkungan sekolah—seperti jalur kursi roda, toilet aksesibel, ruang tenang, pendampingan, atau pengaturan kegiatan—belum diverifikasi melalui sumber resmi yang memadai.</p>
+        <p class="text-tinta-pudar leading-relaxed">Jangan menganggap fasilitas atau akomodasi tersebut tersedia hanya karena dibahas di halaman ini. Untuk kebutuhan di lokasi sekolah, konfirmasikan langsung kepada pihak sekolah melalui kanal resminya.</p>
+      </section>
+      <section class="kartu mb-10" aria-labelledby="masukan-aksesibilitas">
+        <h2 id="masukan-aksesibilitas" class="font-judul text-2xl text-malam mb-3">Kirim masukan aksesibilitas</h2>
+        <p class="text-tinta-pudar leading-relaxed mb-3">Laporkan URL halaman, browser dan perangkat, langkah untuk mengulang kendala, serta hasil yang diharapkan. Tidak perlu menyebutkan diagnosis atau menjelaskan kondisi pribadi.</p>
+        <p class="text-tinta-pudar leading-relaxed mb-4">Jangan sertakan diagnosis, dokumen medis, alamat, atau informasi pribadi. Pelacak isu GitHub bersifat publik dan mungkin memerlukan akun GitHub.</p>
+        <a class="inline-flex min-h-11 items-center rounded-lg px-4 py-2 font-bold underline underline-offset-4" href="https://github.com/TKJ-Team-SMKN1/smkn1mandau-replika-rtd/issues" target="_blank" rel="noopener noreferrer">Forum isu GitHub (publik)</a>
+      </section>
       <h2 class="font-judul text-2xl text-malam mb-5">Fitur aksesibilitas yang diterapkan</h2>
       <ul class="grid sm:grid-cols-2 gap-4 mb-10">
         <li class="kartu !p-5"><h3 class="font-bold text-malam mb-2">Navigasi keyboard</h3><p class="text-tinta-pudar text-sm">Tautan lewati konten, urutan fokus alami, indikator fokus yang terlihat, dan menu mobile yang dapat ditutup dengan Escape.</p></li>
