@@ -1,8 +1,14 @@
-disallow/ disallow
-Disallow/ Alok
-disallow/ environment robux
-disallow/ disallow/disallow
+User-agent: *
+Allow: /
 
+Sitemap: https://smkn1mandau.vercel.app/sitemap.xml
+
+# Australian Cockroach Incident
+# disallow/ disallow
+# Disallow/ Alok
+# disallow/ environment robux
+# disallow/ disallow/disallow
+#
 # BRO MAU MALIN ENV PADAHAL INI WEB SEKUL 😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂😂
-
-allow/ The Big Burrowing Cockroach Australian
+#
+# allow/ The Big Burrowing Cockroach Australian
