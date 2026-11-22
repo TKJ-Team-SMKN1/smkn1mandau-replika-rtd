@@ -5,8 +5,9 @@ These sources are lexical and usage references for human review. DeepL output is
 ## Korean — ko-KR
 - National Institute of Korean Language, Standard Korean Language Dictionary: https://stdict.korean.go.kr/
 - National Institute of Korean Language, Basic Korean Dictionary: https://krdict.korean.go.kr/
+- National Institute of Korean Language, K-term specialized terminology platform: https://kli.korean.go.kr/term/bbs/indexHpcmList.do?lang=en
 
-Use the Standard Korean Language Dictionary for standard forms and the Basic Korean Dictionary for learner-facing definitions and usage examples.
+Use the Standard Korean Language Dictionary for standard forms and the Basic Korean Dictionary for learner-facing definitions and usage examples. For computing or other specialist vocabulary, check K-term and its contributing public-institution terminology collections; do not treat a general dictionary as a technical glossary.
 
 ## Japanese — ja-JP
 - Shogakukan, Daijisen: https://www.monokakido.jp/en/dictionaries/daijisen2/index.html
@@ -32,7 +33,7 @@ Use Simplified Chinese as the script baseline for both locales. Review Singapore
 - TLC, Technical vocabulary (T): https://www.languagecouncils.sg/tamil/ta/language-resources/vocabulary/alphabetical-list/t
 - TLC / National Translation Committee, English–Tamil Glossary Book: https://www.languagecouncils.sg/tamil/ta/-/media/tlc/files/english-to-tamil-glossary-book.pdf
 
-Use Singapore Tamil Language Council resources and its English–Tamil educational terminology references when reviewing school, public-service, and education terms. Treat DeepL's technical-term output as provisional and check the glossary and educational vocabulary before adding overrides.
+Use Singapore Tamil Language Council resources and its English–Tamil educational terminology references when reviewing school, public-service, and education terms. Treat DeepL's technical-term output as provisional and check the glossary and educational vocabulary before adding overrides. The Singapore Tamil Council's published glossary is a reference for attested educational terms, not blanket approval for every vocational label in this Indonesian school context.
 
 ## Editorial rules
 1. Preserve school names, personal names, official programme names, acronyms, URLs, and technical identifiers unless an approved localized form exists.
