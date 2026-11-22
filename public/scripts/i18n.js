@@ -38,7 +38,7 @@
     "zh-CN": { files: ZH_FILES },
     "zh-SG": { files: ZH_FILES, overrides: ["/locales/zh-SG-overrides.json"] },
     "ko-KR": { files: chunkFiles("ko"), overrides: ["/locales/ko-overrides.json"] },
-    "ja-JP": { files: chunkFiles("ja") },
+    "ja-JP": { files: chunkFiles("ja"), overrides: ["/locales/ja-overrides.json"] },
     "ta-SG": { files: chunkFiles("ta"), overrides: ["/locales/ta-overrides.json"] }
   };
   const legacyLocaleAliases = {
