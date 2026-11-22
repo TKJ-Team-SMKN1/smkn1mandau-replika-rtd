@@ -37,9 +37,9 @@
     "ms-SG": { files: MS_FILES, overrides: ["/locales/ms-SG-overrides.json"] },
     "zh-CN": { files: ZH_FILES },
     "zh-SG": { files: ZH_FILES, overrides: ["/locales/zh-SG-overrides.json"] },
-    "ko-KR": { files: chunkFiles("ko") },
+    "ko-KR": { files: chunkFiles("ko"), overrides: ["/locales/ko-overrides.json"] },
     "ja-JP": { files: chunkFiles("ja") },
-    "ta-SG": { files: chunkFiles("ta") }
+    "ta-SG": { files: chunkFiles("ta"), overrides: ["/locales/ta-overrides.json"] }
   };
   const legacyLocaleAliases = {
     id: "id-ID",
