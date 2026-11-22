@@ -113,104 +113,87 @@ for (const url of fontUrls) {
 }
 
 
-const i18n = await readFile(path.join(root, "public/scripts/i18n.js"), "utf8");
-const translationsStart = i18n.indexOf("const translations =");
-if (translationsStart < 0) fail(path.join(dist, "index.html"), "objek translations tidak ditemukan.");
-else {
-  const open = i18n.indexOf("{", translationsStart);
-  let depth = 0, quote = null, escaped = false, end = -1;
-  for (let i = open; i < i18n.length; i++) {
-    const ch = i18n[i], next = i18n[i + 1];
-    if (quote) {
-      if (escaped) escaped = false;
-      else if (ch === "\\") escaped = true;
-      else if (ch === quote) quote = null;
-      continue;
-    }
-    if (ch === '"' || ch === "'" || ch === "\`") { quote = ch; continue; }
-    if (ch === "/" && next === "/") { i = i18n.indexOf("\n", i); if (i < 0) break; continue; }
-    if (ch === "/" && next === "*") { i = i18n.indexOf("*/", i + 2); if (i < 0) break; i++; continue; }
-    if (ch === "{") depth++;
-    if (ch === "}") { depth--; if (depth === 0) { end = i + 1; break; } }
-  }
-  if (end < 0) fail(path.join(dist, "index.html"), "objek translations tidak dapat diparse.");
-  else {
+const sourceKeys = JSON.parse(await readFile(path.join(root, "public/locales/id-source-keys.json"), "utf8"));
+const enFiles = [
+  "public/locales/en-base.json",
+  "public/locales/en-extra-1.json",
+  "public/locales/en-extra-2.json",
+  "public/locales/en-extra-3.json",
+  "public/locales/en-extra-4.json"
+];
+const msFiles = [
+  "public/locales/ms-base.json",
+  "public/locales/ms-extra-1.json",
+  "public/locales/ms-extra-2.json",
+  "public/locales/ms-extra-3.json",
+  "public/locales/ms-extra-4.json",
+  "public/locales/ms-completion.json"
+];
+const zhFiles = [
+  "public/locales/zh-base.json",
+  "public/locales/zh-extra-1.json",
+  "public/locales/zh-extra-2.json",
+  "public/locales/zh-extra-3.json",
+  "public/locales/zh-extra-4.json",
+  "public/locales/zh-completion.json"
+];
+const chunkFiles = (prefix) => Array.from({ length: 13 }, (_, index) =>
+  `public/locales/${prefix}-${String(index + 1).padStart(2, "0")}.json`
+);
+const localeDefinitions = {
+  "en-US": enFiles,
+  "en-GB": [...enFiles, "public/locales/en-GB-overrides.json"],
+  "en-AU": [...enFiles, "public/locales/en-GB-overrides.json"],
+  "en-CA": [...enFiles, "public/locales/en-CA-overrides.json"],
+  "en-SG": [...enFiles, "public/locales/en-GB-overrides.json"],
+  "ms-MY": msFiles,
+  "ms-SG": [...msFiles, "public/locales/ms-SG-overrides.json"],
+  "zh-CN": zhFiles,
+  "zh-SG": [...zhFiles, "public/locales/zh-SG-overrides.json"],
+  "ja-JP": chunkFiles("ja"),
+  "ko-KR": chunkFiles("ko"),
+  "ta-SG": chunkFiles("ta")
+};
+const dictionaries = {};
+for (const [locale, files] of Object.entries(localeDefinitions)) {
+  const dictionary = {};
+  for (const relativePath of files) {
     try {
-      const dictionaries = vm.runInNewContext("(" + i18n.slice(open, end) + ")", Object.create(null), { timeout: 1000 });
-      const languages = ["en", "ms", "zh"];
-
-      function extractObjectLiteralAt(source, openIndex) {
-        let depth = 0, quote = null, escaped = false;
-        for (let i = openIndex; i < source.length; i++) {
-          const ch = source[i], next = source[i + 1];
-          if (quote) {
-            if (escaped) escaped = false;
-            else if (ch === "\\") escaped = true;
-            else if (ch === quote) quote = null;
-            continue;
-          }
-          if (ch === '"' || ch === "'" || ch === String.fromCharCode(96)) { quote = ch; continue; }
-          if (ch === "/" && next === "/") { i = source.indexOf("\n", i); if (i < 0) break; continue; }
-          if (ch === "/" && next === "*") { i = source.indexOf("*/", i + 2); if (i < 0) break; i++; continue; }
-          if (ch === "{") depth++;
-          if (ch === "}") {
-            depth--;
-            if (depth === 0) return source.slice(openIndex, i + 1);
-          }
-        }
-        return null;
+      const chunk = JSON.parse(await readFile(path.join(root, relativePath), "utf8"));
+      if (!chunk || typeof chunk !== "object" || Array.isArray(chunk)) {
+        fail(path.join(dist, "index.html"), "berkas kamus " + relativePath + " bukan objek JSON.");
+        continue;
       }
-
-      // Merge every dictionary extension exactly as the browser runtime does.
-      const extensionPattern = /Object\.assign\(translations\.(en|ms|zh),\s*\{/g;
-      for (const match of i18n.matchAll(extensionPattern)) {
-        const objectStart = i18n.indexOf("{", match.index);
-        const extensionLiteral = extractObjectLiteralAt(i18n, objectStart);
-        if (!extensionLiteral) {
-          fail(path.join(dist, "index.html"), "ekstensi kamus " + match[1] + " tidak dapat diparse.");
-          continue;
-        }
-        try {
-          const extension = vm.runInNewContext("(" + extensionLiteral + ")", Object.create(null), { timeout: 1000 });
-          Object.assign(dictionaries[match[1]], extension);
-        } catch (error) {
-          fail(path.join(dist, "index.html"), "ekstensi kamus " + match[1] + " gagal diparse: " + error.message);
-        }
-      }
-
-      const keySets = Object.fromEntries(languages.map(language => [language, Object.keys(dictionaries[language] || {})]));
-      for (const language of languages) {
-        if (!dictionaries[language]) fail(path.join(dist, "index.html"), "kamus bahasa " + language + " tidak ditemukan.");
-      }
-      const allKeys = new Set(languages.flatMap(language => keySets[language]));
-      for (const language of languages) {
-        const invalid = Object.entries(dictionaries[language] || {}).filter(([, value]) => typeof value !== "string" || !value.trim());
-        if (invalid.length) fail(path.join(dist, "index.html"), "i18n " + language + ": nilai terjemahan kosong atau bukan string: " + invalid.map(([key]) => key).join(" | "));
-      }
-
-      const sourceFiles = [];
-      async function collectSourceFiles(dir) {
-        let items;
-        try { items = await readdir(dir, { withFileTypes: true }); } catch { return; }
-        for (const item of items) {
-          const full = path.join(dir, item.name);
-          if (item.isDirectory()) await collectSourceFiles(full);
-          else if (/\.(astro|jsx|js)$/.test(item.name)) sourceFiles.push(full);
-        }
-      }
-      await collectSourceFiles(path.join(root, "src"));
-      const sourceTexts = await Promise.all(sourceFiles.map(file => readFile(file, "utf8")));
-      const activeKeys = [...new Set([...allKeys].filter(key => sourceTexts.some(source => source.includes(key.trim()))).map(key => key.trim()))];
-      for (const language of languages) {
-        const missing = activeKeys.filter(key => !(key in (dictionaries[language] || {})));
-        if (missing.length) warn(path.join(dist, "index.html"), "i18n " + language + ": " + missing.length + " key belum tersedia: " + missing.join(" | "));
-      }
-      console.log("i18n dictionary key counts:", Object.fromEntries(languages.map(language => [language, keySets[language].length])));
+      Object.assign(dictionary, chunk);
     } catch (error) {
-      fail(path.join(dist, "index.html"), "objek translations gagal diparse: " + error.message);
+      fail(path.join(dist, "index.html"), "berkas kamus " + relativePath + " tidak dapat dibaca: " + error.message);
     }
+  }
+  dictionaries[locale] = dictionary;
+  const invalid = Object.entries(dictionary).filter(([, value]) => typeof value !== "string" || !value.trim());
+  if (invalid.length) fail(path.join(dist, "index.html"), "i18n " + locale + ": nilai terjemahan kosong atau bukan string: " + invalid.map(([key]) => key).join(" | "));
+  const missing = sourceKeys.filter((key) => !(key in dictionary));
+  if (missing.length) fail(path.join(dist, "index.html"), "i18n " + locale + ": " + missing.length + " source key belum tersedia; contoh: " + missing.slice(0, 8).join(" | "));
+}
+
+const sourceFiles = [];
+async function collectSourceFiles(dir) {
+  let items;
+  try { items = await readdir(dir, { withFileTypes: true }); } catch { return; }
+  for (const item of items) {
+    const full = path.join(dir, item.name);
+    if (item.isDirectory()) await collectSourceFiles(full);
+    else if (/\\.(astro|jsx|js)$/.test(item.name)) sourceFiles.push(full);
   }
 }
+await collectSourceFiles(path.join(root, "src"));
+const sourceTexts = await Promise.all(sourceFiles.map((file) => readFile(file, "utf8")));
+const activeKeys = sourceKeys.filter((key) => sourceTexts.some((source) => source.includes(key.trim())));
+for (const [locale, dictionary] of Object.entries(dictionaries)) {
+  const missing = activeKeys.filter((key) => !(key in dictionary));
+  if (missing.length) warn(path.join(dist, "index.html"), "i18n " + locale + ": " + missing.length + " key aktif belum tersedia: " + missing.slice(0, 20).join(" | "));
+}
+console.log("i18n dictionary key counts:", Object.fromEntries(Object.entries(dictionaries).map(([locale, dictionary]) => [locale, Object.keys(dictionary).length])));
 
 console.log("Static audit: " + htmlFiles.length + " halaman HTML publik; Google Search Console verification files excluded; " + fontUrls.length + " referensi font.");
 if (warnings.length) {
