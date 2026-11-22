@@ -176,9 +176,22 @@
     if (requestId !== languageRequestId) return;
     if (!localeLoaded) {
       activeLanguage = "id-ID";
-      document.documentElement.lang = "id-ID";
-      syncLanguageControls("id-ID");
-      try { localStorage.setItem(KEY, "id-ID"); } catch { /* Keep the source language for this view. */ }
+      observer?.disconnect();
+      try {
+        document.documentElement.lang = "id-ID";
+        translateSubtree(document.body, {});
+        const pageTitle = document.querySelector("title");
+        if (pageTitle && original.has(pageTitle)) pageTitle.textContent = original.get(pageTitle);
+        const description = document.querySelector('meta[name="description"]');
+        if (description) {
+          const saved = originalAttributes.get(description);
+          if (saved && "content" in saved) description.setAttribute("content", saved.content);
+        }
+        syncLanguageControls("id-ID");
+        try { localStorage.setItem(KEY, "id-ID"); } catch { /* Keep the source language for this view. */ }
+      } finally {
+        observer?.observe(document.body, observerOptions);
+      }
       return;
     }
     activeLanguage = requestedLanguage;
