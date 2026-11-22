@@ -29,14 +29,14 @@
   const localeConfigs = {
     "id-ID": { files: [] },
     "en-US": { files: EN_FILES },
-    "en-GB": { files: EN_FILES },
-    "en-AU": { files: EN_FILES },
-    "en-CA": { files: EN_FILES },
-    "en-SG": { files: EN_FILES },
+    "en-GB": { files: EN_FILES, overrides: ["/locales/en-GB-overrides.json"] },
+    "en-AU": { files: EN_FILES, overrides: ["/locales/en-GB-overrides.json"] },
+    "en-CA": { files: EN_FILES, overrides: ["/locales/en-CA-overrides.json"] },
+    "en-SG": { files: EN_FILES, overrides: ["/locales/en-GB-overrides.json"] },
     "ms-MY": { files: MS_FILES },
-    "ms-SG": { files: MS_FILES },
+    "ms-SG": { files: MS_FILES, overrides: ["/locales/ms-SG-overrides.json"] },
     "zh-CN": { files: ZH_FILES },
-    "zh-SG": { files: ZH_FILES },
+    "zh-SG": { files: ZH_FILES, overrides: ["/locales/zh-SG-overrides.json"] },
     "ko-KR": { files: chunkFiles("ko") },
     "ja-JP": { files: chunkFiles("ja") },
     "ta-SG": { files: chunkFiles("ta") }
@@ -90,6 +90,17 @@
       for (const dictionary of dictionaries) {
         if (!dictionary || typeof dictionary !== "object" || Array.isArray(dictionary)) return false;
         Object.assign(merged, dictionary);
+      }
+      if (config.overrides?.length) {
+        const overrideResponses = await Promise.all(config.overrides.map((url) =>
+          fetch(url, { credentials: "same-origin", cache: "force-cache" })
+        ));
+        if (!overrideResponses.every((response) => response.ok)) return false;
+        const overrides = await Promise.all(overrideResponses.map((response) => response.json()));
+        for (const override of overrides) {
+          if (!override || typeof override !== "object" || Array.isArray(override)) return false;
+          Object.assign(merged, override);
+        }
       }
       translations[lang] = merged;
       loadedLocales.add(lang);
