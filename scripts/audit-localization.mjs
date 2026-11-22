@@ -76,6 +76,31 @@ for (const [locale, files] of Object.entries(localeFiles)) {
   }
 }
 
+const reviewedOverrides = {
+  ja: await readJson("public/locales/ja-overrides.json"),
+  ko: await readJson("public/locales/ko-overrides.json"),
+  ta: await readJson("public/locales/ta-overrides.json")
+};
+const expectedReviewedTerms = {
+  ja: { "Arsip": "アーカイブ", "Kanal resmi": "公式チャンネル" },
+  ko: { "Aksi utama": "주요 동작", "Arsip": "아카이브", "Kanal resmi": "공식 채널" },
+  ta: {
+    "Bahasa pemrograman": "நிரலாக்க மொழிகள்",
+    "Markup": "குறியிடல்",
+    "Styling": "பாணியமைத்தல்",
+    "Query": "வினவல்",
+    "Kanal resmi": "அதிகாரப்பூர்வ சேனல்",
+    "Arsip": "காப்பகம்"
+  }
+};
+for (const [locale, expected] of Object.entries(expectedReviewedTerms)) {
+  for (const [key, value] of Object.entries(expected)) {
+    if (reviewedOverrides[locale][key] !== value) {
+      errors.push("Missing reviewed terminology override for " + locale + ": " + key);
+    }
+  }
+}
+
 const expectedCountTranslations = {
   en: { "Menampilkan": "Showing", "dari": "of", "nama program.": "vocational programs." },
   ms: { "Menampilkan": "Menunjukkan", "dari": "daripada", "nama program.": "program vokasional." },
