@@ -91,6 +91,7 @@ const expectedReviewedTerms = {
     "Cari program keahlian": "தொழிற்கல்வித் திட்டங்களைத் தேடுங்கள்",
     "Program tidak ditemukan": "தொழிற்கல்வித் திட்டம் கிடைக்கவில்லை",
     "Jelajahi halaman program": "தொழிற்கல்வித் திட்டப் பக்கத்தைப் பாருங்கள்",
+    "Halaman ini merangkum informasi publik tentang Bursa Kerja Khusus (BKK) dan Lembaga Sertifikasi Profesi (LSP-P1) yang tercatat dalam arsip sekolah.": "இந்தப் பக்கம், பள்ளி ஆவணக்காப்பகத்தில் பதிவுசெய்யப்பட்டுள்ள சிறப்பு வேலைவாய்ப்பு மையம் (BKK) மற்றும் தொழில்முறைத் திறன் சான்றளிப்பு நிறுவனம் (LSP-P1) பற்றிய பொதுத் தகவல்களைச் சுருக்கமாக வழங்குகிறது.",
     "Bahasa pemrograman": "நிரலாக்க மொழிகள்",
     "Markup": "குறியிடல்",
     "Styling": "பாணியமைத்தல்",
