@@ -96,12 +96,12 @@ const expectedReviewedTerms = {
   },
   ms: {
     "dalam rumpun ": "dalam bidang ",
-    "Pameran Pekerjaan Khusus (BKK)": "Pusat Khidmat Pekerjaan Khas (BKK)"
+    "Pameran Pekerjaan Khusus (BKK)": "Bursa Kerja Khusus (BKK)"
   },
   zh: {
     "Visi": "愿景", "Misi": "使命", "Arah sekolah": "学校发展方向",
     "Akademik": "学业", "dalam rumpun ": "所属领域：",
-    "Bursa Kerja Khusus": "特别就业服务机构"
+    "Pameran Pekerjaan Khusus (BKK)": "Bursa Kerja Khusus（BKK）"
   },
   ta: {
     "Tema": "தீம்",
@@ -115,13 +115,14 @@ const expectedReviewedTerms = {
     "Cari program keahlian": "தொழிற்கல்வித் திட்டங்களைத் தேடுங்கள்",
     "Program tidak ditemukan": "தொழிற்கல்வித் திட்டம் கிடைக்கவில்லை",
     "Jelajahi halaman program": "தொழிற்கல்வித் திட்டப் பக்கத்தைப் பாருங்கள்",
-    "Halaman ini merangkum informasi publik tentang Bursa Kerja Khusus (BKK) dan Lembaga Sertifikasi Profesi (LSP-P1) yang tercatat dalam arsip sekolah.": "இந்தப் பக்கம், பள்ளி ஆவணக்காப்பகத்தில் பதிவுசெய்யப்பட்டுள்ள சிறப்பு வேலைவாய்ப்பு மையம் (BKK) மற்றும் தொழில்முறைத் திறன் சான்றளிப்பு நிறுவனம் (LSP-P1) பற்றிய பொதுத் தகவல்களைச் சுருக்கமாக வழங்குகிறது.",
+    "Halaman ini merangkum informasi publik tentang Bursa Kerja Khusus (BKK) dan Lembaga Sertifikasi Profesi (LSP-P1) yang tercatat dalam arsip sekolah.": "இந்தப் பக்கம், பள்ளி ஆவணக்காப்பகத்தில் பதிவுசெய்யப்பட்டுள்ள Bursa Kerja Khusus (BKK) எனப்படும் சிறப்பு வேலைவாய்ப்பு சேவை மையம் மற்றும் தொழில்முறைத் திறன் சான்றளிப்பு நிறுவனம் (LSP-P1) பற்றிய பொதுத் தகவல்களைச் சுருக்கமாக வழங்குகிறது.",
     "Bahasa pemrograman": "நிரலாக்க மொழிகள்",
     "Markup": "குறியிடல்",
     "Styling": "பாணியமைத்தல்",
     "Query": "வினவல்",
     "Kanal resmi": "அதிகாரப்பூர்வ சேனல்",
-    "Arsip": "காப்பகம்"
+    "Arsip": "காப்பகம்",
+    "Pameran Pekerjaan Khusus (BKK)": "Bursa Kerja Khusus (BKK)"
   }
 };
 for (const [locale, expected] of Object.entries(expectedReviewedTerms)) {
