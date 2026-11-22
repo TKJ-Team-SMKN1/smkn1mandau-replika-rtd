@@ -151,8 +151,8 @@ const localeDefinitions = {
   "zh-CN": zhFiles,
   "zh-SG": [...zhFiles, "public/locales/zh-SG-overrides.json"],
   "ja-JP": chunkFiles("ja"),
-  "ko-KR": chunkFiles("ko"),
-  "ta-SG": chunkFiles("ta")
+  "ko-KR": [...chunkFiles("ko"), "public/locales/ko-overrides.json"],
+  "ta-SG": [...chunkFiles("ta"), "public/locales/ta-overrides.json"]
 };
 const dictionaries = {};
 for (const [locale, files] of Object.entries(localeDefinitions)) {
