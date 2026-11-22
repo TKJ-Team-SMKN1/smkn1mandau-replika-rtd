@@ -60,7 +60,9 @@ export default function DaftarProgram() {
       </div>
 
       <p className="text-sm text-tinta-pudar mb-5" role="status" aria-live="polite" aria-atomic="true">
-        Menampilkan <strong className="text-malam">{numberFormat.format(hasil.length)}</strong> dari {numberFormat.format(DATA_PROGRAM.length)} nama program.
+        {locale === "ta-SG"
+          ? `${numberFormat.format(hasil.length)} / ${numberFormat.format(DATA_PROGRAM.length)} தொழிற்கல்வித் திட்டங்கள் காட்டப்படுகின்றன.`
+          : <>Menampilkan <strong className="text-malam">{numberFormat.format(hasil.length)}</strong> dari {numberFormat.format(DATA_PROGRAM.length)} nama program.</>}
       </p>
 
       {hasil.length > 0 ? (
