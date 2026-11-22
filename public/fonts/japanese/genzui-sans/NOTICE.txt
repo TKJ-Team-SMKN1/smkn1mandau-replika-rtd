@@ -1,0 +1,24 @@
+GenZui Sans / 源萃ゴシック
+
+Noto Sans JP Regular and Bold: Japanese base, kana components and transcription symbols.
+https://github.com/google/fonts/tree/main/ofl/notosansjp
+Noto Sans Hentaigana: 286 hentaigana from instances at weight axis 410 (Regular)
+and 770 (Bold), calibrated against Noto Sans JP; four archaic kana from the
+Regular instance and an instance at axis 780 (Bold).
+The upstream unencoded E and YE drawings receive U+1B000 and U+1B001.
+https://github.com/notofonts/hentaigana
+GenSeki Hentaigana Gothic 1.201 Regular and Bold: 20 historical kana, small kana and ligatures.
+GenZui refits KOTO, alternate NE and small archaic YE to their kana peers.
+Its source projects include GenSeki Gothic, Sukima Gothic and Shokaki Hentaigana Gothic.
+https://github.com/MihailJP/GenSekiHentaiganaGothic
+Noto Sans CJK JP Regular and Bold: U+5344 (卄), converted to TrueType curves.
+https://github.com/notofonts/noto-cjk
+FRB Taiwanese Kana by Fredrick R. Brennan: Minnan tone letters and combining marks.
+Bold blends them toward GenZui Bold masters drawn on the same points.
+https://github.com/ctrlcctrlv/FRBTaiwaneseKana
+GenZui: alternate WI, transcription symbols, SQUARE PAATU and layout.
+
+Fonts and derived outlines are licensed under SIL OFL 1.1.
+Original copyright notices are retained in OFL.txt and the font metadata.
+
+Okinawan forms: GenZui drawings from Noto Sans JP masters.
