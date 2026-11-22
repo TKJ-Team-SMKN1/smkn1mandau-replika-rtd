@@ -85,7 +85,7 @@ const expectedCountTranslations = {
 };
 for (const [locale, expected] of Object.entries(expectedCountTranslations)) {
   const base = locale === "ja" || locale === "ko"
-    ? dictionaries[locale]
+    ? await readJson(`public/locales/${locale}-overrides.json`)
     : await readJson(`public/locales/${locale}-base.json`);
   for (const [key, value] of Object.entries(expected)) {
     if (base[key] !== value) errors.push("Missing or incorrect dynamic count translation for " + locale + ": " + key);
