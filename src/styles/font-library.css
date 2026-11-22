@@ -1430,3 +1430,202 @@
 .font-mplus-code-latin-60 { font-family: "M PLUS Code Latin 60 Local", "Azeret Mono Local", monospace; }
 .font-mplus-u { font-family: "M PLUS U Local", "Outfit Local", sans-serif; }
 .font-office-code-pro-d { font-family: "Office Code Pro D Local", "Office Code Pro Local", monospace; }
+
+/* Japanese and Korean local typefaces.
+   unicode-range keeps these CJK resources out of Latin-only text rendering. */
+@font-face {
+  font-family: "GenZui Sans Local";
+  src: url("/fonts/japanese/genzui-sans/GenZuiSans-Regular.woff2") format("woff2"),
+       url("/fonts/japanese/genzui-sans/GenZuiSans-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+3000-30FF, U+31F0-31FF, U+3400-4DBF, U+4E00-9FFF, U+FF00-FFEF;
+}
+
+@font-face {
+  font-family: "GenZui Sans Local";
+  src: url("/fonts/japanese/genzui-sans/GenZuiSans-Bold.woff2") format("woff2"),
+       url("/fonts/japanese/genzui-sans/GenZuiSans-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  unicode-range: U+3000-30FF, U+31F0-31FF, U+3400-4DBF, U+4E00-9FFF, U+FF00-FFEF;
+}
+
+@font-face {
+  font-family: "Zen Kaku Gothic New Local";
+  src: url("/fonts/japanese/zen-kaku-gothic/fonts/ttf/ZenKakuGothicNew-Thin.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  unicode-range: U+3000-30FF, U+31F0-31FF, U+3400-4DBF, U+4E00-9FFF, U+FF00-FFEF;
+}
+@font-face {
+  font-family: "Zen Kaku Gothic New Local";
+  src: url("/fonts/japanese/zen-kaku-gothic/fonts/ttf/ZenKakuGothicNew-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  unicode-range: U+3000-30FF, U+31F0-31FF, U+3400-4DBF, U+4E00-9FFF, U+FF00-FFEF;
+}
+@font-face {
+  font-family: "Zen Kaku Gothic New Local";
+  src: url("/fonts/japanese/zen-kaku-gothic/fonts/ttf/ZenKakuGothicNew-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+3000-30FF, U+31F0-31FF, U+3400-4DBF, U+4E00-9FFF, U+FF00-FFEF;
+}
+@font-face {
+  font-family: "Zen Kaku Gothic New Local";
+  src: url("/fonts/japanese/zen-kaku-gothic/fonts/ttf/ZenKakuGothicNew-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  unicode-range: U+3000-30FF, U+31F0-31FF, U+3400-4DBF, U+4E00-9FFF, U+FF00-FFEF;
+}
+@font-face {
+  font-family: "Zen Kaku Gothic New Local";
+  src: url("/fonts/japanese/zen-kaku-gothic/fonts/ttf/ZenKakuGothicNew-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  unicode-range: U+3000-30FF, U+31F0-31FF, U+3400-4DBF, U+4E00-9FFF, U+FF00-FFEF;
+}
+
+@font-face {
+  font-family: "Zen Kaku Gothic Antique Local";
+  src: url("/fonts/japanese/zen-kaku-gothic/fonts/ttf/ZenKakuGothicAntique-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  unicode-range: U+3000-30FF, U+31F0-31FF, U+3400-4DBF, U+4E00-9FFF, U+FF00-FFEF;
+}
+@font-face {
+  font-family: "Zen Kaku Gothic Antique Local";
+  src: url("/fonts/japanese/zen-kaku-gothic/fonts/ttf/ZenKakuGothicAntique-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+3000-30FF, U+31F0-31FF, U+3400-4DBF, U+4E00-9FFF, U+FF00-FFEF;
+}
+@font-face {
+  font-family: "Zen Kaku Gothic Antique Local";
+  src: url("/fonts/japanese/zen-kaku-gothic/fonts/ttf/ZenKakuGothicAntique-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  unicode-range: U+3000-30FF, U+31F0-31FF, U+3400-4DBF, U+4E00-9FFF, U+FF00-FFEF;
+}
+@font-face {
+  font-family: "Zen Kaku Gothic Antique Local";
+  src: url("/fonts/japanese/zen-kaku-gothic/fonts/ttf/ZenKakuGothicAntique-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  unicode-range: U+3000-30FF, U+31F0-31FF, U+3400-4DBF, U+4E00-9FFF, U+FF00-FFEF;
+}
+@font-face {
+  font-family: "Zen Kaku Gothic Antique Local";
+  src: url("/fonts/japanese/zen-kaku-gothic/fonts/ttf/ZenKakuGothicAntique-Black.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  unicode-range: U+3000-30FF, U+31F0-31FF, U+3400-4DBF, U+4E00-9FFF, U+FF00-FFEF;
+}
+
+@font-face {
+  font-family: "Gothic A1 Local";
+  src: url("/fonts/korean/gothic-a1/GothicA1-Thin.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7AF, U+D7B0-D7FF;
+}
+@font-face {
+  font-family: "Gothic A1 Local";
+  src: url("/fonts/korean/gothic-a1/GothicA1-ExtraLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7AF, U+D7B0-D7FF;
+}
+@font-face {
+  font-family: "Gothic A1 Local";
+  src: url("/fonts/korean/gothic-a1/GothicA1-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7AF, U+D7B0-D7FF;
+}
+@font-face {
+  font-family: "Gothic A1 Local";
+  src: url("/fonts/korean/gothic-a1/GothicA1-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7AF, U+D7B0-D7FF;
+}
+@font-face {
+  font-family: "Gothic A1 Local";
+  src: url("/fonts/korean/gothic-a1/GothicA1-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7AF, U+D7B0-D7FF;
+}
+@font-face {
+  font-family: "Gothic A1 Local";
+  src: url("/fonts/korean/gothic-a1/GothicA1-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7AF, U+D7B0-D7FF;
+}
+@font-face {
+  font-family: "Gothic A1 Local";
+  src: url("/fonts/korean/gothic-a1/GothicA1-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7AF, U+D7B0-D7FF;
+}
+@font-face {
+  font-family: "Gothic A1 Local";
+  src: url("/fonts/korean/gothic-a1/GothicA1-ExtraBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7AF, U+D7B0-D7FF;
+}
+@font-face {
+  font-family: "Gothic A1 Local";
+  src: url("/fonts/korean/gothic-a1/GothicA1-Black.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7AF, U+D7B0-D7FF;
+}
+
+/* Locale-aware stacks: Latin keeps the existing type system; CJK glyphs use local faces. */
+@layer base {
+  :lang(ja) body {
+    font-family: "Outfit Local", "Zen Kaku Gothic New Local", "GenZui Sans Local", "M PLUS 1 Local", "M PLUS 2 Local", system-ui, sans-serif;
+  }
+  :lang(ja) h1, :lang(ja) h2, :lang(ja) h3, :lang(ja) .font-judul {
+    font-family: "Archivo Local", "Zen Kaku Gothic New Local", "GenZui Sans Local", "M PLUS 1 Local", "M PLUS 2 Local", system-ui, sans-serif;
+  }
+  :lang(ko) body {
+    font-family: "Outfit Local", "Gothic A1 Local", "M PLUS 1 Local", "M PLUS 2 Local", system-ui, sans-serif;
+  }
+  :lang(ko) h1, :lang(ko) h2, :lang(ko) h3, :lang(ko) .font-judul {
+    font-family: "Archivo Local", "Gothic A1 Local", "M PLUS 1 Local", "M PLUS 2 Local", system-ui, sans-serif;
+  }
+}
+
+/* Explicit specimen hooks for the bundled CJK families. */
+.font-genzui-sans { font-family: "GenZui Sans Local", "Zen Kaku Gothic New Local", sans-serif; }
+.font-zen-kaku-gothic-new { font-family: "Zen Kaku Gothic New Local", "GenZui Sans Local", sans-serif; }
+.font-zen-kaku-gothic-antique { font-family: "Zen Kaku Gothic Antique Local", "Zen Kaku Gothic New Local", sans-serif; }
+.font-gothic-a1 { font-family: "Gothic A1 Local", sans-serif; }
