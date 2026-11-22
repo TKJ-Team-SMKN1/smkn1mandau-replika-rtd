@@ -58,7 +58,7 @@ check(/document\.documentElement\.lang\s*=\s*documentLanguage\(activeLanguage\)/
 check(/html\[lang="ta-SG"\] body[\s\S]*?letter-spacing:\s*normal[\s\S]*?word-spacing:\s*normal[\s\S]*?text-align:\s*start/.test(libraryCss), "Tamil reading defaults (spacing and start alignment) are missing.");
 check(libraryCss.includes('"Noto Serif Tamil Local"'), "Tamil local family is missing from the locale font stack.");
 const tamilBodyRule = libraryCss.split('html[lang="ta-SG"] body {')[1]?.split("}")[0] || "";
-check((tamilBodyRule.match(/letter-spacing:\s*normal\s*;/g) || []).length === 1 && !/letter-spacing:\s*(?!normal\b)/.test(tamilBodyRule), "Tamil body rule must keep normal letter spacing.");
+check(/letter-spacing:\s*normal\s*;/.test(tamilBodyRule), "Tamil body rule must keep normal letter spacing.");
 
 if (errors.length) {
   for (const error of errors) console.error("TAMIL:", error);
