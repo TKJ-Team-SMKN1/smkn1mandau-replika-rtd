@@ -97,3 +97,19 @@ Font Outfit, Archivo, dan Azeret Mono dimuat dari aset lokal di `public/fonts/`.
 ### Fase 3
 
 Navigasi Jelajah menambahkan halaman Fasilitas, Ekstrakurikuler, Kegiatan, dan Unit Sekolah. Informasi historis diberi label periode; halaman sumber yang hanya berupa gambar tidak diisi dengan tebakan. Halaman Pengaturan menampilkan spesimen 19 keluarga font/174 face OTF. CI menjalankan preflight HTML, WCAG statis, dan audit dependensi; pemeriksaan otomatis bukan sertifikasi WCAG 2.2 AA.
+
+
+## RTD — Replica Technical Development
+
+**RTD (Replica Technical Development)** is the development approach and naming identity used for replica websites built through a distinct technical implementation. It is not limited to school websites or to reproducing the original site's exact technology stack.
+
+A project may be classified as RTD when it rebuilds a website concept using its own architecture, frameworks, infrastructure, interface implementation, or other technical systems. The implementation may differ substantially from the source website while remaining a replica project.
+
+This repository is one example of the RTD approach. It is an independent replica concept and is **not an official SMK Negeri 1 Mandau website**, nor does it represent or speak for the school.
+
+### Source website
+
+- **Replica project:** [Open this RTD website](https://smkn1mandau.vercel.app/)
+- **Original school website:** [Visit SMKN 1 Mandau's original website](https://smkn1mandau.sch.id/)
+
+The original-site link is provided as an explicit navigation option. Visitors are not automatically redirected, and should use the original website for official information and current announcements.
