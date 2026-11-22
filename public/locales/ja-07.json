@@ -41,7 +41,7 @@
   "Register dan tanggal pemeriksaan sumber tersedia pada dokumentasi proyek.": "レジスタおよびソースの検証日は、プロジェクトのドキュメントに記載されています。",
   "Baca register sumber": "ソースレジスタを読み込む",
   "Arsitektur teknis": "技術アーキテクチャ",
-  "Static-first, modular, dan ringan": "静的型付けを優先し、モジュール化されており、軽量",
+  "Static-first, modular, dan ringan": "静的構成を優先し、モジュール式で軽量",
   "Teknologi dipilih berdasarkan pekerjaan nyata di website. Tidak ada compiler atau runtime bahasa lain yang dipasang hanya untuk dipamerkan.": "技術の選定は、ウェブサイトでの実際の業務に基づいて行われています。単なる見せびらかしのために、他の言語のコンパイラやランタイムが導入されていることはありません。",
   "Rendering halaman statis dan struktur situs.": "静的ページのレンダリングとサイト構造。",
   "Komponen interaktif yang membutuhkan state browser.": "ブラウザの状態を必要とするインタラクティブなコンポーネント。",
