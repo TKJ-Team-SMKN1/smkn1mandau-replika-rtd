@@ -117,6 +117,8 @@ const expectedReviewedTerms = {
     "Pendidikan dalam angka": "கல்விப் புள்ளிவிவரங்கள்",
     "Bertumbuh.": "வளருங்கள்.",
     "Dokumentasi": "ஆவணங்கள்",
+    "yang memadai di bengkel maupun laboratorium sekolah.": "பள்ளிப் பயிற்சிப் பட்டறைகள் மற்றும் ஆய்வகங்களில் போதுமான வசதிகள்.",
+    "Kenali fungsi setiap teknologi dan mulai dari dokumentasi resminya.": "அதிகாரப்பூர்வ ஆவணங்களைப் பயன்படுத்தி ஒவ்வொரு தொழில்நுட்பத்தின் செயல்பாடுகளையும் அறிந்துகொள்ளுங்கள்.",
     "Riwayat sekolah": "பள்ளியின் வரலாறு",
     "Gedung sekolah berdiri": "பள்ளிக் கட்டிடம் கட்டப்பட்டது",
     "@aria-label:Hapus pencarian": "@aria-label:தேடலை அழிக்கவும்",
