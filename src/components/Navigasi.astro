@@ -45,7 +45,11 @@ const jelajahAktif = jelajah.some((item) => item.kunci === halamanAktif);
       <label class="language-control" aria-label="Pilih bahasa antarmuka">
         <span aria-hidden="true">文</span>
         <select data-language-picker aria-label="Pilih bahasa">
-          <option value="id">ID</option><option value="en">EN</option><option value="ms">MY</option><option value="zh">中文</option>
+          <option value="id-ID">ID</option>
+          <option value="en-US">EN-US</option><option value="en-GB">EN-GB</option><option value="en-AU">EN-AU</option><option value="en-CA">EN-CA</option><option value="en-SG">EN-SG</option>
+          <option value="ms-MY">MS-MY</option><option value="ms-SG">MS-SG</option>
+          <option value="zh-CN">中文-CN</option><option value="zh-SG">中文-SG</option>
+          <option value="ko-KR">한국어</option><option value="ja-JP">日本語</option><option value="ta-SG">தமிழ்</option>
         </select>
       </label>
       <button id="tombol-menu-mobile" class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-mobile" aria-label="Buka menu navigasi">
@@ -82,7 +86,7 @@ const jelajahAktif = jelajah.some((item) => item.kunci === halamanAktif);
 .nav-dropdown-menu a{display:flex;min-height:44px;align-items:center;padding:.65rem .8rem;border-radius:.55rem;color:#f6efe6;text-decoration:none}
 .nav-dropdown-menu a:hover,.nav-dropdown-menu a[aria-current="page"]{color:#fff;background:rgba(184,92,20,.28)}
 .language-control{display:flex;align-items:center;gap:.35rem;color:#efb17b;font-size:.8rem}
-.language-control select{min-height:44px;max-width:86px;padding:.45rem .55rem;border:1px solid rgba(255,255,255,.2);border-radius:10px;color:#fff;background:#102b50;font-size:.8rem}
+.language-control select{min-height:44px;max-width:124px;padding:.45rem .55rem;border:1px solid rgba(255,255,255,.2);border-radius:10px;color:#fff;background:#102b50;font-size:.8rem}
 .theme-nav-link{display:inline-flex;min-height:44px;align-items:center;margin-left:.15rem;padding:.62rem .7rem;border:1px solid rgba(255,255,255,.18);border-radius:.7rem;color:rgba(246,239,230,.9);font-size:.8rem;text-decoration:none;white-space:nowrap}
 .theme-nav-link:hover,.theme-nav-link.is-active{color:#fff;background:rgba(255,255,255,.09)}
 .menu-toggle{display:none;width:44px;height:44px;place-items:center;border:1px solid rgba(255,255,255,.18);border-radius:12px;color:white;background:rgba(255,255,255,.06)}

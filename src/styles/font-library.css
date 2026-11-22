@@ -1,4 +1,4 @@
-/* Local typography library: 19 families / 174 static OTF faces.
+/* Local typography library: 22 families / 174 static OTF faces (19 core families + 3 locale script stacks).
    Fonts are requested only when a rendered element needs that family/weight.
    M PLUS families remain late fallbacks for multilingual glyph coverage. */
 @font-face {
@@ -1430,3 +1430,26 @@
 .font-mplus-code-latin-60 { font-family: "M PLUS Code Latin 60 Local", "Azeret Mono Local", monospace; }
 .font-mplus-u { font-family: "M PLUS U Local", "Outfit Local", sans-serif; }
 .font-office-code-pro-d { font-family: "Office Code Pro D Local", "Office Code Pro Local", monospace; }
+
+/* Locale-specific script faces; apply to body text and display headings.
+   The locale stylesheet is injected by public/scripts/i18n.js after a locale loads.
+   All web-font files are served from this repository's public/fonts directory.
+   Tamil currently has no bundled local font; let the OS/browser provide its script fallback. */
+html[lang="zh-CN"] body,
+html[lang="zh-SG"] body,
+html[lang="zh-CN"] :is(h1, h2, h3, .font-judul),
+html[lang="zh-SG"] :is(h1, h2, h3, .font-judul) {
+  font-family: "Noto Sans SC Local", "M PLUS 1 Local", "M PLUS 2 Local", system-ui, sans-serif;
+}
+html[lang="ja-JP"] body,
+html[lang="ja-JP"] :is(h1, h2, h3, .font-judul) {
+  font-family: "GenZui Sans", "M PLUS 1 Local", "M PLUS 2 Local", system-ui, sans-serif;
+}
+html[lang="ko-KR"] body,
+html[lang="ko-KR"] :is(h1, h2, h3, .font-judul) {
+  font-family: "Gothic A1 Local", "M PLUS 1 Local", "M PLUS 2 Local", system-ui, sans-serif;
+}
+html[lang="ta-SG"] body,
+html[lang="ta-SG"] :is(h1, h2, h3, .font-judul) {
+  font-family: "M PLUS 1 Local", "M PLUS 2 Local", system-ui, sans-serif;
+}

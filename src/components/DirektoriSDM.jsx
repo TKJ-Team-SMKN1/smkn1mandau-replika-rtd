@@ -48,7 +48,9 @@ export default function DirektoriSDM() {
         </div>
       </div>
       <p className="sdm-count" role="status" aria-live="polite" aria-atomic="true">
-        <strong>{numberFormat.format(rows.length)}</strong> dari {numberFormat.format(DATA.length)} entri yang cocok
+        {locale === "ta-SG"
+          ? `${numberFormat.format(rows.length)} / ${numberFormat.format(DATA.length)} பொருந்தும் பதிவுகள் காட்டப்படுகின்றன.`
+          : <><strong>{numberFormat.format(rows.length)}</strong> dari {numberFormat.format(DATA.length)} entri yang cocok</>}
       </p>
       {rows.length ? (
         <div className="sdm-grid">
