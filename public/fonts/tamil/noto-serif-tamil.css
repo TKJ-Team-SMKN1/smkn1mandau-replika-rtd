@@ -1,0 +1,49 @@
+/* Noto Serif Tamil — self-hosted local fonts. No external font CDN. */
+@font-face {
+  font-family: "Noto Serif Tamil Local";
+  src: url("/fonts/tamil/ttf/NotoSerifTamil-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0B80-0BFF;
+}
+@font-face {
+  font-family: "Noto Serif Tamil Local";
+  src: url("/fonts/tamil/ttf/NotoSerifTamil-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  unicode-range: U+0B80-0BFF;
+}
+@font-face {
+  font-family: "Noto Serif Tamil Local";
+  src: url("/fonts/tamil/ttf/NotoSerifTamil-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  unicode-range: U+0B80-0BFF;
+}
+@font-face {
+  font-family: "Noto Serif Tamil Local";
+  src: url("/fonts/tamil/ttf/NotoSerifTamil-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0B80-0BFF;
+}
+@font-face {
+  font-family: "Noto Serif Tamil Local";
+  src: url("/fonts/tamil/ttf/NotoSerifTamil-SemiBoldItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  unicode-range: U+0B80-0BFF;
+}
+@font-face {
+  font-family: "Noto Serif Tamil Local";
+  src: url("/fonts/tamil/ttf/NotoSerifTamil-BoldItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  unicode-range: U+0B80-0BFF;
+}

@@ -38,8 +38,8 @@ for(const file of htmlFiles){
  if(!/<meta\b[^>]*name=["']viewport["']/i.test(html))fail("meta viewport tidak ditemukan.");
 }
 const fonts=await readFile(path.join(root,"src/styles/font-library.css"),"utf8"),faces=(fonts.match(/@font-face\s*\{/g)||[]).length,families=new Set([...fonts.matchAll(/font-family:\s*["']([^"']+)["']/g)].map(m=>m[1]));
-// 174 original OTF faces plus 21 Japanese/Korean TTF/WOFF2 faces across 23 families.
-if(faces!==195)errors.push("Jumlah font face berubah: "+faces);if(families.size!==24)errors.push("Jumlah keluarga font berubah: "+families.size);
+// 174 original OTF faces plus 21 Japanese/Korean TTF/WOFF2 faces and the Tamil locale family.
+if(faces!==195)errors.push("Jumlah font face berubah: "+faces);if(families.size!==25)errors.push("Jumlah keluarga font berubah: "+families.size);
 const css=await readFile(path.join(root,"src/styles/global.css"),"utf8")+await readFile(path.join(root,"src/styles/theme-compat.css"),"utf8");
 if(!/:focus-visible/.test(css))errors.push("focus-visible tidak ditemukan.");if(!/prefers-reduced-motion/.test(css))errors.push("reduced-motion tidak ditemukan.");if(!/forced-colors/.test(css))warnings.push("forced-colors perlu pemeriksaan manual.");if(!/--focus-color/.test(css))errors.push("focus token tidak ditemukan.");
 if(!css.includes("prefers-contrast: more"))errors.push("prefers-contrast enhancement tidak ditemukan.");

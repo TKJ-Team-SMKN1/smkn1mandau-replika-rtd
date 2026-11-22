@@ -1434,7 +1434,7 @@
 /* Locale-specific script faces; apply to body text and display headings.
    The locale stylesheet is injected by public/scripts/i18n.js after a locale loads.
    All web-font files are served from this repository's public/fonts directory.
-   Tamil currently has no bundled local font; let the OS/browser provide its script fallback. */
+   Tamil uses the bundled Noto Serif Tamil family; M PLUS remains a secondary fallback. */
 html[lang="zh-CN"] body,
 html[lang="zh-SG"] body,
 html[lang="zh-CN"] :is(h1, h2, h3, .font-judul),
@@ -1451,7 +1451,28 @@ html[lang="ko-KR"] :is(h1, h2, h3, .font-judul) {
 }
 html[lang="ta-SG"] body,
 html[lang="ta-SG"] :is(h1, h2, h3, .font-judul) {
-  font-family: "M PLUS 1 Local", "M PLUS 2 Local", system-ui, sans-serif;
+  font-family: "Noto Serif Tamil Local", "M PLUS 1 Local", "M PLUS 2 Local", system-ui, sans-serif;
+}
+
+/* Tamil (Singapore) text layout.
+   Keep script shaping to the browser/OpenType engine; do not add tracking
+   or force justification, which can separate vowel signs from their bases. */
+html[lang="ta-SG"] body {
+  font-synthesis: none;
+  line-height: 1.8;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-align: start;
+}
+
+html[lang="ta-SG"] :is(h1, h2, h3, h4, .font-judul) {
+  line-height: 1.4;
+}
+
+html[lang="ta-SG"] :is(button, input, select, textarea) {
+  font-family: inherit;
+  line-height: inherit;
+  letter-spacing: normal;
 }
 
 /* Japanese and Korean local typefaces.

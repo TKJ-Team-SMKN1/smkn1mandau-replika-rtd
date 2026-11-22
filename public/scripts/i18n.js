@@ -54,7 +54,8 @@
     "zh-CN": ["/fonts/noto-sans-sc.css"],
     "zh-SG": ["/fonts/noto-sans-sc.css"],
     "ja-JP": ["/fonts/japanese/genzui-sans/genzui-sans.css"],
-    "ko-KR": ["/fonts/korean/gothic-a1.css"]
+    "ko-KR": ["/fonts/korean/gothic-a1.css"],
+    "ta-SG": ["/fonts/tamil/noto-serif-tamil.css"]
   };
 
   function normalizeLanguage(value) {
