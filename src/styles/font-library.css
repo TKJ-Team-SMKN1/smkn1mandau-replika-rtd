@@ -1,4 +1,4 @@
-/* Local typography library: 19 families / 174 static OTF faces.
+/* Local typography library: 22 families / 174 static OTF faces (19 core families + 3 locale script stacks).
    Fonts are requested only when a rendered element needs that family/weight.
    M PLUS families remain late fallbacks for multilingual glyph coverage. */
 @font-face {
