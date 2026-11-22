@@ -79,10 +79,14 @@ for (const [locale, files] of Object.entries(localeFiles)) {
 const expectedCountTranslations = {
   en: { "Menampilkan": "Showing", "dari": "of", "nama program.": "vocational programs." },
   ms: { "Menampilkan": "Menunjukkan", "dari": "daripada", "nama program.": "program vokasional." },
-  zh: { "Menampilkan": "显示", "dari": "项，共", "nama program.": "个专业。", "entri yang cocok": "条匹配记录" }
+  zh: { "Menampilkan": "显示", "dari": "项，共", "nama program.": "个专业。", "entri yang cocok": "条匹配记录" },
+  ja: { "Menampilkan": "表示：", "dari": "件中", "nama program.": "件の専門課程。" },
+  ko: { "Menampilkan": "표시:", "dari": "개 중", "nama program.": "개 전공 프로그램." }
 };
 for (const [locale, expected] of Object.entries(expectedCountTranslations)) {
-  const base = await readJson(`public/locales/${locale}-base.json`);
+  const base = locale === "ja" || locale === "ko"
+    ? dictionaries[locale]
+    : await readJson(`public/locales/${locale}-base.json`);
   for (const [key, value] of Object.entries(expected)) {
     if (base[key] !== value) errors.push("Missing or incorrect dynamic count translation for " + locale + ": " + key);
   }
