@@ -21,7 +21,7 @@ const expectedLocales = [
   "id-ID", "en-US", "en-GB", "en-AU", "en-CA", "en-SG",
   "ms-MY", "ms-SG", "zh-CN", "zh-SG", "ko-KR", "ja-JP", "ta-SG"
 ];
-const localeOptions = [...navigation.matchAll(/<option\\s+value="([a-z]{2}(?:-[A-Z]{2})?)"/g)].map((match) => match[1]);
+const localeOptions = [...navigation.matchAll(/<option\s+value="([a-z]{2}(?:-[A-Z]{2})?)"/g)].map((match) => match[1]);
 const sourceKeys = await readJson("public/locales/id-source-keys.json");
 
 const localeFiles = {
