@@ -183,7 +183,7 @@ async function collectSourceFiles(dir) {
   for (const item of items) {
     const full = path.join(dir, item.name);
     if (item.isDirectory()) await collectSourceFiles(full);
-    else if (/\\.(astro|jsx|js)$/.test(item.name)) sourceFiles.push(full);
+    else if (/\.(astro|jsx|js)$/.test(item.name)) sourceFiles.push(full);
   }
 }
 await collectSourceFiles(path.join(root, "src"));
