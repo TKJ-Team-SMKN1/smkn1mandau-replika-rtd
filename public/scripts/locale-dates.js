@@ -19,8 +19,12 @@
     });
     const first = formatter.format(start);
     const last = end ? formatter.format(end) : "";
+    const separator = locale.startsWith("zh") ? " 至 "
+      : locale.startsWith("ja") ? "～"
+      : locale.startsWith("ko") ? " ~ "
+      : " – ";
     element.textContent = last && last !== first
-      ? first + (locale.startsWith("zh") ? " 至 " : " – ") + last
+      ? first + separator + last
       : first;
   }
 
