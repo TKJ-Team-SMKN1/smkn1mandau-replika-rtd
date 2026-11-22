@@ -79,7 +79,9 @@ for (const [locale, files] of Object.entries(localeFiles)) {
 const reviewedOverrides = {
   ja: await readJson("public/locales/ja-overrides.json"),
   ko: await readJson("public/locales/ko-overrides.json"),
-  ta: await readJson("public/locales/ta-overrides.json")
+  ta: await readJson("public/locales/ta-overrides.json"),
+  ms: await readJson("public/locales/ms-completion.json"),
+  zh: await readJson("public/locales/zh-completion.json")
 };
 const expectedReviewedTerms = {
   ja: {
@@ -91,6 +93,15 @@ const expectedReviewedTerms = {
     "Aksi utama": "주요 동작", "Arsip": "아카이브", "Kanal resmi": "공식 채널",
     "Visi": "비전", "Misi": "사명", "Arah sekolah": "학교의 방향",
     "Akademik": "학업", "dalam rumpun ": "계열: "
+  },
+  ms: {
+    "dalam rumpun ": "dalam bidang ",
+    "Pameran Pekerjaan Khusus (BKK)": "Pusat Khidmat Pekerjaan Khas (BKK)"
+  },
+  zh: {
+    "Visi": "愿景", "Misi": "使命", "Arah sekolah": "学校发展方向",
+    "Akademik": "学业", "dalam rumpun ": "所属领域：",
+    "Bursa Kerja Khusus": "特别就业服务机构"
   },
   ta: {
     "Tema": "தீம்",
