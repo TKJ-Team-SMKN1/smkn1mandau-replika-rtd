@@ -31,5 +31,9 @@
   "Bursa Kerja Khusus": "Bursa Kerja Khusus (BKK) சிறப்பு வேலைவாய்ப்பு சேவை மையம்",
   "Pameran Pekerjaan Khusus (BKK)": "Bursa Kerja Khusus (BKK)",
   "Melengkapi peralatan praktik yang standar.": "தரநிலையான செய்முறைப் பயிற்சி உபகரணங்களை வழங்குதல்.",
-  "Sumber nama program:": "திட்டத்தின் பெயருக்கான ஆதாரம்:"
+  "Sumber nama program:": "திட்டத்தின் பெயருக்கான ஆதாரம்:",
+  "Riwayat sekolah": "பள்ளியின் வரலாறு",
+  "Gedung sekolah berdiri": "பள்ளிக் கட்டிடம் கட்டப்பட்டது",
+  "@aria-label:Hapus pencarian": "@aria-label:தேடலை அழிக்கவும்",
+  "@placeholder:Contoh: TKJ, listrik, otomotif...": "@placeholder:எ.கா.: TKJ, மின்சாரம், வாகனத் தொழில்நுட்பம்..."
 }
