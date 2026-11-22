@@ -1,74 +1,67 @@
 (() => {
   const KEY = "smkn1mandau-language";
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  // Lexical review: KBBI (ID), DBP/PRPM (MS), Cambridge Dictionary (EN).
-  // DeepL supplies draft translations; proper names and local place names are preserved.
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-
-  // Context-aware counter fragments: keep the three locales grammatical when React renders dynamic counts.
-  
-  
-  
-
-
-  // Coverage pass: shared navigation, interactive React islands, and data-driven labels.
-  // Proper names, school acronyms, personal names, and official program abbreviations stay unchanged.
-  
-  
-  
-
-  
-  
-  
-
-  
-  
-
-  const translations = { id: {}, en: {}, ms: {}, zh: {} };
-  const baseLocaleFiles = {
-    en: "/locales/en-base.json",
-    ms: "/locales/ms-base.json",
-    zh: "/locales/zh-base.json"
+  const EN_FILES = [
+    "/locales/en-base.json",
+    "/locales/en-extra-1.json",
+    "/locales/en-extra-2.json",
+    "/locales/en-extra-3.json",
+    "/locales/en-extra-4.json"
+  ];
+  const MS_FILES = [
+    "/locales/ms-base.json",
+    "/locales/ms-extra-1.json",
+    "/locales/ms-extra-2.json",
+    "/locales/ms-extra-3.json",
+    "/locales/ms-extra-4.json",
+    "/locales/ms-completion.json"
+  ];
+  const ZH_FILES = [
+    "/locales/zh-base.json",
+    "/locales/zh-extra-1.json",
+    "/locales/zh-extra-2.json",
+    "/locales/zh-extra-3.json",
+    "/locales/zh-extra-4.json",
+    "/locales/zh-completion.json"
+  ];
+  const chunkFiles = (prefix) => Array.from({ length: 13 }, (_, index) =>
+    "/locales/" + prefix + "-" + String(index + 1).padStart(2, "0") + ".json"
+  );
+  const localeConfigs = {
+    "id-ID": { files: [] },
+    "en-US": { files: EN_FILES },
+    "en-GB": { files: EN_FILES },
+    "en-AU": { files: EN_FILES },
+    "en-CA": { files: EN_FILES },
+    "en-SG": { files: EN_FILES },
+    "ms-MY": { files: MS_FILES },
+    "ms-SG": { files: MS_FILES },
+    "zh-CN": { files: ZH_FILES },
+    "zh-SG": { files: ZH_FILES },
+    "ko-KR": { files: chunkFiles("ko") },
+    "ja-JP": { files: chunkFiles("ja") },
+    "ta-SG": { files: chunkFiles("ta") }
   };
-  const loadedBaseLocales = new Set();
-  const extraLocaleFiles = {
-    en: ["/locales/en-extra-1.json", "/locales/en-extra-2.json", "/locales/en-extra-3.json", "/locales/en-extra-4.json"],
-    ms: ["/locales/ms-extra-1.json", "/locales/ms-extra-2.json", "/locales/ms-extra-3.json", "/locales/ms-extra-4.json"],
-    zh: ["/locales/zh-extra-1.json", "/locales/zh-extra-2.json", "/locales/zh-extra-3.json", "/locales/zh-extra-4.json"]
+  const legacyLocaleAliases = {
+    id: "id-ID",
+    en: "en-US",
+    ms: "ms-MY",
+    zh: "zh-CN",
+    "zh-Hant": "zh-CN"
   };
+  const translations = Object.fromEntries(Object.keys(localeConfigs).map((locale) => [locale, {}]));
+  const loadedLocales = new Set();
   const localeFontStylesheets = {
-    zh: ["/fonts/noto-sans-sc.css"],
-    "zh-Hant": ["/fonts/noto-sans-tc.css", "/fonts/source-han-serif-hk.css"]
+    "zh-CN": ["/fonts/noto-sans-sc.css"],
+    "zh-SG": ["/fonts/noto-sans-sc.css"],
+    "ja-JP": ["/fonts/japanese/genzui-sans/genzui-sans.css"],
+    "ko-KR": ["/fonts/korean/gothic-a1.css"],
+    "ta-SG": ["/fonts/tamil/noto-sans-tamil.css"]
   };
+
+  function normalizeLanguage(value) {
+    if (Object.prototype.hasOwnProperty.call(localeConfigs, value)) return value;
+    return legacyLocaleAliases[value] || "id-ID";
+  }
 
   function loadLocaleFontStylesheets(lang) {
     for (const href of localeFontStylesheets[lang] || []) {
@@ -82,41 +75,28 @@
     }
   }
 
-  const loadedExtraLocales = new Set();
-  let languageRequestId = 0;
-
   async function loadExtraTranslations(lang) {
-    if (lang === "id") return true;
-    const baseUrl = baseLocaleFiles[lang];
-    if (!baseUrl) return false;
-    if (!loadedBaseLocales.has(lang)) {
-      try {
-        const response = await fetch(baseUrl, { credentials: "same-origin", cache: "force-cache" });
-        if (!response.ok) return false;
-        const base = await response.json();
-        if (!base || typeof base !== "object" || Array.isArray(base)) return false;
-        Object.assign(translations[lang], base);
-        loadedBaseLocales.add(lang);
-      } catch {
-        return false;
+    if (lang === "id-ID") return true;
+    if (loadedLocales.has(lang)) return true;
+    const config = localeConfigs[lang];
+    if (!config) return false;
+    try {
+      const responses = await Promise.all(config.files.map((url) =>
+        fetch(url, { credentials: "same-origin", cache: "force-cache" })
+      ));
+      if (!responses.every((response) => response.ok)) return false;
+      const dictionaries = await Promise.all(responses.map((response) => response.json()));
+      const merged = {};
+      for (const dictionary of dictionaries) {
+        if (!dictionary || typeof dictionary !== "object" || Array.isArray(dictionary)) return false;
+        Object.assign(merged, dictionary);
       }
+      translations[lang] = merged;
+      loadedLocales.add(lang);
+      return true;
+    } catch {
+      return false;
     }
-    const urls = extraLocaleFiles[lang];
-    if (urls && !loadedExtraLocales.has(lang)) {
-      try {
-        const responses = await Promise.all(urls.map((url) => fetch(url, { credentials: "same-origin", cache: "force-cache" })));
-        if (responses.every((response) => response.ok)) {
-          const chunks = await Promise.all(responses.map((response) => response.json()));
-          for (const extra of chunks) {
-            if (extra && typeof extra === "object" && !Array.isArray(extra)) Object.assign(translations[lang], extra);
-          }
-          loadedExtraLocales.add(lang);
-        }
-      } catch {
-        // Base locale remains usable when optional archive chunks fail.
-      }
-    }
-    return loadedBaseLocales.has(lang);
   }
 
   const original = new WeakMap();
@@ -124,10 +104,10 @@
   const attributeNames = ["placeholder", "aria-label", "title", "aria-description"];
   const observerOptions = { childList: true, characterData: true, attributes: true, attributeFilter: attributeNames, subtree: true };
   let observer = null;
-  let activeLanguage = "id";
+  let activeLanguage = "id-ID";
 
   const getDictionary = () => translations[activeLanguage] || {};
-  const documentLanguage = (lang) => ({ id: "id-ID", en: "en", ms: "ms-MY", zh: "zh-CN" })[lang] || "id-ID";
+  const documentLanguage = (lang) => lang;
 
   function translateTextNode(node, dictionary) {
     if (!node || node.nodeType !== Node.TEXT_NODE || !node.parentElement) return;
@@ -137,7 +117,7 @@
     const base = original.get(node);
     const trimmed = base.trim();
     if (!trimmed) return;
-    const translated = dictionary[trimmed] || dictionary[trimmed.replace(/\s+/g, " ")];
+    const translated = dictionary[trimmed] || dictionary[trimmed.replace(/\\s+/g, " ")];
     const nextValue = translated ? base.replace(trimmed, translated) : base;
     if (node.nodeValue !== nextValue) node.nodeValue = nextValue;
   }
@@ -179,23 +159,23 @@
   }
 
   async function applyLanguage(lang) {
-    const requestedLanguage = Object.prototype.hasOwnProperty.call(translations, lang) ? lang : (lang === "zh-Hant" ? "zh" : "id");
+    const requestedLanguage = normalizeLanguage(lang);
     const requestId = ++languageRequestId;
     const localeLoaded = await loadExtraTranslations(requestedLanguage);
     if (requestId !== languageRequestId) return;
-    if (requestedLanguage !== "id" && !localeLoaded) {
-      activeLanguage = "id";
+    if (!localeLoaded) {
+      activeLanguage = "id-ID";
       document.documentElement.lang = "id-ID";
-      syncLanguageControls("id");
-      try { localStorage.setItem(KEY, "id"); } catch { /* Keep the source language for this view. */ }
+      syncLanguageControls("id-ID");
+      try { localStorage.setItem(KEY, "id-ID"); } catch { /* Keep the source language for this view. */ }
       return;
     }
     activeLanguage = requestedLanguage;
-    loadLocaleFontStylesheets(lang === "zh-Hant" ? "zh-Hant" : requestedLanguage);
+    loadLocaleFontStylesheets(activeLanguage);
     const dictionary = getDictionary();
     observer?.disconnect();
     try {
-      document.documentElement.lang = lang === "zh-Hant" ? "zh-Hant" : documentLanguage(activeLanguage);
+      document.documentElement.lang = documentLanguage(activeLanguage);
       translateSubtree(document.body, dictionary);
       syncLanguageControls(activeLanguage);
 
@@ -251,10 +231,10 @@
 
   function init() {
     const picker = document.querySelector("[data-language-picker]");
-    let lang = "id";
+    let lang = "id-ID";
     try {
       const saved = localStorage.getItem(KEY);
-      if (saved && Object.prototype.hasOwnProperty.call(translations, saved)) lang = saved;
+      if (saved) lang = normalizeLanguage(saved);
     } catch { /* Default to Indonesian when local storage is unavailable. */ }
 
     picker?.addEventListener("change", () => applyLanguage(picker.value));
@@ -263,6 +243,7 @@
     applyLanguage(lang);
   }
 
+  let languageRequestId = 0;
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init, { once: true });
   else init();
 })();
