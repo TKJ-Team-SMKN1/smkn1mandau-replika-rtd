@@ -105,6 +105,10 @@ const expectedReviewedTerms = {
   },
   ta: {
     "Tema": "தீம்",
+    "Riwayat sekolah": "பள்ளியின் வரலாறு",
+    "Gedung sekolah berdiri": "பள்ளிக் கட்டிடம் கட்டப்பட்டது",
+    "@aria-label:Hapus pencarian": "@aria-label:தேடலை அழிக்கவும்",
+    "@placeholder:Contoh: TKJ, listrik, otomotif...": "@placeholder:எ.கா.: TKJ, மின்சாரம், வாகனத் தொழில்நுட்பம்...",
     "Visi": "பார்வை",
     "Misi": "நோக்கம்",
     "Arah sekolah": "பள்ளியின் திசைநோக்கு",
