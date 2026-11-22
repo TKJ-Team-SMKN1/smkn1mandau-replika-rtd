@@ -37,6 +37,8 @@ jobs:
         env:
           FONT_LFS_REF: ${{ github.event.pull_request.head.sha || github.sha }}
         run: npm run build
+      - name: Audit Tamil font assets and locale wiring
+        run: npm run audit:tamil
       - name: Audit generated sitemap and canonical SEO metadata
         run: npm run audit:seo
       - name: Audit generated HTML quality and accessibility preflight
