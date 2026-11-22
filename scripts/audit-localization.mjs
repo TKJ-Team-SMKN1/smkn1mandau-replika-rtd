@@ -85,6 +85,11 @@ const reviewedOverrides = {
 };
 const expectedReviewedTerms = {
   ja: {
+    "Minim pengumpulan data": "データ収集を最小限に抑える",
+    "Static-first, modular, dan ringan": "静的ページを基本とし、モジュール式で軽量",
+    "Replika independen, dengan sumber yang dapat ditelusuri.": "出典を追跡できる独立したレプリカです。",
+    "SECURITY": "警備員",
+    "Baca register sumber": "出典一覧を読む",
     "Kejuruan yang menyiapkan ": "職業教育は、",
     "tangan,": "実践力を育て、",
     " bukan hanya nilai rapor.": "成績表の点数だけにとどまりません。",
@@ -93,6 +98,12 @@ const expectedReviewedTerms = {
     "Akademik": "学業", "dalam rumpun ": "分野："
   },
   ko: {
+    "Minim pengumpulan data": "데이터 수집 최소화",
+    "Static-first, modular, dan ringan": "정적 우선, 모듈형, 경량",
+    "Replika independen, dengan sumber yang dapat ditelusuri.": "출처를 추적할 수 있는 독립적인 복제 사이트입니다.",
+    "SECURITY": "경비원",
+    "Bukan sumber operasional": "운영 정보의 공식 출처가 아님",
+    "Baca register sumber": "출처 목록 읽기",
     "Kejuruan yang menyiapkan ": "직업교육은 ",
     "tangan,": "실무 역량을 기르고,",
     " bukan hanya nilai rapor.": "성적표의 점수에만 머무르지 않습니다.",
@@ -110,6 +121,9 @@ const expectedReviewedTerms = {
     "Pameran Pekerjaan Khusus (BKK)": "Bursa Kerja Khusus（BKK）"
   },
   ta: {
+    "Static-first, modular, dan ringan": "நிலையான பக்கங்களை முதன்மையாகக் கொண்டு, தொகுதிமயமாகவும் இலகுவாகவும்",
+    "SECURITY": "பாதுகாப்புப் பணியாளர்",
+    "Baca register sumber": "மூலப் பட்டியலைப் படிக்கவும்",
     "Tema": "தீம்",
     "Kejuruan yang menyiapkan ": "தொழிற்கல்வி ",
     "tangan,": "செய்முறைத் திறன்களை வளர்த்து,",
