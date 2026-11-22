@@ -82,10 +82,23 @@ const reviewedOverrides = {
   ta: await readJson("public/locales/ta-overrides.json")
 };
 const expectedReviewedTerms = {
-  ja: { "Arsip": "アーカイブ", "Kanal resmi": "公式チャンネル" },
-  ko: { "Aksi utama": "주요 동작", "Arsip": "아카이브", "Kanal resmi": "공식 채널" },
+  ja: {
+    "Arsip": "アーカイブ", "Kanal resmi": "公式チャンネル",
+    "Visi": "ビジョン", "Misi": "ミッション", "Arah sekolah": "学校の方針",
+    "Akademik": "学業", "dalam rumpun ": "分野："
+  },
+  ko: {
+    "Aksi utama": "주요 동작", "Arsip": "아카이브", "Kanal resmi": "공식 채널",
+    "Visi": "비전", "Misi": "사명", "Arah sekolah": "학교의 방향",
+    "Akademik": "학업", "dalam rumpun ": "계열: "
+  },
   ta: {
     "Tema": "தீம்",
+    "Visi": "பார்வை",
+    "Misi": "நோக்கம்",
+    "Arah sekolah": "பள்ளியின் திசைநோக்கு",
+    "Akademik": "கல்வி",
+    "dalam rumpun ": "துறையில் ",
     "Program Keahlian": "தொழிற்கல்வித் திட்டங்கள்",
     "Program keahlian": "தொழிற்கல்வித் திட்டங்கள்",
     "Cari program keahlian": "தொழிற்கல்வித் திட்டங்களைத் தேடுங்கள்",
