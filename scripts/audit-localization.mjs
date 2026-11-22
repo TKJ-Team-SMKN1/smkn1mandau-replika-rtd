@@ -3,75 +3,105 @@ import path from "node:path";
 import { parseIndonesianDateRange } from "../src/utils/formatIndonesianDate.js";
 
 const root = process.cwd();
-const script = await readFile(path.join(root, "public/scripts/i18n.js"), "utf8");
-const navigation = await readFile(path.join(root, "src/components/Navigasi.astro"), "utf8");
-const localeDateScript = await readFile(path.join(root, "public/scripts/locale-dates.js"), "utf8");
-const layout = await readFile(path.join(root, "src/layouts/LayoutUtama.astro"), "utf8");
-const programDirectory = await readFile(path.join(root, "src/components/DaftarProgram.jsx"), "utf8");
-const staffDirectory = await readFile(path.join(root, "src/components/DirektoriSDM.jsx"), "utf8");
-const eventsPage = await readFile(path.join(root, "src/pages/kegiatan.astro"), "utf8");
-const unitsPage = await readFile(path.join(root, "src/pages/unit-sekolah.astro"), "utf8");
+const readJson = async (relativePath) =>
+  JSON.parse(await readFile(path.join(root, relativePath), "utf8"));
+const readText = async (relativePath) =>
+  readFile(path.join(root, relativePath), "utf8");
+const script = await readText("public/scripts/i18n.js");
+const navigation = await readText("src/components/Navigasi.astro");
+const localeDateScript = await readText("public/scripts/locale-dates.js");
+const layout = await readText("src/layouts/LayoutUtama.astro");
+const programDirectory = await readText("src/components/DaftarProgram.jsx");
+const staffDirectory = await readText("src/components/DirektoriSDM.jsx");
+const eventsPage = await readText("src/pages/kegiatan.astro");
+const unitsPage = await readText("src/pages/unit-sekolah.astro");
 const errors = [];
-const localeOptions = [...navigation.matchAll(/<option\s+value="([a-z]{2})"/g)].map((match) => match[1]);
-const baseLocaleFiles = {
-  en: "public/locales/en-base.json",
-  ms: "public/locales/ms-base.json",
-  zh: "public/locales/zh-base.json"
-};
-const extraLocaleFiles = {
-  en: ["public/locales/en-extra-1.json", "public/locales/en-extra-2.json", "public/locales/en-extra-3.json", "public/locales/en-extra-4.json"],
-  ms: ["public/locales/ms-extra-1.json", "public/locales/ms-extra-2.json", "public/locales/ms-extra-3.json", "public/locales/ms-extra-4.json"],
-  zh: ["public/locales/zh-extra-1.json", "public/locales/zh-extra-2.json", "public/locales/zh-extra-3.json", "public/locales/zh-extra-4.json"]
-};
-const counts = {};
-const extraCounts = {};
-const expectedCountTranslations = {
-  en: { "Menampilkan": "Showing", "dari": "of", "nama program.": "vocational programs." },
-  ms: { "Menampilkan": "Menunjukkan", "dari": "daripada", "nama program.": "program vokasional." },
-  zh: { "Menampilkan": "显示", "dari": "项，共", "nama program.": "个专业。", "entri yang cocok": "条匹配记录" }
+
+const expectedLocales = [
+  "id-ID", "en-US", "en-GB", "en-AU", "en-CA", "en-SG",
+  "ms-MY", "ms-SG", "zh-CN", "zh-SG", "ko-KR", "ja-JP", "ta-SG"
+];
+const localeOptions = [...navigation.matchAll(/<option\\s+value="([a-z]{2}(?:-[A-Z]{2})?)"/g)].map((match) => match[1]);
+const sourceKeys = await readJson("public/locales/id-source-keys.json");
+
+const localeFiles = {
+  "en": [
+    "public/locales/en-base.json",
+    "public/locales/en-extra-1.json",
+    "public/locales/en-extra-2.json",
+    "public/locales/en-extra-3.json",
+    "public/locales/en-extra-4.json"
+  ],
+  "ms": [
+    "public/locales/ms-base.json",
+    "public/locales/ms-extra-1.json",
+    "public/locales/ms-extra-2.json",
+    "public/locales/ms-extra-3.json",
+    "public/locales/ms-extra-4.json",
+    "public/locales/ms-completion.json"
+  ],
+  "zh": [
+    "public/locales/zh-base.json",
+    "public/locales/zh-extra-1.json",
+    "public/locales/zh-extra-2.json",
+    "public/locales/zh-extra-3.json",
+    "public/locales/zh-extra-4.json",
+    "public/locales/zh-completion.json"
+  ],
+  "ja": Array.from({ length: 13 }, (_, i) => `public/locales/ja-${String(i + 1).padStart(2, "0")}.json`),
+  "ko": Array.from({ length: 13 }, (_, i) => `public/locales/ko-${String(i + 1).padStart(2, "0")}.json`),
+  "ta": Array.from({ length: 13 }, (_, i) => `public/locales/ta-${String(i + 1).padStart(2, "0")}.json`)
 };
 
-for (const locale of ["en", "ms", "zh"]) {
-  let base = {};
-  try {
-    base = JSON.parse(await readFile(path.join(root, baseLocaleFiles[locale]), "utf8"));
-  } catch {
-    errors.push("Missing or invalid base locale JSON: " + baseLocaleFiles[locale]);
-  }
-  counts[locale] = Object.keys(base).length;
-  if (counts[locale] < 300) errors.push("Base locale dictionary unexpectedly small for " + locale + ": " + counts[locale]);
-
-  const merged = { ...base };
-  for (const relativePath of extraLocaleFiles[locale]) {
+const dictionaries = {};
+for (const [locale, files] of Object.entries(localeFiles)) {
+  const merged = {};
+  for (const relativePath of files) {
     try {
-      const extra = JSON.parse(await readFile(path.join(root, relativePath), "utf8"));
-      Object.assign(merged, extra);
+      const chunk = await readJson(relativePath);
+      if (!chunk || typeof chunk !== "object" || Array.isArray(chunk)) {
+        errors.push("Locale chunk is not a JSON object: " + relativePath);
+        continue;
+      }
+      Object.assign(merged, chunk);
     } catch {
-      errors.push("Missing or invalid extra locale JSON: " + relativePath);
+      errors.push("Missing or invalid locale JSON: " + relativePath);
     }
   }
-  extraCounts[locale] = Object.keys(merged).length - counts[locale];
-
-  for (const key of ["Kegiatan sekolah · arsip publik", "Fasilitas sekolah", "Bursa Kerja Khusus (BKK)"]) {
-    if (!Object.prototype.hasOwnProperty.call(merged, key)) errors.push("Missing locale key for " + locale + ": " + key);
-  }
-  for (const [key, expected] of Object.entries(expectedCountTranslations[locale])) {
-    if (base[key] !== expected) errors.push("Missing or incorrect dynamic count translation for " + locale + ": " + key);
-  }
+  dictionaries[locale] = merged;
+  const missing = sourceKeys.filter((key) => !Object.prototype.hasOwnProperty.call(merged, key));
+  if (missing.length) errors.push(locale + " is missing " + missing.length + " source keys; first missing: " + missing.slice(0, 5).join(" | "));
   if (Object.values(merged).some((value) => typeof value !== "string" || !value.trim())) {
     errors.push("Locale bundle contains an empty/non-text translation: " + locale);
   }
 }
 
-const options = new Set(localeOptions);
-if (options.size !== 4 || !["id", "en", "ms", "zh"].every((locale) => options.has(locale))) {
-  errors.push("Language picker must expose exactly the supported ID, EN, MY and ZH options.");
+const expectedCountTranslations = {
+  en: { "Menampilkan": "Showing", "dari": "of", "nama program.": "vocational programs." },
+  ms: { "Menampilkan": "Menunjukkan", "dari": "daripada", "nama program.": "program vokasional." },
+  zh: { "Menampilkan": "显示", "dari": "项，共", "nama program.": "个专业。", "entri yang cocok": "条匹配记录" }
+};
+for (const [locale, expected] of Object.entries(expectedCountTranslations)) {
+  const base = await readJson(`public/locales/${locale}-base.json`);
+  for (const [key, value] of Object.entries(expected)) {
+    if (base[key] !== value) errors.push("Missing or incorrect dynamic count translation for " + locale + ": " + key);
+  }
 }
-if (!script.includes('ms: "ms-MY"') || !script.includes('zh: "zh-CN"') || !script.includes('en: "en"')) {
-  errors.push("The active document language is not synchronized with ID-ID, EN, MS-MY and ZH-CN locale tags.");
+
+const options = new Set(localeOptions);
+if (options.size !== expectedLocales.length || expectedLocales.some((locale) => !options.has(locale))) {
+  errors.push("Language picker must expose exactly these 13 BCP 47 locales: " + expectedLocales.join(", "));
+}
+for (const locale of expectedLocales) {
+  if (!script.includes('"' + locale + '"')) errors.push("Runtime locale configuration is missing " + locale);
+}
+for (const legacy of ['id: "id-ID"', 'en: "en-US"', 'ms: "ms-MY"', 'zh: "zh-CN"']) {
+  if (!script.includes(legacy)) errors.push("Legacy language preference alias is missing: " + legacy);
 }
 if (!script.includes('const KEY = "smkn1mandau-language";')) errors.push("The language preference key is missing.");
-if (!script.includes("baseLocaleFiles") || !script.includes("loadExtraTranslations")) errors.push("On-demand locale loading is missing.");
+if (!script.includes("localeConfigs") || !script.includes("loadExtraTranslations") || !script.includes("config.overrides")) {
+  errors.push("On-demand locale loading or regional overrides are missing.");
+}
 
 const range = parseIndonesianDateRange("8–10 September 2023");
 const single = parseIndonesianDateRange("7 November 2023");
@@ -82,7 +112,8 @@ if (parseIndonesianDateRange("September 2023 (date sequence unverified)") !== nu
 if (!localeDateScript.includes("Intl.DateTimeFormat") || !layout.includes('/scripts/locale-dates.js')) errors.push("Locale-aware date formatter is not wired into the shared layout.");
 if (!eventsPage.includes("data-locale-date") || !unitsPage.includes("data-locale-date")) errors.push("Historical event/unit dates are not marked for locale formatting.");
 if (!programDirectory.includes("Intl.NumberFormat") || !staffDirectory.includes("Intl.NumberFormat")) errors.push("Dynamic program/staff counts are not formatted using the active locale.");
-for (const locale of ["id-ID", "en", "ms-MY", "zh-CN"]) {
+
+for (const locale of expectedLocales) {
   try {
     new Intl.DateTimeFormat(locale, { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date("2023-09-08T12:00:00Z"));
     new Intl.NumberFormat(locale).format(1234567);
@@ -91,7 +122,7 @@ for (const locale of ["id-ID", "en", "ms-MY", "zh-CN"]) {
   }
 }
 
-console.log("Localization preflight: on-demand base dictionaries EN=" + counts.en + ", MS=" + counts.ms + ", ZH=" + counts.zh + "; archive/UI extras EN=" + extraCounts.en + ", MS=" + extraCounts.ms + ", ZH=" + extraCounts.zh + ".");
+console.log("Localization preflight: source keys=" + sourceKeys.length + "; EN=" + Object.keys(dictionaries.en).length + ", MS=" + Object.keys(dictionaries.ms).length + ", ZH=" + Object.keys(dictionaries.zh).length + ", JA=" + Object.keys(dictionaries.ja).length + ", KO=" + Object.keys(dictionaries.ko).length + ", TA=" + Object.keys(dictionaries.ta).length + ".");
 console.log("Locale picker: " + localeOptions.join(", ") + ". Runtime translation does not create separate indexable locale URLs.");
 for (const error of errors) console.error("ERROR:", error);
 if (errors.length) process.exit(1);
