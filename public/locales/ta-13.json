@@ -6,7 +6,7 @@
   "Kepala Bagian Mutu": "தரத் துறையின் தலைவர்",
   "Asesor Kompetensi": "திறன் மதிப்பீட்டாளர்",
   "Bengkel Kilang Pembelajaran bersama Guru Vokasional": "பயிலரங்கம்: தொழிற்கல்வி ஆசிரியர்களுடன் கூட்டுக் கற்றல்",
-  "Halaman ini merangkum informasi publik tentang Bursa Kerja Khusus (BKK) dan Lembaga Sertifikasi Profesi (LSP-P1) yang tercatat dalam arsip sekolah.": "இந்தப் பக்கம், பள்ளியின் பதிவுகளில் உள்ளபடி, சிறப்பு வேலைவாய்ப்புத் திருவிழா (BKK) மற்றும் தொழில்முறைச் சான்றிதழ் அமைப்பு (LSP-P1) பற்றிய பொதுத் தகவல்களைச் சுருக்கமாகக் கூறுகிறது.",
+  "Halaman ini merangkum informasi publik tentang Bursa Kerja Khusus (BKK) dan Lembaga Sertifikasi Profesi (LSP-P1) yang tercatat dalam arsip sekolah.": "இந்தப் பக்கம், பள்ளிப் பதிவுகளில் இடம்பெற்றுள்ள Bursa Kerja Khusus (BKK) மற்றும் தொழில்முறைச் சான்றளிப்பு நிறுவனம் (LSP-P1) பற்றிய பொதுத் தகவல்களைச் சுருக்கமாக வழங்குகிறது.",
   "Publikasi sekolah pada 2023 menjelaskan BKK sebagai unit layanan yang membantu alumni memperoleh informasi dan fasilitas penempatan kerja. Alumni yang belum bekerja dapat berkoordinasi dengan BKK mengenai peluang dan informasi pekerjaan.": "2023 ஆம் ஆண்டின் ஒரு பள்ளி வெளியீடு, முன்னாள் மாணவர்கள் தகவல்களையும் வேலைவாய்ப்பு வசதிகளையும் அணுக உதவும் ஒரு சேவைப் பிரிவாக BKK-ஐ விவரிக்கிறது. இன்னும் வேலைவாய்ப்பு பெறாத முன்னாள் மாணவர்கள், வேலைவாய்ப்பு வாய்ப்புகள் மற்றும் தகவல்கள் குறித்து BKK-உடன் தொடர்பு கொள்ளலாம்.",
   "Buka sumber arsip": "காப்பக மூலத்தைத் திறக்கவும்",
   "Periksa arsip visi-misi BKK": "BKK-யின் தொலைநோக்கு மற்றும் குறிக்கோள் காப்பகத்தைப் பார்க்கவும்",
@@ -29,10 +29,10 @@
   "Pernyataan aksesibilitas dan target WCAG 2.2 Level A dan AA pada situs replika independen SMK Negeri 1 Mandau.": "SMK நெகரி 1 மண்டாவ்-இன் சுயாதீன நகல் இணையதளத்திற்கான அணுகல்தன்மை அறிக்கை மற்றும் WCAG 2.2 நிலை A மற்றும் AA இலக்குகள்.",
   "Replika independen ini dikembangkan dengan mengacu pada Web Content Accessibility Guidelines (WCAG) 2.2 Level A dan AA. Tujuannya adalah membuat informasi dan navigasi dapat digunakan oleh sebanyak mungkin orang, termasuk pengguna teknologi bantu.": "இந்த சுயாதீனமான பிரதி, வலை உள்ளடக்க அணுகல்தன்மை வழிகாட்டுதல்கள் (WCAG) 2.2 நிலைகள் A மற்றும் AA-க்கு இணங்க உருவாக்கப்பட்டுள்ளது. உதவித் தொழில்நுட்பத்தைப் பயன்படுத்துபவர்கள் உட்பட, முடிந்தவரை பலருக்குத் தகவல்களும் வழிசெலுத்தலும் அணுகக்கூடியதாக இருப்பதை உறுதி செய்வதே இதன் நோக்கமாகும்.",
   "Acuan implementasi: WCAG 2.2 Level A dan AA": "செயல்முறை வழிகாட்டுதல்கள்: WCAG 2.2 நிலைகள் A மற்றும் AA",
-  "Kontras minimum": "குறைந்தபட்ச வேறுபாடு",
+  "Kontras minimum": "குறைந்தபட்ச மாறுபாடு",
   "Teks normal menargetkan 4.5:1, teks besar 3:1, dan batas komponen atau grafik informatif 3:1. Setiap tema dan state tetap perlu diuji.": "சாதாரண உரை 4.5:1 என்ற விகிதத்தையும், பெரிய உரை 3:1 என்ற விகிதத்தையும், கூறு எல்லைகள் அல்லது தகவல் வரைபடங்கள் 3:1 என்ற விகிதத்தையும் அடைய வேண்டும். ஒவ்வொரு கருப்பொருள் மற்றும் நிலையும் இன்னும் சோதிக்கப்பட வேண்டும்.",
-  "Konten hover dan fokus": "மேல்நகர்ந்து உள்ளடக்கத்தைக் கவனியுங்கள்",
+  "Konten hover dan fokus": "hover மற்றும் focus உள்ளடக்கம்",
   "Menu dan konten tambahan tidak boleh bergantung pada hover saja; harus dapat dijangkau keyboard, ditutup, dan tetap tersedia saat pointer berpindah.": "மெனுக்கள் மற்றும் கூடுதல் உள்ளடக்கம் hover-ஐ மட்டும் சார்ந்திருக்கக்கூடாது; அவை விசைப்பலகை மூலம் அணுகக்கூடியதாகவும், மூடக்கூடியதாகவும் இருக்க வேண்டும், மேலும் சுட்டிக்காட்டி நகரும்போதும் கிடைக்கக்கூடியதாக இருக்க வேண்டும்.",
-  "Gestur dan formulir": "அசைவுகளும் வடிவங்களும்",
+  "Gestur dan formulir": "சைகைச் செயல்கள் மற்றும் படிவங்கள்",
   "Fitur saat ini tidak memakai drag-and-drop, login, atau formulir bertahap. Jika fungsi itu ditambahkan, alternatif tanpa dragging serta kriteria pengisian dan autentikasi menjadi gerbang penerimaan.": "தற்போதைய பதிப்பு இழுத்து-விடுதல், உள்நுழைவு அல்லது பல-படிவப் படிவங்களைப் பயன்படுத்துவதில்லை. இந்தச் செயல்பாடுகள் சேர்க்கப்பட்டால், இழுப்பதற்கான மாற்று வழிகளும், தரவு உள்ளீடு மற்றும் அங்கீகார அளவுகோல்களும் ஏற்றுக்கொள்வதற்கான நுழைவாயிலாக மாறும்."
 }
