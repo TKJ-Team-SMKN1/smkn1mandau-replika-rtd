@@ -85,6 +85,12 @@ const expectedReviewedTerms = {
   ja: { "Arsip": "アーカイブ", "Kanal resmi": "公式チャンネル" },
   ko: { "Aksi utama": "주요 동작", "Arsip": "아카이브", "Kanal resmi": "공식 채널" },
   ta: {
+    "Tema": "தீம்",
+    "Program Keahlian": "தொழிற்கல்வித் திட்டங்கள்",
+    "Program keahlian": "தொழிற்கல்வித் திட்டங்கள்",
+    "Cari program keahlian": "தொழிற்கல்வித் திட்டங்களைத் தேடுங்கள்",
+    "Program tidak ditemukan": "தொழிற்கல்வித் திட்டம் கிடைக்கவில்லை",
+    "Jelajahi halaman program": "தொழிற்கல்வித் திட்டப் பக்கத்தைப் பாருங்கள்",
     "Bahasa pemrograman": "நிரலாக்க மொழிகள்",
     "Markup": "குறியிடல்",
     "Styling": "பாணியமைத்தல்",
@@ -133,6 +139,25 @@ if (!script.includes("translateSubtree(document.body, {})") || !script.includes(
 }
 if (!script.includes("localeConfigs") || !script.includes("loadExtraTranslations") || !script.includes("config.overrides")) {
   errors.push("On-demand locale loading or regional overrides are missing.");
+}
+for (const path of [
+  "public/locales/en-GB-overrides.json",
+  "public/locales/en-CA-overrides.json",
+  "public/locales/ms-SG-overrides.json",
+  "public/locales/zh-SG-overrides.json"
+]) {
+  try {
+    const regional = await readJson(path);
+    if (!regional || typeof regional !== "object" || Array.isArray(regional)) errors.push("Regional override must be a JSON object: " + path);
+  } catch {
+    errors.push("Missing or invalid regional override file: " + path);
+  }
+}
+if (!programDirectory.includes('locale === "ta-SG"') || !programDirectory.includes("தொழிற்கல்வித் திட்டங்கள் காட்டப்படுகின்றன")) {
+  errors.push("Tamil vocational programme count must use a complete Tamil sentence.");
+}
+if (!staffDirectory.includes('locale === "ta-SG"') || !staffDirectory.includes("பொருந்தும் பதிவுகள் காட்டப்படுகின்றன")) {
+  errors.push("Tamil staff count must use a complete Tamil sentence.");
 }
 
 const range = parseIndonesianDateRange("8–10 September 2023");
