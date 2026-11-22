@@ -57,7 +57,7 @@ check(i18n.includes('"ta-SG": ["/fonts/tamil/noto-serif-tamil.css"]'), "ta-SG lo
 check(/document\.documentElement\.lang\s*=\s*documentLanguage\(activeLanguage\)/.test(i18n), "Active locale is not reflected in the document lang attribute.");
 check(/html\[lang="ta-SG"\] body[\s\S]*?letter-spacing:\s*normal[\s\S]*?word-spacing:\s*normal[\s\S]*?text-align:\s*start/.test(libraryCss), "Tamil reading defaults (spacing and start alignment) are missing.");
 check(libraryCss.includes('"Noto Serif Tamil Local"'), "Tamil local family is missing from the locale font stack.");
-const tamilBodyRule = libraryCss.match(/html\[lang="ta-SG"\]\s+body\s*\{([^}]*)\}/)?.[1] || "";
+const tamilBodyRule = libraryCss.split('html[lang="ta-SG"] body {')[1]?.split("}")[0] || "";
 check((tamilBodyRule.match(/letter-spacing:\s*normal\s*;/g) || []).length === 1 && !/letter-spacing:\s*(?!normal\b)/.test(tamilBodyRule), "Tamil body rule must keep normal letter spacing.");
 
 if (errors.length) {
