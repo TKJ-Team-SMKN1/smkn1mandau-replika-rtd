@@ -1433,7 +1433,8 @@
 
 /* Locale-specific script faces; apply to body text and display headings.
    The locale stylesheet is injected by public/scripts/i18n.js after a locale loads.
-   M PLUS and system stacks remain available while web fonts load or if they fail. */
+   All web-font files are served from this repository's public/fonts directory.
+   Tamil currently has no bundled local font; let the OS/browser provide its script fallback. */
 html[lang="zh-CN"] body,
 html[lang="zh-SG"] body,
 html[lang="zh-CN"] :is(h1, h2, h3, .font-judul),
@@ -1450,5 +1451,5 @@ html[lang="ko-KR"] :is(h1, h2, h3, .font-judul) {
 }
 html[lang="ta-SG"] body,
 html[lang="ta-SG"] :is(h1, h2, h3, .font-judul) {
-  font-family: "Noto Sans Tamil", "Noto Sans Tamil UI", system-ui, sans-serif;
+  font-family: "M PLUS 1 Local", "M PLUS 2 Local", system-ui, sans-serif;
 }
