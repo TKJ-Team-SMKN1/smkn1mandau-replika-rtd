@@ -1455,9 +1455,9 @@
 
 @font-face {
   font-family: "Zen Kaku Gothic New Local";
-  src: url("/fonts/japanese/zen-kaku-gothic/fonts/ttf/ZenKakuGothicNew-Thin.ttf") format("truetype");
+  src: url("/fonts/japanese/zen-kaku-gothic/fonts/ttf/ZenKakuGothicNew-Black.ttf") format("truetype");
   font-style: normal;
-  font-weight: 100;
+  font-weight: 900;
   font-display: swap;
   unicode-range: U+3000-30FF, U+31F0-31FF, U+3400-4DBF, U+4E00-9FFF, U+FF00-FFEF;
 }
