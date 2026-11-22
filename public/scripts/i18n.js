@@ -117,7 +117,7 @@
     const base = original.get(node);
     const trimmed = base.trim();
     if (!trimmed) return;
-    const translated = dictionary[trimmed] || dictionary[trimmed.replace(/\\s+/g, " ")];
+    const translated = dictionary[trimmed] || dictionary[trimmed.replace(/\s+/g, " ")];
     const nextValue = translated ? base.replace(trimmed, translated) : base;
     if (node.nodeValue !== nextValue) node.nodeValue = nextValue;
   }
