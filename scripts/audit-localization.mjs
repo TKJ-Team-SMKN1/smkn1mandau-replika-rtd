@@ -85,11 +85,17 @@ const reviewedOverrides = {
 };
 const expectedReviewedTerms = {
   ja: {
+    "Kejuruan yang menyiapkan ": "職業教育は、",
+    "tangan,": "実践力を育て、",
+    " bukan hanya nilai rapor.": "成績表の点数だけにとどまりません。",
     "Arsip": "アーカイブ", "Kanal resmi": "公式チャンネル",
     "Visi": "ビジョン", "Misi": "ミッション", "Arah sekolah": "学校の方針",
     "Akademik": "学業", "dalam rumpun ": "分野："
   },
   ko: {
+    "Kejuruan yang menyiapkan ": "직업교육은 ",
+    "tangan,": "실무 역량을 기르고,",
+    " bukan hanya nilai rapor.": "성적표의 점수에만 머무르지 않습니다.",
     "Aksi utama": "주요 동작", "Arsip": "아카이브", "Kanal resmi": "공식 채널",
     "Visi": "비전", "Misi": "사명", "Arah sekolah": "학교의 방향",
     "Akademik": "학업", "dalam rumpun ": "계열: "
@@ -105,6 +111,12 @@ const expectedReviewedTerms = {
   },
   ta: {
     "Tema": "தீம்",
+    "Kejuruan yang menyiapkan ": "தொழிற்கல்வி ",
+    "tangan,": "செய்முறைத் திறன்களை வளர்த்து,",
+    " bukan hanya nilai rapor.": "மதிப்பெண்களுடன் மட்டும் நின்றுவிடுவதில்லை.",
+    "Pendidikan dalam angka": "கல்விப் புள்ளிவிவரங்கள்",
+    "Bertumbuh.": "வளருங்கள்.",
+    "Dokumentasi": "ஆவணங்கள்",
     "Riwayat sekolah": "பள்ளியின் வரலாறு",
     "Gedung sekolah berdiri": "பள்ளிக் கட்டிடம் கட்டப்பட்டது",
     "@aria-label:Hapus pencarian": "@aria-label:தேடலை அழிக்கவும்",
