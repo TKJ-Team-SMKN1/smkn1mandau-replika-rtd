@@ -158,13 +158,12 @@ code,pre,kbd,samp,.font-rapat,.font-office-code-pro { font-family: "Office Code 
 .site-search-result-copy small { color: var(--text-muted,#586174); font-size: .78rem; line-height: 1.35; }
 
 /* CJK fonts are loaded on demand by the language controller. */
-html[lang="zh-CN"] body {
-  font-family: "Noto Sans SC Local", "M PLUS 2 Local", "Microsoft YaHei", sans-serif;
+html[lang="zh-CN"] body,
+html[lang="zh-SG"] body {
+  font-family: "Noto Sans SC Local", "M PLUS 2 Local", system-ui, sans-serif;
 }
-html[lang="zh-CN"] code,
-html[lang="zh-CN"] pre,
-html[lang="zh-CN"] kbd,
-html[lang="zh-CN"] samp {
+html[lang="zh-CN"] :is(code, pre, kbd, samp),
+html[lang="zh-SG"] :is(code, pre, kbd, samp) {
   font-family: "Office Code Pro Local", "Noto Sans SC Local", monospace;
 }
 html[lang="zh-Hant"] body {
