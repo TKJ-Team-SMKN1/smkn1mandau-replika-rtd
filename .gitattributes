@@ -8,3 +8,7 @@
 *.dfont !text !filter !merge !diff
 *.pfa !text !filter !merge !diff
 *.pfb !text !filter !merge !diff
+
+# Japanese and Korean fonts: regular Git blobs, not Git LFS
+/public/fonts/japanese/** -filter -diff -merge -text
+/public/fonts/korean/** -filter -diff -merge -text

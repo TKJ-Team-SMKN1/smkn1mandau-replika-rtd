@@ -52,6 +52,9 @@ const [sitemap, robots, allHtmlFiles] = await Promise.all([
 ]);
 const htmlFiles = [];
 for (const file of allHtmlFiles) {
+  const relative = path.relative(dist, file).split(path.sep).join("/");
+  // Third-party font packages may ship standalone specimen/license HTML; these are not public site pages.
+  if (relative.startsWith("fonts/")) continue;
   if (!await isGoogleVerificationFile(file)) htmlFiles.push(file);
 }
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);

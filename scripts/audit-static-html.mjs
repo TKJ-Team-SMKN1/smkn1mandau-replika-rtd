@@ -38,6 +38,8 @@ await walk(dist);
 const publicHtmlFiles = [];
 for (const file of htmlFiles) {
   const relative = path.relative(dist, file).split(path.sep).join("/");
+  // Third-party font packages may ship standalone specimen/license HTML; these are not site pages.
+  if (relative.startsWith("fonts/")) continue;
   if (/^google[0-9a-f]+\.html$/i.test(relative)) {
     const filename = path.basename(file);
     const content = await readFile(file, "utf8");

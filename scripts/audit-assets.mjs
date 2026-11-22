@@ -98,6 +98,9 @@ const allHtmlFiles = await collectHtml(distRoot);
 const htmlFiles = [];
 for (const file of allHtmlFiles) {
   const relative = path.relative(distRoot, file).split(path.sep).join("/");
+  // Third-party font packages may ship standalone HTML specimen/license documents.
+  // They are static vendor assets, not school-owned pages subject to site branding metadata.
+  if (relative.startsWith("fonts/")) continue;
   if (!/^google[0-9a-f]+\.html$/i.test(relative)) {
     htmlFiles.push(file);
     continue;
