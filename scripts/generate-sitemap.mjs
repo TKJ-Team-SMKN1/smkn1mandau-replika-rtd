@@ -35,6 +35,9 @@ function routeFromFile(file) {
 const allHtmlFiles = await collectHtml(outputDirectory);
 const publicHtmlFiles = [];
 for (const file of allHtmlFiles) {
+  const relative = path.relative(outputDirectory, file).split(path.sep).join("/");
+  // Vendor font packages may include standalone specimen/license HTML; keep them out of the public sitemap.
+  if (relative.startsWith("fonts/")) continue;
   if (!await isGoogleVerificationFile(file)) publicHtmlFiles.push(file);
 }
 const routes = [...new Set(publicHtmlFiles.map(routeFromFile).filter(Boolean))]
