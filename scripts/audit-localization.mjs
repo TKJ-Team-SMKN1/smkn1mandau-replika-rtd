@@ -128,6 +128,9 @@ for (const legacy of ['id: "id-ID"', 'en: "en-US"', 'ms: "ms-MY"', 'zh: "zh-CN"'
   if (!script.includes(legacy)) errors.push("Legacy language preference alias is missing: " + legacy);
 }
 if (!script.includes('const KEY = "smkn1mandau-language";')) errors.push("The language preference key is missing.");
+if (!script.includes("translateSubtree(document.body, {})") || !script.includes('activeLanguage = "id-ID";')) {
+  errors.push("Failed locale loading must restore Indonesian source text and language state.");
+}
 if (!script.includes("localeConfigs") || !script.includes("loadExtraTranslations") || !script.includes("config.overrides")) {
   errors.push("On-demand locale loading or regional overrides are missing.");
 }
