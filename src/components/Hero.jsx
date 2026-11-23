@@ -78,14 +78,14 @@ export default function Hero() {
         .hero-copy > p:not(:first-child) { max-width:610px; margin:1.6rem 0 2rem; color:rgba(246,239,230,.78); font-size:clamp(1rem,1.4vw,1.15rem); line-height:1.85; }
         /* Give translated hero headings and descriptions more breathing room
            across English variants, Indonesian, Malay, and Singapore locales. */
-        :is(html[lang^="en"],html[lang="id-ID"],html[lang$="-SG"]:not([lang="ta-SG"]),html[lang="ms-MY"]) .hero-copy > p:not(:first-child) {
-          margin-top:2.35rem;
-          line-height:1.95;
-        }
-        :is(html[lang^="en"],html[lang="id-ID"],html[lang$="-SG"]:not([lang="ta-SG"]),html[lang="ms-MY"]) .hero-copy h1 {
-          margin-bottom:.35rem;
+        :is(html[lang^="en"],html[lang="id-ID"],html[lang$="-SG"]:not([lang="ta-SG"]),html[lang^="ms"]) .hero-copy h1 {
+          margin-bottom:0;
           line-height:1.2;
           letter-spacing:normal;
+        }
+        :is(html[lang^="en"],html[lang="id-ID"],html[lang$="-SG"]:not([lang="ta-SG"]),html[lang^="ms"]) .hero-copy h1 + p {
+          margin-top:clamp(2.5rem,5vw,3.5rem);
+          line-height:1.95;
         }
         .hero-actions { display:flex; flex-wrap:wrap; gap:.85rem; }
         .hero-secondary { color:#fff !important; border-color:rgba(255,255,255,.32) !important; }
