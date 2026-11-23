@@ -312,3 +312,36 @@ a:not([class]) {
 
 :where(button, a, summary, label) { overflow-wrap: anywhere; }
 :where(p, li, dd, dt, figcaption, blockquote) { max-width: 100%; }
+
+
+/* Tamil script metrics: prevent clipped vowel marks and unstable line boxes after locale switching. */
+html[lang="ta-SG"] body {
+  font-family: "Noto Serif Tamil Local", "Outfit Local", "Noto Sans Tamil", system-ui, sans-serif;
+  line-height: 1.9;
+  letter-spacing: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+  hyphens: none;
+  text-rendering: auto;
+}
+html[lang="ta-SG"] :where(h1,h2,h3,h4,p,li,dt,dd,blockquote,label,button,a,summary,input,select,textarea) {
+  font-family: "Noto Serif Tamil Local", "Outfit Local", "Noto Sans Tamil", system-ui, sans-serif;
+  line-height: 1.85;
+  letter-spacing: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+  hyphens: none;
+}
+html[lang="ta-SG"] :where(button,a,summary,label,input,select,textarea) {
+  min-height: 48px;
+}
+html[lang="ta-SG"] :where(h1,h2,h3,h4) {
+  line-height: 1.35;
+  font-weight: 600;
+}
+html[lang="ta-SG"] .brand-name,
+html[lang="ta-SG"] .brand-caption,
+html[lang="ta-SG"] .mobile-nav-heading {
+  letter-spacing: normal;
+  text-transform: none;
+}
