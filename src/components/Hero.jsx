@@ -56,6 +56,25 @@ export default function Hero() {
         .hero-eyebrow-dot { width:8px; height:8px; border-radius:50%; background:#d9843f; box-shadow:0 0 0 5px rgba(217,132,63,.15); }
         .hero-copy h1 { max-width:790px; margin:0; color:#fff; font-family:"Anton Local","Archivo Local",sans-serif; font-size:clamp(2.55rem,5.6vw,5.1rem); line-height:1.13; letter-spacing:-.045em; }
         .hero-copy h1 span { color:#efb17b; }
+        /* Tamil glyphs need taller line boxes and must not inherit Latin display tracking. */
+        html[lang="ta-SG"] .hero-copy h1 {
+          font-family:"Noto Serif Tamil Local","Noto Sans Tamil",serif;
+          font-size:clamp(2.1rem,4.8vw,4.35rem);
+          line-height:1.7;
+          letter-spacing:normal;
+          overflow:visible;
+          text-wrap:pretty;
+        }
+        html[lang="ta-SG"] .hero-copy h1 span {
+          color:#efb17b;
+          line-height:inherit;
+          letter-spacing:normal;
+        }
+        html[lang="ta-SG"] .hero-copy > p:not(:first-child) {
+          margin-top:2rem;
+          line-height:2;
+          overflow:visible;
+        }
         .hero-copy > p:not(:first-child) { max-width:610px; margin:1.6rem 0 2rem; color:rgba(246,239,230,.78); font-size:clamp(1rem,1.4vw,1.15rem); line-height:1.85; }
         .hero-actions { display:flex; flex-wrap:wrap; gap:.85rem; }
         .hero-secondary { color:#fff !important; border-color:rgba(255,255,255,.32) !important; }
