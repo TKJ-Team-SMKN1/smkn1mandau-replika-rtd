@@ -82,7 +82,7 @@ export default function Hero() {
           margin-top:2.35rem;
           line-height:1.95;
         }
-        :is(html[lang^="en"],html[lang="id-ID"],html[lang$="-SG"],html[lang="ms-MY"]) .hero-copy h1 {
+        :is(html[lang^="en"],html[lang="id-ID"],html[lang$="-SG"]:not([lang="ta-SG"]),html[lang="ms-MY"]) .hero-copy h1 {
           margin-bottom:.35rem;
           line-height:1.2;
           letter-spacing:normal;
