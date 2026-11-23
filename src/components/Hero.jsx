@@ -76,6 +76,17 @@ export default function Hero() {
           overflow:visible;
         }
         .hero-copy > p:not(:first-child) { max-width:610px; margin:1.6rem 0 2rem; color:rgba(246,239,230,.78); font-size:clamp(1rem,1.4vw,1.15rem); line-height:1.85; }
+        /* Give translated hero headings and descriptions more breathing room
+           across English variants, Indonesian, Malay, and Singapore locales. */
+        :is(html[lang^="en"],html[lang="id-ID"],html[lang$="-SG"],html[lang="ms-MY"]) .hero-copy > p:not(:first-child) {
+          margin-top:2.35rem;
+          line-height:1.95;
+        }
+        :is(html[lang^="en"],html[lang="id-ID"],html[lang$="-SG"],html[lang="ms-MY"]) .hero-copy h1 {
+          margin-bottom:.35rem;
+          line-height:1.2;
+          letter-spacing:normal;
+        }
         .hero-actions { display:flex; flex-wrap:wrap; gap:.85rem; }
         .hero-secondary { color:#fff !important; border-color:rgba(255,255,255,.32) !important; }
         .hero-secondary:hover { background:rgba(255,255,255,.1) !important; }
