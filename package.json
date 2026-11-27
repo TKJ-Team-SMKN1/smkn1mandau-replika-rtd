@@ -22,7 +22,8 @@
     "audit:inclusive-a11y": "node scripts/audit-inclusive-a11y.mjs",
     "predev": "node scripts/materialize-lfs-fonts.mjs",
     "prebuild": "node scripts/materialize-lfs-fonts.mjs",
-    "audit:tamil": "node scripts/audit-tamil-fonts.mjs"
+    "audit:tamil": "node scripts/audit-tamil-fonts.mjs",
+    "audit:cvd": "node scripts/audit-cvd-adaptation.mjs"
   },
   "dependencies": {
     "astro": "^7.4.8",
