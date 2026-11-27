@@ -488,5 +488,22 @@
   "Kirim masukan aksesibilitas": "Hantar maklum balas kebolehcapaian",
   "Laporkan URL halaman, browser dan perangkat, langkah untuk mengulang kendala, serta hasil yang diharapkan. Tidak perlu menyebutkan diagnosis atau menjelaskan kondisi pribadi.": "Laporkan URL halaman, pelayar dan peranti, langkah untuk mengulangi masalah, serta hasil yang diharapkan. Anda tidak perlu menyatakan diagnosis atau menerangkan keadaan peribadi.",
   "Jangan sertakan diagnosis, dokumen medis, alamat, atau informasi pribadi. Pelacak isu GitHub bersifat publik dan mungkin memerlukan akun GitHub.": "Jangan sertakan diagnosis, dokumen perubatan, alamat atau maklumat peribadi. Penjejak isu GitHub bersifat umum dan mungkin memerlukan akaun GitHub.",
-  "Forum isu GitHub (publik)": "Penjejak isu GitHub (umum)"
+  "Forum isu GitHub (publik)": "Penjejak isu GitHub (umum)",
+  "Profil adaptasi warna": "Profil penyesuaian warna",
+  "Kekuatan penanda": "Kekuatan petunjuk",
+  "P00 — Default aksesibel": "P00 — Lalai mudah akses",
+  "P01 — Bantuan protanomaly": "P01 — Bantuan protanomali",
+  "P02 — Bantuan protanopia": "P02 — Bantuan protanopia",
+  "P03 — Bantuan deuteranomaly": "P03 — Bantuan deuteranomali",
+  "P04 — Bantuan deuteranopia": "P04 — Bantuan deuteranopia",
+  "P05 — Bantuan tritanomaly": "P05 — Bantuan tritanomali",
+  "P06 — Bantuan tritanopia": "P06 — Bantuan tritanopia",
+  "P07 — Ramah monokrom": "P07 — Mesra monokrom",
+  "P08 — Distingsi kuat": "P08 — Perbezaan jelas",
+  "P09 — Penyesuaian pribadi": "P09 — Pelarasan peribadi",
+  "Halus": "Lembut",
+  "Seimbang": "Seimbang",
+  "Lebih tegas": "Lebih ketara",
+  "Profil adaptasi warna diperbarui.": "Profil penyesuaian warna dikemas kini.",
+  "Kekuatan penanda diperbarui.": "Kekuatan petunjuk dikemas kini."
 }
