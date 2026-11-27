@@ -521,5 +521,6 @@
   "Seimbang": "Balanced",
   "Lebih tegas": "Stronger",
   "Profil adaptasi warna diperbarui.": "Color adaptation profile updated.",
-  "Kekuatan penanda diperbarui.": "Cue strength updated."
+  "Kekuatan penanda diperbarui.": "Cue strength updated.",
+  "Profil adalah titik awal pengaturan tampilan, bukan tes atau diagnosis. Semua profil memakai penanda non-warna yang konsisten; preset klinis belum mengubah hue secara otomatis karena palet universal per diagnosis belum tervalidasi. Pilih kekuatan penanda sesuai kenyamanan. Informasi penting tetap tidak boleh dibedakan melalui warna saja.": "Profiles are presentation starting points, not tests or diagnoses. All profiles use consistent non-color cues; clinical presets do not automatically change hue because universal diagnosis-specific palettes are not validated. Choose cue strength for comfort. Important information must never rely on color alone."
 }
