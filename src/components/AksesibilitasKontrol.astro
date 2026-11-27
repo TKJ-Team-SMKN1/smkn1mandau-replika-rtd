@@ -17,9 +17,30 @@
       <button type="button" data-a11y-toggle="motion" aria-pressed="false">Kurangi gerakan: mati</button>
       <button type="button" data-a11y-toggle="reading" aria-pressed="false">Tampilan baca sederhana: mati</button>
       <button type="button" data-a11y-toggle="color" aria-pressed="false">Penanda warna: mati</button>
+      <label class="a11y-field" for="a11y-cvd-profile">Profil adaptasi warna
+        <select id="a11y-cvd-profile" data-a11y-cvd-profile>
+          <option value="P00">P00 — Default aksesibel</option>
+          <option value="P01">P01 — Bantuan protanomaly</option>
+          <option value="P02">P02 — Bantuan protanopia</option>
+          <option value="P03">P03 — Bantuan deuteranomaly</option>
+          <option value="P04">P04 — Bantuan deuteranopia</option>
+          <option value="P05">P05 — Bantuan tritanomaly</option>
+          <option value="P06">P06 — Bantuan tritanopia</option>
+          <option value="P07">P07 — Ramah monokrom</option>
+          <option value="P08">P08 — Distingsi kuat</option>
+          <option value="P09">P09 — Penyesuaian pribadi</option>
+        </select>
+      </label>
+      <label class="a11y-field" for="a11y-cvd-strength">Kekuatan penanda
+        <select id="a11y-cvd-strength" data-a11y-cvd-strength>
+          <option value="subtle">Halus</option>
+          <option value="balanced">Seimbang</option>
+          <option value="stronger">Lebih tegas</option>
+        </select>
+      </label>
       <button type="button" data-a11y-action="reset">Atur ulang</button>
     </div>
-    <p class="a11y-help">Bantuan visual ini menambahkan garis bawah pada tautan dan penanda bentuk pada elemen status. Informasi tidak boleh dibedakan melalui warna saja.</p>
+    <p class="a11y-help">Profil adalah titik awal pengaturan tampilan, bukan tes atau diagnosis. Semua profil memakai penanda non-warna yang konsisten; preset klinis belum mengubah hue secara otomatis karena palet universal per diagnosis belum tervalidasi. Pilih kekuatan penanda sesuai kenyamanan. Informasi penting tetap tidak boleh dibedakan melalui warna saja.</p>
     <p class="a11y-status" role="status" aria-live="polite"></p>
   </section>
 </div>
@@ -33,7 +54,9 @@
   const status = panel.querySelector(".a11y-status");
   const key = "smkn1mandau-a11y";
   const textSteps = [100, 112, 124, 136, 148, 160, 172, 184, 196, 200];
-  const defaults = { text: 100, contrast: false, motion: false, reading: false, color: false };
+  const validProfiles = ["P00","P01","P02","P03","P04","P05","P06","P07","P08","P09"];
+  const validStrengths = ["subtle","balanced","stronger"];
+  const defaults = { text: 100, contrast: false, motion: false, reading: false, color: false, cvdProfile: "P00", cvdStrength: "balanced" };
   let prefs = { ...defaults };
   try {
     const stored = JSON.parse(localStorage.getItem(key) || "null");
@@ -42,7 +65,9 @@
       contrast: stored.contrast === true,
       motion: stored.motion === true,
       reading: stored.reading === true,
-      color: stored.color === true
+      color: stored.color === true,
+      cvdProfile: validProfiles.includes(stored.cvdProfile) ? stored.cvdProfile : "P00",
+      cvdStrength: validStrengths.includes(stored.cvdStrength) ? stored.cvdStrength : "balanced"
     };
   } catch { /* Keep in-memory defaults when storage is unavailable. */ }
   const announce = (message) => { if (status) status.textContent = message; };
@@ -53,6 +78,13 @@
     root.toggleAttribute("data-a11y-motion", prefs.motion);
     root.toggleAttribute("data-a11y-reading", prefs.reading);
     root.toggleAttribute("data-a11y-color", prefs.color);
+    root.dataset.cvdProfile = prefs.cvdProfile;
+    root.dataset.cvdStrength = prefs.cvdStrength;
+    root.toggleAttribute("data-cvd-active", prefs.cvdProfile !== "P00");
+    const profilePicker = panel.querySelector("[data-a11y-cvd-profile]");
+    const strengthPicker = panel.querySelector("[data-a11y-cvd-strength]");
+    if (profilePicker) profilePicker.value = prefs.cvdProfile;
+    if (strengthPicker) strengthPicker.value = prefs.cvdStrength;
     panel.querySelectorAll("[data-a11y-toggle]").forEach((button) => {
       const name = button.dataset.a11yToggle;
       const active = Boolean(prefs[name]);
@@ -75,6 +107,16 @@
     if (open) options.querySelector("button")?.focus();
   });
   panel.querySelector(".a11y-close").addEventListener("click", () => close(true));
+  panel.querySelector("[data-a11y-cvd-profile]")?.addEventListener("change", (event) => {
+    const value = event.currentTarget.value;
+    prefs.cvdProfile = validProfiles.includes(value) ? value : "P00";
+    apply("Profil adaptasi warna diperbarui.");
+  });
+  panel.querySelector("[data-a11y-cvd-strength]")?.addEventListener("change", (event) => {
+    const value = event.currentTarget.value;
+    prefs.cvdStrength = validStrengths.includes(value) ? value : "balanced";
+    apply("Kekuatan penanda diperbarui.");
+  });
   options.addEventListener("click", (event) => {
     const button = event.target.closest("button");
     if (!button) return;
