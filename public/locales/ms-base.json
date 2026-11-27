@@ -505,5 +505,6 @@
   "Seimbang": "Seimbang",
   "Lebih tegas": "Lebih ketara",
   "Profil adaptasi warna diperbarui.": "Profil penyesuaian warna dikemas kini.",
-  "Kekuatan penanda diperbarui.": "Kekuatan petunjuk dikemas kini."
+  "Kekuatan penanda diperbarui.": "Kekuatan petunjuk dikemas kini.",
+  "Profil adalah titik awal pengaturan tampilan, bukan tes atau diagnosis. Semua profil memakai penanda non-warna yang konsisten; preset klinis belum mengubah hue secara otomatis karena palet universal per diagnosis belum tervalidasi. Pilih kekuatan penanda sesuai kenyamanan. Informasi penting tetap tidak boleh dibedakan melalui warna saja.": "Profil ialah titik permulaan paparan, bukan ujian atau diagnosis. Semua profil menggunakan petunjuk bukan warna yang konsisten; pratetap klinikal tidak mengubah rona secara automatik kerana palet khusus diagnosis yang universal belum disahkan. Pilih kekuatan petunjuk mengikut keselesaan. Maklumat penting tidak boleh bergantung pada warna sahaja."
 }
