@@ -13,6 +13,10 @@ const required = [
     'data-a11y-toggle="motion"',
     'data-a11y-toggle="reading"',
     'data-a11y-toggle="color"',
+    'data-a11y-cvd-profile',
+    'data-a11y-cvd-strength',
+    'P09 — Penyesuaian pribadi',
+    'validProfiles = ["P00","P01","P02","P03","P04","P05","P06","P07","P08","P09"]',
     'textSteps = [100, 112, 124, 136, 148, 160, 172, 184, 196, 200]',
     'data-a11y-action="text-up"',
     'data-a11y-action="reset"'
@@ -22,6 +26,9 @@ const required = [
     'html[data-a11y-motion]',
     'html[data-a11y-reading]',
     'html[data-a11y-color]',
+    'html[data-cvd-active]',
+    'html[data-cvd-profile="P07"]',
+    'html[data-cvd-profile="P08"]',
     'html[data-a11y-text="200"]',
     '@media(forced-colors:active)'
   ]],
@@ -49,6 +56,12 @@ for (const locale of ["en", "ms", "zh"]) {
   try {
     const dictionary = JSON.parse(await readFile(file, "utf8"));
     for (const key of [
+      "Profil adaptasi warna",
+      "Kekuatan penanda",
+      "P00 — Default aksesibel",
+      "P09 — Penyesuaian pribadi",
+      "Profil adaptasi warna diperbarui.",
+      "Kekuatan penanda diperbarui.",
       "Penanda warna: mati",
       "Penanda warna: aktif",
       "Preferensi penanda warna diperbarui.",
@@ -66,7 +79,7 @@ for (const locale of ["en", "ms", "zh"]) {
 let built = "";
 try { built = await readFile("dist/index.html", "utf8"); }
 catch { errors.push("Missing generated dist/index.html; run the build before this audit."); }
-for (const needle of ['name="google-site-verification"', 'FXEeMYJjK8H-7Umv_-T9nwn6mB3St0NFqROlj15T4SY', 'Aksesibilitas', 'a11y-options']) {
+for (const needle of ['name="google-site-verification"', 'FXEeMYJjK8H-7Umv_-T9nwn6mB3St0NFqROlj15T4SY', 'Aksesibilitas', 'a11y-options', 'data-a11y-cvd-profile', 'data-a11y-cvd-strength']) {
   if (!built.includes(needle)) errors.push("Generated homepage is missing: " + needle);
 }
 if (errors.length) {
