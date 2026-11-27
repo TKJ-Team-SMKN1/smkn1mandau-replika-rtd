@@ -486,5 +486,22 @@
   "Kirim masukan aksesibilitas": "提交无障碍反馈",
   "Laporkan URL halaman, browser dan perangkat, langkah untuk mengulang kendala, serta hasil yang diharapkan. Tidak perlu menyebutkan diagnosis atau menjelaskan kondisi pribadi.": "请提供页面 URL、浏览器和设备、重现问题的步骤以及预期结果。无需提供诊断信息或描述个人情况。",
   "Jangan sertakan diagnosis, dokumen medis, alamat, atau informasi pribadi. Pelacak isu GitHub bersifat publik dan mungkin memerlukan akun GitHub.": "请勿提供诊断、医疗文件、地址或个人信息。GitHub 问题跟踪区是公开的，可能需要 GitHub 账户。",
-  "Forum isu GitHub (publik)": "公开 GitHub 问题跟踪区"
+  "Forum isu GitHub (publik)": "公开 GitHub 问题跟踪区",
+  "Profil adaptasi warna": "颜色适配配置",
+  "Kekuatan penanda": "视觉提示强度",
+  "P00 — Default aksesibel": "P00 — 无障碍默认",
+  "P01 — Bantuan protanomaly": "P01 — 红色弱辅助",
+  "P02 — Bantuan protanopia": "P02 — 红色盲辅助",
+  "P03 — Bantuan deuteranomaly": "P03 — 绿色弱辅助",
+  "P04 — Bantuan deuteranopia": "P04 — 绿色盲辅助",
+  "P05 — Bantuan tritanomaly": "P05 — 蓝黄色弱辅助",
+  "P06 — Bantuan tritanopia": "P06 — 蓝黄色盲辅助",
+  "P07 — Ramah monokrom": "P07 — 适合单色显示",
+  "P08 — Distingsi kuat": "P08 — 高区分度",
+  "P09 — Penyesuaian pribadi": "P09 — 个性化调整",
+  "Halus": "轻微",
+  "Seimbang": "均衡",
+  "Lebih tegas": "更明显",
+  "Profil adaptasi warna diperbarui.": "颜色适配配置已更新。",
+  "Kekuatan penanda diperbarui.": "视觉提示强度已更新。"
 }
