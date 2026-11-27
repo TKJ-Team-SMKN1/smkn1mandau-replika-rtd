@@ -56,3 +56,12 @@ WCAG success criteria are normative conformance requirements. Autism-friendly pa
 - The Eurofurence accessibility page is used as a reference for transparent communication about available accommodations, limitations, content warnings, venue access, and feedback. Its event-specific services must not be attributed to SMK Negeri 1 Mandau.
 
 A future manual evaluation should invite volunteers with varied access needs, compensate or otherwise respect their time where possible, obtain informed consent, avoid collecting unnecessary health information, document barriers without identifying participants, and retest fixes with the people affected.
+
+
+## Color vision deficiency adaptation profiles — implementation scope
+
+The shared preference panel exposes ten presentation profiles (P00–P09) and a user-selected cue-strength setting. These are UI adaptation starting points, not ten medical diagnoses. P01–P06 retain familiar clinical labels for discoverability, but do not apply automatic diagnosis-specific hue substitution. Current evidence does not establish one universally optimal palette per subtype. All non-default profiles consistently reinforce link underlines and semantic status boundaries; P07 adds a restrained pattern cue to status surfaces; P08 adds stronger component outlines. The user can switch profiles and reset through the existing preference panel. Settings remain in local device storage.
+
+The profile label and strength are user-selected preferences only. The implementation does not infer a condition, run a clinical test, collect health information, recolor photos/video, or claim clinical efficacy. P09 is manual presentation adjustment, not an automated clinical calibration.
+
+Validation must include every route and component state, all five site themes, forced-colors, keyboard and screen-reader use, and task-based evaluation with volunteers who have varied CVD. Simulation and static audits are screening tools, not proof of usability or WCAG conformance.
