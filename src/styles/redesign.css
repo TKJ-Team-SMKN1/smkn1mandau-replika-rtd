@@ -211,3 +211,32 @@ html[data-a11y-reading] .hero-pattern,html[data-a11y-reading] .footer-batik { ba
 /* Color-independent visual aid: reinforces links and common semantic status hooks without color filters. */
 html[data-a11y-color] a:not(.a11y-trigger) { text-decoration:underline !important; text-decoration-thickness:.14em !important; text-underline-offset:.2em !important; }
 html[data-a11y-color] :is([aria-current="page"],[aria-invalid="true"],[data-status],.status,.badge,.badge-teknis) { outline:2px solid currentColor; outline-offset:2px; border-radius:.2rem; }
+
+
+/* CVD adaptation layer: semantic cues first; no unvalidated per-diagnosis hue remapping. */
+.a11y-field { display:grid; gap:.4rem; color:var(--text-primary,#172033); font-weight:700; }
+.a11y-field select { width:100%; min-height:44px; padding:.6rem .75rem; border:1px solid var(--control-border,#687386); border-radius:.65rem; color:var(--text-primary,#172033); background:var(--surface,#fff); }
+.a11y-help { max-width:68ch; line-height:1.6; }
+html[data-cvd-active] :where(a:not(.tombol), .nav-link, .mobile-nav-link) {
+  text-decoration-line:underline;
+  text-decoration-thickness:var(--cvd-underline-width, .12em);
+  text-underline-offset:.2em;
+}
+html[data-cvd-active] :where([data-status], [role="status"], [role="alert"]) {
+  border-inline-start:var(--cvd-marker-width, 3px) solid currentColor;
+  padding-inline-start:.65rem;
+}
+html[data-cvd-active][data-cvd-strength="subtle"] { --cvd-underline-width:.1em; --cvd-marker-width:2px; }
+html[data-cvd-active][data-cvd-strength="balanced"] { --cvd-underline-width:.14em; --cvd-marker-width:3px; }
+html[data-cvd-active][data-cvd-strength="stronger"] { --cvd-underline-width:.2em; --cvd-marker-width:5px; }
+html[data-cvd-profile="P07"] :where([data-status], [role="status"], [role="alert"]) {
+  background-image:repeating-linear-gradient(135deg,transparent 0 7px,color-mix(in srgb,currentColor 7%,transparent) 7px 9px);
+}
+html[data-cvd-profile="P08"] :where(button, input, select, textarea, .kartu, .sdm-card, .sdm-tools) {
+  outline:1px solid color-mix(in srgb,currentColor 42%,transparent);
+  outline-offset:1px;
+}
+@media(forced-colors:active) {
+  html[data-cvd-active] :where([data-status], [role="status"], [role="alert"]) { border-inline-start-color:CanvasText; }
+  html[data-cvd-active] :where(a:not(.tombol), .nav-link, .mobile-nav-link) { text-decoration:underline; }
+}
