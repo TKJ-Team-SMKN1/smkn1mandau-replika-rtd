@@ -503,5 +503,6 @@
   "Seimbang": "均衡",
   "Lebih tegas": "更明显",
   "Profil adaptasi warna diperbarui.": "颜色适配配置已更新。",
-  "Kekuatan penanda diperbarui.": "视觉提示强度已更新。"
+  "Kekuatan penanda diperbarui.": "视觉提示强度已更新。",
+  "Profil adalah titik awal pengaturan tampilan, bukan tes atau diagnosis. Semua profil memakai penanda non-warna yang konsisten; preset klinis belum mengubah hue secara otomatis karena palet universal per diagnosis belum tervalidasi. Pilih kekuatan penanda sesuai kenyamanan. Informasi penting tetap tidak boleh dibedakan melalui warna saja.": "这些配置是界面呈现的起点，并非检测或诊断。所有配置均使用一致的非颜色提示；由于尚无经验证的通用诊断专属调色板，临床类别预设不会自动改变色相。请按舒适程度选择提示强度。重要信息不得仅依靠颜色传达。"
 }
