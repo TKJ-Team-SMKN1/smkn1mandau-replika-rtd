@@ -504,5 +504,22 @@
   "Kirim masukan aksesibilitas": "Send accessibility feedback",
   "Laporkan URL halaman, browser dan perangkat, langkah untuk mengulang kendala, serta hasil yang diharapkan. Tidak perlu menyebutkan diagnosis atau menjelaskan kondisi pribadi.": "Report the page URL, browser and device, steps to reproduce the barrier, and the expected result. You do not need to mention a diagnosis or describe a personal condition.",
   "Jangan sertakan diagnosis, dokumen medis, alamat, atau informasi pribadi. Pelacak isu GitHub bersifat publik dan mungkin memerlukan akun GitHub.": "Do not include diagnoses, medical documents, addresses, or personal information. GitHub Issues are public and may require a GitHub account.",
-  "Forum isu GitHub (publik)": "Public GitHub issue tracker"
+  "Forum isu GitHub (publik)": "Public GitHub issue tracker",
+  "Profil adaptasi warna": "Color adaptation profile",
+  "Kekuatan penanda": "Cue strength",
+  "P00 — Default aksesibel": "P00 — Accessible default",
+  "P01 — Bantuan protanomaly": "P01 — Protanomaly assist",
+  "P02 — Bantuan protanopia": "P02 — Protanopia assist",
+  "P03 — Bantuan deuteranomaly": "P03 — Deuteranomaly assist",
+  "P04 — Bantuan deuteranopia": "P04 — Deuteranopia assist",
+  "P05 — Bantuan tritanomaly": "P05 — Tritanomaly assist",
+  "P06 — Bantuan tritanopia": "P06 — Tritanopia assist",
+  "P07 — Ramah monokrom": "P07 — Monochrome-friendly",
+  "P08 — Distingsi kuat": "P08 — High distinction",
+  "P09 — Penyesuaian pribadi": "P09 — Personal adjustment",
+  "Halus": "Subtle",
+  "Seimbang": "Balanced",
+  "Lebih tegas": "Stronger",
+  "Profil adaptasi warna diperbarui.": "Color adaptation profile updated.",
+  "Kekuatan penanda diperbarui.": "Cue strength updated."
 }
