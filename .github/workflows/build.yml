@@ -53,5 +53,7 @@ jobs:
         run: npm run audit:a11y
       - name: Inclusive accessibility integration preflight
         run: npm run audit:inclusive-a11y
+      - name: CVD adaptation source audit
+        run: npm run audit:cvd
       - name: Dependency security audit
         run: npm run audit:security
